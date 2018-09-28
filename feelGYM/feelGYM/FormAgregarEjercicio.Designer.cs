@@ -32,6 +32,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cmb_tipoEjercicioAgregar = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txt_nombreEjercicio
@@ -67,11 +68,22 @@
             this.cmb_tipoEjercicioAgregar.Size = new System.Drawing.Size(203, 21);
             this.cmb_tipoEjercicioAgregar.TabIndex = 14;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(139, 66);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "label1";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // FormAgregarEjercicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(706, 354);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_nombreEjercicio);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
@@ -89,5 +101,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmb_tipoEjercicioAgregar;
+        private System.Windows.Forms.Label label1;
     }
 }
