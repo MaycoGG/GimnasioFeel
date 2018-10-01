@@ -20,6 +20,8 @@ namespace feelGYM
             InitializeComponent();
         }
 
+        Clases.Conexion conexion = new Clases.Conexion();
+
         private void txt_nombreProfe_Enter(object sender, EventArgs e)
         {
             if (txt_nombreProfe.Text == "NOMBRE")
@@ -137,23 +139,24 @@ namespace feelGYM
 
         private void cmb_sangreProfe_SelectedIndexChanged(object sender, EventArgs e)
         {
-            String conexion = "datasource=localhost; Uid=mayco; password=1234; Database=feelgym; SslMode=none";
-            MySqlConnection DBConect = new MySqlConnection(conexion);
+            
+            Clases.Conexion.obtenerConexion();
             try
             {
-                DBConect.Open();
-                string query = "SELECT * FROM tiposangre";
-                MySqlCommand cmd = new MySqlCommand(query, DBConect);
-                MySqlDataAdapter da1 = new MySqlDataAdapter(cmd);
+                string selectQuery = "SELECT * FROM tiposangre";
+                MySqlCommand command = new MySqlCommand(selectQuery);
+
+                MySqlDataAdapter mysqldt = new MySqlDataAdapter(command);
                 DataTable dt = new DataTable();
-                da1.Fill(dt);
+                mysqldt.Fill(dt);
+
                 cmb_sangreProfe.ValueMember = "id";
                 cmb_sangreProfe.DisplayMember = "nombre";
-
+                cmb_sangreProfe.DataSource = dt;
             }
-            catch (Exception e1)
+            catch (Exception ex)
             {
-                MessageBox.Show(e1.Message);
+                MessageBox.Show(ex.Message);
             }
 
         }
