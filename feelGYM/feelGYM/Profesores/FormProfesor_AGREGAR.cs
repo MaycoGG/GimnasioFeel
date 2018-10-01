@@ -137,25 +137,33 @@ namespace feelGYM
 
         private void cmb_sangreProfe_SelectedIndexChanged(object sender, EventArgs e)
         {
-            String conexion = "datasource=localhost; Uid=mayco; password=1234; Database=feelgym; SslMode=none";
-            MySqlConnection DBConect = new MySqlConnection(conexion);
+
+        }
+
+        public void llenarItems(ComboBox cb, String query, String atributo)
+        {
             try
             {
-                DBConect.Open();
-                string query = "SELECT * FROM tiposangre";
-                MySqlCommand cmd = new MySqlCommand(query, DBConect);
-                MySqlDataAdapter da1 = new MySqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da1.Fill(dt);
-                cmb_sangreProfe.ValueMember = "id";
-                cmb_sangreProfe.DisplayMember = "nombre";
-
+                
+                MySqlCommand cmd = new MySqlCommand(query, Conexion.Conexion.obtenerConexion());
+                MySqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    cb.Items.Add(dr[atributo].ToString());
+                }
+                dr.Close();
             }
-            catch (Exception e1)
+            catch (Exception e3)
             {
-                MessageBox.Show(e1.Message);
+                MessageBox.Show(e3.Message);
             }
+        }
 
+        private void FormProfesor_AGREGAR_Load(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM tiposangre";
+            string atributo = "nombre";
+            llenarItems(cmb_sangreProfe, query, atributo);
         }
     }
 }

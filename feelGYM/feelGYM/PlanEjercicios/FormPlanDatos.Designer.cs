@@ -42,6 +42,7 @@
             this.cmb_sesionesPlan = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_agregarProfeEnPlan = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -54,7 +55,6 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btn_cerrarPlan = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btn_agregarProfeEnPlan = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_sesionesPlan)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -199,6 +199,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Plan Actual";
             // 
+            // btn_agregarProfeEnPlan
+            // 
+            this.btn_agregarProfeEnPlan.Location = new System.Drawing.Point(266, 39);
+            this.btn_agregarProfeEnPlan.Name = "btn_agregarProfeEnPlan";
+            this.btn_agregarProfeEnPlan.Size = new System.Drawing.Size(37, 23);
+            this.btn_agregarProfeEnPlan.TabIndex = 18;
+            this.btn_agregarProfeEnPlan.Text = "+";
+            this.btn_agregarProfeEnPlan.UseVisualStyleBackColor = true;
+            this.btn_agregarProfeEnPlan.Click += new System.EventHandler(this.btn_agregarProfeEnPlan_Click);
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(21, 195);
@@ -302,16 +312,6 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // btn_agregarProfeEnPlan
-            // 
-            this.btn_agregarProfeEnPlan.Location = new System.Drawing.Point(266, 39);
-            this.btn_agregarProfeEnPlan.Name = "btn_agregarProfeEnPlan";
-            this.btn_agregarProfeEnPlan.Size = new System.Drawing.Size(37, 23);
-            this.btn_agregarProfeEnPlan.TabIndex = 18;
-            this.btn_agregarProfeEnPlan.Text = "+";
-            this.btn_agregarProfeEnPlan.UseVisualStyleBackColor = true;
-            this.btn_agregarProfeEnPlan.Click += new System.EventHandler(this.btn_agregarProfeEnPlan_Click);
-            // 
             // FormPlanDatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -322,6 +322,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FormPlanDatos";
             this.Text = "Form Plan Datos";
+            this.Load += new System.EventHandler(this.FormPlanDatos_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_sesionesPlan)).EndInit();

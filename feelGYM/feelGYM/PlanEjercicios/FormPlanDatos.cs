@@ -79,5 +79,10 @@ namespace feelGYM
             FormProfesor_AGREGAR form = new FormProfesor_AGREGAR();
             form.Show();
         }
+
+        private void FormPlanDatos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
