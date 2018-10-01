@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDeDatos.cs" />
+    <Compile Include="Conexion\Conexion.cs" />
     <Compile Include="Form3.cs">
       <SubType>Form</SubType>
     </Compile>

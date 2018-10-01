@@ -191,22 +191,16 @@ namespace feelGYM
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            DBConection();
-            
-        }
-
-        private void DBConection() {
-            String conexion = "datasource=localhost; Uid=mayco; password=1234; Database=feelgym; SslMode=none";
-            MySqlConnection DBConect = new MySqlConnection(conexion);
+            Conexion.Conexion.obtenerConexion();
             try
             {
-                DBConect.Open();
                 MessageBox.Show("Ok estas conectado");
             }
-            catch(Exception e) {
-                MessageBox.Show(e.Message);
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
             }
-            
+
         }
 
         #endregion
