@@ -47,7 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDeDatos.cs" />
-    <Compile Include="Conexion\Conexion.cs" />
+    <Compile Include="Clases\Conexion.cs" />
+    <Compile Include="Clases\Metodos.cs" />
+    <Compile Include="Clases\TipoSangre.cs" />
     <Compile Include="Form3.cs">
       <SubType>Form</SubType>
     </Compile>
