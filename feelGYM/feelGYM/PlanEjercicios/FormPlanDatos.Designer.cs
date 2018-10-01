@@ -1,6 +1,6 @@
 ﻿namespace feelGYM
 {
-    partial class FormPlanDeEjercicos
+    partial class FormPlanDatos
     {
         /// <summary>
         /// Required designer variable.
@@ -29,11 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPlanDeEjercicos));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPlanDatos));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txt_apellidoClientePlan = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_NombreClientePlan = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.cmb_sesionesPlan = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txt_fechaActualPlan = new System.Windows.Forms.TextBox();
@@ -44,14 +54,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btn_cerrarPlan = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.txt_apellidoClientePlan = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txt_NombreClientePlan = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btn_agregarProfeEnPlan = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_sesionesPlan)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -78,6 +81,88 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Personales Cliente";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(17, 183);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(298, 45);
+            this.textBox1.TabIndex = 31;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(14, 158);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "OBJETIVOS";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(17, 274);
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(300, 80);
+            this.textBox5.TabIndex = 29;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(14, 248);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(98, 13);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "OBSERVACIONES";
+            // 
+            // txt_apellidoClientePlan
+            // 
+            this.txt_apellidoClientePlan.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_apellidoClientePlan.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_apellidoClientePlan.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_apellidoClientePlan.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_apellidoClientePlan.Location = new System.Drawing.Point(19, 69);
+            this.txt_apellidoClientePlan.Name = "txt_apellidoClientePlan";
+            this.txt_apellidoClientePlan.Size = new System.Drawing.Size(300, 19);
+            this.txt_apellidoClientePlan.TabIndex = 23;
+            this.txt_apellidoClientePlan.Text = "APELLIDO";
+            this.txt_apellidoClientePlan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_apellidoClientePlan.Enter += new System.EventHandler(this.txt_apellidoClientePlan_Enter);
+            this.txt_apellidoClientePlan.Leave += new System.EventHandler(this.txt_apellidoClientePlan_Leave);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 78);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(301, 13);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "_________________________________________________";
+            // 
+            // txt_NombreClientePlan
+            // 
+            this.txt_NombreClientePlan.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_NombreClientePlan.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_NombreClientePlan.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_NombreClientePlan.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_NombreClientePlan.Location = new System.Drawing.Point(19, 33);
+            this.txt_NombreClientePlan.Name = "txt_NombreClientePlan";
+            this.txt_NombreClientePlan.Size = new System.Drawing.Size(300, 19);
+            this.txt_NombreClientePlan.TabIndex = 22;
+            this.txt_NombreClientePlan.Text = "NOMBRE";
+            this.txt_NombreClientePlan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_NombreClientePlan.Enter += new System.EventHandler(this.txt_NombreClientePlan_Enter);
+            this.txt_NombreClientePlan.Leave += new System.EventHandler(this.txt_NombreClientePlan_Leave);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(16, 42);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(301, 13);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "_________________________________________________";
+            // 
             // cmb_sesionesPlan
             // 
             this.cmb_sesionesPlan.Location = new System.Drawing.Point(127, 116);
@@ -96,6 +181,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btn_agregarProfeEnPlan);
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.textBox7);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.txt_fechaActualPlan);
@@ -110,6 +198,25 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Plan Actual";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(21, 195);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(132, 28);
+            this.button2.TabIndex = 17;
+            this.button2.Text = "Limpiar Datos";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(170, 191);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(153, 37);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Empezar Armado de Plan";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox7
             // 
@@ -174,7 +281,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(100, 39);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(203, 21);
+            this.comboBox1.Size = new System.Drawing.Size(158, 21);
             this.comboBox1.TabIndex = 0;
             // 
             // btn_cerrarPlan
@@ -195,89 +302,17 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // txt_apellidoClientePlan
+            // btn_agregarProfeEnPlan
             // 
-            this.txt_apellidoClientePlan.BackColor = System.Drawing.SystemColors.Control;
-            this.txt_apellidoClientePlan.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_apellidoClientePlan.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_apellidoClientePlan.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_apellidoClientePlan.Location = new System.Drawing.Point(19, 69);
-            this.txt_apellidoClientePlan.Name = "txt_apellidoClientePlan";
-            this.txt_apellidoClientePlan.Size = new System.Drawing.Size(300, 19);
-            this.txt_apellidoClientePlan.TabIndex = 23;
-            this.txt_apellidoClientePlan.Text = "APELLIDO";
-            this.txt_apellidoClientePlan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_apellidoClientePlan.Enter += new System.EventHandler(this.txt_apellidoClientePlan_Enter);
-            this.txt_apellidoClientePlan.Leave += new System.EventHandler(this.txt_apellidoClientePlan_Leave);
+            this.btn_agregarProfeEnPlan.Location = new System.Drawing.Point(266, 39);
+            this.btn_agregarProfeEnPlan.Name = "btn_agregarProfeEnPlan";
+            this.btn_agregarProfeEnPlan.Size = new System.Drawing.Size(37, 23);
+            this.btn_agregarProfeEnPlan.TabIndex = 18;
+            this.btn_agregarProfeEnPlan.Text = "+";
+            this.btn_agregarProfeEnPlan.UseVisualStyleBackColor = true;
+            this.btn_agregarProfeEnPlan.Click += new System.EventHandler(this.btn_agregarProfeEnPlan_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 78);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(301, 13);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "_________________________________________________";
-            // 
-            // txt_NombreClientePlan
-            // 
-            this.txt_NombreClientePlan.BackColor = System.Drawing.SystemColors.Control;
-            this.txt_NombreClientePlan.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_NombreClientePlan.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_NombreClientePlan.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_NombreClientePlan.Location = new System.Drawing.Point(19, 33);
-            this.txt_NombreClientePlan.Name = "txt_NombreClientePlan";
-            this.txt_NombreClientePlan.Size = new System.Drawing.Size(300, 19);
-            this.txt_NombreClientePlan.TabIndex = 22;
-            this.txt_NombreClientePlan.Text = "NOMBRE";
-            this.txt_NombreClientePlan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_NombreClientePlan.Enter += new System.EventHandler(this.txt_NombreClientePlan_Enter);
-            this.txt_NombreClientePlan.Leave += new System.EventHandler(this.txt_NombreClientePlan_Leave);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(16, 42);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(301, 13);
-            this.label11.TabIndex = 24;
-            this.label11.Text = "_________________________________________________";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(17, 274);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(300, 80);
-            this.textBox5.TabIndex = 29;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 248);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(98, 13);
-            this.label5.TabIndex = 28;
-            this.label5.Text = "OBSERVACIONES";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(17, 183);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(298, 45);
-            this.textBox1.TabIndex = 31;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 158);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "OBJETIVOS";
-            // 
-            // FormPlanDeEjercicos
+            // FormPlanDatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -285,8 +320,8 @@
             this.Controls.Add(this.btn_cerrarPlan);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "FormPlanDeEjercicos";
-            this.Text = "FormPlanDeEjercicos";
+            this.Name = "FormPlanDatos";
+            this.Text = "Form Plan Datos";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_sesionesPlan)).EndInit();
@@ -322,5 +357,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_agregarProfeEnPlan;
     }
 }

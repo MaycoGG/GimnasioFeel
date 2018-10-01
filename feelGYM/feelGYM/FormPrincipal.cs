@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace feelGYM
 {
@@ -133,7 +134,7 @@ namespace feelGYM
 
         private void button2_Click(object sender, EventArgs e)
         {
-            abrirFormulario<FormPlanDeEjercicos>();
+            abrirFormulario<FormPlanDatos>();
             button2.BackColor = Color.FromArgb(64, 64, 64);
         }
 
@@ -186,6 +187,26 @@ namespace feelGYM
         private void lbl_horaActual_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            DBConection();
+            
+        }
+
+        private void DBConection() {
+            String conexion = "datasource=localhost; Uid=mayco; password=1234; Database=feelgym; SslMode=none";
+            MySqlConnection DBConect = new MySqlConnection(conexion);
+            try
+            {
+                DBConect.Open();
+                MessageBox.Show("Ok estas conectado");
+            }
+            catch(Exception e) {
+                MessageBox.Show(e.Message);
+            }
+            
         }
 
         #endregion

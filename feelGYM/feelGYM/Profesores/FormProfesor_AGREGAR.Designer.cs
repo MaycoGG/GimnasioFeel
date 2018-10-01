@@ -216,6 +216,7 @@
             this.cmb_sangreProfe.Name = "cmb_sangreProfe";
             this.cmb_sangreProfe.Size = new System.Drawing.Size(298, 21);
             this.cmb_sangreProfe.TabIndex = 49;
+            this.cmb_sangreProfe.SelectedIndexChanged += new System.EventHandler(this.cmb_sangreProfe_SelectedIndexChanged);
             // 
             // FormProfesor_AGREGAR
             // 

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace feelGYM
 {
-    public partial class FormPlanDeEjercicos : Form
+    public partial class FormPlanDatos : Form
     {
-        public FormPlanDeEjercicos()
+        public FormPlanDatos()
         {
             InitializeComponent();
         }
@@ -66,6 +66,18 @@ namespace feelGYM
                 txt_apellidoClientePlan.Text = "APELLIDO";
                 txt_apellidoClientePlan.ForeColor = Color.DimGray;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormPlan_Ejercicios form = new FormPlan_Ejercicios();
+            form.Show();
+        }
+
+        private void btn_agregarProfeEnPlan_Click(object sender, EventArgs e)
+        {
+            FormProfesor_AGREGAR form = new FormProfesor_AGREGAR();
+            form.Show();
         }
     }
 }

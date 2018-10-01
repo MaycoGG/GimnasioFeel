@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using MySql.Data;
+using System.Collections;
 
 namespace feelGYM
 {
@@ -128,6 +131,31 @@ namespace feelGYM
         private void txt_registrarProfe_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+      
+
+        private void cmb_sangreProfe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String conexion = "datasource=localhost; Uid=mayco; password=1234; Database=feelgym; SslMode=none";
+            MySqlConnection DBConect = new MySqlConnection(conexion);
+            try
+            {
+                DBConect.Open();
+                string query = "SELECT * FROM tiposangre";
+                MySqlCommand cmd = new MySqlCommand(query, DBConect);
+                MySqlDataAdapter da1 = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da1.Fill(dt);
+                cmb_sangreProfe.ValueMember = "id";
+                cmb_sangreProfe.DisplayMember = "nombre";
+
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+            }
+
         }
     }
 }

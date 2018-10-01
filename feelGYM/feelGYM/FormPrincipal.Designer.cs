@@ -52,6 +52,7 @@
             this.timerOcultarMenu = new System.Windows.Forms.Timer(this.components);
             this.timerMostrarMenu = new System.Windows.Forms.Timer(this.components);
             this.horaFecha = new System.Windows.Forms.Timer(this.components);
+            this.button3 = new System.Windows.Forms.Button();
             this.panelContenedor.SuspendLayout();
             this.panelFormularios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -128,6 +129,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.panelMenu.Controls.Add(this.button3);
             this.panelMenu.Controls.Add(this.btn_menu);
             this.panelMenu.Controls.Add(this.panel3);
             this.panelMenu.Controls.Add(this.Ejercicios);
@@ -327,6 +329,16 @@
             this.horaFecha.Enabled = true;
             this.horaFecha.Tick += new System.EventHandler(this.horaFecha_Tick);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(58, 223);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,6 +390,7 @@
         private System.Windows.Forms.Label lbl_fechaActual;
         private System.Windows.Forms.Label lbl_horaActual;
         private System.Windows.Forms.Timer horaFecha;
+        private System.Windows.Forms.Button button3;
     }
 }
 
