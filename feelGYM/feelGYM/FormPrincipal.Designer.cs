@@ -36,6 +36,7 @@
             this.lbl_horaActual = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.btn_menu = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.Ejercicios = new System.Windows.Forms.Button();
@@ -52,7 +53,6 @@
             this.timerOcultarMenu = new System.Windows.Forms.Timer(this.components);
             this.timerMostrarMenu = new System.Windows.Forms.Timer(this.components);
             this.horaFecha = new System.Windows.Forms.Timer(this.components);
-            this.button3 = new System.Windows.Forms.Button();
             this.panelContenedor.SuspendLayout();
             this.panelFormularios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -144,6 +144,16 @@
             this.panelMenu.Size = new System.Drawing.Size(200, 627);
             this.panelMenu.TabIndex = 1;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(58, 223);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
             // btn_menu
             // 
             this.btn_menu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -173,8 +183,11 @@
             this.Ejercicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Ejercicios.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ejercicios.ForeColor = System.Drawing.Color.White;
+            this.Ejercicios.Image = ((System.Drawing.Image)(resources.GetObject("Ejercicios.Image")));
+            this.Ejercicios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Ejercicios.Location = new System.Drawing.Point(3, 172);
             this.Ejercicios.Name = "Ejercicios";
+            this.Ejercicios.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Ejercicios.Size = new System.Drawing.Size(197, 32);
             this.Ejercicios.TabIndex = 5;
             this.Ejercicios.Text = "Ejercicios";
@@ -328,16 +341,6 @@
             // 
             this.horaFecha.Enabled = true;
             this.horaFecha.Tick += new System.EventHandler(this.horaFecha_Tick);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(58, 223);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // FormPrincipal
             // 

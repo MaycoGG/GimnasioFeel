@@ -1,4 +1,5 @@
-﻿using System;
+﻿using feelGYM.PlanEjercicios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,25 @@ using System.Windows.Forms;
 
 namespace feelGYM
 {
-    public partial class FormPlan_Ejercicios : Form
+    public partial class FormPlanEjercicios : MyFormPage
     {
-        public FormPlan_Ejercicios()
+        
+
+        public FormPlanEjercicios()
         {
             InitializeComponent();
+            this.pnl = panel1;
+            
+        }
+
+        private void FormPlanEjercicios_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

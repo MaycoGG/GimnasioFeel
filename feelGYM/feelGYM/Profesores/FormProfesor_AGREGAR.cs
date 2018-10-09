@@ -145,7 +145,7 @@ namespace feelGYM
             try
             {
                 
-                MySqlCommand cmd = new MySqlCommand(query, Conexion.Conexion.obtenerConexion());
+                MySqlCommand cmd = new MySqlCommand(query, Clases.Conexion.obtenerConexion());
                 MySqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {

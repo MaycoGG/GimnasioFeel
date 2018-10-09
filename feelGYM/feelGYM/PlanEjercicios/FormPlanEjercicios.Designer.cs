@@ -1,6 +1,6 @@
 ﻿namespace feelGYM
 {
-    partial class FormPlan_Ejercicios
+    partial class FormPlanEjercicios
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel_sesion = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
@@ -54,21 +55,32 @@
             this.button6 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel_sesion.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // panel1
             // 
-            this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.groupBox4);
-            this.groupBox1.Location = new System.Drawing.Point(60, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(818, 486);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Dia 1";
+            this.panel1.Controls.Add(this.panel_sesion);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(973, 530);
+            this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // panel_sesion
+            // 
+            this.panel_sesion.Controls.Add(this.groupBox2);
+            this.panel_sesion.Controls.Add(this.groupBox4);
+            this.panel_sesion.Location = new System.Drawing.Point(32, 12);
+            this.panel_sesion.Name = "panel_sesion";
+            this.panel_sesion.Size = new System.Drawing.Size(887, 506);
+            this.panel_sesion.TabIndex = 3;
+            this.panel_sesion.TabStop = false;
+            this.panel_sesion.Text = "Dia 1";
             // 
             // groupBox2
             // 
@@ -86,7 +98,7 @@
             this.groupBox2.Controls.Add(this.checkBox1);
             this.groupBox2.Location = new System.Drawing.Point(41, 146);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(769, 334);
+            this.groupBox2.Size = new System.Drawing.Size(769, 354);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Desarrollo";
@@ -300,15 +312,17 @@
             this.comboBox3.Size = new System.Drawing.Size(200, 21);
             this.comboBox3.TabIndex = 12;
             // 
-            // FormPlan_Ejercicios
+            // FormPlanEjercicios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 530);
-            this.Controls.Add(this.groupBox1);
-            this.Name = "FormPlan_Ejercicios";
+            this.Controls.Add(this.panel1);
+            this.Name = "FormPlanEjercicios";
             this.Text = "FormPlan_Ejercicios";
-            this.groupBox1.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.FormPlanEjercicios_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel_sesion.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -318,8 +332,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.GroupBox panel_sesion;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ListView listView1;

@@ -140,7 +140,7 @@ namespace feelGYM
 
         private void button3_Click(object sender, EventArgs e)
         {
-            abrirFormulario<Form3>();
+            abrirFormulario<FormAgregarEjercicio>();
             Ejercicios.BackColor = Color.FromArgb(64, 64, 64);
         }
 
@@ -191,7 +191,7 @@ namespace feelGYM
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            Conexion.Conexion.obtenerConexion();
+            Clases.Conexion.obtenerConexion();
             try
             {
                 MessageBox.Show("Ok estas conectado");

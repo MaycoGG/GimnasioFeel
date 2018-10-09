@@ -1,4 +1,5 @@
-﻿using System;
+﻿using feelGYM.PlanEjercicios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -70,8 +71,19 @@ namespace feelGYM
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormPlan_Ejercicios form = new FormPlan_Ejercicios();
-            form.Show();
+            //FormPlanEjercicios form = new FormPlanEjercicios();
+            //form.Show();
+            TabsSesiones tab = new TabsSesiones();
+            tab.Show();
+            Decimal cantsesiones = cmb_sesionesPlan.Value;
+
+            for (int i = 0; i < cantsesiones; i++)
+            {
+                int sesion = i + 1;
+                tab.tabControl1.TabPages.Add(new MyTabPage(new FormPlanEjercicios(), sesion));
+            }
+            
+
         }
 
         private void btn_agregarProfeEnPlan_Click(object sender, EventArgs e)
@@ -81,6 +93,19 @@ namespace feelGYM
         }
 
         private void FormPlanDatos_Load(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM profesores";
+            string atributo = "nombreApe";
+            Clases.Metodos cb = new Clases.Metodos();
+            cb.LlenarCombo(cmb_profesor, query, atributo);
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

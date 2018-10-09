@@ -80,6 +80,15 @@
     <Compile Include="FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlanEjercicios\MyTabsEjercicio.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlanEjercicios\TabsSesiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanEjercicios\TabsSesiones.Designer.cs">
+      <DependentUpon>TabsSesiones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Profesores\FormProfesores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanEjercicios\TabsSesiones.resx">
+      <DependentUpon>TabsSesiones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Profesores\FormProfesores.resx">
       <DependentUpon>FormProfesores.cs</DependentUpon>

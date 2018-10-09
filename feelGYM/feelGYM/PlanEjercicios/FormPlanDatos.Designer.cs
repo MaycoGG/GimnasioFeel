@@ -52,7 +52,7 @@
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmb_profesor = new System.Windows.Forms.ComboBox();
             this.btn_cerrarPlan = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox2.SuspendLayout();
@@ -74,6 +74,7 @@
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.cmb_sesionesPlan);
             this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(53, 43);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(339, 384);
@@ -83,6 +84,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(17, 183);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -92,14 +94,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(14, 158);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.Size = new System.Drawing.Size(85, 17);
             this.label1.TabIndex = 30;
             this.label1.Text = "OBJETIVOS";
             // 
             // textBox5
             // 
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.Location = new System.Drawing.Point(17, 274);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
@@ -109,11 +113,13 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(14, 248);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(98, 13);
+            this.label5.Size = new System.Drawing.Size(125, 17);
             this.label5.TabIndex = 28;
             this.label5.Text = "OBSERVACIONES";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // txt_apellidoClientePlan
             // 
@@ -135,7 +141,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(16, 78);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(301, 13);
+            this.label3.Size = new System.Drawing.Size(350, 15);
             this.label3.TabIndex = 25;
             this.label3.Text = "_________________________________________________";
             // 
@@ -159,23 +165,25 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(16, 42);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(301, 13);
+            this.label11.Size = new System.Drawing.Size(350, 15);
             this.label11.TabIndex = 24;
             this.label11.Text = "_________________________________________________";
             // 
             // cmb_sesionesPlan
             // 
-            this.cmb_sesionesPlan.Location = new System.Drawing.Point(127, 116);
+            this.cmb_sesionesPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_sesionesPlan.Location = new System.Drawing.Point(152, 116);
             this.cmb_sesionesPlan.Name = "cmb_sesionesPlan";
-            this.cmb_sesionesPlan.Size = new System.Drawing.Size(49, 20);
+            this.cmb_sesionesPlan.Size = new System.Drawing.Size(49, 23);
             this.cmb_sesionesPlan.TabIndex = 13;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(16, 118);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(88, 13);
+            this.label9.Size = new System.Drawing.Size(112, 17);
             this.label9.TabIndex = 12;
             this.label9.Text = "NRO SESIONES";
             // 
@@ -191,16 +199,19 @@
             this.groupBox1.Controls.Add(this.numericUpDown1);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cmb_profesor);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(398, 43);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(339, 384);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Plan Actual";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btn_agregarProfeEnPlan
             // 
+            this.btn_agregarProfeEnPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_agregarProfeEnPlan.Location = new System.Drawing.Point(266, 39);
             this.btn_agregarProfeEnPlan.Name = "btn_agregarProfeEnPlan";
             this.btn_agregarProfeEnPlan.Size = new System.Drawing.Size(37, 23);
@@ -211,7 +222,8 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(21, 195);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(95, 200);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(132, 28);
             this.button2.TabIndex = 17;
@@ -220,9 +232,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(170, 191);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(94, 263);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(153, 37);
+            this.button1.Size = new System.Drawing.Size(133, 45);
             this.button1.TabIndex = 16;
             this.button1.Text = "Empezar Armado de Plan";
             this.button1.UseVisualStyleBackColor = true;
@@ -230,69 +243,77 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(100, 143);
+            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.Location = new System.Drawing.Point(109, 143);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(203, 20);
+            this.textBox7.Size = new System.Drawing.Size(194, 23);
             this.textBox7.TabIndex = 15;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(23, 146);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 13);
+            this.label10.Size = new System.Drawing.Size(70, 17);
             this.label10.TabIndex = 14;
             this.label10.Text = "Fecha Fin";
             // 
             // txt_fechaActualPlan
             // 
-            this.txt_fechaActualPlan.Location = new System.Drawing.Point(100, 76);
+            this.txt_fechaActualPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_fechaActualPlan.Location = new System.Drawing.Point(109, 76);
             this.txt_fechaActualPlan.Name = "txt_fechaActualPlan";
-            this.txt_fechaActualPlan.Size = new System.Drawing.Size(203, 20);
+            this.txt_fechaActualPlan.Size = new System.Drawing.Size(194, 23);
             this.txt_fechaActualPlan.TabIndex = 13;
             this.txt_fechaActualPlan.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(20, 79);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 13);
+            this.label8.Size = new System.Drawing.Size(83, 17);
             this.label8.TabIndex = 12;
             this.label8.Text = "Fecha Inicio";
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(100, 110);
+            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown1.Location = new System.Drawing.Point(109, 110);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(53, 20);
+            this.numericUpDown1.Size = new System.Drawing.Size(44, 23);
             this.numericUpDown1.TabIndex = 11;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(23, 112);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(43, 13);
+            this.label7.Size = new System.Drawing.Size(56, 17);
             this.label7.TabIndex = 10;
             this.label7.Text = "Plan N°";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(20, 42);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 13);
+            this.label6.Size = new System.Drawing.Size(62, 17);
             this.label6.TabIndex = 10;
             this.label6.Text = "Profesor";
             // 
-            // comboBox1
+            // cmb_profesor
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(100, 39);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(158, 21);
-            this.comboBox1.TabIndex = 0;
+            this.cmb_profesor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_profesor.FormattingEnabled = true;
+            this.cmb_profesor.Location = new System.Drawing.Point(109, 39);
+            this.cmb_profesor.Name = "cmb_profesor";
+            this.cmb_profesor.Size = new System.Drawing.Size(149, 24);
+            this.cmb_profesor.TabIndex = 0;
             // 
             // btn_cerrarPlan
             // 
@@ -347,7 +368,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmb_profesor;
         private System.Windows.Forms.PictureBox btn_cerrarPlan;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TextBox txt_apellidoClientePlan;
