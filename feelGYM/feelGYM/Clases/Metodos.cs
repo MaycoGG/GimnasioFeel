@@ -20,7 +20,9 @@ namespace feelGYM.Clases
                 while (dr.Read())
                 {
                     cb.Items.Add(dr[atributo].ToString());
+                   
                 }
+                cb.SelectedIndex = 0;
                 dr.Close();
             }
             catch (Exception e3)
@@ -28,6 +30,14 @@ namespace feelGYM.Clases
                 MessageBox.Show(e3.Message);
 
             }
+
+        }
+
+        public void Insertar( String query)
+        {
+         
+            MySqlCommand cmd = new MySqlCommand(query, Clases.Conexion.obtenerConexion());
+            
 
         }
     }
