@@ -23,7 +23,7 @@ namespace feelGYM.Clases
                     cb.Items.Add(dr[atributo].ToString());
                    
                 }
-                cb.SelectedIndex = 0;
+                //cb.SelectedIndex = 0;
                 dr.Close();
             }
             catch (Exception e3)
@@ -32,6 +32,15 @@ namespace feelGYM.Clases
 
             }
 
+        }
+
+
+        public static int AgregarEjercicioNuevo(Ejercicio ejer, String query)
+        {
+            int retorno = 0;
+            MySqlCommand cmd = new MySqlCommand(String.Format(query, ejer.Nombre, ejer.Tipo), Conexion.obtenerConexion());
+            retorno = cmd.ExecuteNonQuery();
+            return retorno;
         }
 
         public void Insertar( String query)

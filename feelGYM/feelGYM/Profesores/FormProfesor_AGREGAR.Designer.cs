@@ -43,6 +43,7 @@
             this.txt_cerEmergenciaProfe = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.cmb_sangreProfe = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btn_registrarProfe
@@ -212,17 +213,30 @@
             // cmb_sangreProfe
             // 
             this.cmb_sangreProfe.FormattingEnabled = true;
-            this.cmb_sangreProfe.Location = new System.Drawing.Point(154, 196);
+            this.cmb_sangreProfe.Location = new System.Drawing.Point(281, 196);
             this.cmb_sangreProfe.Name = "cmb_sangreProfe";
-            this.cmb_sangreProfe.Size = new System.Drawing.Size(298, 21);
+            this.cmb_sangreProfe.Size = new System.Drawing.Size(171, 21);
             this.cmb_sangreProfe.TabIndex = 49;
             this.cmb_sangreProfe.SelectedIndexChanged += new System.EventHandler(this.cmb_sangreProfe_SelectedIndexChanged);
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox1.Location = new System.Drawing.Point(156, 196);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(119, 19);
+            this.textBox1.TabIndex = 50;
+            this.textBox1.Text = "TIPO DE SANGRE";
             // 
             // FormProfesor_AGREGAR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(620, 333);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.cmb_sangreProfe);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txt_mailProfe);
@@ -264,5 +278,6 @@
         private System.Windows.Forms.TextBox txt_cerEmergenciaProfe;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox cmb_sangreProfe;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
