@@ -30,19 +30,28 @@ namespace feelGYM
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Ejercicios ejer = new Ejercicios();
-            ejer.Id = 1;
-            ejer.Nombre = txt_nombreEjercicio.Text;
-            ejer.Tipo = cmb_tipoEjercicioAgregar.SelectedIndex;
+            Ejercicio ejer = new Ejercicio();
+            ejer.Nombre = txt_nombreEjercicioNuevo.Text;
+            ejer.Tipo = cmb_tipoEjercicioAgregar.SelectedIndex + 1;
 
-            string query = "INSERT into ejercicios (id, nombre, tipoEjercicio) Values ('ejer.Id', 'ejer.Nombre', 'ejer.Tipo') ";
-            Clases.Metodos cb = new Clases.Metodos();
-            cb.Insertar(query);
+            //consulta para guardar el ejercicio
+            string query = "insert into ejercicios (nombre, tipoEjercicio) values ('{0}', '{1}')";
+
+            //llamo al metodo de la clase "Metodos" y le paso por parametro el ejercicio creado y la consulta
+            int retorno = Metodos.AgregarEjercicioNuevo(ejer, query);
+            if (retorno > 0)
+            {
+                MessageBox.Show("Se agregó correctamente");
+                txt_nombreEjercicioNuevo.Clear();
+            }
+            else { MessageBox.Show("Ocurrió un error"); }
+
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void FormAgregarEjercicio_Load(object sender, EventArgs e)
@@ -51,6 +60,16 @@ namespace feelGYM
             string atributo = "nombre";
             Clases.Metodos cb = new Clases.Metodos();
             cb.LlenarCombo(cmb_tipoEjercicioAgregar, query, atributo);
+        }
+
+        private void btn_cerrarPlan_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            gb_listaEjercicios.Visible = true;
         }
     }
 }

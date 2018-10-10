@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace feelGYM.Clases
 {
-    class Ejercicios
+    public class Ejercicio
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
         public int Tipo { get; set; }
 
-        public Ejercicios(int id, string nombre, int tipo)
+        public Ejercicio()
+        {
+        }
+
+        public Ejercicio(int id, string nombre, int tipo)
         {
             Id = id;
             Nombre = nombre;
             Tipo = tipo;
-        }
-
-        public Ejercicios()
-        {
         }
     }
 }
