@@ -29,6 +29,27 @@ namespace feelGYM
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
+            
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Boolean valor = ckb_AeroEC.Checked;
+            GrillaEjercicios tab = new GrillaEjercicios();
+            if (ckb_AeroEC.Checked)
+            {
+                tab.checkBoxAero.Checked = true;
+            }
+            if (ckb_ZonaEC.Checked)
+            {
+                tab.checkBoxZona.Checked = true;
+            }
+
+            tab.Show();
+        }
+
+        private void listView3_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

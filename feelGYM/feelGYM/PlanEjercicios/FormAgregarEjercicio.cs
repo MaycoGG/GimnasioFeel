@@ -52,5 +52,10 @@ namespace feelGYM
             Clases.Metodos cb = new Clases.Metodos();
             cb.LlenarCombo(cmb_tipoEjercicioAgregar, query, atributo);
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

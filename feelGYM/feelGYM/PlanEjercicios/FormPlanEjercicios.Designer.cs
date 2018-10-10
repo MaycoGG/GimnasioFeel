@@ -30,6 +30,8 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.checkBox8 = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.Nombre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -45,19 +47,20 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.listView3 = new System.Windows.Forms.ListView();
-            this.EC_ejercicio = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.EC_tiempo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label5 = new System.Windows.Forms.Label();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
-            this.checkBox10 = new System.Windows.Forms.CheckBox();
+            this.ckb_AeroEC = new System.Windows.Forms.CheckBox();
+            this.ckb_ZonaEC = new System.Windows.Forms.CheckBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dgv_EntradaCalor = new System.Windows.Forms.DataGridView();
+            this.NombreEC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoEjeEC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_EC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eliminarEC = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_EntradaCalor)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -92,6 +95,26 @@
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Desarrollo";
+            // 
+            // checkBox7
+            // 
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Location = new System.Drawing.Point(241, 50);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(90, 21);
+            this.checkBox7.TabIndex = 13;
+            this.checkBox7.Text = "Aeróbicos";
+            this.checkBox7.UseVisualStyleBackColor = true;
+            // 
+            // checkBox8
+            // 
+            this.checkBox8.AutoSize = true;
+            this.checkBox8.Location = new System.Drawing.Point(337, 50);
+            this.checkBox8.Name = "checkBox8";
+            this.checkBox8.Size = new System.Drawing.Size(102, 21);
+            this.checkBox8.TabIndex = 12;
+            this.checkBox8.Text = "Zona Media";
+            this.checkBox8.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -216,11 +239,11 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.checkBox9);
-            this.groupBox4.Controls.Add(this.checkBox10);
+            this.groupBox4.Controls.Add(this.dgv_EntradaCalor);
+            this.groupBox4.Controls.Add(this.ckb_AeroEC);
+            this.groupBox4.Controls.Add(this.ckb_ZonaEC);
             this.groupBox4.Controls.Add(this.button3);
             this.groupBox4.Controls.Add(this.button5);
-            this.groupBox4.Controls.Add(this.listView3);
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(79, 25);
@@ -229,6 +252,36 @@
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Entrada en Calor";
+            // 
+            // ckb_AeroEC
+            // 
+            this.ckb_AeroEC.AutoSize = true;
+            this.ckb_AeroEC.Location = new System.Drawing.Point(24, 68);
+            this.ckb_AeroEC.Name = "ckb_AeroEC";
+            this.ckb_AeroEC.Size = new System.Drawing.Size(90, 21);
+            this.ckb_AeroEC.TabIndex = 19;
+            this.ckb_AeroEC.Text = "Aeróbicos";
+            this.ckb_AeroEC.UseVisualStyleBackColor = true;
+            // 
+            // ckb_ZonaEC
+            // 
+            this.ckb_ZonaEC.AutoSize = true;
+            this.ckb_ZonaEC.Location = new System.Drawing.Point(24, 95);
+            this.ckb_ZonaEC.Name = "ckb_ZonaEC";
+            this.ckb_ZonaEC.Size = new System.Drawing.Size(102, 21);
+            this.ckb_ZonaEC.TabIndex = 18;
+            this.ckb_ZonaEC.Text = "Zona Media";
+            this.ckb_ZonaEC.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(132, 68);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(95, 52);
+            this.button3.TabIndex = 17;
+            this.button3.Text = "BUSCAR EJERCICIOS";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button5
             // 
@@ -239,28 +292,6 @@
             this.button5.Text = "Quitar Ejercicio";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // listView3
-            // 
-            this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.EC_ejercicio,
-            this.EC_tiempo});
-            this.listView3.Location = new System.Drawing.Point(254, 51);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(414, 69);
-            this.listView3.TabIndex = 15;
-            this.listView3.UseCompatibleStateImageBehavior = false;
-            this.listView3.View = System.Windows.Forms.View.Details;
-            // 
-            // EC_ejercicio
-            // 
-            this.EC_ejercicio.Text = "Nombre";
-            this.EC_ejercicio.Width = 315;
-            // 
-            // EC_tiempo
-            // 
-            this.EC_tiempo.Text = "Tiempo";
-            this.EC_tiempo.Width = 94;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -270,54 +301,42 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Ejercicios";
             // 
-            // checkBox7
+            // dgv_EntradaCalor
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(241, 50);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(90, 21);
-            this.checkBox7.TabIndex = 13;
-            this.checkBox7.Text = "Aeróbicos";
-            this.checkBox7.UseVisualStyleBackColor = true;
+            this.dgv_EntradaCalor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_EntradaCalor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NombreEC,
+            this.tipoEjeEC,
+            this.id_EC,
+            this.eliminarEC});
+            this.dgv_EntradaCalor.Location = new System.Drawing.Point(266, 23);
+            this.dgv_EntradaCalor.Name = "dgv_EntradaCalor";
+            this.dgv_EntradaCalor.Size = new System.Drawing.Size(396, 106);
+            this.dgv_EntradaCalor.TabIndex = 20;
             // 
-            // checkBox8
+            // NombreEC
             // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(337, 50);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(102, 21);
-            this.checkBox8.TabIndex = 12;
-            this.checkBox8.Text = "Zona Media";
-            this.checkBox8.UseVisualStyleBackColor = true;
+            this.NombreEC.HeaderText = "Nombre";
+            this.NombreEC.Name = "NombreEC";
             // 
-            // checkBox9
+            // tipoEjeEC
             // 
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.Location = new System.Drawing.Point(24, 68);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(90, 21);
-            this.checkBox9.TabIndex = 19;
-            this.checkBox9.Text = "Aeróbicos";
-            this.checkBox9.UseVisualStyleBackColor = true;
+            this.tipoEjeEC.HeaderText = "Tipo Ejercicio";
+            this.tipoEjeEC.Name = "tipoEjeEC";
             // 
-            // checkBox10
+            // id_EC
             // 
-            this.checkBox10.AutoSize = true;
-            this.checkBox10.Location = new System.Drawing.Point(24, 95);
-            this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(102, 21);
-            this.checkBox10.TabIndex = 18;
-            this.checkBox10.Text = "Zona Media";
-            this.checkBox10.UseVisualStyleBackColor = true;
+            this.id_EC.HeaderText = "Id";
+            this.id_EC.Name = "id_EC";
+            this.id_EC.Visible = false;
             // 
-            // button3
+            // eliminarEC
             // 
-            this.button3.Location = new System.Drawing.Point(132, 68);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(95, 52);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "BUSCAR EJERCICIOS";
-            this.button3.UseVisualStyleBackColor = true;
+            this.eliminarEC.HeaderText = "Eliminar";
+            this.eliminarEC.Name = "eliminarEC";
+            this.eliminarEC.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.eliminarEC.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.eliminarEC.Width = 60;
             // 
             // FormPlanEjercicios
             // 
@@ -333,6 +352,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_EntradaCalor)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -358,12 +378,14 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.ListView listView3;
-        private System.Windows.Forms.ColumnHeader EC_ejercicio;
-        private System.Windows.Forms.ColumnHeader EC_tiempo;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox checkBox9;
-        private System.Windows.Forms.CheckBox checkBox10;
         private System.Windows.Forms.Button button3;
+        public System.Windows.Forms.CheckBox ckb_AeroEC;
+        public System.Windows.Forms.CheckBox ckb_ZonaEC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreEC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoEjeEC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_EC;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn eliminarEC;
+        public System.Windows.Forms.DataGridView dgv_EntradaCalor;
     }
 }
