@@ -81,30 +81,52 @@ namespace feelGYM.Clases
 
         }
 
-        public void LlenarGridConGrid(DataGridView grid, String nombre, String tipo)
+        public List<Ejercicio> cargarLista(String nombre, String tipo, String id)
+        {
+            List<Ejercicio> lista = new List<Ejercicio>();
+
+            int Id = int.Parse(id);
+
+            lista.Add(new Ejercicio(Id, nombre));
+
+            return lista;
+        }
+
+        public void LlenarGridConGrid(DataGridView grid, String nombre, String tipo, String id)
         {
 
             DataTable dt = new DataTable();
 
-            grid.Rows.Add(nombre, tipo);
-            grid.DataSource = dt;
+            DataGridViewTextBoxColumn c1 = new DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn c2 = new DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn c3 = new DataGridViewTextBoxColumn();
+            
+
+            grid.Columns.Add(c1);
+            grid.Columns.Add(c2);
+            grid.Columns.Add(c3);
+            //grid.Columns.Add(c4);
+
+            grid.Rows.Add(nombre, tipo, id);
+
+            //grid.DataSource = dt;
 
 
-            //tamaño columna
-            grid.Columns[0].Width = 300;
-            grid.Columns[1].Width = 170;
+            ////tamaño columna
+            //grid.Columns[0].Width = 300;
+            //grid.Columns[1].Width = 170;
 
-            //
-            grid.Columns[2].Visible = false;
+            ////
+            //grid.Columns[2].Visible = false;
 
 
 
-            //pone falso a todos los check box de la tabla.
-            for (int i = 0; i < grid.Rows.Count; i++)
-            {
-                grid.Rows[i].Cells[3].Value = false;
+            ////pone falso a todos los check box de la tabla.
+            //for (int i = 0; i < grid.Rows.Count; i++)
+            //{
+            //    grid.Rows[i].Cells[3].Value = false;
 
-            }
+            //}
 
 
         }

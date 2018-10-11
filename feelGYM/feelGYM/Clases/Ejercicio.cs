@@ -22,5 +22,11 @@ namespace feelGYM.Clases
             Nombre = nombre;
             Tipo = tipo;
         }
+
+        public Ejercicio(int id, string nombre)
+        {
+            Id = id;
+            Nombre = nombre;
+        }
     }
 }

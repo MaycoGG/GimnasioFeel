@@ -1,4 +1,5 @@
-﻿using System;
+﻿using feelGYM.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ namespace feelGYM.PlanEjercicios
     public partial class GrillaEjercicios : Form
     {
         Clases.Metodos m = new Clases.Metodos();
+        public static List<Ejercicio> lista = new List<Ejercicio>();
 
         public GrillaEjercicios()
         {
@@ -55,11 +57,13 @@ namespace feelGYM.PlanEjercicios
 
         private void btn_aceptar_Click(object sender, EventArgs e)
         {
+            
+            FormPlanEjercicios plan = new FormPlanEjercicios();
 
 
             foreach (DataGridViewRow item in dataGridEjercicios.Rows)
             {
-                FormPlanEjercicios plan = new FormPlanEjercicios();
+
                 Clases.Metodos m = new Clases.Metodos();
 
                 if (bool.Parse(item.Cells[0].Value.ToString()))
@@ -68,11 +72,22 @@ namespace feelGYM.PlanEjercicios
 
                     MessageBox.Show("NOmbre Rows: " + item.Cells[1].Value.ToString());
 
-                    m.LlenarGridConGrid(plan.dgv_EntradaCalor, item.Cells[1].Value.ToString(), item.Cells[2].Value.ToString());
+                    //m.cargarLista( , item.Cells[2].Value.ToString(), );
 
-                    
+                    int Id = int.Parse(item.Cells[3].Value.ToString());
+
+                    lista.Add(new Ejercicio(Id, item.Cells[1].Value.ToString()));
                 }
             }
+
+            Close();
+
+
+            
+
+
+
+
             //int cantselec = 0;
 
             //for (int i = 0; i < dataGridEjercicios.Rows.Count; i++)
@@ -97,6 +112,11 @@ namespace feelGYM.PlanEjercicios
             //MessageBox.Show("Is Checked: " + cantselec);
 
 
+        }
+
+        public List<Ejercicio> retornarLista()
+        {
+            return lista;
         }
     }
 }
