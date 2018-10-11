@@ -203,6 +203,11 @@ namespace feelGYM
 
         }
 
+        private void panelMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         #endregion
 
         //Método para abrir formulario dentro del panel

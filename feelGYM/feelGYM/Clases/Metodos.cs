@@ -34,13 +34,69 @@ namespace feelGYM.Clases
 
         }
 
-
+        //metodo para agregar ejercicios
         public static int AgregarEjercicioNuevo(Ejercicio ejer, String query)
         {
             int retorno = 0;
             MySqlCommand cmd = new MySqlCommand(String.Format(query, ejer.Nombre, ejer.Tipo), Conexion.obtenerConexion());
             retorno = cmd.ExecuteNonQuery();
             return retorno;
+        }
+
+        //metodo para modificar ejercicios
+        public static int ModificarEjercicio(Ejercicio ejer, String query)
+        {
+            int retorno = 0;
+            MySqlCommand cmd = new MySqlCommand(String.Format(query, ejer.Nombre, ejer.Tipo, ejer.Id), Conexion.obtenerConexion());
+            retorno = cmd.ExecuteNonQuery();
+            return retorno;
+        }
+
+        //metodo para eliminar ejercicios
+        public static int EliminarEjercicio(Ejercicio ejer, String query)
+        {
+            int retorno = 0;
+            MySqlCommand cmd = new MySqlCommand(String.Format(query, ejer.Id), Conexion.obtenerConexion());
+            retorno = cmd.ExecuteNonQuery();
+            return retorno;
+        }
+
+        //metodo para buscar un ejercicio
+        public static List<Ejercicio> BuscarEjercicio(string nombre)
+        {
+            List<Ejercicio> _lista = new List<Ejercicio>();
+
+            MySqlCommand cmd = new MySqlCommand(String.Format("SELECT ejercicio.id, ejercicio.nombre, tipoejercicio.nombre " +
+                "FROM ejercicios JOIN tipoejercicio ON ejercicios.tipoEjercicio = tipoejercicio.id " +
+                "where nombre LIKE '%{0}%'", nombre), Conexion.obtenerConexion());
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                Ejercicio ejer = new Ejercicio();
+                ejer.Nombre = reader.GetString(1);
+                ejer.Tipo = reader.GetInt32(2);
+                ejer.Id = reader.GetInt32(0);
+
+                _lista.Add(ejer);
+            }
+            return _lista;
+        }
+
+        //metodo para obtener un ejercicio
+        public static Ejercicio ObtenerEjercicio(int id)
+        {
+            Ejercicio ejer = new Ejercicio();
+
+            MySqlCommand cmd = new MySqlCommand(String.Format("select id, nombre, tipoEjercicio from ejercicios where id = '{0}'", id), Conexion.obtenerConexion());
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                ejer.Nombre = reader.GetString(1);
+                ejer.Tipo = reader.GetInt32(2);
+                ejer.Id = reader.GetInt32(0);
+            }
+
+            return ejer;
         }
 
         public void Insertar( String query)
@@ -81,52 +137,48 @@ namespace feelGYM.Clases
 
         }
 
-        public List<Ejercicio> cargarLista(String nombre, String tipo, String id)
+
+        public void LlenarGridEjercicios(DataGridView grid, String query)
         {
-            List<Ejercicio> lista = new List<Ejercicio>();
+            MySqlCommand cmd = new MySqlCommand(query, Clases.Conexion.obtenerConexion());
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
 
-            int Id = int.Parse(id);
+            da.Fill(dt);
+            grid.DataSource = dt;
 
-            lista.Add(new Ejercicio(Id, nombre));
+            //tamaño columna
+            grid.Columns[0].Width = 200;
+            grid.Columns[1].Width = 170;
+            grid.Columns[2].Visible = false;
 
-            return lista;
         }
 
-        public void LlenarGridConGrid(DataGridView grid, String nombre, String tipo, String id)
+
+        public void LlenarGridConGrid(DataGridView grid, String nombre, String tipo)
         {
 
             DataTable dt = new DataTable();
 
-            DataGridViewTextBoxColumn c1 = new DataGridViewTextBoxColumn();
-            DataGridViewTextBoxColumn c2 = new DataGridViewTextBoxColumn();
-            DataGridViewTextBoxColumn c3 = new DataGridViewTextBoxColumn();
-            
-
-            grid.Columns.Add(c1);
-            grid.Columns.Add(c2);
-            grid.Columns.Add(c3);
-            //grid.Columns.Add(c4);
-
-            grid.Rows.Add(nombre, tipo, id);
-
-            //grid.DataSource = dt;
+            grid.Rows.Add(nombre, tipo);
+            grid.DataSource = dt;
 
 
-            ////tamaño columna
-            //grid.Columns[0].Width = 300;
-            //grid.Columns[1].Width = 170;
+            //tamaño columna
+            grid.Columns[0].Width = 300;
+            grid.Columns[1].Width = 170;
 
-            ////
-            //grid.Columns[2].Visible = false;
+            //
+            grid.Columns[2].Visible = false;
 
 
 
-            ////pone falso a todos los check box de la tabla.
-            //for (int i = 0; i < grid.Rows.Count; i++)
-            //{
-            //    grid.Rows[i].Cells[3].Value = false;
+            //pone falso a todos los check box de la tabla.
+            for (int i = 0; i < grid.Rows.Count; i++)
+            {
+                grid.Rows[i].Cells[3].Value = false;
 
-            //}
+            }
 
 
         }
