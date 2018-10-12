@@ -53,7 +53,6 @@
             this.timerOcultarMenu = new System.Windows.Forms.Timer(this.components);
             this.timerMostrarMenu = new System.Windows.Forms.Timer(this.components);
             this.horaFecha = new System.Windows.Forms.Timer(this.components);
-            this.button4 = new System.Windows.Forms.Button();
             this.panelContenedor.SuspendLayout();
             this.panelFormularios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -130,7 +129,6 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
-            this.panelMenu.Controls.Add(this.button4);
             this.panelMenu.Controls.Add(this.button3);
             this.panelMenu.Controls.Add(this.btn_menu);
             this.panelMenu.Controls.Add(this.panel3);
@@ -345,15 +343,6 @@
             this.horaFecha.Enabled = true;
             this.horaFecha.Tick += new System.EventHandler(this.horaFecha_Tick);
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(58, 261);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "No sirve";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -406,7 +395,6 @@
         private System.Windows.Forms.Label lbl_horaActual;
         private System.Windows.Forms.Timer horaFecha;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
     }
 }
 

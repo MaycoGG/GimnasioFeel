@@ -88,14 +88,16 @@ namespace feelGYM
 
         private void btn_agregarProfeEnPlan_Click(object sender, EventArgs e)
         {
+            this.Close();
             FormProfesor_AGREGAR form = new FormProfesor_AGREGAR();
             form.Show();
+            
         }
 
         private void FormPlanDatos_Load(object sender, EventArgs e)
         {
             string query = "SELECT * FROM profesores";
-            string atributo = "nombreApe";
+            string atributo = "nombreApe, nombreApe";
             Clases.Metodos cb = new Clases.Metodos();
             cb.LlenarCombo(cmb_profesor, query, atributo);
         }

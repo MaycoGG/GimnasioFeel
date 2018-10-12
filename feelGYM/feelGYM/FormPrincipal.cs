@@ -128,7 +128,8 @@ namespace feelGYM
 
         private void button1_Click(object sender, EventArgs e)
         {
-            abrirFormulario<FormProfesores>();
+            //abrirFormulario<FormProfesores>();
+            abrirFormulario<FormProfesor_AGREGAR>();
             button1.BackColor = Color.FromArgb(64, 64, 64);
         }
 
