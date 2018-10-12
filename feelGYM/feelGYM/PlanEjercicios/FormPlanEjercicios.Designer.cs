@@ -29,6 +29,27 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.dgv_ejerciciosDesarrollo = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btn_aceptarEjerDesa = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dgv_Desarrollo = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rb_dorsalesD = new System.Windows.Forms.RadioButton();
+            this.rb_HombroD = new System.Windows.Forms.RadioButton();
+            this.rb_bicepsD = new System.Windows.Forms.RadioButton();
+            this.rb_tricepsD = new System.Windows.Forms.RadioButton();
+            this.rb_piernasD = new System.Windows.Forms.RadioButton();
+            this.rb_aeroD = new System.Windows.Forms.RadioButton();
+            this.rb_zonaD = new System.Windows.Forms.RadioButton();
+            this.rb_pectoralesD = new System.Windows.Forms.RadioButton();
+            this.btn_quitarEjerDes = new System.Windows.Forms.Button();
+            this.btn_ejerDesarrollo = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgv_EjerciciosEC = new System.Windows.Forms.DataGridView();
             this.selec_EjerEC = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -36,46 +57,26 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dgv_EntradaCalor = new System.Windows.Forms.DataGridView();
-            this.ckb_AeroEC = new System.Windows.Forms.CheckBox();
-            this.ckb_ZonaEC = new System.Windows.Forms.CheckBox();
-            this.btn_buscarEC = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.btn_quitarEjerDes = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.Nombre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Series = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Repeticiones = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Peso = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btn_ejerDesarrollo = new System.Windows.Forms.Button();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.btn_aceptarEjerDesa = new System.Windows.Forms.Button();
             this.nombreeje = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoEje = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ckb_AeroEC = new System.Windows.Forms.CheckBox();
+            this.ckb_ZonaEC = new System.Windows.Forms.CheckBox();
+            this.btn_buscarEC = new System.Windows.Forms.Button();
+            this.btn_quitarEjerEC = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btn_buscarEjerEC = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ejerciciosDesarrollo)).BeginInit();
+            this.panel4.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Desarrollo)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_EjerciciosEC)).BeginInit();
             this.panel2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_EntradaCalor)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -87,9 +88,223 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1184, 749);
+            this.panel1.Size = new System.Drawing.Size(1184, 694);
             this.panel1.TabIndex = 2;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.dgv_ejerciciosDesarrollo);
+            this.panel5.Controls.Add(this.btn_aceptarEjerDesa);
+            this.panel5.Location = new System.Drawing.Point(88, 473);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(807, 0);
+            this.panel5.TabIndex = 21;
+            // 
+            // dgv_ejerciciosDesarrollo
+            // 
+            this.dgv_ejerciciosDesarrollo.AllowUserToAddRows = false;
+            this.dgv_ejerciciosDesarrollo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_ejerciciosDesarrollo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewCheckBoxColumn1});
+            this.dgv_ejerciciosDesarrollo.Location = new System.Drawing.Point(38, 13);
+            this.dgv_ejerciciosDesarrollo.Name = "dgv_ejerciciosDesarrollo";
+            this.dgv_ejerciciosDesarrollo.Size = new System.Drawing.Size(662, 170);
+            this.dgv_ejerciciosDesarrollo.TabIndex = 7;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Selección";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.Width = 60;
+            // 
+            // btn_aceptarEjerDesa
+            // 
+            this.btn_aceptarEjerDesa.Location = new System.Drawing.Point(711, 61);
+            this.btn_aceptarEjerDesa.Name = "btn_aceptarEjerDesa";
+            this.btn_aceptarEjerDesa.Size = new System.Drawing.Size(65, 33);
+            this.btn_aceptarEjerDesa.TabIndex = 17;
+            this.btn_aceptarEjerDesa.Text = "Aceptar";
+            this.btn_aceptarEjerDesa.UseVisualStyleBackColor = true;
+            this.btn_aceptarEjerDesa.Click += new System.EventHandler(this.btn_aceptarEjerDesa_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.groupBox2);
+            this.panel4.Location = new System.Drawing.Point(88, 197);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(807, 270);
+            this.panel4.TabIndex = 20;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dgv_Desarrollo);
+            this.groupBox2.Controls.Add(this.rb_dorsalesD);
+            this.groupBox2.Controls.Add(this.rb_HombroD);
+            this.groupBox2.Controls.Add(this.rb_bicepsD);
+            this.groupBox2.Controls.Add(this.rb_tricepsD);
+            this.groupBox2.Controls.Add(this.rb_piernasD);
+            this.groupBox2.Controls.Add(this.rb_aeroD);
+            this.groupBox2.Controls.Add(this.rb_zonaD);
+            this.groupBox2.Controls.Add(this.rb_pectoralesD);
+            this.groupBox2.Controls.Add(this.btn_quitarEjerDes);
+            this.groupBox2.Controls.Add(this.btn_ejerDesarrollo);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(14, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(769, 256);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Desarrollo";
+            // 
+            // dgv_Desarrollo
+            // 
+            this.dgv_Desarrollo.AllowUserToAddRows = false;
+            this.dgv_Desarrollo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Desarrollo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.dgv_Desarrollo.Location = new System.Drawing.Point(24, 107);
+            this.dgv_Desarrollo.Name = "dgv_Desarrollo";
+            this.dgv_Desarrollo.Size = new System.Drawing.Size(638, 106);
+            this.dgv_Desarrollo.TabIndex = 21;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Tipo Ejercicio";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Visible = false;
+            // 
+            // rb_dorsalesD
+            // 
+            this.rb_dorsalesD.AutoSize = true;
+            this.rb_dorsalesD.Location = new System.Drawing.Point(245, 19);
+            this.rb_dorsalesD.Name = "rb_dorsalesD";
+            this.rb_dorsalesD.Size = new System.Drawing.Size(82, 21);
+            this.rb_dorsalesD.TabIndex = 19;
+            this.rb_dorsalesD.TabStop = true;
+            this.rb_dorsalesD.Text = "Dorsales";
+            this.rb_dorsalesD.UseVisualStyleBackColor = true;
+            // 
+            // rb_HombroD
+            // 
+            this.rb_HombroD.AutoSize = true;
+            this.rb_HombroD.Location = new System.Drawing.Point(355, 19);
+            this.rb_HombroD.Name = "rb_HombroD";
+            this.rb_HombroD.Size = new System.Drawing.Size(83, 21);
+            this.rb_HombroD.TabIndex = 18;
+            this.rb_HombroD.TabStop = true;
+            this.rb_HombroD.Text = "Hombros";
+            this.rb_HombroD.UseVisualStyleBackColor = true;
+            // 
+            // rb_bicepsD
+            // 
+            this.rb_bicepsD.AutoSize = true;
+            this.rb_bicepsD.Location = new System.Drawing.Point(468, 19);
+            this.rb_bicepsD.Name = "rb_bicepsD";
+            this.rb_bicepsD.Size = new System.Drawing.Size(68, 21);
+            this.rb_bicepsD.TabIndex = 17;
+            this.rb_bicepsD.TabStop = true;
+            this.rb_bicepsD.Text = "Biceps";
+            this.rb_bicepsD.UseVisualStyleBackColor = true;
+            // 
+            // rb_tricepsD
+            // 
+            this.rb_tricepsD.AutoSize = true;
+            this.rb_tricepsD.Location = new System.Drawing.Point(132, 46);
+            this.rb_tricepsD.Name = "rb_tricepsD";
+            this.rb_tricepsD.Size = new System.Drawing.Size(73, 21);
+            this.rb_tricepsD.TabIndex = 16;
+            this.rb_tricepsD.TabStop = true;
+            this.rb_tricepsD.Text = "Triceps";
+            this.rb_tricepsD.UseVisualStyleBackColor = true;
+            // 
+            // rb_piernasD
+            // 
+            this.rb_piernasD.AutoSize = true;
+            this.rb_piernasD.Location = new System.Drawing.Point(245, 46);
+            this.rb_piernasD.Name = "rb_piernasD";
+            this.rb_piernasD.Size = new System.Drawing.Size(74, 21);
+            this.rb_piernasD.TabIndex = 15;
+            this.rb_piernasD.TabStop = true;
+            this.rb_piernasD.Text = "Piernas";
+            this.rb_piernasD.UseVisualStyleBackColor = true;
+            // 
+            // rb_aeroD
+            // 
+            this.rb_aeroD.AutoSize = true;
+            this.rb_aeroD.Location = new System.Drawing.Point(355, 46);
+            this.rb_aeroD.Name = "rb_aeroD";
+            this.rb_aeroD.Size = new System.Drawing.Size(89, 21);
+            this.rb_aeroD.TabIndex = 14;
+            this.rb_aeroD.TabStop = true;
+            this.rb_aeroD.Text = "Aeróbicos";
+            this.rb_aeroD.UseVisualStyleBackColor = true;
+            // 
+            // rb_zonaD
+            // 
+            this.rb_zonaD.AutoSize = true;
+            this.rb_zonaD.Location = new System.Drawing.Point(468, 46);
+            this.rb_zonaD.Name = "rb_zonaD";
+            this.rb_zonaD.Size = new System.Drawing.Size(101, 21);
+            this.rb_zonaD.TabIndex = 13;
+            this.rb_zonaD.TabStop = true;
+            this.rb_zonaD.Text = "Zona Media";
+            this.rb_zonaD.UseVisualStyleBackColor = true;
+            // 
+            // rb_pectoralesD
+            // 
+            this.rb_pectoralesD.AutoSize = true;
+            this.rb_pectoralesD.Location = new System.Drawing.Point(132, 19);
+            this.rb_pectoralesD.Name = "rb_pectoralesD";
+            this.rb_pectoralesD.Size = new System.Drawing.Size(93, 21);
+            this.rb_pectoralesD.TabIndex = 12;
+            this.rb_pectoralesD.TabStop = true;
+            this.rb_pectoralesD.Text = "Pectorales";
+            this.rb_pectoralesD.UseVisualStyleBackColor = true;
+            // 
+            // btn_quitarEjerDes
+            // 
+            this.btn_quitarEjerDes.Location = new System.Drawing.Point(673, 119);
+            this.btn_quitarEjerDes.Name = "btn_quitarEjerDes";
+            this.btn_quitarEjerDes.Size = new System.Drawing.Size(81, 45);
+            this.btn_quitarEjerDes.TabIndex = 11;
+            this.btn_quitarEjerDes.Text = "Quitar Ejercicio";
+            this.btn_quitarEjerDes.UseVisualStyleBackColor = true;
+            this.btn_quitarEjerDes.Click += new System.EventHandler(this.btn_quitarEjerDes_Click);
+            // 
+            // btn_ejerDesarrollo
+            // 
+            this.btn_ejerDesarrollo.Location = new System.Drawing.Point(652, 19);
+            this.btn_ejerDesarrollo.Name = "btn_ejerDesarrollo";
+            this.btn_ejerDesarrollo.Size = new System.Drawing.Size(95, 52);
+            this.btn_ejerDesarrollo.TabIndex = 9;
+            this.btn_ejerDesarrollo.Text = "BUSCAR EJERCICIOS";
+            this.btn_ejerDesarrollo.UseVisualStyleBackColor = true;
+            this.btn_ejerDesarrollo.Click += new System.EventHandler(this.btn_ejerDesarrollo_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 17);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Objetivo del Día";
             // 
             // panel3
             // 
@@ -137,11 +352,12 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.btn_buscarEjerEC);
             this.groupBox4.Controls.Add(this.dgv_EntradaCalor);
             this.groupBox4.Controls.Add(this.ckb_AeroEC);
             this.groupBox4.Controls.Add(this.ckb_ZonaEC);
             this.groupBox4.Controls.Add(this.btn_buscarEC);
-            this.groupBox4.Controls.Add(this.button5);
+            this.groupBox4.Controls.Add(this.btn_quitarEjerEC);
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(14, 3);
@@ -150,7 +366,7 @@
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Entrada en Calor";
-            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
+            
             // 
             // dgv_EntradaCalor
             // 
@@ -164,7 +380,25 @@
             this.dgv_EntradaCalor.Name = "dgv_EntradaCalor";
             this.dgv_EntradaCalor.Size = new System.Drawing.Size(396, 106);
             this.dgv_EntradaCalor.TabIndex = 20;
-            this.dgv_EntradaCalor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_EntradaCalor_CellContentClick);
+            
+            // 
+            // nombreeje
+            // 
+            this.nombreeje.HeaderText = "Nombre";
+            this.nombreeje.Name = "nombreeje";
+            this.nombreeje.Width = 200;
+            // 
+            // tipoEje
+            // 
+            this.tipoEje.HeaderText = "Tipo Ejercicio";
+            this.tipoEje.Name = "tipoEje";
+            this.tipoEje.Width = 150;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
             // 
             // ckb_AeroEC
             // 
@@ -190,21 +424,21 @@
             // 
             this.btn_buscarEC.Location = new System.Drawing.Point(132, 68);
             this.btn_buscarEC.Name = "btn_buscarEC";
-            this.btn_buscarEC.Size = new System.Drawing.Size(95, 52);
+            this.btn_buscarEC.Size = new System.Drawing.Size(95, 0);
             this.btn_buscarEC.TabIndex = 17;
             this.btn_buscarEC.Text = "BUSCAR EJERCICIOS";
             this.btn_buscarEC.UseVisualStyleBackColor = true;
-            this.btn_buscarEC.Click += new System.EventHandler(this.button3_Click);
+            
             // 
-            // button5
+            // btn_quitarEjerEC
             // 
-            this.button5.Location = new System.Drawing.Point(682, 61);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(65, 33);
-            this.button5.TabIndex = 16;
-            this.button5.Text = "Quitar Ejercicio";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btn_quitarEjerEC.Location = new System.Drawing.Point(674, 50);
+            this.btn_quitarEjerEC.Name = "btn_quitarEjerEC";
+            this.btn_quitarEjerEC.Size = new System.Drawing.Size(80, 47);
+            this.btn_quitarEjerEC.TabIndex = 16;
+            this.btn_quitarEjerEC.Text = "Quitar Ejercicio";
+            this.btn_quitarEjerEC.UseVisualStyleBackColor = true;
+            this.btn_quitarEjerEC.Click += new System.EventHandler(this.button5_Click);
             // 
             // label5
             // 
@@ -215,253 +449,39 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Ejercicios";
             // 
-            // groupBox2
+            // btn_buscarEjerEC
             // 
-            this.groupBox2.Controls.Add(this.checkBox7);
-            this.groupBox2.Controls.Add(this.checkBox8);
-            this.groupBox2.Controls.Add(this.btn_quitarEjerDes);
-            this.groupBox2.Controls.Add(this.listView1);
-            this.groupBox2.Controls.Add(this.btn_ejerDesarrollo);
-            this.groupBox2.Controls.Add(this.checkBox6);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.checkBox5);
-            this.groupBox2.Controls.Add(this.checkBox4);
-            this.groupBox2.Controls.Add(this.checkBox3);
-            this.groupBox2.Controls.Add(this.checkBox2);
-            this.groupBox2.Controls.Add(this.checkBox1);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(14, 3);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(769, 256);
-            this.groupBox2.TabIndex = 6;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Desarrollo";
-            // 
-            // checkBox7
-            // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(241, 50);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(90, 21);
-            this.checkBox7.TabIndex = 13;
-            this.checkBox7.Text = "Aeróbicos";
-            this.checkBox7.UseVisualStyleBackColor = true;
-            // 
-            // checkBox8
-            // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(337, 50);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(102, 21);
-            this.checkBox8.TabIndex = 12;
-            this.checkBox8.Text = "Zona Media";
-            this.checkBox8.UseVisualStyleBackColor = true;
-            // 
-            // btn_quitarEjerDes
-            // 
-            this.btn_quitarEjerDes.Location = new System.Drawing.Point(682, 119);
-            this.btn_quitarEjerDes.Name = "btn_quitarEjerDes";
-            this.btn_quitarEjerDes.Size = new System.Drawing.Size(81, 32);
-            this.btn_quitarEjerDes.TabIndex = 11;
-            this.btn_quitarEjerDes.Text = "Quitar Ejercicio";
-            this.btn_quitarEjerDes.UseVisualStyleBackColor = true;
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Nombre,
-            this.Series,
-            this.Repeticiones,
-            this.Peso});
-            this.listView1.Location = new System.Drawing.Point(36, 91);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(640, 146);
-            this.listView1.TabIndex = 10;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // Nombre
-            // 
-            this.Nombre.Text = "Nombre";
-            this.Nombre.Width = 146;
-            // 
-            // Series
-            // 
-            this.Series.Text = "Series";
-            this.Series.Width = 94;
-            // 
-            // Repeticiones
-            // 
-            this.Repeticiones.Text = "Repeticiones";
-            this.Repeticiones.Width = 94;
-            // 
-            // Peso
-            // 
-            this.Peso.Text = "Peso";
-            this.Peso.Width = 116;
-            // 
-            // btn_ejerDesarrollo
-            // 
-            this.btn_ejerDesarrollo.Location = new System.Drawing.Point(652, 19);
-            this.btn_ejerDesarrollo.Name = "btn_ejerDesarrollo";
-            this.btn_ejerDesarrollo.Size = new System.Drawing.Size(95, 52);
-            this.btn_ejerDesarrollo.TabIndex = 9;
-            this.btn_ejerDesarrollo.Text = "BUSCAR EJERCICIOS";
-            this.btn_ejerDesarrollo.UseVisualStyleBackColor = true;
-            this.btn_ejerDesarrollo.Click += new System.EventHandler(this.btn_ejerDesarrollo_Click);
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(406, 20);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(69, 21);
-            this.checkBox6.TabIndex = 6;
-            this.checkBox6.Text = "Biceps";
-            this.checkBox6.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 17);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Objetivo del Día";
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(227, 19);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(83, 21);
-            this.checkBox5.TabIndex = 4;
-            this.checkBox5.Text = "Dorsales";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(127, 19);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(94, 21);
-            this.checkBox4.TabIndex = 3;
-            this.checkBox4.Text = "Pectorales";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(481, 20);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(74, 21);
-            this.checkBox3.TabIndex = 2;
-            this.checkBox3.Text = "Triceps";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(316, 20);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(84, 21);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "Hombros";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(561, 21);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(75, 21);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Piernas";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.groupBox2);
-            this.panel4.Location = new System.Drawing.Point(88, 197);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(807, 270);
-            this.panel4.TabIndex = 20;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.dataGridView1);
-            this.panel5.Controls.Add(this.btn_aceptarEjerDesa);
-            this.panel5.Location = new System.Drawing.Point(88, 473);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(807, 196);
-            this.panel5.TabIndex = 21;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewCheckBoxColumn1});
-            this.dataGridView1.Location = new System.Drawing.Point(38, 13);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(662, 170);
-            this.dataGridView1.TabIndex = 7;
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Selección";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.Width = 60;
-            // 
-            // btn_aceptarEjerDesa
-            // 
-            this.btn_aceptarEjerDesa.Location = new System.Drawing.Point(711, 61);
-            this.btn_aceptarEjerDesa.Name = "btn_aceptarEjerDesa";
-            this.btn_aceptarEjerDesa.Size = new System.Drawing.Size(65, 33);
-            this.btn_aceptarEjerDesa.TabIndex = 17;
-            this.btn_aceptarEjerDesa.Text = "Aceptar";
-            this.btn_aceptarEjerDesa.UseVisualStyleBackColor = true;
-            // 
-            // nombreeje
-            // 
-            this.nombreeje.HeaderText = "Nombre";
-            this.nombreeje.Name = "nombreeje";
-            this.nombreeje.Width = 200;
-            // 
-            // tipoEje
-            // 
-            this.tipoEje.HeaderText = "Tipo Ejercicio";
-            this.tipoEje.Name = "tipoEje";
-            this.tipoEje.Width = 150;
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
+            this.btn_buscarEjerEC.Location = new System.Drawing.Point(147, 64);
+            this.btn_buscarEjerEC.Name = "btn_buscarEjerEC";
+            this.btn_buscarEjerEC.Size = new System.Drawing.Size(95, 52);
+            this.btn_buscarEjerEC.TabIndex = 22;
+            this.btn_buscarEjerEC.Text = "BUSCAR EJERCICIOS";
+            this.btn_buscarEjerEC.UseVisualStyleBackColor = true;
+            this.btn_buscarEjerEC.Click += new System.EventHandler(this.btn_buscarEjerEC_Click);
             // 
             // FormPlanEjercicios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 749);
+            this.ClientSize = new System.Drawing.Size(1184, 694);
             this.Controls.Add(this.panel1);
             this.Name = "FormPlanEjercicios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPlan_Ejercicios";
             this.Load += new System.EventHandler(this.FormPlanEjercicios_Load);
             this.panel1.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ejerciciosDesarrollo)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Desarrollo)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_EjerciciosEC)).EndInit();
             this.panel2.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_EntradaCalor)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -469,24 +489,11 @@
         #endregion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox8;
         private System.Windows.Forms.Button btn_quitarEjerDes;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader Nombre;
-        private System.Windows.Forms.ColumnHeader Series;
-        private System.Windows.Forms.ColumnHeader Repeticiones;
-        private System.Windows.Forms.ColumnHeader Peso;
         private System.Windows.Forms.Button btn_ejerDesarrollo;
-        private System.Windows.Forms.CheckBox checkBox6;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btn_quitarEjerEC;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btn_buscarEC;
         public System.Windows.Forms.CheckBox ckb_AeroEC;
@@ -499,11 +506,24 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_ejerciciosDesarrollo;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.Button btn_aceptarEjerDesa;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreeje;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoEje;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.RadioButton rb_dorsalesD;
+        private System.Windows.Forms.RadioButton rb_HombroD;
+        private System.Windows.Forms.RadioButton rb_bicepsD;
+        private System.Windows.Forms.RadioButton rb_tricepsD;
+        private System.Windows.Forms.RadioButton rb_piernasD;
+        private System.Windows.Forms.RadioButton rb_aeroD;
+        private System.Windows.Forms.RadioButton rb_zonaD;
+        private System.Windows.Forms.RadioButton rb_pectoralesD;
+        public System.Windows.Forms.DataGridView dgv_Desarrollo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.Button btn_buscarEjerEC;
     }
 }
