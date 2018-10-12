@@ -93,10 +93,6 @@ namespace feelGYM
                 }
                 else { MessageBox.Show("Ocurrió un error"); }
             }
-
-            
-
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -187,38 +183,55 @@ namespace feelGYM
 
             //Metodos que controlan de que tipo es para cargar el comboBox
             #region
-            if (ejercicioSeleccionado.Tipo == 1)
+            if (dgv_todosLosEjercicios.SelectedRows.Count == 0)
             {
-                cmb_tipoEjercicioAgregar.SelectedIndex = 0;
+                MessageBox.Show("Debe seleccionar una fila", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            if (ejercicioSeleccionado.Tipo == 2)
+            else
             {
-                cmb_tipoEjercicioAgregar.SelectedIndex = 1;
+                if (ejercicioSeleccionado.Tipo == 1)
+                {
+                    cmb_tipoEjercicioAgregar.SelectedIndex = 0;
+                }
+                if (ejercicioSeleccionado.Tipo == 2)
+                {
+                    cmb_tipoEjercicioAgregar.SelectedIndex = 1;
+                }
+                if (ejercicioSeleccionado.Tipo == 3)
+                {
+                    cmb_tipoEjercicioAgregar.SelectedIndex = 2;
+                }
+                if (ejercicioSeleccionado.Tipo == 4)
+                {
+                    cmb_tipoEjercicioAgregar.SelectedIndex = 3;
+                }
+                if (ejercicioSeleccionado.Tipo == 5)
+                {
+                    cmb_tipoEjercicioAgregar.SelectedIndex = 4;
+                }
+                if (ejercicioSeleccionado.Tipo == 6)
+                {
+                    cmb_tipoEjercicioAgregar.SelectedIndex = 5;
+                }
+                if (ejercicioSeleccionado.Tipo == 7)
+                {
+                    cmb_tipoEjercicioAgregar.SelectedIndex = 6;
+                }
+                if (ejercicioSeleccionado.Tipo == 8)
+                {
+                    cmb_tipoEjercicioAgregar.SelectedIndex = 7;
+                }
             }
-            if (ejercicioSeleccionado.Tipo == 3)
-            {
-                cmb_tipoEjercicioAgregar.SelectedIndex = 2;
-            }
-            if (ejercicioSeleccionado.Tipo == 4)
-            {
-                cmb_tipoEjercicioAgregar.SelectedIndex = 3;
-            }
-            if (ejercicioSeleccionado.Tipo == 5)
-            {
-                cmb_tipoEjercicioAgregar.SelectedIndex = 4;
-            }
-            if (ejercicioSeleccionado.Tipo == 6)
-            {
-                cmb_tipoEjercicioAgregar.SelectedIndex = 5;
-            }
-            if (ejercicioSeleccionado.Tipo == 7)
-            {
-                cmb_tipoEjercicioAgregar.SelectedIndex = 6;
-            }
-            if (ejercicioSeleccionado.Tipo == 8)
-            {
-                cmb_tipoEjercicioAgregar.SelectedIndex = 7;
-            }
+            #endregion
+
+            //actualizo el data grid view
+            #region
+            Clases.Metodos m = new Clases.Metodos();
+            string query2 = "SELECT ejercicios.nombre as 'Nombre', tipoejercicio.nombre as 'Tipo Ejercicio', ejercicios.id " +
+                "FROM ejercicios JOIN tipoejercicio ON ejercicios.tipoEjercicio = tipoejercicio.id ORDER BY tipoejercicio.id";
+
+            //llena de grilla con todos los ejercicios
+            m.LlenarGridEjercicios(dgv_todosLosEjercicios, query2);
             #endregion
         }
 
@@ -239,7 +252,7 @@ namespace feelGYM
                     {
                         txt_nombreEjercicioNuevo.Clear();
                         cmb_tipoEjercicioAgregar.SelectedItem = null;
-                        MessageBox.Show("Cliente Eliminado Correctamente!", "Ejercicio Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Ejercicio Eliminado Correctamente!", "Ejercicio Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         //actualizo el data grid view
                         #region
                         Clases.Metodos m = new Clases.Metodos();
@@ -252,7 +265,7 @@ namespace feelGYM
                     }
                     else
                     {
-                        MessageBox.Show("No se pudo eliminar el Cliente", "Ejercicio No Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("No se pudo eliminar el Ejercicio", "Ejercicio No Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
                 else

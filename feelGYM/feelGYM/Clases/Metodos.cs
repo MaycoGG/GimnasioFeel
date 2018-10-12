@@ -34,6 +34,10 @@ namespace feelGYM.Clases
 
         }
 
+
+        //metodos para EJERCICIOS
+        #region Ejercicios
+
         //metodo para agregar ejercicios
         public static int AgregarEjercicioNuevo(Ejercicio ejer, String query)
         {
@@ -61,22 +65,21 @@ namespace feelGYM.Clases
             return retorno;
         }
 
-        //metodo para buscar un ejercicio
-        public static List<Ejercicio> BuscarEjercicio(string nombre)
+            //metodo para buscar un ejercicio
+            public static List<Ejercicio> BuscarEjercicio(string nombre)
         {
             List<Ejercicio> _lista = new List<Ejercicio>();
-
-            MySqlCommand cmd = new MySqlCommand(String.Format("SELECT ejercicio.id, ejercicio.nombre, tipoejercicio.nombre " +
-                "FROM ejercicios JOIN tipoejercicio ON ejercicios.tipoEjercicio = tipoejercicio.id " +
-                "where nombre LIKE '%{0}%'", nombre), Conexion.obtenerConexion());
+            MySqlCommand cmd = new MySqlCommand(String.Format(
+               "SELECT ejercicios.id, ejercicios.nombre, ejercicios.tipoEjercicio " +
+               "FROM ejercicios JOIN tipoejercicio ON ejercicios.tipoEjercicio = tipoejercicio.id " +
+               "where ejercicios.nombre LIKE '%{0}%'", nombre), Conexion.obtenerConexion());
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
                 Ejercicio ejer = new Ejercicio();
+                ejer.Id = reader.GetInt32(0);
                 ejer.Nombre = reader.GetString(1);
                 ejer.Tipo = reader.GetInt32(2);
-                ejer.Id = reader.GetInt32(0);
-
                 _lista.Add(ejer);
             }
             return _lista;
@@ -87,25 +90,103 @@ namespace feelGYM.Clases
         {
             Ejercicio ejer = new Ejercicio();
 
-            MySqlCommand cmd = new MySqlCommand(String.Format("select id, nombre, tipoEjercicio from ejercicios where id = '{0}'", id), Conexion.obtenerConexion());
+            MySqlCommand cmd = new MySqlCommand(String.Format("select nombre, tipoEjercicio, id from ejercicios where id = '{0}'", id), Conexion.obtenerConexion());
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                ejer.Nombre = reader.GetString(1);
-                ejer.Tipo = reader.GetInt32(2);
-                ejer.Id = reader.GetInt32(0);
+                ejer.Nombre = reader.GetString(0);
+                ejer.Tipo = reader.GetInt32(1);
+                ejer.Id = reader.GetInt32(2);
             }
 
             return ejer;
         }
 
-        public void Insertar( String query)
-        {
-         
-            MySqlCommand cmd = new MySqlCommand(query, Clases.Conexion.obtenerConexion());
-            
+        #endregion 
 
+
+
+
+
+        //metodos para PROFESORES
+        #region Profesores
+
+        //metodo para agregar profesores
+        public static int AgregarProfesor(Profesores profe, String query)
+        {
+            int retorno = 0;
+            string nombreApe = profe.Apellido + " " + profe.Nombre;
+            MySqlCommand cmd = new MySqlCommand(String.Format(query, profe.Dni ,nombreApe, profe.Celular, profe.CelEmergencia, profe.TipoSangre), Conexion.obtenerConexion());
+            retorno = cmd.ExecuteNonQuery();
+            return retorno;
         }
+
+        //metodo para modificar datos profesor
+        public static int ModificarProfe(Profesores profe, String query)
+        {
+            int retorno = 0;
+            string nombreApe = profe.Apellido + " " + profe.Nombre;
+            MySqlCommand cmd = new MySqlCommand(String.Format(query, profe.Dni, nombreApe, profe.Celular, profe.CelEmergencia, profe.TipoSangre), Conexion.obtenerConexion());
+            retorno = cmd.ExecuteNonQuery();
+            return retorno;
+        }
+
+        //metodo para eliminar ejercicios
+        public static int EliminarProfe(Ejercicio ejer, String query)
+        {
+            int retorno = 0;
+            MySqlCommand cmd = new MySqlCommand(String.Format(query, ejer.Id), Conexion.obtenerConexion());
+            retorno = cmd.ExecuteNonQuery();
+            return retorno;
+        }
+
+        //metodo para buscar un profesor
+        public static List<Profesores> BuscarProfe(string nombre)
+        {
+            List<Profesores> _lista = new List<Profesores>();
+
+            MySqlCommand cmd = new MySqlCommand(String.Format("SELECT profesores.nombreApe as 'Profesor', profesores.dniProfe as 'DNI', " +
+                "profesores.celular as 'Celular', profesores.celEmergencia as 'Cel Emergencia', tiposangre.nombre as 'Grupo Sanguíneo' " +
+                "FROM profesores JOIN tiposangre ON profesores.tipoSangre = tiposangre.id ORDER BY 1 " +
+                "where profesores.nombreApe LIKE '%{0}%'", nombre), Conexion.obtenerConexion());
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                Profesores ejer = new Profesores();
+                ejer.Nombre = reader.GetString(0);
+                ejer.Apellido = reader.GetString(0);
+                ejer.Dni = reader.GetInt32(1);
+                ejer.Celular = reader.GetDouble(2);
+                ejer.CelEmergencia = reader.GetDouble(3);
+                
+
+                _lista.Add(ejer);
+            }
+            return _lista;
+        }
+
+        //metodo para obtener un profesor
+        public static Profesores ObtenerProfe(int dni)
+        {
+            Profesores ejer = new Profesores();
+
+            MySqlCommand cmd = new MySqlCommand(String.Format("select dniProfe, nombreApe, celular, celEmergencia, tipoSangre from profesores where dniProfe = '{0}'", dni), Conexion.obtenerConexion());
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                ejer.Apellido = reader.GetString(1);
+                ejer.Celular= reader.GetDouble(2);
+                ejer.CelEmergencia = reader.GetDouble(3);
+                ejer.TipoSangre = reader.GetInt32(4);
+                ejer.Dni = reader.GetInt32(0);
+            }
+
+            return ejer;
+        }
+
+
+
+        #endregion
 
         public void LlenarGrid(DataGridView grid, String query)
         {
@@ -121,8 +202,6 @@ namespace feelGYM.Clases
             //tamaño columna
             grid.Columns[1].Width = 300;
             grid.Columns[2].Width = 170;
-
-            //
             grid.Columns[3].Visible = false;
             
 
@@ -151,6 +230,24 @@ namespace feelGYM.Clases
             grid.Columns[0].Width = 200;
             grid.Columns[1].Width = 170;
             grid.Columns[2].Visible = false;
+
+        }
+
+        public void LlenarGridProfesores(DataGridView grid, String query)
+        {
+            MySqlCommand cmd = new MySqlCommand(query, Clases.Conexion.obtenerConexion());
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+            grid.DataSource = dt;
+
+            //tamaño columna
+            grid.Columns[0].Width = 200;
+            grid.Columns[1].Width = 100;
+            grid.Columns[2].Width = 100;
+            grid.Columns[3].Width = 100;
+            grid.Columns[4].Width = 100;
 
         }
 
