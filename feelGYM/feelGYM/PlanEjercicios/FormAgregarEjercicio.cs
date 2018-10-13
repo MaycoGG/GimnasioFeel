@@ -169,7 +169,7 @@ namespace feelGYM
             if (dgv_todosLosEjercicios.SelectedRows.Count == 1)
             {
                 //obtiene el id del ejercicio que se selecciono
-                int id = Convert.ToInt32(dgv_todosLosEjercicios.CurrentRow.Cells[2].Value);
+                int id = Convert.ToInt32(dgv_todosLosEjercicios.CurrentRow.Cells["id"].Value);
                 //busca el ejercicio con el id encontrado recien
                 ejercicioSeleccionado = Metodos.ObtenerEjercicio(id);
             }
@@ -179,6 +179,7 @@ namespace feelGYM
             {
                 txt_nombreEjercicioNuevo.Text = ejercicioSeleccionado.Nombre;
                 txt_idEjercicioModificar.Text = Convert.ToString(ejercicioSeleccionado.Id);
+                gb_listaEjercicios.Visible = false;
             }
 
             //Metodos que controlan de que tipo es para cargar el comboBox

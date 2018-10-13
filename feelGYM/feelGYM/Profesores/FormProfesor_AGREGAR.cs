@@ -20,6 +20,8 @@ namespace feelGYM
             InitializeComponent();
         }
 
+        //Metodos que hacen aparecer y desaparecer los textos de los TEXTBOX de acuerdo a las tabulaciones.
+        #region Sensores
         private void txt_nombreProfe_Enter(object sender, EventArgs e)
         {
             if (txt_nombreProfe.Text == "NOMBRE")
@@ -127,14 +129,17 @@ namespace feelGYM
                 txt_buscarPorNombre.ForeColor = Color.DimGray;
             }
         }
+        #endregion
 
 
+
+        //metodo para REGISTRAR / MODIFICAR profesores
         private void txt_registrarProfe_Click(object sender, EventArgs e)
         {
             Clases.Profesores ejer = new Clases.Profesores();
 
             //si el TXT_DOCUMENTO esta vacio lo agrega, de lo contrario lo modifica.
-            if (string.IsNullOrEmpty(txt_docProfe.Text))
+            if (string.IsNullOrEmpty(txt_CONTROL.Text))
             {
                 //consulta para guardar el ejercicio
                 string query = "insert into profesores (dniProfe, nombreApe, celular, celEmergencia, tipoSangre) values ('{0}', '{1}', '{2}', '{3}', '{4}')";
@@ -178,7 +183,6 @@ namespace feelGYM
             }
             else
             {
-               
                 //consulta para actualizar el ejercicio
                 string query = "UPDATE profesores set nombreApe = '{1}', celular = '{2}', celEmergencia = '{3}', tipoSangre = '{4}' where dniProfe = '{0}'";
 
@@ -198,23 +202,13 @@ namespace feelGYM
                 {
                     MessageBox.Show("Profesor modificado correctamente!", "Profesor Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txt_nombreProfe.Visible = true;
-                    txt_nombreProfe.Clear();
-                    txt_apellidoProfe.Clear();
-                    txt_docProfe.Clear();
-                    txt_celProfe.Clear();
-                    txt_cerEmergenciaProfe.Clear();
+                    txt_nombreProfe.Text = "NOMBRE";
+                    txt_apellidoProfe.Text = "APELLIDO";
+                    txt_docProfe.Text = "NRO DOCUMENTO";
+                    txt_celProfe.Text = "CELULAR";
+                    txt_cerEmergenciaProfe.Text = "CEL EMERGENCIA";
                     cmb_sangreProfe.SelectedItem = null;
-
-                    //actualizo el data grid view
-                    #region
-                    Clases.Metodos m = new Clases.Metodos();
-                    string query2 = "SELECT profesores.nombreApe as 'Profesor', profesores.dniProfe as 'DNI', profesores.celular as 'Celular', " +
-                    "profesores.celEmergencia as 'Cel Emergencia', tiposangre.nombre as 'Grupo Sanguineo' " +
-                    "FROM profesores JOIN tiposangre ON profesores.tipoSangre = tiposangre.id ORDER BY 1";
-
-                    //llena de grilla con todos los ejercicios
-                    m.LlenarGridEjercicios(dgv_todosLosProfes, query2);
-                    #endregion
+                    btn_registrarProfe.Text = "REGISTRAR";
                 }
                 else { MessageBox.Show("Ocurrió un error"); }
 
@@ -267,6 +261,8 @@ namespace feelGYM
             this.Close();
         }
 
+
+        //BTN que despliega/cierra el COMBOBOX lista de profesores.
         private void btn_mostrarProfe_Click(object sender, EventArgs e)
         {
             //si esta invisible, lo despliega
@@ -293,18 +289,20 @@ namespace feelGYM
 
         private void txt_buscarPorNombre_TextChanged(object sender, EventArgs e)
         {
-            //dgv_todosLosProfes.DataSource = Clases.Metodos.BuscarProfe(txt_buscarPorNombre.Text);
+            dgv_todosLosProfes.DataSource = Clases.Metodos.BuscarProfe(txt_buscarPorNombre.Text);
         }
 
         //crea un objeto de tipo PROFESOR.
         public Clases.Profesores profeSeleccionado { get; set; }
 
+
+        //BUTTON que al presionarlo obtiene el profesor seleccionado y agrega en cada campo correspondiente para poder modificarlo
         private void btn_modificarEjercicio_Click(object sender, EventArgs e)
         {
             if (dgv_todosLosProfes.SelectedRows.Count == 1)
             {
                 //obtiene el DNI del Profe que se selecciono
-                int dni = Convert.ToInt32(dgv_todosLosProfes.CurrentRow.Cells[1].Value);
+                int dni = Convert.ToInt32(dgv_todosLosProfes.CurrentRow.Cells["DNI"].Value);
                 //busca el ejercicio con el id encontrado recien
                 profeSeleccionado = Clases.Metodos.ObtenerProfe(dni);
             }
@@ -314,10 +312,13 @@ namespace feelGYM
             {
                 txt_docProfe.Enabled = false;
                 txt_nombreProfe.Visible = false;
+                txt_CONTROL.Text = Convert.ToString(profeSeleccionado.Dni);
                 txt_apellidoProfe.Text = profeSeleccionado.Apellido;
                 txt_docProfe.Text = Convert.ToString(profeSeleccionado.Dni);
                 txt_celProfe.Text = profeSeleccionado.Celular.ToString();
                 txt_cerEmergenciaProfe.Text = Convert.ToString(profeSeleccionado.CelEmergencia);
+                btn_registrarProfe.Text = "GUARDAR";
+                gb_profesores.Visible = false;
             }
 
             //Metodos que controlan de que tipo es para cargar el comboBox
@@ -364,8 +365,49 @@ namespace feelGYM
             #endregion
         }
 
+
+        //BTN que borra el ejercicio seleccionado y actualiza la grilla.
         private void btn_borrarEjercicio_Click(object sender, EventArgs e)
         {
+            if (dgv_todosLosProfes.SelectedRows.Count == 1)
+            {
+                //obtiene el id del ejercicio que se selecciono
+                int dni = Convert.ToInt32(dgv_todosLosProfes.CurrentRow.Cells["DNI"].Value);
+                //busca el ejercicio con el id encontrado recien
+                profeSeleccionado = Clases.Metodos.ObtenerProfe(dni);
+
+                string query = "DELETE FROM profesores where dniProfe = '{0}'";
+
+                if (MessageBox.Show("Esta Seguro que desea eliminar el Profesor", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    if (Clases.Metodos.EliminarProfe(profeSeleccionado, query) > 0)
+                    {
+                        //txt_nombreEjercicioNuevo.Clear();
+                        //cmb_tipoEjercicioAgregar.SelectedItem = null;
+                        MessageBox.Show("Profesor Eliminado Correctamente!", "Ejercicio Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //actualizo el data grid view
+                        #region
+                        Clases.Metodos m = new Clases.Metodos();
+                        string query2 = "SELECT profesores.nombreApe as 'Profesor', profesores.dniProfe as 'DNI', profesores.celular as 'Celular', " +
+                        "profesores.celEmergencia as 'Cel Emergencia', tiposangre.nombre as 'Grupo Sanguineo' " +
+                        "FROM profesores JOIN tiposangre ON profesores.tipoSangre = tiposangre.id ORDER BY 1";
+
+                        //llena de grilla con todos los ejercicios
+                        m.LlenarGridProfesores(dgv_todosLosProfes, query2);
+                        #endregion
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo eliminar el Ejercicio", "Ejercicio No Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+                else
+                    MessageBox.Show("Se cancelo la eliminacion", "Eliminacion Cancelada", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+
+        public void ValidarCampos() {
 
         }
     }

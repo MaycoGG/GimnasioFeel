@@ -47,12 +47,13 @@
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gb_profesores = new System.Windows.Forms.GroupBox();
-            this.btn_mostrarProfe = new System.Windows.Forms.Button();
+            this.txt_buscarPorNombre = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btn_modificarEjercicio = new System.Windows.Forms.Button();
             this.btn_borrarEjercicio = new System.Windows.Forms.Button();
             this.dgv_todosLosProfes = new System.Windows.Forms.DataGridView();
-            this.txt_buscarPorNombre = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btn_mostrarProfe = new System.Windows.Forms.Button();
+            this.txt_CONTROL = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cerrarPlan)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.gb_profesores.SuspendLayout();
@@ -153,7 +154,7 @@
             this.txt_docProfe.ForeColor = System.Drawing.Color.DimGray;
             this.txt_docProfe.Location = new System.Drawing.Point(41, 69);
             this.txt_docProfe.Name = "txt_docProfe";
-            this.txt_docProfe.Size = new System.Drawing.Size(300, 19);
+            this.txt_docProfe.Size = new System.Drawing.Size(181, 19);
             this.txt_docProfe.TabIndex = 38;
             this.txt_docProfe.Text = "NRO DOCUMENTO";
             this.txt_docProfe.Enter += new System.EventHandler(this.txt_docProfe_Enter);
@@ -253,6 +254,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txt_CONTROL);
             this.groupBox1.Controls.Add(this.txt_celProfe);
             this.groupBox1.Controls.Add(this.txt_docProfe);
             this.groupBox1.Controls.Add(this.label11);
@@ -270,7 +272,7 @@
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(356, 246);
+            this.groupBox1.Size = new System.Drawing.Size(402, 246);
             this.groupBox1.TabIndex = 53;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -290,22 +292,29 @@
             this.gb_profesores.Text = "groupBox2";
             this.gb_profesores.Visible = false;
             // 
-            // btn_mostrarProfe
+            // txt_buscarPorNombre
             // 
-            this.btn_mostrarProfe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
-            this.btn_mostrarProfe.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_mostrarProfe.FlatAppearance.BorderSize = 0;
-            this.btn_mostrarProfe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_mostrarProfe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_mostrarProfe.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_mostrarProfe.ForeColor = System.Drawing.Color.LightGray;
-            this.btn_mostrarProfe.Location = new System.Drawing.Point(433, 13);
-            this.btn_mostrarProfe.Name = "btn_mostrarProfe";
-            this.btn_mostrarProfe.Size = new System.Drawing.Size(114, 65);
-            this.btn_mostrarProfe.TabIndex = 53;
-            this.btn_mostrarProfe.Text = "MOSTRAR PROFESORES";
-            this.btn_mostrarProfe.UseVisualStyleBackColor = false;
-            this.btn_mostrarProfe.Click += new System.EventHandler(this.btn_mostrarProfe_Click);
+            this.txt_buscarPorNombre.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_buscarPorNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_buscarPorNombre.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_buscarPorNombre.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_buscarPorNombre.Location = new System.Drawing.Point(102, 38);
+            this.txt_buscarPorNombre.Name = "txt_buscarPorNombre";
+            this.txt_buscarPorNombre.Size = new System.Drawing.Size(300, 19);
+            this.txt_buscarPorNombre.TabIndex = 37;
+            this.txt_buscarPorNombre.Text = "BUSCAR POR NOMBRE/APELLIDO";
+            this.txt_buscarPorNombre.TextChanged += new System.EventHandler(this.txt_buscarPorNombre_TextChanged);
+            this.txt_buscarPorNombre.Enter += new System.EventHandler(this.txt_buscarPorNombre_Enter);
+            this.txt_buscarPorNombre.Leave += new System.EventHandler(this.txt_buscarPorNombre_Leave);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(99, 47);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(301, 13);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "_________________________________________________";
             // 
             // btn_modificarEjercicio
             // 
@@ -337,29 +346,34 @@
             this.dgv_todosLosProfes.Size = new System.Drawing.Size(623, 150);
             this.dgv_todosLosProfes.TabIndex = 29;
             // 
-            // txt_buscarPorNombre
+            // btn_mostrarProfe
             // 
-            this.txt_buscarPorNombre.BackColor = System.Drawing.SystemColors.Control;
-            this.txt_buscarPorNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_buscarPorNombre.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_buscarPorNombre.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_buscarPorNombre.Location = new System.Drawing.Point(102, 38);
-            this.txt_buscarPorNombre.Name = "txt_buscarPorNombre";
-            this.txt_buscarPorNombre.Size = new System.Drawing.Size(300, 19);
-            this.txt_buscarPorNombre.TabIndex = 37;
-            this.txt_buscarPorNombre.Text = "BUSCAR POR NOMBRE/APELLIDO";
-            this.txt_buscarPorNombre.TextChanged += new System.EventHandler(this.txt_buscarPorNombre_TextChanged);
-            this.txt_buscarPorNombre.Enter += new System.EventHandler(this.txt_buscarPorNombre_Enter);
-            this.txt_buscarPorNombre.Leave += new System.EventHandler(this.txt_buscarPorNombre_Leave);
+            this.btn_mostrarProfe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.btn_mostrarProfe.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_mostrarProfe.FlatAppearance.BorderSize = 0;
+            this.btn_mostrarProfe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_mostrarProfe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_mostrarProfe.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_mostrarProfe.ForeColor = System.Drawing.Color.LightGray;
+            this.btn_mostrarProfe.Location = new System.Drawing.Point(433, 13);
+            this.btn_mostrarProfe.Name = "btn_mostrarProfe";
+            this.btn_mostrarProfe.Size = new System.Drawing.Size(114, 65);
+            this.btn_mostrarProfe.TabIndex = 53;
+            this.btn_mostrarProfe.Text = "MOSTRAR PROFESORES";
+            this.btn_mostrarProfe.UseVisualStyleBackColor = false;
+            this.btn_mostrarProfe.Click += new System.EventHandler(this.btn_mostrarProfe_Click);
             // 
-            // label1
+            // txt_CONTROL
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(99, 47);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(301, 13);
-            this.label1.TabIndex = 38;
-            this.label1.Text = "_________________________________________________";
+            this.txt_CONTROL.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_CONTROL.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_CONTROL.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_CONTROL.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_CONTROL.Location = new System.Drawing.Point(225, 69);
+            this.txt_CONTROL.Name = "txt_CONTROL";
+            this.txt_CONTROL.Size = new System.Drawing.Size(112, 19);
+            this.txt_CONTROL.TabIndex = 53;
+            this.txt_CONTROL.Visible = false;
             // 
             // FormProfesor_AGREGAR
             // 
@@ -410,5 +424,6 @@
         private System.Windows.Forms.Button btn_modificarEjercicio;
         private System.Windows.Forms.Button btn_borrarEjercicio;
         private System.Windows.Forms.DataGridView dgv_todosLosProfes;
+        private System.Windows.Forms.TextBox txt_CONTROL;
     }
 }
