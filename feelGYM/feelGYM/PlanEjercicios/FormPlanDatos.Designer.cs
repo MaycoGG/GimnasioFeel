@@ -314,6 +314,7 @@
             this.cmb_profesor.Name = "cmb_profesor";
             this.cmb_profesor.Size = new System.Drawing.Size(149, 24);
             this.cmb_profesor.TabIndex = 0;
+            this.cmb_profesor.SelectedIndexChanged += new System.EventHandler(this.cmb_profesor_SelectedIndexChanged);
             // 
             // btn_cerrarPlan
             // 

@@ -111,5 +111,10 @@ namespace feelGYM
         {
 
         }
+
+        private void cmb_profesor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

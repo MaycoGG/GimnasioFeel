@@ -72,7 +72,12 @@ namespace feelGYM.Clases
             MySqlCommand cmd = new MySqlCommand(String.Format(
                "SELECT ejercicios.id, ejercicios.nombre, ejercicios.tipoEjercicio " +
                "FROM ejercicios JOIN tipoejercicio ON ejercicios.tipoEjercicio = tipoejercicio.id " +
-               "where ejercicios.nombre LIKE '%{0}%'", nombre), Conexion.obtenerConexion());
+               "where ejercicios.nombre LIKE '%{0}%' ORDER BY ejercicios.nombre", nombre), Conexion.obtenerConexion());
+
+
+            //SELECT ejercicios.nombre as 'Nombre', tipoejercicio.nombre as 'Tipo Ejercicio', ejercicios.id " +
+            //        "FROM ejercicios JOIN tipoejercicio ON ejercicios.tipoEjercicio = tipoejercicio.id ORDER BY tipoejercicio.id
+
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
@@ -132,10 +137,10 @@ namespace feelGYM.Clases
         }
 
         //metodo para eliminar ejercicios
-        public static int EliminarProfe(Ejercicio ejer, String query)
+        public static int EliminarProfe(Profesores ejer, String query)
         {
             int retorno = 0;
-            MySqlCommand cmd = new MySqlCommand(String.Format(query, ejer.Id), Conexion.obtenerConexion());
+            MySqlCommand cmd = new MySqlCommand(String.Format(query, ejer.Dni), Conexion.obtenerConexion());
             retorno = cmd.ExecuteNonQuery();
             return retorno;
         }
@@ -147,8 +152,8 @@ namespace feelGYM.Clases
 
             MySqlCommand cmd = new MySqlCommand(String.Format("SELECT profesores.nombreApe as 'Profesor', profesores.dniProfe as 'DNI', " +
                 "profesores.celular as 'Celular', profesores.celEmergencia as 'Cel Emergencia', tiposangre.nombre as 'Grupo Sanguíneo' " +
-                "FROM profesores JOIN tiposangre ON profesores.tipoSangre = tiposangre.id ORDER BY 1 " +
-                "where profesores.nombreApe LIKE '%{0}%'", nombre), Conexion.obtenerConexion());
+                "FROM profesores JOIN tiposangre ON profesores.tipoSangre = tiposangre.id " +
+                "where profesores.nombreApe LIKE '%{0}%' ORDER BY 1 ", nombre), Conexion.obtenerConexion());
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
@@ -230,6 +235,7 @@ namespace feelGYM.Clases
             grid.Columns[0].Width = 200;
             grid.Columns[1].Width = 170;
             grid.Columns[2].Visible = false;
+            //grid.Columns[2].Width = 50;
 
         }
 
@@ -251,33 +257,5 @@ namespace feelGYM.Clases
 
         }
 
-
-        public void LlenarGridConGrid(DataGridView grid, String nombre, String tipo)
-        {
-
-            DataTable dt = new DataTable();
-
-            grid.Rows.Add(nombre, tipo);
-            grid.DataSource = dt;
-
-
-            //tamaño columna
-            grid.Columns[0].Width = 300;
-            grid.Columns[1].Width = 170;
-
-            //
-            grid.Columns[2].Visible = false;
-
-
-
-            //pone falso a todos los check box de la tabla.
-            for (int i = 0; i < grid.Rows.Count; i++)
-            {
-                grid.Rows[i].Cells[3].Value = false;
-
-            }
-
-
-        }
     }
 }
