@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.btn_aceptarPag = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgv_ejerciciosDesarrollo = new System.Windows.Forms.DataGridView();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -56,6 +58,7 @@
             this.aceptar_Ejer = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btn_buscarEjerEC = new System.Windows.Forms.Button();
             this.dgv_EntradaCalor = new System.Windows.Forms.DataGridView();
             this.nombreeje = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoEje = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,8 +68,8 @@
             this.btn_buscarEC = new System.Windows.Forms.Button();
             this.btn_quitarEjerEC = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.btn_buscarEjerEC = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ejerciciosDesarrollo)).BeginInit();
             this.panel4.SuspendLayout();
@@ -81,6 +84,8 @@
             // 
             // panel1
             // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
@@ -88,9 +93,27 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1184, 694);
+            this.panel1.Size = new System.Drawing.Size(916, 515);
             this.panel1.TabIndex = 2;
-            
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.btn_aceptarPag);
+            this.panel6.Location = new System.Drawing.Point(88, 476);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(807, 36);
+            this.panel6.TabIndex = 23;
+            // 
+            // btn_aceptarPag
+            // 
+            this.btn_aceptarPag.Location = new System.Drawing.Point(729, 7);
+            this.btn_aceptarPag.Name = "btn_aceptarPag";
+            this.btn_aceptarPag.Size = new System.Drawing.Size(75, 23);
+            this.btn_aceptarPag.TabIndex = 22;
+            this.btn_aceptarPag.Text = "button1";
+            this.btn_aceptarPag.UseVisualStyleBackColor = true;
+            this.btn_aceptarPag.Click += new System.EventHandler(this.btn_aceptarPag_Click);
             // 
             // panel5
             // 
@@ -366,7 +389,16 @@
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Entrada en Calor";
-            
+            // 
+            // btn_buscarEjerEC
+            // 
+            this.btn_buscarEjerEC.Location = new System.Drawing.Point(147, 64);
+            this.btn_buscarEjerEC.Name = "btn_buscarEjerEC";
+            this.btn_buscarEjerEC.Size = new System.Drawing.Size(95, 52);
+            this.btn_buscarEjerEC.TabIndex = 22;
+            this.btn_buscarEjerEC.Text = "BUSCAR EJERCICIOS";
+            this.btn_buscarEjerEC.UseVisualStyleBackColor = true;
+            this.btn_buscarEjerEC.Click += new System.EventHandler(this.btn_buscarEjerEC_Click);
             // 
             // dgv_EntradaCalor
             // 
@@ -380,7 +412,6 @@
             this.dgv_EntradaCalor.Name = "dgv_EntradaCalor";
             this.dgv_EntradaCalor.Size = new System.Drawing.Size(396, 106);
             this.dgv_EntradaCalor.TabIndex = 20;
-            
             // 
             // nombreeje
             // 
@@ -428,7 +459,6 @@
             this.btn_buscarEC.TabIndex = 17;
             this.btn_buscarEC.Text = "BUSCAR EJERCICIOS";
             this.btn_buscarEC.UseVisualStyleBackColor = true;
-            
             // 
             // btn_quitarEjerEC
             // 
@@ -449,27 +479,19 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Ejercicios";
             // 
-            // btn_buscarEjerEC
-            // 
-            this.btn_buscarEjerEC.Location = new System.Drawing.Point(147, 64);
-            this.btn_buscarEjerEC.Name = "btn_buscarEjerEC";
-            this.btn_buscarEjerEC.Size = new System.Drawing.Size(95, 52);
-            this.btn_buscarEjerEC.TabIndex = 22;
-            this.btn_buscarEjerEC.Text = "BUSCAR EJERCICIOS";
-            this.btn_buscarEjerEC.UseVisualStyleBackColor = true;
-            this.btn_buscarEjerEC.Click += new System.EventHandler(this.btn_buscarEjerEC_Click);
-            // 
             // FormPlanEjercicios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 694);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(916, 515);
             this.Controls.Add(this.panel1);
             this.Name = "FormPlanEjercicios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPlan_Ejercicios";
             this.Load += new System.EventHandler(this.FormPlanEjercicios_Load);
             this.panel1.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ejerciciosDesarrollo)).EndInit();
             this.panel4.ResumeLayout(false);
@@ -525,5 +547,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.Button btn_buscarEjerEC;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button btn_aceptarPag;
     }
 }

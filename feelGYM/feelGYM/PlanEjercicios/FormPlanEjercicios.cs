@@ -109,6 +109,7 @@ namespace feelGYM
 
             panel5.Height = 201;
             panel5.Location = new Point(88, 473);
+            panel6.Location = new Point(88, 690);
             Height = 749;
             panel1.Height = 749;
         }
@@ -130,9 +131,13 @@ namespace feelGYM
 
             }
 
+            panel5.Location = new Point(88, 473);
             panel5.Height = 0;
-            Height = 518;
-            panel1.Height = 518;
+            panel6.Location = new Point(88, 476);
+            Height = 554;
+            panel1.Height = 554;
+            
+            
         }
 
         private void btn_quitarEjerDes_Click(object sender, EventArgs e)
@@ -182,6 +187,20 @@ namespace feelGYM
             //String query = "SELECT ejercicios.nombre as 'Nombre', tipoejercicio.nombre as 'Tipo Ejercicio' FROM ejercicios JOIN tipoejercicio ON ejercicios.tipoEjercicio = tipoejercicio.id";
 
             m.LlenarGrid(dgv_EjerciciosEC, query);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btn_aceptarPag_Click(object sender, EventArgs e)
+        {
+            TabsSesiones tab = new TabsSesiones();
+
+            int cantTab = tab.tabControl1.TabPages.Count;
+
+            MessageBox.Show("Num de sesion; " + cantTab);
         }
     }
 }

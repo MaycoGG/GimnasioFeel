@@ -97,7 +97,7 @@ namespace feelGYM
         private void FormPlanDatos_Load(object sender, EventArgs e)
         {
             string query = "SELECT * FROM profesores";
-            string atributo = "nombreApe, nombreApe";
+            string atributo = "nombreApe";
             Clases.Metodos cb = new Clases.Metodos();
             cb.LlenarCombo(cmb_profesor, query, atributo);
         }

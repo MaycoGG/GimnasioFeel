@@ -16,6 +16,7 @@ namespace feelGYM.PlanEjercicios
             this.frm = frm_contenido;
             this.Controls.Add(frm_contenido.pnl);
             this.Text = "Sesion " + i;
+            this.AutoScroll = true;
 
         }
 

@@ -37,7 +37,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(935, 737);
+            this.tabControl1.Size = new System.Drawing.Size(935, 523);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -45,7 +45,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 749);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(944, 529);
             this.Controls.Add(this.tabControl1);
             this.Name = "TabsSesiones";
             this.Text = "TabsSesiones";
