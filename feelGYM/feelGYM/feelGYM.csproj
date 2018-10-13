@@ -50,7 +50,9 @@
     <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Clases\Ejercicio.cs" />
     <Compile Include="Clases\Metodos.cs" />
+    <Compile Include="Clases\PlanEjercicio.cs" />
     <Compile Include="Clases\Profesores.cs" />
+    <Compile Include="Clases\Socio.cs" />
     <Compile Include="Clases\TipoSangre.cs" />
     <Compile Include="Form3.cs">
       <SubType>Form</SubType>

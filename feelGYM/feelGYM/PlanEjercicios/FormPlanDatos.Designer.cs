@@ -31,9 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPlanDatos));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_dniSocio = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txt_obj = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txt_obs = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_apellidoClientePlan = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,32 +47,30 @@
             this.btn_agregarProfeEnPlan = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txt_fechaFin = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txt_fechaActualPlan = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericPlan = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cmb_profesor = new System.Windows.Forms.ComboBox();
             this.btn_cerrarPlan = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_sesionesPlan)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPlan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cerrarPlan)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.txt_dniSocio);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.txt_obj);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.txt_obs);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.txt_apellidoClientePlan);
             this.groupBox2.Controls.Add(this.label3);
@@ -86,14 +86,36 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Personales Cliente";
             // 
-            // textBox1
+            // txt_dniSocio
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(22, 207);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(298, 45);
-            this.textBox1.TabIndex = 31;
+            this.txt_dniSocio.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_dniSocio.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_dniSocio.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_dniSocio.ForeColor = System.Drawing.Color.DimGray;
+            this.txt_dniSocio.Location = new System.Drawing.Point(6, 110);
+            this.txt_dniSocio.Name = "txt_dniSocio";
+            this.txt_dniSocio.Size = new System.Drawing.Size(300, 19);
+            this.txt_dniSocio.TabIndex = 32;
+            this.txt_dniSocio.Text = "DNI";
+            this.txt_dniSocio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 119);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(350, 15);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "_________________________________________________";
+            // 
+            // txt_obj
+            // 
+            this.txt_obj.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_obj.Location = new System.Drawing.Point(22, 207);
+            this.txt_obj.Multiline = true;
+            this.txt_obj.Name = "txt_obj";
+            this.txt_obj.Size = new System.Drawing.Size(298, 45);
+            this.txt_obj.TabIndex = 31;
             // 
             // label1
             // 
@@ -105,14 +127,14 @@
             this.label1.TabIndex = 30;
             this.label1.Text = "OBJETIVOS";
             // 
-            // textBox5
+            // txt_obs
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(22, 298);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(300, 80);
-            this.textBox5.TabIndex = 29;
+            this.txt_obs.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_obs.Location = new System.Drawing.Point(22, 298);
+            this.txt_obs.Multiline = true;
+            this.txt_obs.Name = "txt_obs";
+            this.txt_obs.Size = new System.Drawing.Size(300, 80);
+            this.txt_obs.TabIndex = 29;
             // 
             // label5
             // 
@@ -196,11 +218,11 @@
             this.groupBox1.Controls.Add(this.btn_agregarProfeEnPlan);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox7);
+            this.groupBox1.Controls.Add(this.txt_fechaFin);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.txt_fechaActualPlan);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.numericUpDown1);
+            this.groupBox1.Controls.Add(this.numericPlan);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.cmb_profesor);
@@ -245,13 +267,13 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox7
+            // txt_fechaFin
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(109, 143);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(194, 23);
-            this.textBox7.TabIndex = 15;
+            this.txt_fechaFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_fechaFin.Location = new System.Drawing.Point(109, 143);
+            this.txt_fechaFin.Name = "txt_fechaFin";
+            this.txt_fechaFin.Size = new System.Drawing.Size(194, 23);
+            this.txt_fechaFin.TabIndex = 15;
             // 
             // label10
             // 
@@ -282,13 +304,13 @@
             this.label8.TabIndex = 12;
             this.label8.Text = "Fecha Inicio";
             // 
-            // numericUpDown1
+            // numericPlan
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(109, 110);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(44, 23);
-            this.numericUpDown1.TabIndex = 11;
+            this.numericPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericPlan.Location = new System.Drawing.Point(109, 110);
+            this.numericPlan.Name = "numericPlan";
+            this.numericPlan.Size = new System.Drawing.Size(44, 23);
+            this.numericPlan.TabIndex = 11;
             // 
             // label7
             // 
@@ -338,28 +360,6 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 119);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(350, 15);
-            this.label2.TabIndex = 33;
-            this.label2.Text = "_________________________________________________";
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox2.Location = new System.Drawing.Point(6, 110);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(300, 19);
-            this.textBox2.TabIndex = 32;
-            this.textBox2.Text = "DNI";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // FormPlanDatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,7 +377,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmb_sesionesPlan)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPlan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cerrarPlan)).EndInit();
             this.ResumeLayout(false);
 
@@ -389,11 +389,11 @@
         private System.Windows.Forms.NumericUpDown cmb_sesionesPlan;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txt_fechaFin;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txt_fechaActualPlan;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numericPlan;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmb_profesor;
@@ -403,14 +403,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_NombreClientePlan;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_obj;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txt_obs;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btn_agregarProfeEnPlan;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_dniSocio;
     }
 }

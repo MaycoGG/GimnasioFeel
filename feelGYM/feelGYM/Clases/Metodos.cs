@@ -257,5 +257,39 @@ namespace feelGYM.Clases
 
         }
 
+        //metodo para agregar Socio
+        public static int AgregarSocio(Socio s, String query)
+        {
+            int retorno = 0;
+            MySqlCommand cmd = new MySqlCommand(String.Format(query, s.Dni, s.Nombre, s.Apellido), Conexion.obtenerConexion());
+            retorno = cmd.ExecuteNonQuery();
+            return retorno;
+        }
+
+        //metodo para agregar DatosPlan
+        public static int AgregarDatosPlan(PlanEjercicio plan, String query)
+        {
+            int retorno = 0;
+            MySqlCommand cmd = new MySqlCommand(String.Format(query, plan.numPlan, plan.dniSocio, plan.fechaInicio, plan.fechaFin, 
+                plan.numSesiones, plan.dniProfe, plan.objetivo, plan.obserb), Conexion.obtenerConexion());
+            retorno = cmd.ExecuteNonQuery();
+            return retorno;
+        }
+
+        //metodo para obtener un dni profesor
+        public static Profesores ObtenerDniProfe(string nombre)
+        {
+            Profesores ejer = new Profesores();
+
+            MySqlCommand cmd = new MySqlCommand(String.Format("select dniProfe from profesores where nombreApe = '{0}'", nombre), Conexion.obtenerConexion());
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                ejer.Dni = reader.GetInt32(0);
+            }
+
+            return ejer;
+        }
+
     }
 }

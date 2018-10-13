@@ -71,8 +71,32 @@ namespace feelGYM
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //FormPlanEjercicios form = new FormPlanEjercicios();
-            //form.Show();
+            //#region agrega Socio
+            //Clases.Socio socio = new Clases.Socio();
+            //string query = "INSERT INTO socio (dni, nombre, apellido) values ('{0}', '{1}', '{2}')";
+            //socio.Dni = Convert.ToInt32(txt_dniSocio.Text);
+            //socio.Nombre = txt_NombreClientePlan.Text;
+            //socio.Apellido = txt_apellidoClientePlan.Text;
+            //int retorno = Clases.Metodos.AgregarSocio(socio, query);
+            //#endregion
+
+            #region agrega Socio
+            Clases.PlanEjercicio plan = new Clases.PlanEjercicio();
+            string query2 = "INSERT INTO planejercicios (nroPlan, dniSocio, fechaInicio, fechaFin, numSesiones, dniProfe, objetivo, observacion) " +
+                "values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}')";
+            plan.numPlan = Convert.ToInt32(numericPlan.Value);
+            plan.dniSocio = Convert.ToInt32(txt_dniSocio.Text);
+            plan.fechaInicio = Convert.ToDateTime(txt_fechaActualPlan.Text);
+            plan.fechaFin = Convert.ToDateTime(txt_fechaFin.Text);
+            plan.numSesiones = Convert.ToInt32(cmb_sesionesPlan.Value);
+            plan.dniProfe = 15111222;
+            plan.objetivo = txt_obj.Text;
+            plan.obserb = txt_obs.Text;
+            int retorno2 = Clases.Metodos.AgregarDatosPlan(plan, query2);
+            #endregion
+
+
+
             TabsSesiones tab = new TabsSesiones();
             tab.Show();
             Decimal cantsesiones = cmb_sesionesPlan.Value;
