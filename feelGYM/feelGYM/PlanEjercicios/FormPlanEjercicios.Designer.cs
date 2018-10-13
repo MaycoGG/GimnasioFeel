@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_sesion = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btn_aceptarPag = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -68,6 +69,7 @@
             this.btn_buscarEC = new System.Windows.Forms.Button();
             this.btn_quitarEjerEC = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.lbl_numPag = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -85,6 +87,8 @@
             // panel1
             // 
             this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.lbl_numPag);
+            this.panel1.Controls.Add(this.lbl_sesion);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel4);
@@ -93,25 +97,36 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(916, 515);
+            this.panel1.Size = new System.Drawing.Size(916, 524);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // lbl_sesion
+            // 
+            this.lbl_sesion.AutoSize = true;
+            this.lbl_sesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_sesion.Location = new System.Drawing.Point(362, 9);
+            this.lbl_sesion.Name = "lbl_sesion";
+            this.lbl_sesion.Size = new System.Drawing.Size(132, 31);
+            this.lbl_sesion.TabIndex = 23;
+            this.lbl_sesion.Text = "SESIÓN: ";
             // 
             // panel6
             // 
             this.panel6.Controls.Add(this.btn_aceptarPag);
             this.panel6.Location = new System.Drawing.Point(88, 476);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(807, 36);
+            this.panel6.Size = new System.Drawing.Size(807, 41);
             this.panel6.TabIndex = 23;
             // 
             // btn_aceptarPag
             // 
-            this.btn_aceptarPag.Location = new System.Drawing.Point(729, 7);
+            this.btn_aceptarPag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_aceptarPag.Location = new System.Drawing.Point(720, 7);
             this.btn_aceptarPag.Name = "btn_aceptarPag";
-            this.btn_aceptarPag.Size = new System.Drawing.Size(75, 23);
+            this.btn_aceptarPag.Size = new System.Drawing.Size(75, 29);
             this.btn_aceptarPag.TabIndex = 22;
-            this.btn_aceptarPag.Text = "button1";
+            this.btn_aceptarPag.Text = "Aceptar";
             this.btn_aceptarPag.UseVisualStyleBackColor = true;
             this.btn_aceptarPag.Click += new System.EventHandler(this.btn_aceptarPag_Click);
             // 
@@ -479,18 +494,29 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Ejercicios";
             // 
+            // lbl_numPag
+            // 
+            this.lbl_numPag.AutoSize = true;
+            this.lbl_numPag.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_numPag.Location = new System.Drawing.Point(485, 9);
+            this.lbl_numPag.Name = "lbl_numPag";
+            this.lbl_numPag.Size = new System.Drawing.Size(71, 31);
+            this.lbl_numPag.TabIndex = 24;
+            this.lbl_numPag.Text = "Num";
+            // 
             // FormPlanEjercicios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(916, 515);
+            this.ClientSize = new System.Drawing.Size(916, 524);
             this.Controls.Add(this.panel1);
             this.Name = "FormPlanEjercicios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPlan_Ejercicios";
             this.Load += new System.EventHandler(this.FormPlanEjercicios_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ejerciciosDesarrollo)).EndInit();
@@ -549,5 +575,7 @@
         private System.Windows.Forms.Button btn_buscarEjerEC;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button btn_aceptarPag;
+        private System.Windows.Forms.Label lbl_sesion;
+        private System.Windows.Forms.Label lbl_numPag;
     }
 }

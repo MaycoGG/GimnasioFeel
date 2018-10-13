@@ -17,6 +17,7 @@ namespace feelGYM.PlanEjercicios
             this.Controls.Add(frm_contenido.pnl);
             this.Text = "Sesion " + i;
             this.AutoScroll = true;
+            frm_contenido.labelPag.Text = i.ToString();
 
         }
 
@@ -34,6 +35,6 @@ namespace feelGYM.PlanEjercicios
     public class MyFormPage : Form
     {
         public Panel pnl;
-
+        public Label labelPag;
     }
 }

@@ -20,6 +20,7 @@ namespace feelGYM
         {
             InitializeComponent();
             this.pnl = panel1;
+            this.labelPag = lbl_numPag;
         }
 
         private void FormPlanEjercicios_Load(object sender, EventArgs e)
@@ -196,11 +197,11 @@ namespace feelGYM
 
         private void btn_aceptarPag_Click(object sender, EventArgs e)
         {
-            TabsSesiones tab = new TabsSesiones();
+            //TabsSesiones tab = new TabsSesiones();
 
-            int cantTab = tab.tabControl1.TabPages.Count;
+            //int cantTab = tab.tabControl1.TabPages;
 
-            MessageBox.Show("Num de sesion; " + cantTab);
+            //MessageBox.Show("Num de sesion; " + cantTab);
         }
     }
 }
