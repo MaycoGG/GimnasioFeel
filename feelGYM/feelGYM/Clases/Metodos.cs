@@ -206,7 +206,9 @@ namespace feelGYM.Clases
 
             //tamaño columna
             grid.Columns[1].Width = 300;
+            grid.Columns[1].ReadOnly = true;
             grid.Columns[2].Width = 170;
+            grid.Columns[2].ReadOnly = true;
             grid.Columns[3].Visible = false;
             
 
@@ -271,7 +273,7 @@ namespace feelGYM.Clases
         {
             int retorno = 0;
             MySqlCommand cmd = new MySqlCommand(String.Format(query, plan.numPlan, plan.dniSocio, plan.fechaInicio, plan.fechaFin, 
-                plan.numSesiones, plan.dniProfe, plan.objetivo, plan.obserb, plan.id), Conexion.obtenerConexion());
+                plan.numSesiones, plan.dniProfe, plan.objetivo, plan.obserb), Conexion.obtenerConexion());
             retorno = cmd.ExecuteNonQuery();
             return retorno;
         }
@@ -301,6 +303,20 @@ namespace feelGYM.Clases
                 doc = reader.GetInt32(0);
             }
             return doc;
+        }
+
+        //metodo para obtener numero de PLAN de un SOCIO
+        public static int ObtenerNroPlanSocio(int dniSocio)
+        {
+            
+            int contador = 0;
+            MySqlCommand cmd = new MySqlCommand(String.Format("SELECT COUNT(planejercicios.dniSocio) from planejercicios where planejercicios.dniSocio = '{0}'", dniSocio), Conexion.obtenerConexion());
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                contador = reader.GetInt32(0);
+            }
+            return contador;
         }
     }
 }

@@ -11,13 +11,14 @@ namespace feelGYM.PlanEjercicios
     {
         private Form frm;
 
-        public  MyTabPage (MyFormPage frm_contenido, int i)
+        public  MyTabPage (MyFormPage frm_contenido, int i, int numPag)
         {
             this.frm = frm_contenido;
             this.Controls.Add(frm_contenido.pnl);
             this.Text = "Sesion " + i;
             this.AutoScroll = true;
             frm_contenido.labelPag.Text = i.ToString();
+            frm_contenido.numPlan.Text = numPag.ToString();
 
         }
 
@@ -36,5 +37,6 @@ namespace feelGYM.PlanEjercicios
     {
         public Panel pnl;
         public Label labelPag;
+        public Label numPlan;
     }
 }

@@ -109,7 +109,8 @@ namespace feelGYM
             string query2 = "INSERT INTO planejercicios (nroPlan, dniSocio, fechaInicio, fechaFin, numSesiones, dniProfe, objetivo, observacion) " +
                 "values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}')";
 
-            plan.numPlan = Convert.ToInt32(numericPlan.Value);
+            int nroPlan = Clases.Metodos.ObtenerNroPlanSocio(Convert.ToInt32(txt_dniSocio.Text));
+            plan.numPlan = nroPlan + 1;
             plan.dniSocio = Convert.ToInt32(txt_dniSocio.Text);
             //plan.dniSocio = 38331462;
             plan.fechaInicio = picker_fechaInicio.Text;
@@ -119,6 +120,7 @@ namespace feelGYM
             plan.objetivo = txt_obj.Text;
             plan.obserb = txt_obs.Text;
             int retorno2 = Clases.Metodos.AgregarDatosPlan(plan, query2);
+
             #endregion
 
 
@@ -130,9 +132,8 @@ namespace feelGYM
             for (int i = 0; i < cantsesiones; i++)
             {
                 int sesion = i + 1;
-                tab.tabControl1.TabPages.Add(new MyTabPage(new FormPlanEjercicios(), sesion));
+                tab.tabControl1.TabPages.Add(new MyTabPage(new FormPlanEjercicios(), sesion, plan.numPlan));
             }
-
 
         }
 
