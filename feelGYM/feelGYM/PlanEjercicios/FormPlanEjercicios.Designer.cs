@@ -141,11 +141,11 @@
             // btn_aceptarPag
             // 
             this.btn_aceptarPag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_aceptarPag.Location = new System.Drawing.Point(720, 7);
+            this.btn_aceptarPag.Location = new System.Drawing.Point(706, 7);
             this.btn_aceptarPag.Name = "btn_aceptarPag";
-            this.btn_aceptarPag.Size = new System.Drawing.Size(75, 29);
+            this.btn_aceptarPag.Size = new System.Drawing.Size(89, 29);
             this.btn_aceptarPag.TabIndex = 22;
-            this.btn_aceptarPag.Text = "Aceptar";
+            this.btn_aceptarPag.Text = "GUARDAR";
             this.btn_aceptarPag.UseVisualStyleBackColor = true;
             this.btn_aceptarPag.Click += new System.EventHandler(this.btn_aceptarPag_Click);
             // 
