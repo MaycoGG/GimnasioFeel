@@ -30,7 +30,7 @@ namespace feelGYM
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            txt_fechaActualPlan.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            //txt_fechaActualPlan.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         private void txt_NombreClientePlan_Enter(object sender, EventArgs e)
@@ -38,7 +38,7 @@ namespace feelGYM
             if (txt_NombreClientePlan.Text == "NOMBRE")
             {
                 txt_NombreClientePlan.Text = "";
-                txt_NombreClientePlan.ForeColor = Color.LightGray;
+                txt_NombreClientePlan.ForeColor = Color.Black;
             }
         }
 
@@ -56,7 +56,7 @@ namespace feelGYM
             if (txt_apellidoClientePlan.Text == "APELLIDO")
             {
                 txt_apellidoClientePlan.Text = "";
-                txt_apellidoClientePlan.ForeColor = Color.LightGray;
+                txt_apellidoClientePlan.ForeColor = Color.Black;
             }
         }
 
@@ -69,27 +69,53 @@ namespace feelGYM
             }
         }
 
+        private void txt_dniSocio_Enter(object sender, EventArgs e)
+        {
+            if (txt_dniSocio.Text == "DNI")
+            {
+                txt_dniSocio.Text = "";
+                txt_dniSocio.ForeColor = Color.Black;
+            }
+        }
+
+        private void txt_dniSocio_Leave(object sender, EventArgs e)
+        {
+            if (txt_dniSocio.Text == "")
+            {
+                txt_dniSocio.Text = "DNI";
+                txt_dniSocio.ForeColor = Color.DimGray;
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            //#region agrega Socio
-            //Clases.Socio socio = new Clases.Socio();
-            //string query = "INSERT INTO socio (dni, nombre, apellido) values ('{0}', '{1}', '{2}')";
-            //socio.Dni = Convert.ToInt32(txt_dniSocio.Text);
-            //socio.Nombre = txt_NombreClientePlan.Text;
-            //socio.Apellido = txt_apellidoClientePlan.Text;
-            //int retorno = Clases.Metodos.AgregarSocio(socio, query);
-            //#endregion
-
             #region agrega Socio
+
+            int dniExiste = Clases.Metodos.ObtenerDniSocio(txt_NombreClientePlan.Text, txt_apellidoClientePlan.Text);
+            if (dniExiste == 0)
+            {
+                Clases.Socio socio = new Clases.Socio();
+                string query = "INSERT INTO socio (dni, nombre, apellido) values ('{0}', '{1}', '{2}')";
+                socio.Dni = Convert.ToInt32(txt_dniSocio.Text);
+                socio.Nombre = txt_NombreClientePlan.Text;
+                socio.Apellido = txt_apellidoClientePlan.Text;
+                int retorno = Clases.Metodos.AgregarSocio(socio, query);
+            }
+
+            #endregion
+
+            #region agrega PlanEjercicios
             Clases.PlanEjercicio plan = new Clases.PlanEjercicio();
             string query2 = "INSERT INTO planejercicios (nroPlan, dniSocio, fechaInicio, fechaFin, numSesiones, dniProfe, objetivo, observacion) " +
                 "values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}')";
+
             plan.numPlan = Convert.ToInt32(numericPlan.Value);
             plan.dniSocio = Convert.ToInt32(txt_dniSocio.Text);
-            plan.fechaInicio = Convert.ToDateTime(txt_fechaActualPlan.Text);
-            plan.fechaFin = Convert.ToDateTime(txt_fechaFin.Text);
+            //plan.dniSocio = 38331462;
+            plan.fechaInicio = picker_fechaInicio.Text;
+            plan.fechaFin = picker_fechaFin.Text;
             plan.numSesiones = Convert.ToInt32(cmb_sesionesPlan.Value);
-            plan.dniProfe = 15111222;
+            plan.dniProfe = Clases.Metodos.ObtenerDniProfe(cmb_profesor.Text);
             plan.objetivo = txt_obj.Text;
             plan.obserb = txt_obs.Text;
             int retorno2 = Clases.Metodos.AgregarDatosPlan(plan, query2);
@@ -140,5 +166,7 @@ namespace feelGYM
         {
 
         }
+
+        
     }
 }

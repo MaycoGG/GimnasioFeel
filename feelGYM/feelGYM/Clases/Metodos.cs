@@ -271,25 +271,36 @@ namespace feelGYM.Clases
         {
             int retorno = 0;
             MySqlCommand cmd = new MySqlCommand(String.Format(query, plan.numPlan, plan.dniSocio, plan.fechaInicio, plan.fechaFin, 
-                plan.numSesiones, plan.dniProfe, plan.objetivo, plan.obserb), Conexion.obtenerConexion());
+                plan.numSesiones, plan.dniProfe, plan.objetivo, plan.obserb, plan.id), Conexion.obtenerConexion());
             retorno = cmd.ExecuteNonQuery();
             return retorno;
         }
 
         //metodo para obtener un dni profesor
-        public static Profesores ObtenerDniProfe(string nombre)
+        public static int ObtenerDniProfe(string nombre)
         {
-            Profesores ejer = new Profesores();
-
+            int doc = 0;
             MySqlCommand cmd = new MySqlCommand(String.Format("select dniProfe from profesores where nombreApe = '{0}'", nombre), Conexion.obtenerConexion());
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                ejer.Dni = reader.GetInt32(0);
+                doc = reader.GetInt32(0);
             }
-
-            return ejer;
+            return doc;
         }
 
+        //metodo para obtener un dni socio
+        public static int ObtenerDniSocio(string nombre, string apellido)
+        {
+            int doc = 0;
+            MySqlCommand cmd = new MySqlCommand(String.Format("select dni from socio where nombre = '{0}' " +
+                "and apellido = '{1}'", nombre, apellido), Conexion.obtenerConexion());
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                doc = reader.GetInt32(0);
+            }
+            return doc;
+        }
     }
 }
