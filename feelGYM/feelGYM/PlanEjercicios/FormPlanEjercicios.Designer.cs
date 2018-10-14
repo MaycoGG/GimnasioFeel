@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_numPag = new System.Windows.Forms.Label();
             this.lbl_sesion = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btn_aceptarPag = new System.Windows.Forms.Button();
@@ -39,9 +40,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgv_Desarrollo = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rb_dorsalesD = new System.Windows.Forms.RadioButton();
             this.rb_HombroD = new System.Windows.Forms.RadioButton();
             this.rb_bicepsD = new System.Windows.Forms.RadioButton();
@@ -61,15 +59,24 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btn_buscarEjerEC = new System.Windows.Forms.Button();
             this.dgv_EntradaCalor = new System.Windows.Forms.DataGridView();
-            this.nombreeje = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoEje = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ckb_AeroEC = new System.Windows.Forms.CheckBox();
             this.ckb_ZonaEC = new System.Windows.Forms.CheckBox();
             this.btn_buscarEC = new System.Windows.Forms.Button();
             this.btn_quitarEjerEC = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.lbl_numPag = new System.Windows.Forms.Label();
+            this.lbl_numPlan = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.nombreeje = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoEje = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.observacionEC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.intensidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.series = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.repeteciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.observacionD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -87,6 +94,8 @@
             // panel1
             // 
             this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.lbl_numPlan);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.lbl_numPag);
             this.panel1.Controls.Add(this.lbl_sesion);
             this.panel1.Controls.Add(this.panel6);
@@ -101,11 +110,21 @@
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // lbl_numPag
+            // 
+            this.lbl_numPag.AutoSize = true;
+            this.lbl_numPag.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_numPag.Location = new System.Drawing.Point(768, 9);
+            this.lbl_numPag.Name = "lbl_numPag";
+            this.lbl_numPag.Size = new System.Drawing.Size(71, 31);
+            this.lbl_numPag.TabIndex = 24;
+            this.lbl_numPag.Text = "Num";
+            // 
             // lbl_sesion
             // 
             this.lbl_sesion.AutoSize = true;
             this.lbl_sesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_sesion.Location = new System.Drawing.Point(362, 9);
+            this.lbl_sesion.Location = new System.Drawing.Point(645, 9);
             this.lbl_sesion.Name = "lbl_sesion";
             this.lbl_sesion.Size = new System.Drawing.Size(132, 31);
             this.lbl_sesion.TabIndex = 23;
@@ -203,29 +222,15 @@
             this.dgv_Desarrollo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
+            this.dataGridViewTextBoxColumn3,
+            this.intensidad,
+            this.series,
+            this.repeteciones,
+            this.observacionD});
             this.dgv_Desarrollo.Location = new System.Drawing.Point(24, 107);
             this.dgv_Desarrollo.Name = "dgv_Desarrollo";
             this.dgv_Desarrollo.Size = new System.Drawing.Size(638, 106);
             this.dgv_Desarrollo.TabIndex = 21;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Tipo Ejercicio";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Visible = false;
             // 
             // rb_dorsalesD
             // 
@@ -422,29 +427,12 @@
             this.dgv_EntradaCalor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombreeje,
             this.tipoEje,
-            this.Id});
+            this.Id,
+            this.observacionEC});
             this.dgv_EntradaCalor.Location = new System.Drawing.Point(266, 23);
             this.dgv_EntradaCalor.Name = "dgv_EntradaCalor";
             this.dgv_EntradaCalor.Size = new System.Drawing.Size(396, 106);
             this.dgv_EntradaCalor.TabIndex = 20;
-            // 
-            // nombreeje
-            // 
-            this.nombreeje.HeaderText = "Nombre";
-            this.nombreeje.Name = "nombreeje";
-            this.nombreeje.Width = 200;
-            // 
-            // tipoEje
-            // 
-            this.tipoEje.HeaderText = "Tipo Ejercicio";
-            this.tipoEje.Name = "tipoEje";
-            this.tipoEje.Width = 150;
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
             // 
             // ckb_AeroEC
             // 
@@ -494,15 +482,90 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Ejercicios";
             // 
-            // lbl_numPag
+            // lbl_numPlan
             // 
-            this.lbl_numPag.AutoSize = true;
-            this.lbl_numPag.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_numPag.Location = new System.Drawing.Point(485, 9);
-            this.lbl_numPag.Name = "lbl_numPag";
-            this.lbl_numPag.Size = new System.Drawing.Size(71, 31);
-            this.lbl_numPag.TabIndex = 24;
-            this.lbl_numPag.Text = "Num";
+            this.lbl_numPlan.AutoSize = true;
+            this.lbl_numPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_numPlan.Location = new System.Drawing.Point(557, 9);
+            this.lbl_numPlan.Name = "lbl_numPlan";
+            this.lbl_numPlan.Size = new System.Drawing.Size(71, 31);
+            this.lbl_numPlan.TabIndex = 26;
+            this.lbl_numPlan.Text = "Num";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(434, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(114, 31);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "N° Plan:";
+            // 
+            // nombreeje
+            // 
+            this.nombreeje.HeaderText = "Nombre";
+            this.nombreeje.Name = "nombreeje";
+            this.nombreeje.ReadOnly = true;
+            this.nombreeje.Width = 200;
+            // 
+            // tipoEje
+            // 
+            this.tipoEje.HeaderText = "Tipo Ejercicio";
+            this.tipoEje.Name = "tipoEje";
+            this.tipoEje.ReadOnly = true;
+            this.tipoEje.Width = 150;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
+            // 
+            // observacionEC
+            // 
+            this.observacionEC.HeaderText = "Observación";
+            this.observacionEC.Name = "observacionEC";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Tipo Ejercicio";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Visible = false;
+            // 
+            // intensidad
+            // 
+            this.intensidad.HeaderText = "Intensidad (%)";
+            this.intensidad.Name = "intensidad";
+            // 
+            // series
+            // 
+            this.series.HeaderText = "Series";
+            this.series.Name = "series";
+            // 
+            // repeteciones
+            // 
+            this.repeteciones.HeaderText = "Repeticiones";
+            this.repeteciones.Name = "repeteciones";
+            // 
+            // observacionD
+            // 
+            this.observacionD.HeaderText = "Observación";
+            this.observacionD.Name = "observacionD";
             // 
             // FormPlanEjercicios
             // 
@@ -557,9 +620,6 @@
         private System.Windows.Forms.DataGridView dgv_ejerciciosDesarrollo;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.Button btn_aceptarEjerDesa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreeje;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoEje;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.RadioButton rb_dorsalesD;
         private System.Windows.Forms.RadioButton rb_HombroD;
         private System.Windows.Forms.RadioButton rb_bicepsD;
@@ -569,13 +629,23 @@
         private System.Windows.Forms.RadioButton rb_zonaD;
         private System.Windows.Forms.RadioButton rb_pectoralesD;
         public System.Windows.Forms.DataGridView dgv_Desarrollo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.Button btn_buscarEjerEC;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button btn_aceptarPag;
         private System.Windows.Forms.Label lbl_sesion;
         private System.Windows.Forms.Label lbl_numPag;
+        private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label lbl_numPlan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn intensidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn series;
+        private System.Windows.Forms.DataGridViewTextBoxColumn repeteciones;
+        private System.Windows.Forms.DataGridViewTextBoxColumn observacionD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreeje;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoEje;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn observacionEC;
     }
 }

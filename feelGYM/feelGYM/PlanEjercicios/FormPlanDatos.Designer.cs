@@ -44,23 +44,20 @@
             this.cmb_sesionesPlan = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.picker_fechaInicio = new System.Windows.Forms.DateTimePicker();
             this.picker_fechaFin = new System.Windows.Forms.DateTimePicker();
             this.btn_agregarProfeEnPlan = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.numericPlan = new System.Windows.Forms.NumericUpDown();
-            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cmb_profesor = new System.Windows.Forms.ComboBox();
             this.btn_cerrarPlan = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.picker_fechaInicio = new System.Windows.Forms.DateTimePicker();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_sesionesPlan)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericPlan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cerrarPlan)).BeginInit();
             this.SuspendLayout();
             // 
@@ -224,8 +221,6 @@
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.numericPlan);
-            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.cmb_profesor);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -237,11 +232,22 @@
             this.groupBox1.Text = "Datos Plan Actual";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // picker_fechaInicio
+            // 
+            this.picker_fechaInicio.CustomFormat = "dd/MM/yyyy";
+            this.picker_fechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.picker_fechaInicio.Location = new System.Drawing.Point(109, 79);
+            this.picker_fechaInicio.MinDate = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
+            this.picker_fechaInicio.Name = "picker_fechaInicio";
+            this.picker_fechaInicio.Size = new System.Drawing.Size(194, 21);
+            this.picker_fechaInicio.TabIndex = 20;
+            this.picker_fechaInicio.Value = new System.DateTime(2018, 10, 14, 0, 0, 0, 0);
+            // 
             // picker_fechaFin
             // 
             this.picker_fechaFin.CustomFormat = "dd/MM/yyyy";
             this.picker_fechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.picker_fechaFin.Location = new System.Drawing.Point(109, 145);
+            this.picker_fechaFin.Location = new System.Drawing.Point(109, 114);
             this.picker_fechaFin.MinDate = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
             this.picker_fechaFin.Name = "picker_fechaFin";
             this.picker_fechaFin.Size = new System.Drawing.Size(194, 21);
@@ -284,7 +290,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(23, 146);
+            this.label10.Location = new System.Drawing.Point(20, 117);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(70, 17);
             this.label10.TabIndex = 14;
@@ -299,24 +305,6 @@
             this.label8.Size = new System.Drawing.Size(83, 17);
             this.label8.TabIndex = 12;
             this.label8.Text = "Fecha Inicio";
-            // 
-            // numericPlan
-            // 
-            this.numericPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericPlan.Location = new System.Drawing.Point(109, 110);
-            this.numericPlan.Name = "numericPlan";
-            this.numericPlan.Size = new System.Drawing.Size(44, 23);
-            this.numericPlan.TabIndex = 11;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(23, 112);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 17);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Plan N°";
             // 
             // label6
             // 
@@ -356,17 +344,6 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // picker_fechaInicio
-            // 
-            this.picker_fechaInicio.CustomFormat = "dd/MM/yyyy";
-            this.picker_fechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.picker_fechaInicio.Location = new System.Drawing.Point(109, 79);
-            this.picker_fechaInicio.MinDate = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
-            this.picker_fechaInicio.Name = "picker_fechaInicio";
-            this.picker_fechaInicio.Size = new System.Drawing.Size(194, 21);
-            this.picker_fechaInicio.TabIndex = 20;
-            this.picker_fechaInicio.Value = new System.DateTime(2018, 10, 14, 0, 0, 0, 0);
-            // 
             // FormPlanDatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -384,7 +361,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmb_sesionesPlan)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericPlan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cerrarPlan)).EndInit();
             this.ResumeLayout(false);
 
@@ -398,8 +374,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.NumericUpDown numericPlan;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmb_profesor;
         private System.Windows.Forms.PictureBox btn_cerrarPlan;

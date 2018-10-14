@@ -21,6 +21,7 @@ namespace feelGYM
             InitializeComponent();
             this.pnl = panel1;
             this.labelPag = lbl_numPag;
+            this.numPlan = lbl_numPlan;
         }
 
         private void FormPlanEjercicios_Load(object sender, EventArgs e)
