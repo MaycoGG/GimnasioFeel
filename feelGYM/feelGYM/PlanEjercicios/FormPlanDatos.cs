@@ -130,7 +130,7 @@ namespace feelGYM
             for (int i = 0; i < cantsesiones; i++)
             {
                 int sesion = i + 1;
-                tab.tabControl1.TabPages.Add(new MyTabPage(new FormPlanEjercicios(), sesion, plan.numPlan));
+                tab.tabControl1.TabPages.Add(new MyTabPage(new FormPlanEjercicios(), sesion, plan.numPlan, plan.dniSocio));
             }
 
         }

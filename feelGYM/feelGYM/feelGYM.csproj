@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="BaseDeDatos.cs" />
     <Compile Include="Clases\Conexion.cs" />
+    <Compile Include="Clases\DetallePlan.cs" />
     <Compile Include="Clases\Ejercicio.cs" />
     <Compile Include="Clases\Metodos.cs" />
     <Compile Include="Clases\PlanEjercicio.cs" />

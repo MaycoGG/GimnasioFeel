@@ -278,6 +278,57 @@ namespace feelGYM.Clases
             return retorno;
         }
 
+
+        //metodo para agregar Detalle ENTRADA EN CALOR
+        public static int AgregarDatosDetallePlanEC(DetallePlan plan, String query)
+        {
+            int retorno = 0;
+            MySqlCommand cmd = new MySqlCommand(String.Format(query, plan.nroPlan, plan.dniSocio, plan.nroSesion, plan.tipoDetalle, plan.idEjercicio,
+                plan.obsEC), Conexion.obtenerConexion());
+            retorno = cmd.ExecuteNonQuery();
+            return retorno;
+        }
+
+        //metodo para agregar Detalle PLAN DESARROLLO
+        public static int AgregarDatosDetallePlanDesarrollo(DetallePlan plan, String query)
+        {
+            int retorno = 0;
+            MySqlCommand cmd = new MySqlCommand(String.Format(query, plan.nroPlan, plan.dniSocio, plan.nroSesion, plan.tipoDetalle, plan.idEjercicio,
+                plan.intensidad, plan.series, plan.repe, plan.obsD), Conexion.obtenerConexion());
+            retorno = cmd.ExecuteNonQuery();
+            return retorno;
+        }
+
+        //metodo para eliminar DETALLE DE PLAN
+        public static int EliminarDetallePlan(DetallePlan plan, String query)
+        {
+            int retorno = 0;
+            MySqlCommand cmd = new MySqlCommand(String.Format(query, plan.nroPlan, plan.dniSocio, plan.nroSesion, plan.idEjercicio), Conexion.obtenerConexion());
+            retorno = cmd.ExecuteNonQuery();
+            return retorno;
+        }
+
+        //metodo para obtener un DETALLEPLAB
+        public static DetallePlan ObtenerDetallePlan(int nroPlan, int dniSocio, int sesion, int idEjer)
+        {
+            DetallePlan plan = new DetallePlan();
+
+            MySqlCommand cmd = new MySqlCommand(String.Format("SELECT detalleplanejercicios.nroPlan, detalleplanejercicios.dniSocio, " +
+                "detalleplanejercicios.nroSesion, detalleplanejercicios.idEjercicio from detalleplanejercicios " +
+                "where detalleplanejercicios.nroPlan = '{0}' AND detalleplanejercicios.dniSocio = '{1}'" +
+                "and detalleplanejercicios.nroSesion  = '{2}' and detalleplanejercicios.idEjercicio = '{3}'", nroPlan, dniSocio, sesion, idEjer), Conexion.obtenerConexion());
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                plan.nroPlan = reader.GetInt32(0);
+                plan.dniSocio = reader.GetInt32(1);
+                plan.nroSesion = reader.GetInt32(2);
+                plan.idEjercicio = reader.GetInt32(3);
+            }
+
+            return plan;
+        }
+
         //metodo para obtener un dni profesor
         public static int ObtenerDniProfe(string nombre)
         {
@@ -311,6 +362,20 @@ namespace feelGYM.Clases
             
             int contador = 0;
             MySqlCommand cmd = new MySqlCommand(String.Format("SELECT COUNT(planejercicios.dniSocio) from planejercicios where planejercicios.dniSocio = '{0}'", dniSocio), Conexion.obtenerConexion());
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                contador = reader.GetInt32(0);
+            }
+            return contador;
+        }
+
+        //metodo para comparar si existe detalle
+        public static int compararDetalle(int nroPlan, int dniSocio, int numSesion, int id_eje)
+        {
+
+            int contador = 0;
+            MySqlCommand cmd = new MySqlCommand(String.Format("SELECT COUNT(*) from detalleplanejercicios where detalleplanejercicios.nroPlan='{0}' AND detalleplanejercicios.dniSocio='{1}' AND detalleplanejercicios.nroSesion='{2}' AND detalleplanejercicios.idTipoDetalle=1 AND detalleplanejercicios.idEjercicio='{3}'", nroPlan, dniSocio, numSesion, id_eje), Conexion.obtenerConexion());
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {

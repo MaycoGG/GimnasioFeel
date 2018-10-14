@@ -31,13 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.label1 = new System.Windows.Forms.Label();
             this.btn_cerrarForm3 = new System.Windows.Forms.PictureBox();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cerrarForm3)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(229, 90);
+            this.label1.Location = new System.Drawing.Point(52, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 13);
             this.label1.TabIndex = 5;
@@ -55,6 +57,10 @@
             this.btn_cerrarForm3.TabIndex = 9;
             this.btn_cerrarForm3.TabStop = false;
             this.btn_cerrarForm3.Click += new System.EventHandler(this.btn_cerrarForm3_Click);
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
             // Form3
             // 
@@ -75,5 +81,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox btn_cerrarForm3;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PageSetupDialog pageSetupDialog1;
     }
 }
