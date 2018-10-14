@@ -89,29 +89,29 @@ namespace feelGYM
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //#region agrega Socio
+            #region agrega Socio
 
-            //int dniExiste = Clases.Metodos.ObtenerDniSocio(txt_NombreClientePlan.Text, txt_apellidoClientePlan.Text);
-            //if (dniExiste == 0)
-            //{
-            //    Clases.Socio socio = new Clases.Socio();
-            //    string query = "INSERT INTO socio (dni, nombre, apellido) values ('{0}', '{1}', '{2}')";
-            //    socio.Dni = Convert.ToInt32(txt_dniSocio.Text);
-            //    socio.Nombre = txt_NombreClientePlan.Text;
-            //    socio.Apellido = txt_apellidoClientePlan.Text;
-            //    int retorno = Clases.Metodos.AgregarSocio(socio, query);
-            //}
+            int dniExiste = Clases.Metodos.ObtenerDniSocio(txt_NombreClientePlan.Text, txt_apellidoClientePlan.Text);
+            if (dniExiste == 0)
+            {
+                Clases.Socio socio = new Clases.Socio();
+                string query = "INSERT INTO socio (dni, nombre, apellido) values ('{0}', '{1}', '{2}')";
+                socio.Dni = Convert.ToInt32(txt_dniSocio.Text);
+                socio.Nombre = txt_NombreClientePlan.Text;
+                socio.Apellido = txt_apellidoClientePlan.Text;
+                int retorno = Clases.Metodos.AgregarSocio(socio, query);
+            }
 
-            //#endregion
+            #endregion
 
-            //#region agrega PlanEjercicios
-            //Clases.PlanEjercicio plan = new Clases.PlanEjercicio();
-            //string query2 = "INSERT INTO planejercicios (nroPlan, dniSocio, fechaInicio, fechaFin, numSesiones, dniProfe, objetivo, observacion) " +
-            //    "values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}')";
+            #region agrega PlanEjercicios
+            Clases.PlanEjercicio plan = new Clases.PlanEjercicio();
+            string query2 = "INSERT INTO planejercicios (nroPlan, dniSocio, fechaInicio, fechaFin, numSesiones, dniProfe, objetivo, observacion) " +
+                "values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}')";
 
-            plan.numPlan = Convert.ToInt32(numericPlan.Value);
+            int nroPlan = Clases.Metodos.ObtenerNroPlanSocio(Convert.ToInt32(txt_dniSocio.Text));
+            plan.numPlan = nroPlan + 1;
             plan.dniSocio = Convert.ToInt32(txt_dniSocio.Text);
-            //plan.dniSocio = 38331462;
             plan.fechaInicio = picker_fechaInicio.Text;
             plan.fechaFin = picker_fechaFin.Text;
             plan.numSesiones = Convert.ToInt32(cmb_sesionesPlan.Value);
