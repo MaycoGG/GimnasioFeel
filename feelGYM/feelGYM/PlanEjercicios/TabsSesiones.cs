@@ -20,6 +20,7 @@ namespace feelGYM.PlanEjercicios
         private void TabsSesiones_Load(object sender, EventArgs e)
         {
 
+            //this.reportViewer1.RefreshReport();
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)

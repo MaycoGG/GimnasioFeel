@@ -26,5 +26,11 @@ namespace feelGYM
         {
 
         }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+
+            this.reportViewer1.RefreshReport();
+        }
     }
 }
