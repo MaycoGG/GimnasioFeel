@@ -29,21 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
-            this.label1 = new System.Windows.Forms.Label();
             this.btn_cerrarForm3 = new System.Windows.Forms.PictureBox();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cerrarForm3)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(159, 126);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "FORMULARIO 3";
             // 
             // btn_cerrarForm3
             // 
@@ -68,18 +58,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(615, 328);
             this.Controls.Add(this.btn_cerrarForm3);
-            this.Controls.Add(this.label1);
             this.Name = "Form3";
             this.Text = "Form3";
             ((System.ComponentModel.ISupportInitialize)(this.btn_cerrarForm3)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox btn_cerrarForm3;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PageSetupDialog pageSetupDialog1;
