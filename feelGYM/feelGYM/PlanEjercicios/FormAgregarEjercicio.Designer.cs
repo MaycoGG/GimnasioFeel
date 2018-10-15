@@ -247,6 +247,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "FormAgregarEjercicio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormAgregarEjercicio";
             this.Load += new System.EventHandler(this.FormAgregarEjercicio_Load);
             this.groupBox1.ResumeLayout(false);

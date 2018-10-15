@@ -373,9 +373,10 @@ namespace feelGYM.Clases
         //metodo para comparar si existe detalle
         public static int compararDetalle(int nroPlan, int dniSocio, int numSesion, int id_eje)
         {
-
             int contador = 0;
-            MySqlCommand cmd = new MySqlCommand(String.Format("SELECT COUNT(*) from detalleplanejercicios where detalleplanejercicios.nroPlan='{0}' AND detalleplanejercicios.dniSocio='{1}' AND detalleplanejercicios.nroSesion='{2}' AND detalleplanejercicios.idTipoDetalle=1 AND detalleplanejercicios.idEjercicio='{3}'", nroPlan, dniSocio, numSesion, id_eje), Conexion.obtenerConexion());
+            MySqlCommand cmd = new MySqlCommand(String.Format("SELECT COUNT(*) from detalleplanejercicios where detalleplanejercicios.nroPlan='{0}' " +
+                "AND detalleplanejercicios.dniSocio='{1}' AND detalleplanejercicios.nroSesion='{2}' AND detalleplanejercicios.idTipoDetalle IN (1,2) " +
+                "AND detalleplanejercicios.idEjercicio='{3}'", nroPlan, dniSocio, numSesion, id_eje), Conexion.obtenerConexion());
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {

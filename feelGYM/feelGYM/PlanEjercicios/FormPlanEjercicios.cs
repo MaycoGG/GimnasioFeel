@@ -59,6 +59,8 @@ namespace feelGYM
         //crea un objeto de tipo Ejercicio.
         public DetallePlan planSeleccionado { get; set; }
 
+
+        //metodo que borra de la BD un ejercicio de la ENTRADA EN CALOR y actualiza la grilla.
         private void button5_Click(object sender, EventArgs e)
         {
             if (dgv_EntradaCalor.SelectedRows.Count == 1)
@@ -156,12 +158,20 @@ namespace feelGYM
 
         private void btn_quitarEjerDes_Click(object sender, EventArgs e)
         {
-            if (dgv_Desarrollo.CurrentRow == null)
+            if (dgv_Desarrollo.SelectedRows.Count == 1)
             {
-                return;
-            }
-            else
-            {
+                int nroPlan = Convert.ToInt32(lbl_numPlan.Text);
+                int dni = Convert.ToInt32(lbl_dniSocio.Text);
+                int nroSesion = Convert.ToInt32(lbl_numPag.Text);
+                int idEjercicio = Convert.ToInt32(dgv_Desarrollo.CurrentRow.Cells["IDD"].Value);
+                planSeleccionado = Clases.Metodos.ObtenerDetallePlan(nroPlan, dni, nroSesion, idEjercicio);
+
+                string query = "DELETE FROM detalleplanejercicios where detalleplanejercicios.nroPlan = '{0}' " +
+                        "AND detalleplanejercicios.dniSocio = '{1}' and detalleplanejercicios.nroSesion = '{2}' " +
+                        "AND detalleplanejercicios.idEjercicio = '{3}' AND detalleplanejercicios.idTipoDetalle = 2 ";
+                Metodos.EliminarDetallePlan(planSeleccionado, query);
+
+                //la borra de la tabla
                 dgv_Desarrollo.Rows.Remove(dgv_Desarrollo.CurrentRow);
             }
         }
@@ -204,6 +214,8 @@ namespace feelGYM
         {
 
         }
+
+
 
         private void btn_aceptarPag_Click(object sender, EventArgs e)
         {
@@ -256,7 +268,22 @@ namespace feelGYM
                 detalle.series = Convert.ToInt32(item.Cells["series"].Value);
                 detalle.repe = item.Cells["repeticiones"].Value.ToString();
                 detalle.obsD = item.Cells["observacionD"].Value.ToString();
-                int retorno = Clases.Metodos.AgregarDatosDetallePlanDesarrollo(detalle, query);
+                
+
+                int contador = Clases.Metodos.compararDetalle(detalle.nroPlan, detalle.dniSocio, detalle.nroSesion, detalle.idEjercicio);
+
+                if (contador != 0)
+                {
+                    MessageBox.Show("Ejercicio " + detalle.idEjercicio + " se repite");
+
+                    dgv_Desarrollo.Rows.Remove(item);
+                }
+                else
+                {
+                    int retorno = Clases.Metodos.AgregarDatosDetallePlanDesarrollo(detalle, query);
+                }
+
+
             }
             
         }

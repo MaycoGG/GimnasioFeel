@@ -33,6 +33,8 @@ namespace feelGYM.Clases
             this.obsD = obsD;
         }
 
+
+        //sirve para eliminar un detalle
         public DetallePlan(int nroPlan, int dniSocio, int nroSesion, int idEje)
         {
             this.nroPlan = nroPlan;

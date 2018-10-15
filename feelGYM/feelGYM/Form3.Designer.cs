@@ -39,7 +39,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(52, 24);
+            this.label1.Location = new System.Drawing.Point(159, 126);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 13);
             this.label1.TabIndex = 5;
@@ -50,7 +50,7 @@
             this.btn_cerrarForm3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_cerrarForm3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_cerrarForm3.Image = ((System.Drawing.Image)(resources.GetObject("btn_cerrarForm3.Image")));
-            this.btn_cerrarForm3.Location = new System.Drawing.Point(568, 12);
+            this.btn_cerrarForm3.Location = new System.Drawing.Point(578, 12);
             this.btn_cerrarForm3.Name = "btn_cerrarForm3";
             this.btn_cerrarForm3.Size = new System.Drawing.Size(25, 25);
             this.btn_cerrarForm3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -66,7 +66,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(605, 307);
+            this.ClientSize = new System.Drawing.Size(615, 328);
             this.Controls.Add(this.btn_cerrarForm3);
             this.Controls.Add(this.label1);
             this.Name = "Form3";

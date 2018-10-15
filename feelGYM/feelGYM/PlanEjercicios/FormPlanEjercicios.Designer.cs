@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_dniSocio = new System.Windows.Forms.Label();
             this.lbl_numPlan = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_numPag = new System.Windows.Forms.Label();
@@ -70,7 +71,6 @@
             this.btn_buscarEC = new System.Windows.Forms.Button();
             this.btn_quitarEjerEC = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.lbl_dniSocio = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDD = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -111,6 +111,16 @@
             this.panel1.Size = new System.Drawing.Size(916, 524);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // lbl_dniSocio
+            // 
+            this.lbl_dniSocio.AutoSize = true;
+            this.lbl_dniSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_dniSocio.Location = new System.Drawing.Point(256, 9);
+            this.lbl_dniSocio.Name = "lbl_dniSocio";
+            this.lbl_dniSocio.Size = new System.Drawing.Size(71, 31);
+            this.lbl_dniSocio.TabIndex = 27;
+            this.lbl_dniSocio.Text = "Num";
             // 
             // lbl_numPlan
             // 
@@ -529,16 +539,6 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Ejercicios";
             // 
-            // lbl_dniSocio
-            // 
-            this.lbl_dniSocio.AutoSize = true;
-            this.lbl_dniSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_dniSocio.Location = new System.Drawing.Point(256, 9);
-            this.lbl_dniSocio.Name = "lbl_dniSocio";
-            this.lbl_dniSocio.Size = new System.Drawing.Size(71, 31);
-            this.lbl_dniSocio.TabIndex = 27;
-            this.lbl_dniSocio.Text = "Num";
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "Nombre";
@@ -557,6 +557,7 @@
             // 
             this.IDD.HeaderText = "IDD";
             this.IDD.Name = "IDD";
+            this.IDD.ReadOnly = true;
             this.IDD.Visible = false;
             // 
             // intensidad
