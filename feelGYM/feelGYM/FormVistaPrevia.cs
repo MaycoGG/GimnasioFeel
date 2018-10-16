@@ -32,12 +32,39 @@ namespace feelGYM
                 "JOIN ejercicios ON ejercicios.id = detalleplanejercicios.idEjercicio " +
                 "JOIN tipoejercicio ON tipoejercicio.id = detalleplanejercicios.idTipoDetalle " +
                 "JOIN tipodetalleejercicio ON tipodetalleejercicio.id = detalleplanejercicios.idTipoDetalle " +
-                "WHERE planejercicios.nroPlan = 8 AND planejercicios.dniSocio = 15000111";
+                "WHERE planejercicios.nroPlan = 1 AND planejercicios.dniSocio = 15000111";
 
             Clases.Metodos m = new Clases.Metodos();
+            int nroS = Clases.Metodos.ObtenerNroSesiones(1, 15000111);
+            int x = 8;
+            int y = 8;
+
+            //for que crea dataGridView, uno para cada sesion.
+            for (int i = 0; i < nroS; i++)
+            {
+                DataGridView dg = new DataGridView();
+                Controls.Add(dg);
+                int nroSesion = i + 1;
+                dg.Name = "grilla"+nroSesion;
+                dg.Location = new Point(x, y);
+                dg.Size = new Size(750, 200);
+                //x = x + 450;
+                y += 250;
+
+                if (dg.Name == "grilla"+nroSesion)
+                {
+                    string querySesion = "SELECT tipodetalleejercicio.nombre, ejercicios.nombre, detalleplanejercicios.observacionesEC, detalleplanejercicios.intensidad, detalleplanejercicios.series, detalleplanejercicios.repeticiones, detalleplanejercicios.observacionesD FROM ejercicios JOIN detalleplanejercicios ON ejercicios.id = detalleplanejercicios.idEjercicio JOIN tipodetalleejercicio ON tipodetalleejercicio.id = detalleplanejercicios.idTipoDetalle WHERE detalleplanejercicios.nroPlan = 1 AND detalleplanejercicios.dniSocio = 15000111 AND detalleplanejercicios.nroSesion = " + nroSesion + " ORDER BY detalleplanejercicios.idTipoDetalle";
+                    //string queryEC = "SELECT ejercicios.nombre, detalleplanejercicios.observacionesEC, detalleplanejercicios.idTipoDetalle FROM ejercicios JOIN detalleplanejercicios ON ejercicios.id = detalleplanejercicios.idEjercicio WHERE detalleplanejercicios.nroPlan = 9 AND detalleplanejercicios.dniSocio = 15000111 AND detalleplanejercicios.nroSesion = " + nroSesion + " AND detalleplanejercicios.idTipoDetalle = 1";
+                    m.LlenarGridReporte(dg, querySesion);
+                }
+               
+            }
+
+
+
             m.LlenarGridReporte(dgv_vistaprevia, query);
 
-            
+
         }
 
         ReportDataSource rs = new ReportDataSource();

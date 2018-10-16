@@ -395,5 +395,20 @@ namespace feelGYM.Clases
             }
             return contador;
         }
+
+
+        //metodo para obtener numero de SESIONES DE UN PLAN
+        public static int ObtenerNroSesiones(int nroPlan,int dniSocio)
+        {
+            int contador = 0;
+            MySqlCommand cmd = new MySqlCommand(String.Format("SELECT planejercicios.numSesiones from planejercicios where planejercicios.nroPlan = '{0}' AND planejercicios.dniSocio = '{1}'", nroPlan ,dniSocio), Conexion.obtenerConexion());
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                contador = reader.GetInt32(0);
+            }
+            return contador;
+        }
+
     }
 }
