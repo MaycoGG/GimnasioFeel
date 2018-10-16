@@ -45,10 +45,16 @@ namespace feelGYM
         }
 
         ReportDataSource rs = new ReportDataSource();
-        ReportDataSource rsDetalle = new ReportDataSource();
+        ReportDataSource rsDetalle1 = new ReportDataSource();
+        ReportDataSource rsDetalle2 = new ReportDataSource();
+        ReportDataSource rsDetalle3 = new ReportDataSource();
+        ReportDataSource rsDetalle4 = new ReportDataSource();
+        ReportDataSource rsDetalle5 = new ReportDataSource();
+        ReportDataSource rsDetalle6 = new ReportDataSource();
 
         private void btn_imprimir_Click(object sender, EventArgs e)
         {
+            #region DataSet Datos - Encabezado
             List<Clases.Imprimir> listDatosImp = new List<Clases.Imprimir>();
             listDatosImp.Clear();
             Clases.Imprimir datos = new Clases.Imprimir();
@@ -73,25 +79,222 @@ namespace feelGYM
 
             rs.Name = "DataSet1";
             rs.Value = listDatosImp;
+            #endregion
 
-            List<Clases.ImpresionDetalle> listDetalle = new List<Clases.ImpresionDetalle>();
-            listDetalle.Clear();
-            Clases.ImpresionDetalle datosDetalle = new Clases.ImpresionDetalle();
-            
-            for (int j = 0; j < grillas.ElementAt(0).Rows.Count - 1; j++)
+            #region DatasetDetalle - 1
+            List<Clases.ImpresionDetalle> listDetalle1 = new List<Clases.ImpresionDetalle>();
+            listDetalle1.Clear();
+            Clases.ImpresionDetalle datosDetalle1 = new Clases.ImpresionDetalle();
+
+            if (grillas.ElementAt(0) != null)
             {
-                datosDetalle.ejercicio = grillas.ElementAt(0).Rows[j].Cells[1].Value.ToString();
-                listDetalle.Add(new Clases.ImpresionDetalle(datosDetalle.ejercicio));
+                for (int j = 0; j < grillas.ElementAt(0).Rows.Count - 1; j++)
+                {
+                    datosDetalle1.ejercicio = grillas.ElementAt(0).Rows[j].Cells[1].Value.ToString();
+                    datosDetalle1.intesidad = grillas.ElementAt(0).Rows[j].Cells[2].Value.ToString();
+                    datosDetalle1.repeticiones = grillas.ElementAt(0).Rows[j].Cells[3].Value.ToString();
+                    datosDetalle1.observacionDetalle = grillas.ElementAt(0).Rows[j].Cells[4].Value.ToString();
+                    listDetalle1.Add(new Clases.ImpresionDetalle(datosDetalle1.ejercicio));
+                }
             }
 
-            rsDetalle.Name = "DataSet2";
-            rsDetalle.Value = listDetalle;
+            rsDetalle1.Name = "DataSet2";
+            rsDetalle1.Value = listDetalle1;
+
+            #endregion
+
+            #region DatasetDetalle - 2
+            List<Clases.ImpresionDetalle> listDetalle2 = new List<Clases.ImpresionDetalle>();
+            listDetalle2.Clear();
+            Clases.ImpresionDetalle datosDetalle2 = new Clases.ImpresionDetalle();
+
+            if (grillas.ElementAt(1) != null)
+            {
+                for (int j = 0; j < grillas.ElementAt(1).Rows.Count - 1; j++)   
+                {
+                    datosDetalle2.ejercicio = grillas.ElementAt(1).Rows[j].Cells[1].Value.ToString();
+                    datosDetalle2.intesidad = grillas.ElementAt(1).Rows[j].Cells[2].Value.ToString();
+                    //if (int.Parse(grillas.ElementAt(1).Rows[j].Cells[3].Value.ToString()) != 0)
+                    //{
+                    //    datosDetalle2.series = int.Parse(grillas.ElementAt(1).Rows[j].Cells[3].Value.ToString());
+                    //}
+                    
+                    datosDetalle2.repeticiones = grillas.ElementAt(1).Rows[j].Cells[4].Value.ToString();
+                    datosDetalle2.observacionDetalle = grillas.ElementAt(1).Rows[j].Cells[5].Value.ToString();
+                    listDetalle2.Add(new Clases.ImpresionDetalle(datosDetalle2.ejercicio));
+                }
+            }
+
+            rsDetalle2.Name = "DataSet3";
+            rsDetalle2.Value = listDetalle2;
+            #endregion
+
+            #region DatasetDetalle - 3
+            List<Clases.ImpresionDetalle> listDetalle3 = new List<Clases.ImpresionDetalle>();
+            listDetalle3.Clear();
+            Clases.ImpresionDetalle datosDetalle3 = new Clases.ImpresionDetalle();
+
+            if (grillas.Count == 3)
+            {
+                for (int j = 0; j < grillas.ElementAt(2).Rows.Count - 1; j++)
+                {
+                    datosDetalle3.ejercicio = grillas.ElementAt(2).Rows[j].Cells[1].Value.ToString();
+                    datosDetalle1.intesidad = grillas.ElementAt(2).Rows[j].Cells[2].Value.ToString();
+                    datosDetalle1.repeticiones = grillas.ElementAt(2).Rows[j].Cells[3].Value.ToString();
+                    datosDetalle1.observacionDetalle = grillas.ElementAt(2).Rows[j].Cells[4].Value.ToString();
+                    listDetalle3.Add(new Clases.ImpresionDetalle(datosDetalle3.ejercicio));
+                }
+            }
+
+            rsDetalle3.Name = "DataSet4";
+            rsDetalle3.Value = listDetalle3;
+            #endregion
+
+            #region DatasetDetalle - 4
+            List<Clases.ImpresionDetalle> listDetalle4 = new List<Clases.ImpresionDetalle>();
+            listDetalle4.Clear();
+            Clases.ImpresionDetalle datosDetalle4 = new Clases.ImpresionDetalle();
+
+            if (grillas.Count == 4)
+            {
+                for (int j = 0; j < grillas.ElementAt(3).Rows.Count - 1; j++)
+                {
+                    datosDetalle4.ejercicio = grillas.ElementAt(3).Rows[j].Cells[1].Value.ToString();
+                    datosDetalle1.intesidad = grillas.ElementAt(3).Rows[j].Cells[2].Value.ToString();
+                    datosDetalle1.repeticiones = grillas.ElementAt(3).Rows[j].Cells[3].Value.ToString();
+                    datosDetalle1.observacionDetalle = grillas.ElementAt(3).Rows[j].Cells[4].Value.ToString();
+                    listDetalle4.Add(new Clases.ImpresionDetalle(datosDetalle4.ejercicio));
+                }
+            }
+
+            rsDetalle4.Name = "DataSet5";
+            rsDetalle4.Value = listDetalle4;
+            #endregion
+
+            #region DatasetDetalle - 5
+            List<Clases.ImpresionDetalle> listDetalle5 = new List<Clases.ImpresionDetalle>();
+            listDetalle5.Clear();
+            Clases.ImpresionDetalle datosDetalle5 = new Clases.ImpresionDetalle();
+
+            if (grillas.Count == 5)
+            {
+                for (int j = 0; j < grillas.ElementAt(4).Rows.Count - 1; j++)
+                {
+                    datosDetalle5.ejercicio = grillas.ElementAt(4).Rows[j].Cells[1].Value.ToString();
+                    datosDetalle1.intesidad = grillas.ElementAt(4).Rows[j].Cells[2].Value.ToString();
+                    datosDetalle1.repeticiones = grillas.ElementAt(4).Rows[j].Cells[3].Value.ToString();
+                    datosDetalle1.observacionDetalle = grillas.ElementAt(4).Rows[j].Cells[4].Value.ToString();
+                    listDetalle5.Add(new Clases.ImpresionDetalle(datosDetalle5.ejercicio));
+                }
+            }
+
+            rsDetalle5.Name = "DataSet6";
+            rsDetalle5.Value = listDetalle5;
+            #endregion
+
+            #region DatasetDetalle - 6
+            List<Clases.ImpresionDetalle> listDetalle6 = new List<Clases.ImpresionDetalle>();
+            listDetalle6.Clear();
+            Clases.ImpresionDetalle datosDetalle6 = new Clases.ImpresionDetalle();
+
+            if (grillas.Count == 6)
+            {
+                for (int j = 0; j < grillas.ElementAt(5).Rows.Count - 1; j++)
+                {
+                    datosDetalle6.ejercicio = grillas.ElementAt(5).Rows[j].Cells[1].Value.ToString();
+                    datosDetalle1.intesidad = grillas.ElementAt(5).Rows[j].Cells[2].Value.ToString();
+                    datosDetalle1.repeticiones = grillas.ElementAt(5).Rows[j].Cells[3].Value.ToString();
+                    datosDetalle1.observacionDetalle = grillas.ElementAt(5).Rows[j].Cells[4].Value.ToString();
+                    listDetalle6.Add(new Clases.ImpresionDetalle(datosDetalle6.ejercicio));
+                }
+            }
+
+            rsDetalle6.Name = "DataSet7";
+            rsDetalle6.Value = listDetalle6;
+            #endregion
+
+
 
             Form3 frm = new Form3();
             frm.reportViewerImprimir.LocalReport.DataSources.Clear();
+
+            //Agregar los DataSources de cada DataSet
             frm.reportViewerImprimir.LocalReport.DataSources.Add(rs);
-            frm.reportViewerImprimir.LocalReport.DataSources.Add(rsDetalle);
+            frm.reportViewerImprimir.LocalReport.DataSources.Add(rsDetalle1);
+            frm.reportViewerImprimir.LocalReport.DataSources.Add(rsDetalle2);
+            frm.reportViewerImprimir.LocalReport.DataSources.Add(rsDetalle3);
+            frm.reportViewerImprimir.LocalReport.DataSources.Add(rsDetalle4);
+            frm.reportViewerImprimir.LocalReport.DataSources.Add(rsDetalle5);
+            frm.reportViewerImprimir.LocalReport.DataSources.Add(rsDetalle6);
+
+            //asigna el reporte
             frm.reportViewerImprimir.LocalReport.ReportEmbeddedResource = "feelGYM.ReporteImpresion.rdlc";
+
+            //parametros para ocultar las tablas
+            #region asignamos los parametros
+            if (listDetalle1.Count != 0)
+            {
+                ReportParameter dts1 = new ReportParameter("dts1", "false");
+                frm.reportViewerImprimir.LocalReport.SetParameters(dts1);
+            }
+            else
+            {
+                ReportParameter dts1 = new ReportParameter("dts1", "true");
+                frm.reportViewerImprimir.LocalReport.SetParameters(dts1);
+            }
+
+            if (listDetalle2.Count != 0)
+            {
+                ReportParameter dts2 = new ReportParameter("dts2", "false");
+                frm.reportViewerImprimir.LocalReport.SetParameters(dts2);
+            }
+            else
+            {
+                ReportParameter dts2 = new ReportParameter("dts2", "true");
+                frm.reportViewerImprimir.LocalReport.SetParameters(dts2);
+            }
+            if (listDetalle3.Count != 0)
+            {
+                ReportParameter dts3 = new ReportParameter("dts3", "false");
+                frm.reportViewerImprimir.LocalReport.SetParameters(dts3);
+            }
+            else
+            {
+                ReportParameter dts3 = new ReportParameter("dts3", "true");
+                frm.reportViewerImprimir.LocalReport.SetParameters(dts3);
+            }
+            if (listDetalle4.Count != 0)
+            {
+                ReportParameter dts4 = new ReportParameter("dts4", "false");
+                frm.reportViewerImprimir.LocalReport.SetParameters(dts4);
+            }
+            else
+            {
+                ReportParameter dts4 = new ReportParameter("dts4", "true");
+                frm.reportViewerImprimir.LocalReport.SetParameters(dts4);
+            }
+            if (listDetalle5.Count != 0)
+            {
+                ReportParameter dts5 = new ReportParameter("dts5", "false");
+                frm.reportViewerImprimir.LocalReport.SetParameters(dts5);
+            }
+            else
+            {
+                ReportParameter dts5 = new ReportParameter("dts5", "true");
+                frm.reportViewerImprimir.LocalReport.SetParameters(dts5);
+            }
+            if (listDetalle6.Count != 0)
+            {
+                ReportParameter dts6 = new ReportParameter("dts6", "false");
+                frm.reportViewerImprimir.LocalReport.SetParameters(dts6);
+            }
+            else
+            {
+                ReportParameter dts6 = new ReportParameter("dts6", "true");
+                frm.reportViewerImprimir.LocalReport.SetParameters(dts6);
+            }
+            #endregion
+
             frm.ShowDialog();
 
 
