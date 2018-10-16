@@ -57,6 +57,7 @@
             this.txt_imprimirPlan.TabIndex = 5;
             this.txt_imprimirPlan.Text = "IMPRIMIR";
             this.txt_imprimirPlan.UseVisualStyleBackColor = false;
+            this.txt_imprimirPlan.Click += new System.EventHandler(this.txt_imprimirPlan_Click);
             // 
             // TabsSesiones
             // 

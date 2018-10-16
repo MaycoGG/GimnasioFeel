@@ -32,5 +32,10 @@ namespace feelGYM.PlanEjercicios
         {
             
         }
+
+        private void txt_imprimirPlan_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

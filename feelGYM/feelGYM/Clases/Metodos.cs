@@ -241,6 +241,17 @@ namespace feelGYM.Clases
 
         }
 
+        public void LlenarGridReporte(DataGridView grid, String query)
+        {
+            MySqlCommand cmd = new MySqlCommand(query, Clases.Conexion.obtenerConexion());
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+            grid.DataSource = dt;
+
+        }
+
         public void LlenarGridProfesores(DataGridView grid, String query)
         {
             MySqlCommand cmd = new MySqlCommand(query, Clases.Conexion.obtenerConexion());
