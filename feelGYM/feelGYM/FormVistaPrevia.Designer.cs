@@ -41,6 +41,7 @@
             this.dgv_vistaprevia.Size = new System.Drawing.Size(75, 22);
             this.dgv_vistaprevia.TabIndex = 0;
             this.dgv_vistaprevia.Visible = false;
+            this.dgv_vistaprevia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_vistaprevia_CellContentClick);
             // 
             // btn_imprimir
             // 

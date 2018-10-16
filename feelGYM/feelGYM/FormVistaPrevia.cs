@@ -35,7 +35,7 @@ namespace feelGYM
                 "WHERE planejercicios.nroPlan = 1 AND planejercicios.dniSocio = 15000111";
 
             Clases.Metodos m = new Clases.Metodos();
-            int nroS = Clases.Metodos.ObtenerNroSesiones(1, 15000111);
+            int nroS = Clases.Metodos.ObtenerNroSesiones(2, 15000111);
             int x = 8;
             int y = 8;
 
@@ -48,12 +48,13 @@ namespace feelGYM
                 dg.Name = "grilla"+nroSesion;
                 dg.Location = new Point(x, y);
                 dg.Size = new Size(750, 200);
+                dg.ReadOnly = true;
                 //x = x + 450;
                 y += 250;
 
                 if (dg.Name == "grilla"+nroSesion)
                 {
-                    string querySesion = "SELECT tipodetalleejercicio.nombre, ejercicios.nombre, detalleplanejercicios.observacionesEC, detalleplanejercicios.intensidad, detalleplanejercicios.series, detalleplanejercicios.repeticiones, detalleplanejercicios.observacionesD FROM ejercicios JOIN detalleplanejercicios ON ejercicios.id = detalleplanejercicios.idEjercicio JOIN tipodetalleejercicio ON tipodetalleejercicio.id = detalleplanejercicios.idTipoDetalle WHERE detalleplanejercicios.nroPlan = 1 AND detalleplanejercicios.dniSocio = 15000111 AND detalleplanejercicios.nroSesion = " + nroSesion + " ORDER BY detalleplanejercicios.idTipoDetalle";
+                    string querySesion = "SELECT tipodetalleejercicio.nombre as 'Tipo Ejercicio', ejercicios.nombre, detalleplanejercicios.intensidad, detalleplanejercicios.series, detalleplanejercicios.repeticiones, detalleplanejercicios.observacionesEC as 'Observaciones' FROM ejercicios JOIN detalleplanejercicios ON ejercicios.id = detalleplanejercicios.idEjercicio JOIN tipodetalleejercicio ON tipodetalleejercicio.id = detalleplanejercicios.idTipoDetalle WHERE detalleplanejercicios.nroPlan = 2 AND detalleplanejercicios.dniSocio = 15000111 AND detalleplanejercicios.nroSesion = " + nroSesion + " ORDER BY detalleplanejercicios.idTipoDetalle";
                     //string queryEC = "SELECT ejercicios.nombre, detalleplanejercicios.observacionesEC, detalleplanejercicios.idTipoDetalle FROM ejercicios JOIN detalleplanejercicios ON ejercicios.id = detalleplanejercicios.idEjercicio WHERE detalleplanejercicios.nroPlan = 9 AND detalleplanejercicios.dniSocio = 15000111 AND detalleplanejercicios.nroSesion = " + nroSesion + " AND detalleplanejercicios.idTipoDetalle = 1";
                     m.LlenarGridReporte(dg, querySesion);
                 }
@@ -100,6 +101,11 @@ namespace feelGYM
 
         }
 
+        private void dgv_vistaprevia_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         //public class DatosImpresion
         //{
         //    public string NombreSocio { get; set; }
@@ -109,6 +115,6 @@ namespace feelGYM
         //    public int IdTipoDetalle { get; set; }
         //}
 
-        
+
     }
 }
