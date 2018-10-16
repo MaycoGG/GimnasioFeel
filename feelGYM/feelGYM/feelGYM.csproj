@@ -69,6 +69,8 @@
     <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Clases\DetallePlan.cs" />
     <Compile Include="Clases\Ejercicio.cs" />
+    <Compile Include="Clases\ImpresionDetalle.cs" />
+    <Compile Include="Clases\Imprimir.cs" />
     <Compile Include="Clases\Metodos.cs" />
     <Compile Include="Clases\PlanEjercicio.cs" />
     <Compile Include="Clases\Profesores.cs" />
@@ -188,10 +190,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ReporteDatos.rdlc" />
+    <EmbeddedResource Include="ReporteImpresion.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\feelGYM.Clases.Class1.datasource" />
     <None Include="Properties\DataSources\feelGYM.Clases.DatosImpresion.datasource" />
+    <None Include="Properties\DataSources\feelGYM.Clases.ImpresionDetalle.datasource" />
+    <None Include="Properties\DataSources\feelGYM.Clases.Imprimir.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
