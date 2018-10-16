@@ -468,7 +468,7 @@
         <Width>7.5cm</Width>
         <ZIndex>3</ZIndex>
         <Visibility>
-          <Hidden>true</Hidden>
+          <Hidden>=Parameters!validarDS1.Value = true</Hidden>
         </Visibility>
         <Style>
           <Border>

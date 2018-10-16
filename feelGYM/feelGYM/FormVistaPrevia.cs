@@ -91,6 +91,8 @@ namespace feelGYM
             frm.reportViewerImprimir.LocalReport.DataSources.Clear();
             frm.reportViewerImprimir.LocalReport.DataSources.Add(rs);
             frm.reportViewerImprimir.LocalReport.DataSources.Add(rsDetalle);
+
+            
             frm.reportViewerImprimir.LocalReport.ReportEmbeddedResource = "feelGYM.ReporteImpresion.rdlc";
             frm.ShowDialog();
 
