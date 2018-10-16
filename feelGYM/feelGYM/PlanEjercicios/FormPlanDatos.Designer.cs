@@ -96,6 +96,7 @@
             this.txt_dniSocio.Text = "DNI";
             this.txt_dniSocio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_dniSocio.Enter += new System.EventHandler(this.txt_dniSocio_Enter);
+            this.txt_dniSocio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_dniSocio_KeyPress);
             this.txt_dniSocio.Leave += new System.EventHandler(this.txt_dniSocio_Leave);
             // 
             // label2
@@ -159,6 +160,7 @@
             this.txt_apellidoClientePlan.Text = "APELLIDO";
             this.txt_apellidoClientePlan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_apellidoClientePlan.Enter += new System.EventHandler(this.txt_apellidoClientePlan_Enter);
+            this.txt_apellidoClientePlan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_apellidoClientePlan_KeyPress);
             this.txt_apellidoClientePlan.Leave += new System.EventHandler(this.txt_apellidoClientePlan_Leave);
             // 
             // label3
@@ -183,6 +185,7 @@
             this.txt_NombreClientePlan.Text = "NOMBRE";
             this.txt_NombreClientePlan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_NombreClientePlan.Enter += new System.EventHandler(this.txt_NombreClientePlan_Enter);
+            this.txt_NombreClientePlan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_NombreClientePlan_KeyPress);
             this.txt_NombreClientePlan.Leave += new System.EventHandler(this.txt_NombreClientePlan_Leave);
             // 
             // label11
@@ -274,6 +277,7 @@
             this.button2.TabIndex = 17;
             this.button2.Text = "Limpiar Datos";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 

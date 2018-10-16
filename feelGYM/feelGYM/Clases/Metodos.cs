@@ -279,6 +279,14 @@ namespace feelGYM.Clases
             return retorno;
         }
 
+        public static int ValidarSocio(int dniSocio, String query)
+        {
+            int retorno = 0;
+            MySqlCommand cmd = new MySqlCommand(String.Format(query, dniSocio), Conexion.obtenerConexion());
+            retorno = cmd.ExecuteNonQuery();
+            return retorno;
+        }
+
         //metodo para agregar DatosPlan
         public static int AgregarDatosPlan(PlanEjercicio plan, String query)
         {
