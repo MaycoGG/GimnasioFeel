@@ -257,7 +257,7 @@ namespace feelGYM
                 Clases.DetallePlan detalle = new Clases.DetallePlan();
                 string query = "INSERT into detalleplanejercicios (detalleplanejercicios.nroPlan, detalleplanejercicios.dniSocio, " +
                     "detalleplanejercicios.nroSesion, detalleplanejercicios.idTipoDetalle, detalleplanejercicios.idEjercicio, " +
-                    "detalleplanejercicios.intensidad, detalleplanejercicios.series, detalleplanejercicios.repeticiones, detalleplanejercicios.observacionesD) " +
+                    "detalleplanejercicios.intensidad, detalleplanejercicios.series, detalleplanejercicios.repeticiones, detalleplanejercicios.observacionesEC) " +
                     "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}')";
                 detalle.nroPlan  = Convert.ToInt32(lbl_numPlan.Text);
                 detalle.dniSocio = Convert.ToInt32(lbl_dniSocio.Text);
