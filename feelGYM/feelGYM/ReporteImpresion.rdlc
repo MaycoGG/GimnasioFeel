@@ -2532,7 +2532,7 @@
         <Height>4.15625in</Height>
         <Style />
       </Body>
-      <Width>7.80567in</Width>
+      <Width>7.40984in</Width>
       <Page>
         <PageHeader>
           <Height>4.02167cm</Height>
@@ -3018,7 +3018,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Sum(Fields!NroPlan.Value, "DataSet1")</Value>
+                      <Value>=First(Fields!NroPlan.Value, "DataSet1")</Value>
                       <Style />
                     </TextRun>
                   </TextRuns>

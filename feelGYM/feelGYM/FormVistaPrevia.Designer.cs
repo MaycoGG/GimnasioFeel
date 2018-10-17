@@ -36,12 +36,11 @@
             // dgv_vistaprevia
             // 
             this.dgv_vistaprevia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_vistaprevia.Location = new System.Drawing.Point(804, 69);
+            this.dgv_vistaprevia.Location = new System.Drawing.Point(786, 78);
             this.dgv_vistaprevia.Name = "dgv_vistaprevia";
-            this.dgv_vistaprevia.Size = new System.Drawing.Size(75, 22);
+            this.dgv_vistaprevia.Size = new System.Drawing.Size(70, 24);
             this.dgv_vistaprevia.TabIndex = 0;
             this.dgv_vistaprevia.Visible = false;
-            
             // 
             // btn_imprimir
             // 

@@ -93,7 +93,7 @@
             this.txt_dniSocio.ForeColor = System.Drawing.Color.DimGray;
             this.txt_dniSocio.Location = new System.Drawing.Point(28, 149);
             this.txt_dniSocio.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_dniSocio.MaxLength = 7;
+            this.txt_dniSocio.MaxLength = 8;
             this.txt_dniSocio.Name = "txt_dniSocio";
             this.txt_dniSocio.Size = new System.Drawing.Size(397, 19);
             this.txt_dniSocio.TabIndex = 3;

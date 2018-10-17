@@ -265,7 +265,7 @@ namespace feelGYM
                 detalle.tipoDetalle = 2;
                 detalle.idEjercicio = Convert.ToInt32(item.Cells["IDD"].Value);
                 detalle.intensidad = item.Cells["intensidad"].Value.ToString();
-                detalle.series = Convert.ToInt32(item.Cells["series"].Value);
+                detalle.series = item.Cells["series"].Value.ToString();
                 detalle.repe = item.Cells["repeticiones"].Value.ToString();
                 detalle.obsD = item.Cells["observacionD"].Value.ToString();
                 

@@ -92,7 +92,7 @@ namespace feelGYM
             string atributo = "nombreApe";
             Clases.Metodos cb = new Clases.Metodos();
             cb.LlenarCombo(cmb_profesor, query, atributo);
-            txt_dniSocio.MaxLength = 7;
+            txt_dniSocio.MaxLength = 8;
             
         }
 
@@ -141,16 +141,7 @@ namespace feelGYM
                 MessageBox.Show("Campo 'DNI' vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 valida = false;
             }
-            else
-            {
-                string querySocio = "SELECT COUNT(socio.dni) from socio where socio.dni = " + Convert.ToInt32(txt_dniSocio.Text);
-                int contador = Clases.Metodos.ValidarSocio(Convert.ToInt32(txt_dniSocio.Text), querySocio);
-                if (contador != 0)
-                {
-                    MessageBox.Show("Ya existe un socio con ese DNI", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    valida = false;
-                }
-            }
+            
 
             if (cmb_sesionesPlan.Value < 1 || cmb_sesionesPlan.Value > 6)
             {

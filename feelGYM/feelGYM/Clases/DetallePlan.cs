@@ -15,11 +15,11 @@ namespace feelGYM.Clases
         public int idEjercicio { get; set; }
         public string obsEC { get; set; }
         public string intensidad { get; set; }
-        public int series { get; set; }
+        public string series { get; set; }
         public string repe { get; set; }
         public string obsD { get; set; }
 
-        public DetallePlan(int nroPlan, int dniSocio, int nroSesion, int tipoDetalle, int idEje, string obsEC, string inten, int series ,string repe, string obsD)
+        public DetallePlan(int nroPlan, int dniSocio, int nroSesion, int tipoDetalle, int idEje, string obsEC, string inten, string series ,string repe, string obsD)
         {
             this.nroPlan = nroPlan;
             this.dniSocio = dniSocio;

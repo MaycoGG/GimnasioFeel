@@ -92,8 +92,9 @@ namespace feelGYM
                 {
                     datosDetalle1.ejercicio = grillas.ElementAt(0).Rows[j].Cells[1].Value.ToString();
                     datosDetalle1.intesidad = grillas.ElementAt(0).Rows[j].Cells[2].Value.ToString();
-                    datosDetalle1.repeticiones = grillas.ElementAt(0).Rows[j].Cells[3].Value.ToString();
-                    datosDetalle1.observacionDetalle = grillas.ElementAt(0).Rows[j].Cells[4].Value.ToString();
+                    datosDetalle1.series = grillas.ElementAt(0).Rows[j].Cells[3].Value.ToString();
+                    datosDetalle1.repeticiones = grillas.ElementAt(0).Rows[j].Cells[4].Value.ToString();
+                    datosDetalle1.observacionDetalle = grillas.ElementAt(0).Rows[j].Cells[5].Value.ToString();
                     listDetalle1.Add(new Clases.ImpresionDetalle(datosDetalle1.ejercicio));
                 }
             }
@@ -114,11 +115,7 @@ namespace feelGYM
                 {
                     datosDetalle2.ejercicio = grillas.ElementAt(1).Rows[j].Cells[1].Value.ToString();
                     datosDetalle2.intesidad = grillas.ElementAt(1).Rows[j].Cells[2].Value.ToString();
-                    //if (int.Parse(grillas.ElementAt(1).Rows[j].Cells[3].Value.ToString()) != 0)
-                    //{
-                    //    datosDetalle2.series = int.Parse(grillas.ElementAt(1).Rows[j].Cells[3].Value.ToString());
-                    //}
-                    
+                    datosDetalle2.series = grillas.ElementAt(1).Rows[j].Cells[3].Value.ToString();
                     datosDetalle2.repeticiones = grillas.ElementAt(1).Rows[j].Cells[4].Value.ToString();
                     datosDetalle2.observacionDetalle = grillas.ElementAt(1).Rows[j].Cells[5].Value.ToString();
                     listDetalle2.Add(new Clases.ImpresionDetalle(datosDetalle2.ejercicio));
@@ -139,10 +136,10 @@ namespace feelGYM
                 for (int j = 0; j < grillas.ElementAt(2).Rows.Count - 1; j++)
                 {
                     datosDetalle3.ejercicio = grillas.ElementAt(2).Rows[j].Cells[1].Value.ToString();
-                    datosDetalle1.intesidad = grillas.ElementAt(2).Rows[j].Cells[2].Value.ToString();
-                    datosDetalle1.repeticiones = grillas.ElementAt(2).Rows[j].Cells[3].Value.ToString();
-                    datosDetalle1.observacionDetalle = grillas.ElementAt(2).Rows[j].Cells[4].Value.ToString();
-                    listDetalle3.Add(new Clases.ImpresionDetalle(datosDetalle3.ejercicio));
+                    datosDetalle3.intesidad = grillas.ElementAt(2).Rows[j].Cells[2].Value.ToString();
+                    datosDetalle3.series = grillas.ElementAt(2).Rows[j].Cells[3].Value.ToString();
+                    datosDetalle3.repeticiones = grillas.ElementAt(2).Rows[j].Cells[4].Value.ToString();
+                    datosDetalle3.observacionDetalle = grillas.ElementAt(2).Rows[j].Cells[5].Value.ToString();
                 }
             }
 
@@ -160,10 +157,10 @@ namespace feelGYM
                 for (int j = 0; j < grillas.ElementAt(3).Rows.Count - 1; j++)
                 {
                     datosDetalle4.ejercicio = grillas.ElementAt(3).Rows[j].Cells[1].Value.ToString();
-                    datosDetalle1.intesidad = grillas.ElementAt(3).Rows[j].Cells[2].Value.ToString();
-                    datosDetalle1.repeticiones = grillas.ElementAt(3).Rows[j].Cells[3].Value.ToString();
-                    datosDetalle1.observacionDetalle = grillas.ElementAt(3).Rows[j].Cells[4].Value.ToString();
-                    listDetalle4.Add(new Clases.ImpresionDetalle(datosDetalle4.ejercicio));
+                    datosDetalle4.intesidad = grillas.ElementAt(3).Rows[j].Cells[2].Value.ToString();
+                    datosDetalle4.series = grillas.ElementAt(3).Rows[j].Cells[3].Value.ToString();
+                    datosDetalle4.repeticiones = grillas.ElementAt(3).Rows[j].Cells[4].Value.ToString();
+                    datosDetalle4.observacionDetalle = grillas.ElementAt(3).Rows[j].Cells[5].Value.ToString();
                 }
             }
 
@@ -181,9 +178,10 @@ namespace feelGYM
                 for (int j = 0; j < grillas.ElementAt(4).Rows.Count - 1; j++)
                 {
                     datosDetalle5.ejercicio = grillas.ElementAt(4).Rows[j].Cells[1].Value.ToString();
-                    datosDetalle1.intesidad = grillas.ElementAt(4).Rows[j].Cells[2].Value.ToString();
-                    datosDetalle1.repeticiones = grillas.ElementAt(4).Rows[j].Cells[3].Value.ToString();
-                    datosDetalle1.observacionDetalle = grillas.ElementAt(4).Rows[j].Cells[4].Value.ToString();
+                    datosDetalle5.intesidad = grillas.ElementAt(4).Rows[j].Cells[2].Value.ToString();
+                    datosDetalle5.series = grillas.ElementAt(4).Rows[j].Cells[3].Value.ToString();
+                    datosDetalle5.repeticiones = grillas.ElementAt(4).Rows[j].Cells[4].Value.ToString();
+                    datosDetalle5.observacionDetalle = grillas.ElementAt(4).Rows[j].Cells[5].Value.ToString();
                     listDetalle5.Add(new Clases.ImpresionDetalle(datosDetalle5.ejercicio));
                 }
             }
@@ -202,9 +200,10 @@ namespace feelGYM
                 for (int j = 0; j < grillas.ElementAt(5).Rows.Count - 1; j++)
                 {
                     datosDetalle6.ejercicio = grillas.ElementAt(5).Rows[j].Cells[1].Value.ToString();
-                    datosDetalle1.intesidad = grillas.ElementAt(5).Rows[j].Cells[2].Value.ToString();
-                    datosDetalle1.repeticiones = grillas.ElementAt(5).Rows[j].Cells[3].Value.ToString();
-                    datosDetalle1.observacionDetalle = grillas.ElementAt(5).Rows[j].Cells[4].Value.ToString();
+                    datosDetalle6.intesidad = grillas.ElementAt(5).Rows[j].Cells[2].Value.ToString();
+                    datosDetalle6.series = grillas.ElementAt(5).Rows[j].Cells[3].Value.ToString();
+                    datosDetalle6.repeticiones = grillas.ElementAt(5).Rows[j].Cells[4].Value.ToString();
+                    datosDetalle6.observacionDetalle = grillas.ElementAt(5).Rows[j].Cells[5].Value.ToString();
                     listDetalle6.Add(new Clases.ImpresionDetalle(datosDetalle6.ejercicio));
                 }
             }
@@ -321,7 +320,7 @@ namespace feelGYM
 
                 if (dg.Name == "grilla" + nroSesion)
                 {
-                    string querySesion = "SELECT tipodetalleejercicio.nombre as 'Tipo Ejercicio', ejercicios.nombre, detalleplanejercicios.intensidad, detalleplanejercicios.series, detalleplanejercicios.repeticiones, detalleplanejercicios.observacionesEC as 'Observaciones' FROM ejercicios JOIN detalleplanejercicios ON ejercicios.id = detalleplanejercicios.idEjercicio JOIN tipodetalleejercicio ON tipodetalleejercicio.id = detalleplanejercicios.idTipoDetalle WHERE detalleplanejercicios.nroPlan = 2 AND detalleplanejercicios.dniSocio = 15000111 AND detalleplanejercicios.nroSesion = " + nroSesion + " ORDER BY detalleplanejercicios.idTipoDetalle";
+                    string querySesion = "SELECT tipodetalleejercicio.nombre as 'Tipo Ejercicio', ejercicios.nombre, detalleplanejercicios.intensidad, detalleplanejercicios.series, detalleplanejercicios.repeticiones, detalleplanejercicios.observacionesEC as 'Observaciones' FROM ejercicios JOIN detalleplanejercicios ON ejercicios.id = detalleplanejercicios.idEjercicio JOIN tipodetalleejercicio ON tipodetalleejercicio.id = detalleplanejercicios.idTipoDetalle WHERE detalleplanejercicios.nroPlan = 1 AND detalleplanejercicios.dniSocio = 15000111 AND detalleplanejercicios.nroSesion = " + nroSesion + " ORDER BY detalleplanejercicios.idTipoDetalle";
                     //string queryEC = "SELECT ejercicios.nombre, detalleplanejercicios.observacionesEC, detalleplanejercicios.idTipoDetalle FROM ejercicios JOIN detalleplanejercicios ON ejercicios.id = detalleplanejercicios.idEjercicio WHERE detalleplanejercicios.nroPlan = 9 AND detalleplanejercicios.dniSocio = 15000111 AND detalleplanejercicios.nroSesion = " + nroSesion + " AND detalleplanejercicios.idTipoDetalle = 1";
                     m.LlenarGridReporte(dg, querySesion);
                 }
