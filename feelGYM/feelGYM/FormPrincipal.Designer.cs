@@ -98,7 +98,7 @@
             this.lbl_fechaActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_fechaActual.ForeColor = System.Drawing.Color.SlateGray;
             this.lbl_fechaActual.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.lbl_fechaActual.Location = new System.Drawing.Point(295, 552);
+            this.lbl_fechaActual.Location = new System.Drawing.Point(538, 572);
             this.lbl_fechaActual.Name = "lbl_fechaActual";
             this.lbl_fechaActual.Size = new System.Drawing.Size(126, 46);
             this.lbl_fechaActual.TabIndex = 2;
@@ -111,7 +111,7 @@
             this.lbl_horaActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_horaActual.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.lbl_horaActual.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.lbl_horaActual.Location = new System.Drawing.Point(234, 476);
+            this.lbl_horaActual.Location = new System.Drawing.Point(443, 495);
             this.lbl_horaActual.Name = "lbl_horaActual";
             this.lbl_horaActual.Size = new System.Drawing.Size(249, 91);
             this.lbl_horaActual.TabIndex = 1;
@@ -120,13 +120,11 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(-70, 25);
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(851, 448);
+            this.pictureBox2.Size = new System.Drawing.Size(776, 627);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -152,7 +150,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(58, 223);
+            this.button3.Location = new System.Drawing.Point(54, 287);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 8;
@@ -165,9 +163,9 @@
             this.btn_menu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_menu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_menu.Image = ((System.Drawing.Image)(resources.GetObject("btn_menu.Image")));
-            this.btn_menu.Location = new System.Drawing.Point(151, 6);
+            this.btn_menu.Location = new System.Drawing.Point(144, 6);
             this.btn_menu.Name = "btn_menu";
-            this.btn_menu.Size = new System.Drawing.Size(43, 38);
+            this.btn_menu.Size = new System.Drawing.Size(56, 49);
             this.btn_menu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_menu.TabIndex = 7;
             this.btn_menu.TabStop = false;
@@ -176,9 +174,9 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel3.Location = new System.Drawing.Point(0, 172);
+            this.panel3.Location = new System.Drawing.Point(0, 209);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(10, 32);
+            this.panel3.Size = new System.Drawing.Size(10, 60);
             this.panel3.TabIndex = 6;
             // 
             // Ejercicios
@@ -187,14 +185,14 @@
             this.Ejercicios.FlatAppearance.BorderSize = 0;
             this.Ejercicios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Ejercicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Ejercicios.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ejercicios.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold);
             this.Ejercicios.ForeColor = System.Drawing.Color.White;
             this.Ejercicios.Image = ((System.Drawing.Image)(resources.GetObject("Ejercicios.Image")));
             this.Ejercicios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Ejercicios.Location = new System.Drawing.Point(3, 172);
+            this.Ejercicios.Location = new System.Drawing.Point(3, 209);
             this.Ejercicios.Name = "Ejercicios";
             this.Ejercicios.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Ejercicios.Size = new System.Drawing.Size(197, 32);
+            this.Ejercicios.Size = new System.Drawing.Size(197, 60);
             this.Ejercicios.TabIndex = 5;
             this.Ejercicios.Text = "Ejercicios";
             this.Ejercicios.UseVisualStyleBackColor = true;
@@ -203,9 +201,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel2.Location = new System.Drawing.Point(0, 134);
+            this.panel2.Location = new System.Drawing.Point(0, 143);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 32);
+            this.panel2.Size = new System.Drawing.Size(10, 60);
             this.panel2.TabIndex = 4;
             // 
             // button2
@@ -214,13 +212,13 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold);
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(3, 134);
+            this.button2.Location = new System.Drawing.Point(3, 143);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(197, 32);
+            this.button2.Size = new System.Drawing.Size(197, 60);
             this.button2.TabIndex = 3;
             this.button2.Text = "Planes";
             this.button2.UseVisualStyleBackColor = true;
@@ -229,9 +227,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel1.Location = new System.Drawing.Point(0, 96);
+            this.panel1.Location = new System.Drawing.Point(0, 77);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 32);
+            this.panel1.Size = new System.Drawing.Size(10, 60);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -242,14 +240,14 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(3, 96);
+            this.button1.Location = new System.Drawing.Point(3, 77);
             this.button1.Name = "button1";
             this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button1.Size = new System.Drawing.Size(197, 32);
+            this.button1.Size = new System.Drawing.Size(197, 60);
             this.button1.TabIndex = 1;
             this.button1.Text = "Profesores";
             this.button1.UseVisualStyleBackColor = false;
@@ -287,12 +285,13 @@
             this.btn_maximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_maximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_maximizar.Image = ((System.Drawing.Image)(resources.GetObject("btn_maximizar.Image")));
-            this.btn_maximizar.Location = new System.Drawing.Point(908, 3);
+            this.btn_maximizar.Location = new System.Drawing.Point(827, 3);
             this.btn_maximizar.Name = "btn_maximizar";
             this.btn_maximizar.Size = new System.Drawing.Size(25, 25);
             this.btn_maximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_maximizar.TabIndex = 3;
             this.btn_maximizar.TabStop = false;
+            this.btn_maximizar.Visible = false;
             this.btn_maximizar.Click += new System.EventHandler(this.btn_maximizar_Click);
             // 
             // btn_restaurar
@@ -300,7 +299,7 @@
             this.btn_restaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_restaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_restaurar.Image = ((System.Drawing.Image)(resources.GetObject("btn_restaurar.Image")));
-            this.btn_restaurar.Location = new System.Drawing.Point(908, 3);
+            this.btn_restaurar.Location = new System.Drawing.Point(796, 3);
             this.btn_restaurar.Name = "btn_restaurar";
             this.btn_restaurar.Size = new System.Drawing.Size(25, 25);
             this.btn_restaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -314,7 +313,7 @@
             this.btn_minimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_minimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_minimizar.Image = ((System.Drawing.Image)(resources.GetObject("btn_minimizar.Image")));
-            this.btn_minimizar.Location = new System.Drawing.Point(877, 3);
+            this.btn_minimizar.Location = new System.Drawing.Point(908, 3);
             this.btn_minimizar.Name = "btn_minimizar";
             this.btn_minimizar.Size = new System.Drawing.Size(25, 25);
             this.btn_minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

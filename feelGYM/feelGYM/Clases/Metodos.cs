@@ -287,6 +287,14 @@ namespace feelGYM.Clases
             return retorno;
         }
 
+        public static int ValidarProfe(int dniProfe, String query)
+        {
+            int retorno = 0;
+            MySqlCommand cmd = new MySqlCommand(String.Format(query, dniProfe), Conexion.obtenerConexion());
+            retorno = cmd.ExecuteNonQuery();
+            return retorno;
+        }
+
         //metodo para agregar DatosPlan
         public static int AgregarDatosPlan(PlanEjercicio plan, String query)
         {

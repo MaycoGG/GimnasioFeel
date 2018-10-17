@@ -27,7 +27,7 @@ namespace feelGYM
             if (txt_nombreProfe.Text == "NOMBRE")
             {
                 txt_nombreProfe.Text = "";
-                txt_nombreProfe.ForeColor = Color.LightGray;
+                txt_nombreProfe.ForeColor = Color.Black;
             }
         }
 
@@ -45,7 +45,7 @@ namespace feelGYM
             if (txt_apellidoProfe.Text == "APELLIDO")
             {
                 txt_apellidoProfe.Text = "";
-                txt_apellidoProfe.ForeColor = Color.LightGray;
+                txt_apellidoProfe.ForeColor = Color.Black;
             }
         }
 
@@ -63,7 +63,7 @@ namespace feelGYM
             if (txt_docProfe.Text == "NRO DOCUMENTO")
             {
                 txt_docProfe.Text = "";
-                txt_docProfe.ForeColor = Color.LightGray;
+                txt_docProfe.ForeColor = Color.Black;
             }
         }
 
@@ -81,7 +81,7 @@ namespace feelGYM
             if (txt_celProfe.Text == "CELULAR")
             {
                 txt_celProfe.Text = "";
-                txt_celProfe.ForeColor = Color.LightGray;
+                txt_celProfe.ForeColor = Color.Black;
             }
         }
 
@@ -99,7 +99,7 @@ namespace feelGYM
             if (txt_cerEmergenciaProfe.Text == "CEL EMERGENCIA")
             {
                 txt_cerEmergenciaProfe.Text = "";
-                txt_cerEmergenciaProfe.ForeColor = Color.LightGray;
+                txt_cerEmergenciaProfe.ForeColor = Color.Black;
             }
         }
 
@@ -117,7 +117,7 @@ namespace feelGYM
             if (txt_buscarPorNombre.Text == "BUSCAR POR NOMBRE/APELLIDO")
             {
                 txt_buscarPorNombre.Text = "";
-                txt_buscarPorNombre.ForeColor = Color.LightGray;
+                txt_buscarPorNombre.ForeColor = Color.Black;
             }
         }
 
@@ -136,85 +136,89 @@ namespace feelGYM
         //metodo para REGISTRAR / MODIFICAR profesores
         private void txt_registrarProfe_Click(object sender, EventArgs e)
         {
-            Clases.Profesores ejer = new Clases.Profesores();
 
-            //si el TXT_DOCUMENTO esta vacio lo agrega, de lo contrario lo modifica.
-            if (string.IsNullOrEmpty(txt_CONTROL.Text))
+            if (ValidarDatos())
             {
-                //consulta para guardar el ejercicio
-                string query = "insert into profesores (dniProfe, nombreApe, celular, celEmergencia, tipoSangre) values ('{0}', '{1}', '{2}', '{3}', '{4}')";
+                Clases.Profesores ejer = new Clases.Profesores();
 
-                ejer.Nombre = txt_nombreProfe.Text;
-                ejer.Apellido = txt_apellidoProfe.Text;
-                ejer.Dni = Convert.ToInt32(txt_docProfe.Text);
-                ejer.Celular = Convert.ToDouble(txt_celProfe.Text);
-                ejer.CelEmergencia = Convert.ToDouble(txt_cerEmergenciaProfe.Text);
-                ejer.TipoSangre = cmb_sangreProfe.SelectedIndex + 1;
-
-
-                //llamo al metodo de la clase "Metodos" y le paso por parametro el profesor creado y la consulta
-                int retorno = Clases.Metodos.AgregarProfesor(ejer, query);
-                if (retorno > 0)
+                //si el TXT_DOCUMENTO esta vacio lo agrega, de lo contrario lo modifica.
+                if (string.IsNullOrEmpty(txt_CONTROL.Text))
                 {
-                    MessageBox.Show("Se agrego correctamente!", "Profesor Agregado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txt_nombreProfe.Clear();
-                    txt_apellidoProfe.Clear();
-                    txt_docProfe.Clear();
-                    txt_celProfe.Clear();
-                    txt_cerEmergenciaProfe.Clear();
-                    cmb_sangreProfe.SelectedItem = null;
+                    //consulta para guardar el ejercicio
+                    string query = "insert into profesores (dniProfe, nombreApe, celular, celEmergencia, tipoSangre) values ('{0}', '{1}', '{2}', '{3}', '{4}')";
 
-                    //actualizo el data grid view
-                    #region
-                    Clases.Metodos m = new Clases.Metodos();
-                    string query2 = "SELECT profesores.nombreApe as 'Profesor', profesores.dniProfe as 'DNI', profesores.celular as 'Celular', " +
-                    "profesores.celEmergencia as 'Cel Emergencia', tiposangre.nombre as 'Grupo Sanguineo' " +
-                    "FROM profesores JOIN tiposangre ON profesores.tipoSangre = tiposangre.id ORDER BY 1";
+                    ejer.Nombre = txt_nombreProfe.Text;
+                    ejer.Apellido = txt_apellidoProfe.Text;
+                    ejer.Dni = Convert.ToInt32(txt_docProfe.Text);
+                    ejer.Celular = Convert.ToDouble(txt_celProfe.Text);
+                    ejer.CelEmergencia = Convert.ToDouble(txt_cerEmergenciaProfe.Text);
+                    ejer.TipoSangre = cmb_sangreProfe.SelectedIndex + 1;
 
-                    //llena de grilla con todos los ejercicios
-                    m.LlenarGridEjercicios(dgv_todosLosProfes, query2);
-                    #endregion
 
-                    //cierro el FORM
-                    this.Close();
+                    //llamo al metodo de la clase "Metodos" y le paso por parametro el profesor creado y la consulta
+                    int retorno = Clases.Metodos.AgregarProfesor(ejer, query);
+                    if (retorno > 0)
+                    {
+                        MessageBox.Show("Se agrego correctamente!", "Profesor Agregado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txt_nombreProfe.Clear();
+                        txt_apellidoProfe.Clear();
+                        txt_docProfe.Clear();
+                        txt_celProfe.Clear();
+                        txt_cerEmergenciaProfe.Clear();
+                        cmb_sangreProfe.SelectedItem = null;
+
+                        //actualizo el data grid view
+                        #region
+                        Clases.Metodos m = new Clases.Metodos();
+                        string query2 = "SELECT profesores.nombreApe as 'Profesor', profesores.dniProfe as 'DNI', profesores.celular as 'Celular', " +
+                        "profesores.celEmergencia as 'Cel Emergencia', tiposangre.nombre as 'Grupo Sanguineo' " +
+                        "FROM profesores JOIN tiposangre ON profesores.tipoSangre = tiposangre.id ORDER BY 1";
+
+                        //llena de grilla con todos los ejercicios
+                        m.LlenarGridEjercicios(dgv_todosLosProfes, query2);
+                        #endregion
+
+                        //cierro el FORM
+                        this.Close();
+                    }
+                    else { MessageBox.Show("Ocurrió un error"); }
+
                 }
-                else { MessageBox.Show("Ocurrió un error"); }
+                else
+                {
+                    //consulta para actualizar el ejercicio
+                    string query = "UPDATE profesores set nombreApe = '{1}', celular = '{2}', celEmergencia = '{3}', tipoSangre = '{4}' where dniProfe = '{0}'";
+
+                    //ejer.Nombre = txt_nombreProfe.Text;
+                    ejer.Apellido = txt_apellidoProfe.Text;
+                    String nomApe = ejer.Nombre + " " + ejer.Apellido;
+                    ejer.Celular = Convert.ToDouble(txt_celProfe.Text);
+                    ejer.CelEmergencia = Convert.ToDouble(txt_cerEmergenciaProfe.Text);
+                    ejer.TipoSangre = cmb_sangreProfe.SelectedIndex + 1;
+                    ejer.Dni = Convert.ToInt32(txt_docProfe.Text);
+
+
+
+                    //llamo al metodo de la clase "Metodos" y le paso por parametro el ejercicio creado y la consulta
+                    int retorno = Clases.Metodos.ModificarProfe(ejer, query);
+                    if (retorno > 0)
+                    {
+                        MessageBox.Show("Profesor modificado correctamente!", "Profesor Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txt_nombreProfe.Visible = true;
+                        txt_nombreProfe.Text = "NOMBRE";
+                        txt_apellidoProfe.Text = "APELLIDO";
+                        txt_docProfe.Text = "NRO DOCUMENTO";
+                        txt_celProfe.Text = "CELULAR";
+                        txt_cerEmergenciaProfe.Text = "CEL EMERGENCIA";
+                        cmb_sangreProfe.SelectedItem = null;
+                        btn_registrarProfe.Text = "REGISTRAR";
+                    }
+                    else { MessageBox.Show("Ocurrió un error"); }
+
+                }
 
             }
-            else
-            {
-                //consulta para actualizar el ejercicio
-                string query = "UPDATE profesores set nombreApe = '{1}', celular = '{2}', celEmergencia = '{3}', tipoSangre = '{4}' where dniProfe = '{0}'";
 
-                //ejer.Nombre = txt_nombreProfe.Text;
-                ejer.Apellido = txt_apellidoProfe.Text;
-                String nomApe = ejer.Nombre + " " + ejer.Apellido;
-                ejer.Celular = Convert.ToDouble(txt_celProfe.Text);
-                ejer.CelEmergencia = Convert.ToDouble(txt_cerEmergenciaProfe.Text);
-                ejer.TipoSangre = cmb_sangreProfe.SelectedIndex + 1;
-                ejer.Dni = Convert.ToInt32(txt_docProfe.Text);
-                
-
-
-                //llamo al metodo de la clase "Metodos" y le paso por parametro el ejercicio creado y la consulta
-                int retorno = Clases.Metodos.ModificarProfe(ejer, query);
-                if (retorno > 0)
-                {
-                    MessageBox.Show("Profesor modificado correctamente!", "Profesor Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txt_nombreProfe.Visible = true;
-                    txt_nombreProfe.Text = "NOMBRE";
-                    txt_apellidoProfe.Text = "APELLIDO";
-                    txt_docProfe.Text = "NRO DOCUMENTO";
-                    txt_celProfe.Text = "CELULAR";
-                    txt_cerEmergenciaProfe.Text = "CEL EMERGENCIA";
-                    cmb_sangreProfe.SelectedItem = null;
-                    btn_registrarProfe.Text = "REGISTRAR";
-                }
-                else { MessageBox.Show("Ocurrió un error"); }
-
-            }
-
-            
 
         }
 
@@ -249,6 +253,7 @@ namespace feelGYM
             string query = "SELECT * FROM tiposangre";
             string atributo = "nombre";
             llenarItems(cmb_sangreProfe, query, atributo);
+            txt_docProfe.MaxLength = 9;
         }
 
         private void btn_cerrarPlan_Click(object sender, EventArgs e)
@@ -296,8 +301,136 @@ namespace feelGYM
         public Clases.Profesores profeSeleccionado { get; set; }
 
 
+
+        public Boolean ValidarDatos()
+        {
+            Boolean valida = true;
+
+            if (txt_nombreProfe.Text == "NOMBRE")
+            {
+                MessageBox.Show("Campo 'NOMBRE' vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                valida = false;
+            }
+
+            if (txt_apellidoProfe.Text == "APELLIDO")
+            {
+                MessageBox.Show("Campo 'APELLIDO' vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                valida = false;
+            }
+
+            if (txt_docProfe.Text == "NRO DOCUMENTO")
+            {
+                MessageBox.Show("Campo 'DNI' vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                valida = false;
+            }
+            else
+            {
+                string querySocio = "SELECT COUNT(profesores.dniProfe) from profesores where profesores.dniProfe = " + Convert.ToInt32(txt_docProfe.Text);
+                int contador = Clases.Metodos.ValidarProfe(Convert.ToInt32(txt_docProfe.Text), querySocio);
+                if (contador != 0)
+                {
+                    MessageBox.Show("Ya existe un profesor con ese DNI", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    valida = false;
+                }
+            }
+
+            if (txt_celProfe.Text == "CELULAR")
+            {
+                MessageBox.Show("Campo 'CELULAR' vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                valida = false;
+            }
+
+            if (txt_cerEmergenciaProfe.Text == "CEL EMERGENCIA")
+            {
+                MessageBox.Show("Campo 'CELULAR EMERGENCIA' vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                valida = false;
+            }
+
+            if (cmb_sangreProfe.SelectedIndex < 0)
+            {
+                MessageBox.Show("Seleccione un TIPO DE SANGRE", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                valida = false;
+            }
+
+            return valida;
+        }
+
+        private void txt_docProfe_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números 
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+              if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso 
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan 
+                e.Handled = true;
+            }
+        }
+
+        private void txt_nombreProfe_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && e.KeyChar != '\b')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_apellidoProfe_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && e.KeyChar != '\b')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_celProfe_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números 
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+              if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso 
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan 
+                e.Handled = true;
+            }
+        }
+
+        private void txt_cerEmergenciaProfe_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números 
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+              if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso 
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan 
+                e.Handled = true;
+            }
+        }
+
+
         //BUTTON que al presionarlo obtiene el profesor seleccionado y agrega en cada campo correspondiente para poder modificarlo
-        private void btn_modificarEjercicio_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             if (dgv_todosLosProfes.SelectedRows.Count == 1)
             {
@@ -363,11 +496,12 @@ namespace feelGYM
                 }
             }
             #endregion
+
+            txt_buscarPorNombre.Clear();
         }
 
-
         //BTN que borra el ejercicio seleccionado y actualiza la grilla.
-        private void btn_borrarEjercicio_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             if (dgv_todosLosProfes.SelectedRows.Count == 1)
             {
@@ -404,11 +538,6 @@ namespace feelGYM
                 else
                     MessageBox.Show("Se cancelo la eliminacion", "Eliminacion Cancelada", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-        }
-
-
-        public void ValidarCampos() {
-
         }
     }
 }

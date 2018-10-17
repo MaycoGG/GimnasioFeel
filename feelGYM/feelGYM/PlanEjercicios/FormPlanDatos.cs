@@ -23,14 +23,11 @@ namespace feelGYM
             this.Close();
         }
 
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-            //txt_fechaActualPlan.Text = DateTime.Now.ToString("dd/MM/yyyy");
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             //txt_fechaActualPlan.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            picker_fechaInicio.Text =  DateTime.Now.ToString("dd/MM/yyyy");
+            picker_fechaFin.Text = DateTime.Now.AddDays(30).ToString("dd/MM/yyyy");
         }
 
         private void txt_NombreClientePlan_Enter(object sender, EventArgs e)
@@ -87,7 +84,130 @@ namespace feelGYM
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+
+        private void FormPlanDatos_Load(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM profesores";
+            string atributo = "nombreApe";
+            Clases.Metodos cb = new Clases.Metodos();
+            cb.LlenarCombo(cmb_profesor, query, atributo);
+            txt_dniSocio.MaxLength = 7;
+            
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmb_profesor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (ValidarDatos())
+            {
+
+            }
+
+        }
+
+        public Boolean ValidarDatos()
+        {
+            Boolean valida = true;
+            
+            if (txt_NombreClientePlan.Text == "NOMBRE")
+            {
+                MessageBox.Show("Campo 'NOMBRE' vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                valida = false;
+            }
+
+            if (txt_apellidoClientePlan.Text == "APELLIDO")
+            {
+                MessageBox.Show("Campo 'APELLIDO' vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                valida = false;
+            }
+
+            if (txt_dniSocio.Text == "DNI")
+            {
+                MessageBox.Show("Campo 'DNI' vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                valida = false;
+            }
+            else
+            {
+                string querySocio = "SELECT COUNT(socio.dni) from socio where socio.dni = " + Convert.ToInt32(txt_dniSocio.Text);
+                int contador = Clases.Metodos.ValidarSocio(Convert.ToInt32(txt_dniSocio.Text), querySocio);
+                if (contador != 0)
+                {
+                    MessageBox.Show("Ya existe un socio con ese DNI", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    valida = false;
+                }
+            }
+
+            if (cmb_sesionesPlan.Value < 1 || cmb_sesionesPlan.Value > 6)
+            {
+                MessageBox.Show("El número de sesiones acepta valores entre 1 y 6 inclusive", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                valida = false;
+            }
+
+            if (cmb_profesor.SelectedIndex < 0)
+            {
+                MessageBox.Show("Seleccione un PROFESOR", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                valida = false;
+            }
+
+            return valida;
+        }
+
+        private void txt_dniSocio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números 
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+              if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso 
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan 
+                e.Handled = true;
+            }
+        }
+
+        private void txt_NombreClientePlan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && e.KeyChar != '\b')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_apellidoClientePlan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && e.KeyChar != '\b')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btn_registrarProfe_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_armarPlan_Click(object sender, EventArgs e)
         {
             if (ValidarDatos())
             {
@@ -135,129 +255,13 @@ namespace feelGYM
                     tab.tabControl1.TabPages.Add(new MyTabPage(new FormPlanEjercicios(), sesion, plan.numPlan, plan.dniSocio));
                 }
             }
-
         }
 
-        private void btn_agregarProfeEnPlan_Click(object sender, EventArgs e)
+        private void btn_agregarProf_Click(object sender, EventArgs e)
         {
             this.Close();
             FormProfesor_AGREGAR form = new FormProfesor_AGREGAR();
             form.Show();
-            
-        }
-
-        private void FormPlanDatos_Load(object sender, EventArgs e)
-        {
-            string query = "SELECT * FROM profesores";
-            string atributo = "nombreApe";
-            Clases.Metodos cb = new Clases.Metodos();
-            cb.LlenarCombo(cmb_profesor, query, atributo);
-            txt_dniSocio.MaxLength = 9;
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmb_profesor_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (ValidarDatos())
-            {
-
-            }
-
-        }
-
-        public Boolean ValidarDatos()
-        {
-            Boolean valida = true;
-            if (cmb_sesionesPlan.Value < 1 || cmb_sesionesPlan.Value > 6)
-            {
-                MessageBox.Show("El número de sesiones acepta valores entre 1 y 6 inclusive", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                valida = false;
-            }
-            if (txt_NombreClientePlan.Text == "NOMBRE")
-            {
-                MessageBox.Show("Campo 'NOMBRE' vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                valida = false;
-            }
-            if (txt_apellidoClientePlan.Text == "APELLIDO")
-            {
-                MessageBox.Show("Campo 'APELLIDO' vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                valida = false;
-            }
-            if (txt_dniSocio.Text == "DNI")
-            {
-                MessageBox.Show("Campo 'DNI' vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                valida = false;
-            }
-            if (cmb_profesor.SelectedIndex != 0)
-            {
-                MessageBox.Show("Seleccione un PROFESOR", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                valida = false;
-            }
-            if (txt_dniSocio.Text == "DNI")
-            {
-
-            }
-            else {
-                //string querySocio = "SELECT COUNT(socio.dni) from socio where socio.dni = " + Convert.ToInt32(txt_dniSocio.Text);
-                //int contador = Clases.Metodos.ValidarSocio(Convert.ToInt32(txt_dniSocio.Text), querySocio);
-                //if (contador > 0)
-                //{
-                //    MessageBox.Show("Ya existe un socio con ese DNI", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    valida = false;
-                //}
-                //valida = false;
-            }
-            
-            return valida;
-        }
-
-        private void txt_dniSocio_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //Para obligar a que sólo se introduzcan números 
-            if (Char.IsDigit(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-              if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso 
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                //el resto de teclas pulsadas se desactivan 
-                e.Handled = true;
-            }
-        }
-
-        private void txt_NombreClientePlan_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && e.KeyChar != '\b')
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void txt_apellidoClientePlan_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && e.KeyChar != '\b')
-            {
-                e.Handled = true;
-            }
         }
     }
 }

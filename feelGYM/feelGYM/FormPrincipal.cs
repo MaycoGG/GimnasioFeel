@@ -152,7 +152,8 @@ namespace feelGYM
                 this.timerOcultarMenu.Enabled = false;
             }
             else {
-                this.panelMenu.Width = panelMenu.Width - 20;
+                //this.panelMenu.Width = panelMenu.Width - 20;
+                this.panelMenu.Width = 56 ;
             }
         }
 
@@ -164,7 +165,8 @@ namespace feelGYM
             }
             else
             {
-                this.panelMenu.Width = panelMenu.Width + 20;
+                //this.panelMenu.Width = panelMenu.Width + 20;
+                this.panelMenu.Width = 200;
             }
         }
 
@@ -175,7 +177,7 @@ namespace feelGYM
                 timerOcultarMenu.Enabled = true;
             }
             else{
-                if (panelMenu.Width == 60) { timerMostrarMenu.Enabled = true; }
+                if (panelMenu.Width == 56) { timerMostrarMenu.Enabled = true; }
             }
         }
 
@@ -183,6 +185,7 @@ namespace feelGYM
         {
             lbl_horaActual.Text = DateTime.Now.ToString("HH:mm:ss");
             lbl_fechaActual.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            
         }
 
         private void lbl_horaActual_Click(object sender, EventArgs e)
