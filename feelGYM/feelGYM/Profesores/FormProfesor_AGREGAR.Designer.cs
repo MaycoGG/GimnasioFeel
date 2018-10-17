@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProfesor_AGREGAR));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_registrarProfe = new System.Windows.Forms.Button();
             this.txt_apellidoProfe = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -48,12 +49,12 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_CONTROL = new System.Windows.Forms.TextBox();
             this.gb_profesores = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.txt_buscarPorNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_todosLosProfes = new System.Windows.Forms.DataGridView();
             this.btn_mostrarProfe = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cerrarPlan)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.gb_profesores.SuspendLayout();
@@ -70,7 +71,7 @@
             this.btn_registrarProfe.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_registrarProfe.ForeColor = System.Drawing.Color.LightGray;
             this.btn_registrarProfe.Location = new System.Drawing.Point(55, 238);
-            this.btn_registrarProfe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_registrarProfe.Margin = new System.Windows.Forms.Padding(4);
             this.btn_registrarProfe.Name = "btn_registrarProfe";
             this.btn_registrarProfe.Size = new System.Drawing.Size(181, 52);
             this.btn_registrarProfe.TabIndex = 1;
@@ -85,7 +86,7 @@
             this.txt_apellidoProfe.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_apellidoProfe.ForeColor = System.Drawing.Color.DimGray;
             this.txt_apellidoProfe.Location = new System.Drawing.Point(52, 58);
-            this.txt_apellidoProfe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_apellidoProfe.Margin = new System.Windows.Forms.Padding(4);
             this.txt_apellidoProfe.Name = "txt_apellidoProfe";
             this.txt_apellidoProfe.Size = new System.Drawing.Size(400, 19);
             this.txt_apellidoProfe.TabIndex = 34;
@@ -111,7 +112,7 @@
             this.txt_nombreProfe.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nombreProfe.ForeColor = System.Drawing.Color.DimGray;
             this.txt_nombreProfe.Location = new System.Drawing.Point(52, 25);
-            this.txt_nombreProfe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_nombreProfe.Margin = new System.Windows.Forms.Padding(4);
             this.txt_nombreProfe.Name = "txt_nombreProfe";
             this.txt_nombreProfe.Size = new System.Drawing.Size(400, 19);
             this.txt_nombreProfe.TabIndex = 33;
@@ -137,7 +138,7 @@
             this.txt_celProfe.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_celProfe.ForeColor = System.Drawing.Color.DimGray;
             this.txt_celProfe.Location = new System.Drawing.Point(55, 123);
-            this.txt_celProfe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_celProfe.Margin = new System.Windows.Forms.Padding(4);
             this.txt_celProfe.Name = "txt_celProfe";
             this.txt_celProfe.Size = new System.Drawing.Size(400, 19);
             this.txt_celProfe.TabIndex = 39;
@@ -163,7 +164,7 @@
             this.txt_docProfe.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_docProfe.ForeColor = System.Drawing.Color.DimGray;
             this.txt_docProfe.Location = new System.Drawing.Point(55, 90);
-            this.txt_docProfe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_docProfe.Margin = new System.Windows.Forms.Padding(4);
             this.txt_docProfe.Name = "txt_docProfe";
             this.txt_docProfe.Size = new System.Drawing.Size(241, 19);
             this.txt_docProfe.TabIndex = 38;
@@ -199,7 +200,7 @@
             this.txt_cerEmergenciaProfe.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_cerEmergenciaProfe.ForeColor = System.Drawing.Color.DimGray;
             this.txt_cerEmergenciaProfe.Location = new System.Drawing.Point(55, 156);
-            this.txt_cerEmergenciaProfe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_cerEmergenciaProfe.Margin = new System.Windows.Forms.Padding(4);
             this.txt_cerEmergenciaProfe.Name = "txt_cerEmergenciaProfe";
             this.txt_cerEmergenciaProfe.Size = new System.Drawing.Size(400, 19);
             this.txt_cerEmergenciaProfe.TabIndex = 42;
@@ -222,7 +223,7 @@
             // 
             this.cmb_sangreProfe.FormattingEnabled = true;
             this.cmb_sangreProfe.Location = new System.Drawing.Point(221, 188);
-            this.cmb_sangreProfe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmb_sangreProfe.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_sangreProfe.Name = "cmb_sangreProfe";
             this.cmb_sangreProfe.Size = new System.Drawing.Size(269, 25);
             this.cmb_sangreProfe.TabIndex = 49;
@@ -235,7 +236,7 @@
             this.textBox1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.DimGray;
             this.textBox1.Location = new System.Drawing.Point(55, 188);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(159, 19);
             this.textBox1.TabIndex = 50;
@@ -247,7 +248,7 @@
             this.btn_cerrarPlan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_cerrarPlan.Image = ((System.Drawing.Image)(resources.GetObject("btn_cerrarPlan.Image")));
             this.btn_cerrarPlan.Location = new System.Drawing.Point(1145, 16);
-            this.btn_cerrarPlan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_cerrarPlan.Margin = new System.Windows.Forms.Padding(4);
             this.btn_cerrarPlan.Name = "btn_cerrarPlan";
             this.btn_cerrarPlan.Size = new System.Drawing.Size(33, 33);
             this.btn_cerrarPlan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -265,7 +266,7 @@
             this.btn_cancelar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cancelar.ForeColor = System.Drawing.Color.LightGray;
             this.btn_cancelar.Location = new System.Drawing.Point(255, 238);
-            this.btn_cancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_cancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(195, 52);
             this.btn_cancelar.TabIndex = 52;
@@ -293,9 +294,9 @@
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(270, 18);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(536, 322);
             this.groupBox1.TabIndex = 53;
             this.groupBox1.TabStop = false;
@@ -308,7 +309,7 @@
             this.txt_CONTROL.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_CONTROL.ForeColor = System.Drawing.Color.DimGray;
             this.txt_CONTROL.Location = new System.Drawing.Point(300, 90);
-            this.txt_CONTROL.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_CONTROL.Margin = new System.Windows.Forms.Padding(4);
             this.txt_CONTROL.Name = "txt_CONTROL";
             this.txt_CONTROL.Size = new System.Drawing.Size(149, 19);
             this.txt_CONTROL.TabIndex = 53;
@@ -323,14 +324,50 @@
             this.gb_profesores.Controls.Add(this.dgv_todosLosProfes);
             this.gb_profesores.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb_profesores.Location = new System.Drawing.Point(97, 361);
-            this.gb_profesores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gb_profesores.Margin = new System.Windows.Forms.Padding(4);
             this.gb_profesores.Name = "gb_profesores";
-            this.gb_profesores.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gb_profesores.Padding = new System.Windows.Forms.Padding(4);
             this.gb_profesores.Size = new System.Drawing.Size(905, 305);
             this.gb_profesores.TabIndex = 54;
             this.gb_profesores.TabStop = false;
             this.gb_profesores.Text = "TODOS LOS PROFESORES";
             this.gb_profesores.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.LightGray;
+            this.button1.Location = new System.Drawing.Point(722, 200);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(167, 52);
+            this.button1.TabIndex = 54;
+            this.button1.Text = "BORRAR";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.LightGray;
+            this.button2.Location = new System.Drawing.Point(722, 140);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(167, 52);
+            this.button2.TabIndex = 53;
+            this.button2.Text = "MODIFICAR";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // txt_buscarPorNombre
             // 
@@ -339,7 +376,7 @@
             this.txt_buscarPorNombre.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_buscarPorNombre.ForeColor = System.Drawing.Color.DimGray;
             this.txt_buscarPorNombre.Location = new System.Drawing.Point(206, 49);
-            this.txt_buscarPorNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_buscarPorNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txt_buscarPorNombre.Name = "txt_buscarPorNombre";
             this.txt_buscarPorNombre.Size = new System.Drawing.Size(400, 19);
             this.txt_buscarPorNombre.TabIndex = 37;
@@ -360,10 +397,23 @@
             // 
             // dgv_todosLosProfes
             // 
+            this.dgv_todosLosProfes.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_todosLosProfes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_todosLosProfes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_todosLosProfes.EnableHeadersVisualStyles = false;
+            this.dgv_todosLosProfes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
             this.dgv_todosLosProfes.Location = new System.Drawing.Point(65, 93);
-            this.dgv_todosLosProfes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv_todosLosProfes.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_todosLosProfes.Name = "dgv_todosLosProfes";
+            this.dgv_todosLosProfes.ReadOnly = true;
+            this.dgv_todosLosProfes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_todosLosProfes.Size = new System.Drawing.Size(638, 196);
             this.dgv_todosLosProfes.TabIndex = 29;
             // 
@@ -377,49 +427,13 @@
             this.btn_mostrarProfe.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mostrarProfe.ForeColor = System.Drawing.Color.LightGray;
             this.btn_mostrarProfe.Location = new System.Drawing.Point(850, 118);
-            this.btn_mostrarProfe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_mostrarProfe.Margin = new System.Windows.Forms.Padding(4);
             this.btn_mostrarProfe.Name = "btn_mostrarProfe";
             this.btn_mostrarProfe.Size = new System.Drawing.Size(152, 85);
             this.btn_mostrarProfe.TabIndex = 53;
             this.btn_mostrarProfe.Text = "MOSTRAR PROFESORES";
             this.btn_mostrarProfe.UseVisualStyleBackColor = false;
             this.btn_mostrarProfe.Click += new System.EventHandler(this.btn_mostrarProfe_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.LightGray;
-            this.button1.Location = new System.Drawing.Point(708, 200);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(181, 52);
-            this.button1.TabIndex = 54;
-            this.button1.Text = "BORRAR";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.LightGray;
-            this.button2.Location = new System.Drawing.Point(708, 140);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(181, 52);
-            this.button2.TabIndex = 53;
-            this.button2.Text = "MODIFICAR";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // FormProfesor_AGREGAR
             // 
@@ -432,7 +446,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_cerrarPlan);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormProfesor_AGREGAR";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "REGISTRAR PROFESOR";

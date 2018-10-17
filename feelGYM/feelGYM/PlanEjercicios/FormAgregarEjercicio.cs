@@ -146,7 +146,7 @@ namespace feelGYM
                 gb_listaEjercicios.Visible = true;
 
                 Clases.Metodos m = new Clases.Metodos();
-                string query = "SELECT ejercicios.nombre as 'Nombre', tipoejercicio.nombre as 'Tipo Ejercicio', ejercicios.id " +
+                string query = "SELECT ejercicios.nombre AS 'NOMBRE', tipoejercicio.nombre AS 'TIPO EJERCICIO', ejercicios.id " +
                     "FROM ejercicios JOIN tipoejercicio ON ejercicios.tipoEjercicio = tipoejercicio.id ORDER BY tipoejercicio.id";
 
                 //llena de grilla con todos los ejercicios

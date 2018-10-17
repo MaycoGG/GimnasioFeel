@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAgregarEjercicio));
-            this.label1 = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_nombreEjercicioNuevo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,17 +52,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_todosLosEjercicios)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(185, 86);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 17);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "label1";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txt_nombreEjercicioNuevo);
@@ -73,7 +62,7 @@
             this.groupBox1.Controls.Add(this.txt_idEjercicioModificar);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.cmb_tipoEjercicioAgregar);
-            this.groupBox1.Location = new System.Drawing.Point(41, 27);
+            this.groupBox1.Location = new System.Drawing.Point(214, 29);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -196,10 +185,10 @@
             // 
             // btn_cerrarPlan
             // 
-            this.btn_cerrarPlan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_cerrarPlan.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_cerrarPlan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_cerrarPlan.Image = ((System.Drawing.Image)(resources.GetObject("btn_cerrarPlan.Image")));
-            this.btn_cerrarPlan.Location = new System.Drawing.Point(759, 16);
+            this.btn_cerrarPlan.Location = new System.Drawing.Point(952, 16);
             this.btn_cerrarPlan.Margin = new System.Windows.Forms.Padding(4);
             this.btn_cerrarPlan.Name = "btn_cerrarPlan";
             this.btn_cerrarPlan.Size = new System.Drawing.Size(33, 33);
@@ -215,7 +204,7 @@
             this.gb_listaEjercicios.Controls.Add(this.txt_buscar);
             this.gb_listaEjercicios.Controls.Add(this.label4);
             this.gb_listaEjercicios.Controls.Add(this.dgv_todosLosEjercicios);
-            this.gb_listaEjercicios.Location = new System.Drawing.Point(41, 276);
+            this.gb_listaEjercicios.Location = new System.Drawing.Point(214, 278);
             this.gb_listaEjercicios.Margin = new System.Windows.Forms.Padding(4);
             this.gb_listaEjercicios.Name = "gb_listaEjercicios";
             this.gb_listaEjercicios.Padding = new System.Windows.Forms.Padding(4);
@@ -290,10 +279,23 @@
             // 
             // dgv_todosLosEjercicios
             // 
+            this.dgv_todosLosEjercicios.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_todosLosEjercicios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_todosLosEjercicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_todosLosEjercicios.EnableHeadersVisualStyles = false;
+            this.dgv_todosLosEjercicios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
             this.dgv_todosLosEjercicios.Location = new System.Drawing.Point(27, 98);
             this.dgv_todosLosEjercicios.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_todosLosEjercicios.Name = "dgv_todosLosEjercicios";
+            this.dgv_todosLosEjercicios.ReadOnly = true;
+            this.dgv_todosLosEjercicios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_todosLosEjercicios.Size = new System.Drawing.Size(434, 196);
             this.dgv_todosLosEjercicios.TabIndex = 24;
             // 
@@ -302,11 +304,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(808, 650);
+            this.ClientSize = new System.Drawing.Size(1001, 650);
             this.Controls.Add(this.gb_listaEjercicios);
             this.Controls.Add(this.btn_cerrarPlan);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormAgregarEjercicio";
@@ -320,12 +321,10 @@
             this.gb_listaEjercicios.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_todosLosEjercicios)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmb_tipoEjercicioAgregar;
