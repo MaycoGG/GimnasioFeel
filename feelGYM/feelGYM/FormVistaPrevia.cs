@@ -95,7 +95,7 @@ namespace feelGYM
                     datosDetalle1.series = grillas.ElementAt(0).Rows[j].Cells[3].Value.ToString();
                     datosDetalle1.repeticiones = grillas.ElementAt(0).Rows[j].Cells[4].Value.ToString();
                     datosDetalle1.observacionDetalle = grillas.ElementAt(0).Rows[j].Cells[5].Value.ToString();
-                    listDetalle1.Add(new Clases.ImpresionDetalle(datosDetalle1.ejercicio));
+                    listDetalle1.Add(new Clases.ImpresionDetalle(datosDetalle1.ejercicio, datosDetalle1.intesidad,datosDetalle1.series,datosDetalle1.repeticiones,datosDetalle1.observacionDetalle));
                 }
             }
 
@@ -118,7 +118,7 @@ namespace feelGYM
                     datosDetalle2.series = grillas.ElementAt(1).Rows[j].Cells[3].Value.ToString();
                     datosDetalle2.repeticiones = grillas.ElementAt(1).Rows[j].Cells[4].Value.ToString();
                     datosDetalle2.observacionDetalle = grillas.ElementAt(1).Rows[j].Cells[5].Value.ToString();
-                    listDetalle2.Add(new Clases.ImpresionDetalle(datosDetalle2.ejercicio));
+                    listDetalle2.Add(new Clases.ImpresionDetalle(datosDetalle2.ejercicio, datosDetalle2.intesidad, datosDetalle2.series, datosDetalle2.repeticiones, datosDetalle2.observacionDetalle));
                 }
             }
 
@@ -140,6 +140,7 @@ namespace feelGYM
                     datosDetalle3.series = grillas.ElementAt(2).Rows[j].Cells[3].Value.ToString();
                     datosDetalle3.repeticiones = grillas.ElementAt(2).Rows[j].Cells[4].Value.ToString();
                     datosDetalle3.observacionDetalle = grillas.ElementAt(2).Rows[j].Cells[5].Value.ToString();
+                    listDetalle3.Add(new Clases.ImpresionDetalle(datosDetalle3.ejercicio, datosDetalle3.intesidad, datosDetalle3.series, datosDetalle3.repeticiones, datosDetalle3.observacionDetalle));
                 }
             }
 
@@ -161,6 +162,7 @@ namespace feelGYM
                     datosDetalle4.series = grillas.ElementAt(3).Rows[j].Cells[3].Value.ToString();
                     datosDetalle4.repeticiones = grillas.ElementAt(3).Rows[j].Cells[4].Value.ToString();
                     datosDetalle4.observacionDetalle = grillas.ElementAt(3).Rows[j].Cells[5].Value.ToString();
+                    listDetalle4.Add(new Clases.ImpresionDetalle(datosDetalle4.ejercicio, datosDetalle4.intesidad, datosDetalle4.series, datosDetalle4.repeticiones, datosDetalle4.observacionDetalle));
                 }
             }
 
@@ -182,7 +184,7 @@ namespace feelGYM
                     datosDetalle5.series = grillas.ElementAt(4).Rows[j].Cells[3].Value.ToString();
                     datosDetalle5.repeticiones = grillas.ElementAt(4).Rows[j].Cells[4].Value.ToString();
                     datosDetalle5.observacionDetalle = grillas.ElementAt(4).Rows[j].Cells[5].Value.ToString();
-                    listDetalle5.Add(new Clases.ImpresionDetalle(datosDetalle5.ejercicio));
+                    listDetalle5.Add(new Clases.ImpresionDetalle(datosDetalle5.ejercicio, datosDetalle5.intesidad, datosDetalle5.series, datosDetalle5.repeticiones, datosDetalle5.observacionDetalle));
                 }
             }
 
@@ -204,7 +206,7 @@ namespace feelGYM
                     datosDetalle6.series = grillas.ElementAt(5).Rows[j].Cells[3].Value.ToString();
                     datosDetalle6.repeticiones = grillas.ElementAt(5).Rows[j].Cells[4].Value.ToString();
                     datosDetalle6.observacionDetalle = grillas.ElementAt(5).Rows[j].Cells[5].Value.ToString();
-                    listDetalle6.Add(new Clases.ImpresionDetalle(datosDetalle6.ejercicio));
+                    listDetalle6.Add(new Clases.ImpresionDetalle(datosDetalle6.ejercicio, datosDetalle6.intesidad, datosDetalle6.series, datosDetalle6.repeticiones, datosDetalle6.observacionDetalle));
                 }
             }
 
@@ -231,6 +233,21 @@ namespace feelGYM
 
             //parametros para ocultar las tablas
             #region asignamos los parametros
+
+            ReportParameter s1 = new ReportParameter("s1", "Sesión 1");
+            frm.reportViewerImprimir.LocalReport.SetParameters(s1);
+            ReportParameter s2 = new ReportParameter("s2", "Sesión 2");
+            frm.reportViewerImprimir.LocalReport.SetParameters(s2);
+            ReportParameter s3 = new ReportParameter("s3", "Sesión 3");
+            frm.reportViewerImprimir.LocalReport.SetParameters(s3);
+            ReportParameter s4 = new ReportParameter("s4", "Sesión 4");
+            frm.reportViewerImprimir.LocalReport.SetParameters(s4);
+            ReportParameter s5 = new ReportParameter("s5", "Sesión 5");
+            frm.reportViewerImprimir.LocalReport.SetParameters(s5);
+            ReportParameter s6 = new ReportParameter("s6", "Sesión 6");
+            frm.reportViewerImprimir.LocalReport.SetParameters(s6);
+
+
             if (listDetalle1.Count != 0)
             {
                 ReportParameter dts1 = new ReportParameter("dts1", "false");

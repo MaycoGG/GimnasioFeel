@@ -14,7 +14,7 @@ namespace feelGYM.Clases
         public string repeticiones { get; set; }
         public string ejercicio { get; set; }
 
-        public ImpresionDetalle(string observacionDetalle, string intesidad, string series, string repeticiones, string ejercicio)
+        public ImpresionDetalle(string ejercicio, string intesidad, string repeticiones, string series, string observacionDetalle )
         {
             this.observacionDetalle = observacionDetalle;
             this.intesidad = intesidad;

@@ -37,14 +37,14 @@
             this.reportViewerImprimir.Location = new System.Drawing.Point(0, 0);
             this.reportViewerImprimir.Name = "reportViewerImprimir";
             this.reportViewerImprimir.ServerReport.BearerToken = null;
-            this.reportViewerImprimir.Size = new System.Drawing.Size(846, 485);
+            this.reportViewerImprimir.Size = new System.Drawing.Size(747, 545);
             this.reportViewerImprimir.TabIndex = 0;
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(846, 485);
+            this.ClientSize = new System.Drawing.Size(747, 545);
             this.Controls.Add(this.reportViewerImprimir);
             this.Name = "Form3";
             this.Text = "Form3";
