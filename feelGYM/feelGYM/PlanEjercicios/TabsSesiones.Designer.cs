@@ -38,12 +38,13 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(887, 486);
+            this.tabControl1.Size = new System.Drawing.Size(926, 662);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // txt_imprimirPlan
             // 
+            this.txt_imprimirPlan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_imprimirPlan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
             this.txt_imprimirPlan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txt_imprimirPlan.FlatAppearance.BorderSize = 0;
@@ -51,9 +52,9 @@
             this.txt_imprimirPlan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.txt_imprimirPlan.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_imprimirPlan.ForeColor = System.Drawing.Color.LightGray;
-            this.txt_imprimirPlan.Location = new System.Drawing.Point(643, 477);
+            this.txt_imprimirPlan.Location = new System.Drawing.Point(773, 668);
             this.txt_imprimirPlan.Name = "txt_imprimirPlan";
-            this.txt_imprimirPlan.Size = new System.Drawing.Size(289, 40);
+            this.txt_imprimirPlan.Size = new System.Drawing.Size(153, 46);
             this.txt_imprimirPlan.TabIndex = 5;
             this.txt_imprimirPlan.Text = "IMPRIMIR";
             this.txt_imprimirPlan.UseVisualStyleBackColor = false;
@@ -64,10 +65,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(944, 529);
+            this.ClientSize = new System.Drawing.Size(943, 720);
             this.Controls.Add(this.txt_imprimirPlan);
             this.Controls.Add(this.tabControl1);
             this.Name = "TabsSesiones";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TabsSesiones";
             this.Load += new System.EventHandler(this.TabsSesiones_Load);
             this.ResumeLayout(false);

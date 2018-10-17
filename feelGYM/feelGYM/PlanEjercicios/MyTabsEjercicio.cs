@@ -15,7 +15,7 @@ namespace feelGYM.PlanEjercicios
         {
             this.frm = frm_contenido;
             this.Controls.Add(frm_contenido.pnl);
-            this.Text = "Sesion " + i;
+            this.Text = "SESIÓN " + i;
             this.AutoScroll = true;
             frm_contenido.labelPag.Text = i.ToString();
             frm_contenido.numPlan.Text = numPag.ToString();

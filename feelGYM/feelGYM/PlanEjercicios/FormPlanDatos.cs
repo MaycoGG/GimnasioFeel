@@ -246,6 +246,7 @@ namespace feelGYM
                     tab.tabControl1.TabPages.Add(new MyTabPage(new FormPlanEjercicios(), sesion, plan.numPlan, plan.dniSocio));
                 }
             }
+            
         }
 
         private void btn_agregarProf_Click(object sender, EventArgs e)

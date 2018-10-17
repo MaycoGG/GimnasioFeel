@@ -276,8 +276,8 @@ namespace feelGYM
                 gb_profesores.Visible = true;
 
                 Clases.Metodos m = new Clases.Metodos();
-                string query = "SELECT profesores.nombreApe as 'Profesor', profesores.dniProfe as 'DNI', profesores.celular as 'Celular', " +
-                    "profesores.celEmergencia as 'Cel Emergencia', tiposangre.nombre as 'Grupo Sanguineo' " +
+                string query = "SELECT profesores.nombreApe as 'PROFESOR', profesores.dniProfe as 'DNI', profesores.celular as 'CELULAR', " +
+                    "profesores.celEmergencia as 'CEL EMERGENCIA', tiposangre.nombre as 'GRUPO SANGUÍNEO' " +
                     "FROM profesores JOIN tiposangre ON profesores.tipoSangre = tiposangre.id ORDER BY 1";
 
                 //llena de grilla con todos los ejercicios
