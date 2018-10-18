@@ -422,6 +422,21 @@ namespace feelGYM.Clases
         }
 
         //metodo para obtener numero de PLAN de un SOCIO
+        public static int ValidarEjercicio(int tipoEjer, string nombre)
+        {
+            int contador = 0;
+            MySqlCommand cmd = new MySqlCommand(String.Format("SELECT COUNT(*) FROM ejercicios WHERE ejercicios.nombre = '{0}' AND ejercicios.tipoEjercicio = '{1}' ", nombre, tipoEjer), Conexion.obtenerConexion());
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                contador = reader.GetInt32(0);
+            }
+            return contador;
+        }
+
+        
+
+        //metodo para obtener numero de PLAN de un SOCIO
         public static int ObtenerNroPlanSocio(int dniSocio)
         {
             

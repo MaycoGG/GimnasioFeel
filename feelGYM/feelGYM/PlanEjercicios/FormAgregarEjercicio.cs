@@ -320,6 +320,7 @@ namespace feelGYM
         public Boolean ValidarDatos()
         {
             bool valida = true;
+            int tipo = 0;
             if (txt_nombreEjercicioNuevo.Text == "")
             {
                 MessageBox.Show("Campo 'NOMBRE' vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -330,7 +331,59 @@ namespace feelGYM
                 MessageBox.Show("Seleccione un TIPO DE EJERCICIO", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 valida = false;
             }
+
+            int devolveme = devolverTipoEjercicio();
+            int contValidacion = Clases.Metodos.ValidarEjercicio(devolveme, txt_nombreEjercicioNuevo.Text);
+
+            if (contValidacion > 0)
+            {
+                MessageBox.Show("Existe un ejercicio con mismo tipo e igual nombre", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                valida = false;
+            }
+
+
             return valida;
+        }
+
+        public int devolverTipoEjercicio()
+        {
+            int tipo = 0;
+
+            if (cmb_tipoEjercicioAgregar.SelectedIndex == 0)
+            {
+                tipo = 1;
+            }
+            if (cmb_tipoEjercicioAgregar.SelectedIndex == 1)
+            {
+                tipo = 2;
+            }
+            if (cmb_tipoEjercicioAgregar.SelectedIndex == 2)
+            {
+                tipo = 3;
+            }
+            if (cmb_tipoEjercicioAgregar.SelectedIndex == 3)
+            {
+                tipo = 4;
+            }
+            if (cmb_tipoEjercicioAgregar.SelectedIndex == 4)
+            {
+                tipo = 5;
+            }
+            if (cmb_tipoEjercicioAgregar.SelectedIndex == 5)
+            {
+                tipo = 6;
+            }
+            if (cmb_tipoEjercicioAgregar.SelectedIndex == 6)
+            {
+                tipo = 7;
+            }
+            if (cmb_tipoEjercicioAgregar.SelectedIndex == 7)
+            {
+                tipo = 8;
+            }
+
+
+            return tipo;
         }
     }
 }
