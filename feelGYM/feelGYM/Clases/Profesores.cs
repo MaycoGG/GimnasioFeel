@@ -13,18 +13,16 @@ namespace feelGYM.Clases
         public string Apellido { get; set; }
         public double Celular { get; set; }
         public double CelEmergencia { get; set; }
-        public string Mail { get; set; }
         public int TipoSangre { get; set; }
 
         public Profesores() { }
 
-        public Profesores(int dni, string nombre, string ape, double cel, double celEmer, string mail, int tiposangre) {
+        public Profesores(int dni, string nombre, string ape, double cel, double celEmer, int tiposangre) {
             this.Dni = dni;
             this.Nombre = nombre;
             this.Apellido = Apellido;
             this.Celular = cel;
             this.CelEmergencia = celEmer;
-            this.Mail = mail;
             this.TipoSangre = tiposangre;
         }
         

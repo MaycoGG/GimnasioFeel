@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProfesor_AGREGAR));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_registrarProfe = new System.Windows.Forms.Button();
             this.txt_apellidoProfe = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -47,7 +47,6 @@
             this.btn_cerrarPlan = new System.Windows.Forms.PictureBox();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txt_CONTROL = new System.Windows.Forms.TextBox();
             this.gb_profesores = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -276,7 +275,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txt_CONTROL);
             this.groupBox1.Controls.Add(this.txt_celProfe);
             this.groupBox1.Controls.Add(this.txt_docProfe);
             this.groupBox1.Controls.Add(this.label11);
@@ -302,19 +300,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DATOS PROFESOR";
             // 
-            // txt_CONTROL
-            // 
-            this.txt_CONTROL.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txt_CONTROL.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_CONTROL.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_CONTROL.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_CONTROL.Location = new System.Drawing.Point(300, 90);
-            this.txt_CONTROL.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_CONTROL.Name = "txt_CONTROL";
-            this.txt_CONTROL.Size = new System.Drawing.Size(149, 19);
-            this.txt_CONTROL.TabIndex = 53;
-            this.txt_CONTROL.Visible = false;
-            // 
             // gb_profesores
             // 
             this.gb_profesores.Controls.Add(this.button1);
@@ -335,7 +320,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.button1.BackColor = System.Drawing.Color.Maroon;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -398,14 +383,14 @@
             // dgv_todosLosProfes
             // 
             this.dgv_todosLosProfes.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_todosLosProfes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_todosLosProfes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_todosLosProfes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_todosLosProfes.EnableHeadersVisualStyles = false;
             this.dgv_todosLosProfes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
@@ -416,6 +401,7 @@
             this.dgv_todosLosProfes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_todosLosProfes.Size = new System.Drawing.Size(638, 196);
             this.dgv_todosLosProfes.TabIndex = 29;
+            this.dgv_todosLosProfes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_todosLosProfes_CellContentClick);
             // 
             // btn_mostrarProfe
             // 
@@ -485,7 +471,6 @@
         private System.Windows.Forms.TextBox txt_buscarPorNombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgv_todosLosProfes;
-        private System.Windows.Forms.TextBox txt_CONTROL;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
     }

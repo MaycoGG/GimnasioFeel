@@ -28,6 +28,7 @@ namespace feelGYM
             {
                 txt_nombreProfe.Text = "";
                 txt_nombreProfe.ForeColor = Color.Black;
+                gb_profesores.Visible = false;
             }
         }
 
@@ -37,6 +38,7 @@ namespace feelGYM
             {
                 txt_nombreProfe.Text = "NOMBRE";
                 txt_nombreProfe.ForeColor = Color.DimGray;
+                gb_profesores.Visible = false;
             }
         }
 
@@ -46,6 +48,7 @@ namespace feelGYM
             {
                 txt_apellidoProfe.Text = "";
                 txt_apellidoProfe.ForeColor = Color.Black;
+                gb_profesores.Visible = false;
             }
         }
 
@@ -55,6 +58,7 @@ namespace feelGYM
             {
                 txt_apellidoProfe.Text = "APELLIDO";
                 txt_apellidoProfe.ForeColor = Color.DimGray;
+                gb_profesores.Visible = false;
             }
         }
 
@@ -64,6 +68,7 @@ namespace feelGYM
             {
                 txt_docProfe.Text = "";
                 txt_docProfe.ForeColor = Color.Black;
+                gb_profesores.Visible = false;
             }
         }
 
@@ -73,6 +78,7 @@ namespace feelGYM
             {
                 txt_docProfe.Text = "NRO DOCUMENTO";
                 txt_docProfe.ForeColor = Color.DimGray;
+                gb_profesores.Visible = false;
             }
         }
 
@@ -82,6 +88,7 @@ namespace feelGYM
             {
                 txt_celProfe.Text = "";
                 txt_celProfe.ForeColor = Color.Black;
+                gb_profesores.Visible = false;
             }
         }
 
@@ -91,6 +98,7 @@ namespace feelGYM
             {
                 txt_celProfe.Text = "CELULAR";
                 txt_celProfe.ForeColor = Color.DimGray;
+                gb_profesores.Visible = false;
             }
         }
 
@@ -100,6 +108,7 @@ namespace feelGYM
             {
                 txt_cerEmergenciaProfe.Text = "";
                 txt_cerEmergenciaProfe.ForeColor = Color.Black;
+                gb_profesores.Visible = false;
             }
         }
 
@@ -109,6 +118,7 @@ namespace feelGYM
             {
                 txt_cerEmergenciaProfe.Text = "CEL EMERGENCIA";
                 txt_cerEmergenciaProfe.ForeColor = Color.DimGray;
+                gb_profesores.Visible = false;
             }
         }
 
@@ -118,7 +128,9 @@ namespace feelGYM
             {
                 txt_buscarPorNombre.Text = "";
                 txt_buscarPorNombre.ForeColor = Color.Black;
+                dgv_todosLosProfes.Refresh();
             }
+            dgv_todosLosProfes.Refresh();
         }
 
         private void txt_buscarPorNombre_Leave(object sender, EventArgs e)
@@ -127,7 +139,9 @@ namespace feelGYM
             {
                 txt_buscarPorNombre.Text = "BUSCAR POR NOMBRE/APELLIDO";
                 txt_buscarPorNombre.ForeColor = Color.DimGray;
+                dgv_todosLosProfes.Refresh();
             }
+            dgv_todosLosProfes.Refresh();
         }
         #endregion
 
@@ -141,8 +155,46 @@ namespace feelGYM
             {
                 Clases.Profesores ejer = new Clases.Profesores();
 
+                string queryProfe = "SELECT COUNT(profesores.dniProfe) from profesores where profesores.dniProfe = " + Convert.ToInt32(txt_docProfe.Text);
+                int validarProfe = Clases.Metodos.ValidarProfe(Convert.ToInt32(txt_docProfe.Text), queryProfe);
+
                 //si el TXT_DOCUMENTO esta vacio lo agrega, de lo contrario lo modifica.
-                if (string.IsNullOrEmpty(txt_CONTROL.Text))
+                if (validarProfe > 0)
+                {
+
+                    //consulta para actualizar el ejercicio
+                    string query = "UPDATE profesores set nombreApe = '{1}', celular = '{2}', celEmergencia = '{3}', tipoSangre = '{4}' where dniProfe = '{0}'";
+
+                    //txt_nombreProfe.Text = "";
+                    //ejer.Nombre = txt_nombreProfe.Text;
+                    ejer.Apellido = txt_apellidoProfe.Text;
+                    String nomApe = ejer.Nombre + " " + ejer.Apellido;
+                    ejer.Celular = Convert.ToDouble(txt_celProfe.Text);
+                    ejer.CelEmergencia = Convert.ToDouble(txt_cerEmergenciaProfe.Text);
+                    ejer.TipoSangre = cmb_sangreProfe.SelectedIndex + 1;
+                    ejer.Dni = Convert.ToInt32(txt_docProfe.Text);
+
+
+
+                    //llamo al metodo de la clase "Metodos" y le paso por parametro el ejercicio creado y la consulta
+                    int retorno = Clases.Metodos.ModificarProfe(ejer, query);
+                    if (retorno > 0)
+                    {
+                        MessageBox.Show("Profesor modificado correctamente!", "Profesor Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txt_nombreProfe.Visible = true;
+                        txt_nombreProfe.Text = "NOMBRE";
+                        txt_apellidoProfe.Text = "APELLIDO";
+                        txt_docProfe.Text = "NRO DOCUMENTO";
+                        txt_celProfe.Text = "CELULAR";
+                        txt_cerEmergenciaProfe.Text = "CEL EMERGENCIA";
+                        cmb_sangreProfe.SelectedItem = null;
+                        btn_registrarProfe.Text = "REGISTRAR";
+                    }
+                    else { MessageBox.Show("Ocurrió un error"); }
+  
+
+                }
+                else
                 {
                     //consulta para guardar el ejercicio
                     string query = "insert into profesores (dniProfe, nombreApe, celular, celEmergencia, tipoSangre) values ('{0}', '{1}', '{2}', '{3}', '{4}')";
@@ -180,38 +232,6 @@ namespace feelGYM
 
                         //cierro el FORM
                         this.Close();
-                    }
-                    else { MessageBox.Show("Ocurrió un error"); }
-
-                }
-                else
-                {
-                    //consulta para actualizar el ejercicio
-                    string query = "UPDATE profesores set nombreApe = '{1}', celular = '{2}', celEmergencia = '{3}', tipoSangre = '{4}' where dniProfe = '{0}'";
-
-                    //ejer.Nombre = txt_nombreProfe.Text;
-                    ejer.Apellido = txt_apellidoProfe.Text;
-                    String nomApe = ejer.Nombre + " " + ejer.Apellido;
-                    ejer.Celular = Convert.ToDouble(txt_celProfe.Text);
-                    ejer.CelEmergencia = Convert.ToDouble(txt_cerEmergenciaProfe.Text);
-                    ejer.TipoSangre = cmb_sangreProfe.SelectedIndex + 1;
-                    ejer.Dni = Convert.ToInt32(txt_docProfe.Text);
-
-
-
-                    //llamo al metodo de la clase "Metodos" y le paso por parametro el ejercicio creado y la consulta
-                    int retorno = Clases.Metodos.ModificarProfe(ejer, query);
-                    if (retorno > 0)
-                    {
-                        MessageBox.Show("Profesor modificado correctamente!", "Profesor Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        txt_nombreProfe.Visible = true;
-                        txt_nombreProfe.Text = "NOMBRE";
-                        txt_apellidoProfe.Text = "APELLIDO";
-                        txt_docProfe.Text = "NRO DOCUMENTO";
-                        txt_celProfe.Text = "CELULAR";
-                        txt_cerEmergenciaProfe.Text = "CEL EMERGENCIA";
-                        cmb_sangreProfe.SelectedItem = null;
-                        btn_registrarProfe.Text = "REGISTRAR";
                     }
                     else { MessageBox.Show("Ocurrió un error"); }
 
@@ -254,6 +274,7 @@ namespace feelGYM
             string atributo = "nombre";
             llenarItems(cmb_sangreProfe, query, atributo);
             txt_docProfe.MaxLength = 9;
+
         }
 
         private void btn_cerrarPlan_Click(object sender, EventArgs e)
@@ -294,7 +315,15 @@ namespace feelGYM
 
         private void txt_buscarPorNombre_TextChanged(object sender, EventArgs e)
         {
-            dgv_todosLosProfes.DataSource = Clases.Metodos.BuscarProfe(txt_buscarPorNombre.Text);
+            if (txt_buscarPorNombre.Text == "")
+            {
+                dgv_todosLosProfes.Refresh();
+            }
+            else
+            {
+                dgv_todosLosProfes.DataSource = Clases.Metodos.BuscarProfe(txt_buscarPorNombre.Text);
+            }
+            
         }
 
         //crea un objeto de tipo PROFESOR.
@@ -327,7 +356,8 @@ namespace feelGYM
             {
                 string querySocio = "SELECT COUNT(profesores.dniProfe) from profesores where profesores.dniProfe = " + Convert.ToInt32(txt_docProfe.Text);
                 int contador = Clases.Metodos.ValidarProfe(Convert.ToInt32(txt_docProfe.Text), querySocio);
-                if (contador > 0)
+
+                if (contador > 0 && txt_docProfe.Enabled == true )
                 {
                     MessageBox.Show("Ya existe un profesor con ese DNI", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     valida = false;
@@ -445,7 +475,8 @@ namespace feelGYM
             {
                 txt_docProfe.Enabled = false;
                 txt_nombreProfe.Visible = false;
-                txt_CONTROL.Text = Convert.ToString(profeSeleccionado.Dni);
+                txt_nombreProfe.Text = "";
+                
                 txt_apellidoProfe.Text = profeSeleccionado.Apellido;
                 txt_docProfe.Text = Convert.ToString(profeSeleccionado.Dni);
                 txt_celProfe.Text = profeSeleccionado.Celular.ToString();
@@ -538,6 +569,11 @@ namespace feelGYM
                 else
                     MessageBox.Show("Se cancelo la eliminacion", "Eliminacion Cancelada", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private void dgv_todosLosProfes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }
