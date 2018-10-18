@@ -309,7 +309,11 @@ namespace feelGYM.Clases
         {
             int retorno = 0;
             MySqlCommand cmd = new MySqlCommand(String.Format(query, dniProfe), Conexion.obtenerConexion());
-            retorno = cmd.ExecuteNonQuery();
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                retorno = reader.GetInt32(0);
+            }
             return retorno;
         }
 

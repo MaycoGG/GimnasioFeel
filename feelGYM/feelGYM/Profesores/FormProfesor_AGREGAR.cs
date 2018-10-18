@@ -327,7 +327,7 @@ namespace feelGYM
             {
                 string querySocio = "SELECT COUNT(profesores.dniProfe) from profesores where profesores.dniProfe = " + Convert.ToInt32(txt_docProfe.Text);
                 int contador = Clases.Metodos.ValidarProfe(Convert.ToInt32(txt_docProfe.Text), querySocio);
-                if (contador != 0)
+                if (contador > 0)
                 {
                     MessageBox.Show("Ya existe un profesor con ese DNI", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     valida = false;
