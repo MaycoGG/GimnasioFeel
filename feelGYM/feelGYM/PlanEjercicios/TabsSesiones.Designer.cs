@@ -45,14 +45,14 @@
             // txt_imprimirPlan
             // 
             this.txt_imprimirPlan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_imprimirPlan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.txt_imprimirPlan.BackColor = System.Drawing.Color.LightSteelBlue;
             this.txt_imprimirPlan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txt_imprimirPlan.FlatAppearance.BorderSize = 0;
             this.txt_imprimirPlan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txt_imprimirPlan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.txt_imprimirPlan.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_imprimirPlan.ForeColor = System.Drawing.Color.LightGray;
-            this.txt_imprimirPlan.Location = new System.Drawing.Point(755, 668);
+            this.txt_imprimirPlan.ForeColor = System.Drawing.Color.Black;
+            this.txt_imprimirPlan.Location = new System.Drawing.Point(764, 668);
             this.txt_imprimirPlan.Name = "txt_imprimirPlan";
             this.txt_imprimirPlan.Size = new System.Drawing.Size(149, 46);
             this.txt_imprimirPlan.TabIndex = 5;
@@ -65,10 +65,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(921, 720);
+            this.BackColor = System.Drawing.Color.LightSlateGray;
+            this.ClientSize = new System.Drawing.Size(930, 720);
             this.Controls.Add(this.txt_imprimirPlan);
             this.Controls.Add(this.tabControl1);
+            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "TabsSesiones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TabsSesiones";

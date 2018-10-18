@@ -44,7 +44,6 @@
             this.cmb_sesionesPlan = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btn_agregarProf = new System.Windows.Forms.Button();
             this.btn_armarPlan = new System.Windows.Forms.Button();
             this.btn_registrarProfe = new System.Windows.Forms.Button();
             this.picker_fechaInicio = new System.Windows.Forms.DateTimePicker();
@@ -55,6 +54,7 @@
             this.cmb_profesor = new System.Windows.Forms.ComboBox();
             this.btn_cerrarPlan = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btn_agregarProf = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_sesionesPlan)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -91,7 +91,7 @@
             this.txt_dniSocio.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_dniSocio.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_dniSocio.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_dniSocio.Location = new System.Drawing.Point(28, 149);
+            this.txt_dniSocio.Location = new System.Drawing.Point(31, 56);
             this.txt_dniSocio.Margin = new System.Windows.Forms.Padding(4);
             this.txt_dniSocio.MaxLength = 8;
             this.txt_dniSocio.Name = "txt_dniSocio";
@@ -106,7 +106,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(60, 158);
+            this.label2.Location = new System.Drawing.Point(63, 65);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(330, 17);
@@ -189,7 +189,7 @@
             this.txt_NombreClientePlan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_NombreClientePlan.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_NombreClientePlan.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_NombreClientePlan.Location = new System.Drawing.Point(29, 57);
+            this.txt_NombreClientePlan.Location = new System.Drawing.Point(31, 149);
             this.txt_NombreClientePlan.Margin = new System.Windows.Forms.Padding(4);
             this.txt_NombreClientePlan.Name = "txt_NombreClientePlan";
             this.txt_NombreClientePlan.Size = new System.Drawing.Size(396, 19);
@@ -203,7 +203,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(60, 66);
+            this.label11.Location = new System.Drawing.Point(62, 158);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(330, 17);
@@ -266,24 +266,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Plan Actual";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // btn_agregarProf
-            // 
-            this.btn_agregarProf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
-            this.btn_agregarProf.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_agregarProf.FlatAppearance.BorderSize = 0;
-            this.btn_agregarProf.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_agregarProf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_agregarProf.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_agregarProf.ForeColor = System.Drawing.Color.LightGray;
-            this.btn_agregarProf.Location = new System.Drawing.Point(349, 47);
-            this.btn_agregarProf.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_agregarProf.Name = "btn_agregarProf";
-            this.btn_agregarProf.Size = new System.Drawing.Size(53, 37);
-            this.btn_agregarProf.TabIndex = 23;
-            this.btn_agregarProf.Text = "+";
-            this.btn_agregarProf.UseVisualStyleBackColor = false;
-            this.btn_agregarProf.Click += new System.EventHandler(this.btn_agregarProf_Click);
             // 
             // btn_armarPlan
             // 
@@ -386,7 +368,7 @@
             this.cmb_profesor.Location = new System.Drawing.Point(145, 51);
             this.cmb_profesor.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_profesor.Name = "cmb_profesor";
-            this.cmb_profesor.Size = new System.Drawing.Size(197, 24);
+            this.cmb_profesor.Size = new System.Drawing.Size(212, 24);
             this.cmb_profesor.TabIndex = 0;
             this.cmb_profesor.SelectedIndexChanged += new System.EventHandler(this.cmb_profesor_SelectedIndexChanged);
             // 
@@ -408,6 +390,24 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // btn_agregarProf
+            // 
+            this.btn_agregarProf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.btn_agregarProf.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_agregarProf.FlatAppearance.BorderSize = 0;
+            this.btn_agregarProf.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_agregarProf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_agregarProf.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_agregarProf.ForeColor = System.Drawing.Color.LightGray;
+            this.btn_agregarProf.Location = new System.Drawing.Point(365, 51);
+            this.btn_agregarProf.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_agregarProf.Name = "btn_agregarProf";
+            this.btn_agregarProf.Size = new System.Drawing.Size(37, 24);
+            this.btn_agregarProf.TabIndex = 23;
+            this.btn_agregarProf.Text = "+";
+            this.btn_agregarProf.UseVisualStyleBackColor = false;
+            this.btn_agregarProf.Click += new System.EventHandler(this.btn_agregarProf_Click);
             // 
             // FormPlanDatos
             // 
