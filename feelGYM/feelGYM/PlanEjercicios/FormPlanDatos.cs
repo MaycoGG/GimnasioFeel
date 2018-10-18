@@ -93,7 +93,13 @@ namespace feelGYM
             Clases.Metodos cb = new Clases.Metodos();
             cb.LlenarCombo(cmb_profesor, query, atributo);
             txt_dniSocio.MaxLength = 8;
-            
+
+            picker_fechaInicio.MinDate = DateTime.Today;
+            picker_fechaInicio.Text = DateTime.Now.ToString("dd/MM/yyyy");
+
+            picker_fechaFin.MinDate = DateTime.Today.AddDays(1);
+            picker_fechaFin.Text = DateTime.Now.AddDays(30).ToString("dd/MM/yyyy");
+
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -204,8 +210,11 @@ namespace feelGYM
             {
                 #region agrega Socio
 
+                string queryValidar = "select COUNT(socio.dni) FROM socio where socio.dni = " + Convert.ToInt32(txt_dniSocio.Text);
+
                 int dniExiste = Clases.Metodos.ObtenerDniSocio(txt_NombreClientePlan.Text, txt_apellidoClientePlan.Text);
-                if (dniExiste == 0)
+                int dniValidar = Clases.Metodos.ValidarSocio(Convert.ToInt32(txt_dniSocio.Text), queryValidar);
+                if (dniExiste == 0 && dniValidar != 0)
                 {
                     Clases.Socio socio = new Clases.Socio();
                     string query = "INSERT INTO socio (dni, nombre, apellido) values ('{0}', '{1}', '{2}')";
@@ -256,6 +265,11 @@ namespace feelGYM
             this.Close();
             FormProfesor_AGREGAR form = new FormProfesor_AGREGAR();
             form.Show();
+        }
+
+        private void picker_fechaInicio_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
