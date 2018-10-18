@@ -278,7 +278,6 @@
             this.panelBarraTitulo.Name = "panelBarraTitulo";
             this.panelBarraTitulo.Size = new System.Drawing.Size(976, 40);
             this.panelBarraTitulo.TabIndex = 0;
-            this.panelBarraTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelBarraTitulo_MouseMove);
             // 
             // btn_maximizar
             // 
@@ -376,8 +375,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panelContenedor;
         private System.Windows.Forms.Panel panelFormularios;
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel panelBarraTitulo;
@@ -400,6 +397,7 @@
         private System.Windows.Forms.Label lbl_horaActual;
         private System.Windows.Forms.Timer horaFecha;
         private System.Windows.Forms.Button button3;
+        public System.Windows.Forms.Panel panelContenedor;
     }
 }
 

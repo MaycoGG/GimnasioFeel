@@ -387,5 +387,31 @@ namespace feelGYM
                 dgv_EjerciciosEC.SelectedRows[0].Cells[0].Value = false;
             }
         }
+
+        private void dgv_Desarrollo_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            if (dgv_Desarrollo.CurrentCell.ColumnIndex == 4 || dgv_Desarrollo.CurrentCell.ColumnIndex == 3 )
+            {
+                TextBox txt = e.Control as TextBox;
+                if (txt != null)
+                {
+                    txt.KeyPress -= new KeyPressEventHandler(dgv_Desarrollo_KeyPress);
+                    txt.KeyPress += new KeyPressEventHandler(dgv_Desarrollo_KeyPress);
+                }
+            }
+        }
+
+        private void dgv_Desarrollo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (dgv_Desarrollo.CurrentCell.ColumnIndex == 4 || dgv_Desarrollo.CurrentCell.ColumnIndex == 3)
+            {
+                if (char.IsNumber(e.KeyChar) || e.KeyChar == (char)Keys.Back)
+                {
+                    e.Handled = false;
+                }
+                else
+                { e.Handled = true; }
+            }
+        }
     }
 }

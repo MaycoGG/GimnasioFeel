@@ -118,6 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAASZJREFUSEvtk19OwkAchPtOeEPPQ70BhqOQEB8MCAdS4BoIngSk6XPrN2V4atbd
+        Ev8kxi+ZbJmd+S1ZaPY3qarqBi3RDpWWnpd1XQ8cuw6GjFHBoBDv7N873g0PrzSF5ZllyNqT/CxPe2Lk
+        WhoUblHzzVkntluwN3XmxJJ+XRR0vyq+2ApCZu3sk604hN9UgqGtIGRzBVn3tuIQvlxPz1YQMn1nC1tx
+        rjygtBWH8N6l3FYQZZzd2YpDeOFS8o8Mc1txKOnt1V9Ph0xtt2DvwZmDOrbToDBClxdthXLUt+7QRnuC
+        50fXukFRhxw9p4X2NNwf9Xnmajr0BhQX6BUVqMTbahhqrqWZbuQ3xa+EufPz+DP/h3wKc3/8kPQXsAsa
+        /G3Df4ks+wDm4hU0mAvR8wAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="btn_cerrarPlan.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1

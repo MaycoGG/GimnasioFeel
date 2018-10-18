@@ -44,7 +44,6 @@
             this.cmb_sesionesPlan = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btn_agregarProf = new System.Windows.Forms.Button();
             this.btn_armarPlan = new System.Windows.Forms.Button();
             this.btn_registrarProfe = new System.Windows.Forms.Button();
             this.picker_fechaInicio = new System.Windows.Forms.DateTimePicker();
@@ -55,6 +54,7 @@
             this.cmb_profesor = new System.Windows.Forms.ComboBox();
             this.btn_cerrarPlan = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_sesionesPlan)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -63,6 +63,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.txt_NombreClientePlan);
             this.groupBox2.Controls.Add(this.txt_dniSocio);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.txt_obj);
@@ -71,7 +73,6 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.txt_apellidoClientePlan);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.txt_NombreClientePlan);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.cmb_sesionesPlan);
             this.groupBox2.Controls.Add(this.label9);
@@ -91,14 +92,15 @@
             this.txt_dniSocio.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_dniSocio.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_dniSocio.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_dniSocio.Location = new System.Drawing.Point(28, 149);
+            this.txt_dniSocio.Location = new System.Drawing.Point(93, 56);
             this.txt_dniSocio.Margin = new System.Windows.Forms.Padding(4);
             this.txt_dniSocio.MaxLength = 8;
             this.txt_dniSocio.Name = "txt_dniSocio";
-            this.txt_dniSocio.Size = new System.Drawing.Size(397, 19);
+            this.txt_dniSocio.Size = new System.Drawing.Size(274, 19);
             this.txt_dniSocio.TabIndex = 3;
             this.txt_dniSocio.Text = "DNI";
             this.txt_dniSocio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_dniSocio.TextChanged += new System.EventHandler(this.txt_dniSocio_TextChanged);
             this.txt_dniSocio.Enter += new System.EventHandler(this.txt_dniSocio_Enter);
             this.txt_dniSocio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_dniSocio_KeyPress);
             this.txt_dniSocio.Leave += new System.EventHandler(this.txt_dniSocio_Leave);
@@ -189,7 +191,7 @@
             this.txt_NombreClientePlan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_NombreClientePlan.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_NombreClientePlan.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_NombreClientePlan.Location = new System.Drawing.Point(29, 57);
+            this.txt_NombreClientePlan.Location = new System.Drawing.Point(31, 149);
             this.txt_NombreClientePlan.Margin = new System.Windows.Forms.Padding(4);
             this.txt_NombreClientePlan.Name = "txt_NombreClientePlan";
             this.txt_NombreClientePlan.Size = new System.Drawing.Size(396, 19);
@@ -247,7 +249,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btn_agregarProf);
             this.groupBox1.Controls.Add(this.btn_armarPlan);
             this.groupBox1.Controls.Add(this.btn_registrarProfe);
             this.groupBox1.Controls.Add(this.picker_fechaInicio);
@@ -266,24 +267,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Plan Actual";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // btn_agregarProf
-            // 
-            this.btn_agregarProf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
-            this.btn_agregarProf.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_agregarProf.FlatAppearance.BorderSize = 0;
-            this.btn_agregarProf.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_agregarProf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_agregarProf.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_agregarProf.ForeColor = System.Drawing.Color.LightGray;
-            this.btn_agregarProf.Location = new System.Drawing.Point(349, 47);
-            this.btn_agregarProf.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_agregarProf.Name = "btn_agregarProf";
-            this.btn_agregarProf.Size = new System.Drawing.Size(53, 37);
-            this.btn_agregarProf.TabIndex = 23;
-            this.btn_agregarProf.Text = "+";
-            this.btn_agregarProf.UseVisualStyleBackColor = false;
-            this.btn_agregarProf.Click += new System.EventHandler(this.btn_agregarProf_Click);
             // 
             // btn_armarPlan
             // 
@@ -386,7 +369,7 @@
             this.cmb_profesor.Location = new System.Drawing.Point(145, 51);
             this.cmb_profesor.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_profesor.Name = "cmb_profesor";
-            this.cmb_profesor.Size = new System.Drawing.Size(197, 24);
+            this.cmb_profesor.Size = new System.Drawing.Size(257, 24);
             this.cmb_profesor.TabIndex = 0;
             this.cmb_profesor.SelectedIndexChanged += new System.EventHandler(this.cmb_profesor_SelectedIndexChanged);
             // 
@@ -395,7 +378,7 @@
             this.btn_cerrarPlan.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_cerrarPlan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_cerrarPlan.Image = ((System.Drawing.Image)(resources.GetObject("btn_cerrarPlan.Image")));
-            this.btn_cerrarPlan.Location = new System.Drawing.Point(1008, 16);
+            this.btn_cerrarPlan.Location = new System.Drawing.Point(1011, 13);
             this.btn_cerrarPlan.Margin = new System.Windows.Forms.Padding(4);
             this.btn_cerrarPlan.Name = "btn_cerrarPlan";
             this.btn_cerrarPlan.Size = new System.Drawing.Size(33, 33);
@@ -408,6 +391,25 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.LightGray;
+            this.button1.Location = new System.Drawing.Point(353, 51);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(28, 24);
+            this.button1.TabIndex = 34;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormPlanDatos
             // 
@@ -459,6 +461,6 @@
         private System.Windows.Forms.DateTimePicker picker_fechaInicio;
         private System.Windows.Forms.Button btn_registrarProfe;
         private System.Windows.Forms.Button btn_armarPlan;
-        private System.Windows.Forms.Button btn_agregarProf;
+        private System.Windows.Forms.Button button1;
     }
 }
