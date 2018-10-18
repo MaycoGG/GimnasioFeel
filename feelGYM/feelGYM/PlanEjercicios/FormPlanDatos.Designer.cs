@@ -215,9 +215,24 @@
             this.cmb_sesionesPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_sesionesPlan.Location = new System.Drawing.Point(203, 197);
             this.cmb_sesionesPlan.Margin = new System.Windows.Forms.Padding(4);
+            this.cmb_sesionesPlan.Maximum = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
+            this.cmb_sesionesPlan.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.cmb_sesionesPlan.Name = "cmb_sesionesPlan";
             this.cmb_sesionesPlan.Size = new System.Drawing.Size(65, 23);
             this.cmb_sesionesPlan.TabIndex = 13;
+            this.cmb_sesionesPlan.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label9
             // 
@@ -317,6 +332,7 @@
             this.picker_fechaInicio.Size = new System.Drawing.Size(257, 23);
             this.picker_fechaInicio.TabIndex = 20;
             this.picker_fechaInicio.Value = new System.DateTime(2018, 10, 14, 0, 0, 0, 0);
+            this.picker_fechaInicio.ValueChanged += new System.EventHandler(this.picker_fechaInicio_ValueChanged);
             // 
             // picker_fechaFin
             // 
