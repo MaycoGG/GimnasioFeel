@@ -237,6 +237,8 @@ namespace feelGYM
 
 
                 TabsSesiones tab = new TabsSesiones();
+                tab.dniSocio = plan.dniSocio;
+                tab.numPlan = plan.numPlan;
                 tab.Show();
                 Decimal cantsesiones = cmb_sesionesPlan.Value;
 

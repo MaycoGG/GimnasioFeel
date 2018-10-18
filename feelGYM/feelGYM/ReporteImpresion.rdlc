@@ -337,19 +337,19 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>7.66664cm</Width>
+                  <Width>8.91187cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.30466cm</Width>
+                  <Width>1.17944cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.19534cm</Width>
+                  <Width>1.09548cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.88912cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.10854cm</Width>
+                  <Width>3.9709cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -394,14 +394,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox29">
+                        <Textbox Name="Textbox17">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>I</Value>
+                                  <Value>I (%)</Value>
                                   <Style>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -548,7 +548,10 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!ejercicio.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Century Gothic</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -578,10 +581,15 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!intesidad.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Century Gothic</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox73</rd:DefaultName>
@@ -608,10 +616,15 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!repeticiones.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Century Gothic</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>repeticiones2</rd:DefaultName>
@@ -638,10 +651,15 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!series.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Century Gothic</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>series3</rd:DefaultName>
@@ -668,7 +686,10 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!observacionDetalle.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Century Gothic</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -713,9 +734,9 @@
             </TablixRowHierarchy>
             <DataSetName>DataSet7</DataSetName>
             <Top>11.12076cm</Top>
-            <Left>1.86083cm</Left>
+            <Left>0.68792cm</Left>
             <Height>1.2cm</Height>
-            <Width>15.77518cm</Width>
+            <Width>18.04681cm</Width>
             <Visibility>
               <Hidden>=Parameters!dts6.Value = "true"</Hidden>
             </Visibility>
@@ -729,19 +750,19 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>7.66664cm</Width>
+                  <Width>8.91187cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.30466cm</Width>
+                  <Width>1.17944cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.19534cm</Width>
+                  <Width>1.09548cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.88912cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.10854cm</Width>
+                  <Width>3.97091cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -786,14 +807,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox17">
+                        <Textbox Name="Textbox13">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>I</Value>
+                                  <Value>I (%)</Value>
                                   <Style>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -940,7 +961,10 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!ejercicio.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Century Gothic</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -970,10 +994,15 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!intesidad.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Century Gothic</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox73</rd:DefaultName>
@@ -1000,10 +1029,15 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!repeticiones.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Century Gothic</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>repeticiones3</rd:DefaultName>
@@ -1030,10 +1064,15 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!series.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Century Gothic</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>series4</rd:DefaultName>
@@ -1060,7 +1099,10 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!observacionDetalle.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Century Gothic</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -1105,9 +1147,9 @@
             </TablixRowHierarchy>
             <DataSetName>DataSet6</DataSetName>
             <Top>9.02285cm</Top>
-            <Left>1.86083cm</Left>
+            <Left>0.68792cm</Left>
             <Height>1.2cm</Height>
-            <Width>15.77518cm</Width>
+            <Width>18.04682cm</Width>
             <ZIndex>1</ZIndex>
             <Visibility>
               <Hidden>=Parameters!dts5.Value = "true"</Hidden>
@@ -1122,19 +1164,19 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>7.66664cm</Width>
+                  <Width>8.91187cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.30466cm</Width>
+                  <Width>1.17944cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.19534cm</Width>
+                  <Width>1.09548cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.88912cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.10854cm</Width>
+                  <Width>3.9709cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -1179,14 +1221,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox13">
+                        <Textbox Name="Textbox12">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>I</Value>
+                                  <Value>I (%)</Value>
                                   <Style>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -1333,7 +1375,10 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!ejercicio.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Century Gothic</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -1363,10 +1408,15 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!intesidad.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Century Gothic</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox73</rd:DefaultName>
@@ -1393,10 +1443,15 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!repeticiones.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Century Gothic</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>repeticiones4</rd:DefaultName>
@@ -1423,10 +1478,15 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!series.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Century Gothic</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>series5</rd:DefaultName>
@@ -1453,7 +1513,10 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!observacionDetalle.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Century Gothic</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -1498,9 +1561,9 @@
             </TablixRowHierarchy>
             <DataSetName>DataSet5</DataSetName>
             <Top>7.04646cm</Top>
-            <Left>1.86083cm</Left>
+            <Left>0.68792cm</Left>
             <Height>1.2cm</Height>
-            <Width>15.77518cm</Width>
+            <Width>18.04681cm</Width>
             <ZIndex>2</ZIndex>
             <Visibility>
               <Hidden>=Parameters!dts4.Value = "true"</Hidden>
@@ -1515,19 +1578,19 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>7.66664cm</Width>
+                  <Width>8.91187cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.30466cm</Width>
+                  <Width>1.12872cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.19534cm</Width>
+                  <Width>1.14619cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.88912cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.10854cm</Width>
+                  <Width>3.9709cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -1572,14 +1635,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox12">
+                        <Textbox Name="Textbox10">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>I</Value>
+                                  <Value>I (%)</Value>
                                   <Style>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -1726,7 +1789,10 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!ejercicio.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Century Gothic</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -1756,10 +1822,15 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!intesidad.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Century Gothic</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox73</rd:DefaultName>
@@ -1786,10 +1857,15 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!repeticiones.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Century Gothic</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox75</rd:DefaultName>
@@ -1816,10 +1892,15 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!series.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Century Gothic</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>series2</rd:DefaultName>
@@ -1846,7 +1927,10 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!observacionDetalle.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Century Gothic</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -1891,9 +1975,9 @@
             </TablixRowHierarchy>
             <DataSetName>DataSet4</DataSetName>
             <Top>5.04472cm</Top>
-            <Left>1.86083cm</Left>
+            <Left>0.68792cm</Left>
             <Height>1.2cm</Height>
-            <Width>15.77518cm</Width>
+            <Width>18.04681cm</Width>
             <ZIndex>3</ZIndex>
             <Visibility>
               <Hidden>=Parameters!dts3.Value = "true"</Hidden>
@@ -1908,19 +1992,19 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>7.66664cm</Width>
+                  <Width>8.91187cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.30466cm</Width>
+                  <Width>1.12872cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.19534cm</Width>
+                  <Width>1.14619cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.88912cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.10854cm</Width>
+                  <Width>3.9709cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -1972,7 +2056,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>I</Value>
+                                  <Value>I (%)</Value>
                                   <Style>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -2119,7 +2203,10 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!ejercicio.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Century Gothic</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -2149,10 +2236,15 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!intesidad.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Century Gothic</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>intesidad</rd:DefaultName>
@@ -2179,10 +2271,15 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!repeticiones.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Century Gothic</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>repeticiones</rd:DefaultName>
@@ -2209,10 +2306,15 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!series.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Century Gothic</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>series</rd:DefaultName>
@@ -2239,7 +2341,10 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!observacionDetalle.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Century Gothic</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -2284,9 +2389,9 @@
             </TablixRowHierarchy>
             <DataSetName>DataSet2</DataSetName>
             <Top>0.92286cm</Top>
-            <Left>1.86083cm</Left>
+            <Left>0.68792cm</Left>
             <Height>1.27938cm</Height>
-            <Width>15.77518cm</Width>
+            <Width>18.04681cm</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
@@ -2298,19 +2403,19 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>7.66664cm</Width>
+                  <Width>8.91187cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.30466cm</Width>
+                  <Width>1.12872cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.19534cm</Width>
+                  <Width>1.14619cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.88912cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.10854cm</Width>
+                  <Width>3.9709cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -2355,14 +2460,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox10">
+                        <Textbox Name="Textbox54">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>I</Value>
+                                  <Value>I (%)</Value>
                                   <Style>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -2509,7 +2614,10 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!ejercicio.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Century Gothic</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -2539,10 +2647,15 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!intesidad.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>century Gothic</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>intesidad1</rd:DefaultName>
@@ -2569,10 +2682,15 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!repeticiones.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>century Gothic</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>intesidad1</rd:DefaultName>
@@ -2599,10 +2717,15 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!series.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>century Gothic</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>series1</rd:DefaultName>
@@ -2629,7 +2752,10 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!observacionDetalle.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Century Gothic</FontFamily>
+                                    <FontSize>11pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -2674,9 +2800,9 @@
             </TablixRowHierarchy>
             <DataSetName>DataSet3</DataSetName>
             <Top>2.99777cm</Top>
-            <Left>1.86083cm</Left>
+            <Left>0.68792cm</Left>
             <Height>1.2cm</Height>
-            <Width>15.77518cm</Width>
+            <Width>18.04681cm</Width>
             <ZIndex>5</ZIndex>
             <Style>
               <Border>
@@ -2704,7 +2830,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox39</rd:DefaultName>
             <Top>0.25231cm</Top>
-            <Left>1.86083cm</Left>
+            <Left>1.58742cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
             <ZIndex>6</ZIndex>
@@ -2741,7 +2867,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox39</rd:DefaultName>
             <Top>10.48549cm</Top>
-            <Left>1.86083cm</Left>
+            <Left>1.58742cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
             <ZIndex>7</ZIndex>
@@ -2778,7 +2904,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox39</rd:DefaultName>
             <Top>8.42285cm</Top>
-            <Left>1.86083cm</Left>
+            <Left>1.58743cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
             <ZIndex>8</ZIndex>
@@ -2815,7 +2941,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox39</rd:DefaultName>
             <Top>6.41118cm</Top>
-            <Left>1.86083cm</Left>
+            <Left>1.58742cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
             <ZIndex>9</ZIndex>
@@ -2851,8 +2977,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox39</rd:DefaultName>
-            <Top>4.37416cm</Top>
-            <Left>1.86083cm</Left>
+            <Top>4.44472cm</Top>
+            <Left>1.58742cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
             <ZIndex>10</ZIndex>
@@ -2888,8 +3014,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox39</rd:DefaultName>
-            <Top>2.33687cm</Top>
-            <Left>1.86083cm</Left>
+            <Top>2.36249cm</Top>
+            <Left>1.58743cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
             <ZIndex>11</ZIndex>
@@ -2913,7 +3039,7 @@
       <Width>7.64348in</Width>
       <Page>
         <PageHeader>
-          <Height>5.50182cm</Height>
+          <Height>5.45979cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -2927,7 +3053,7 @@
                       <Value>=First(Fields!NombreSocio.Value, "DataSet1")</Value>
                       <Style>
                         <FontFamily>Century Gothic</FontFamily>
-                        <FontSize>12pt</FontSize>
+                        <FontSize>11pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -2958,7 +3084,8 @@
                     <TextRun>
                       <Value>Objetivo:</Value>
                       <Style>
-                        <FontSize>12pt</FontSize>
+                        <FontFamily>Century Gothic</FontFamily>
+                        <FontSize>11pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -2967,10 +3094,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox13</rd:DefaultName>
-              <Top>2.24924cm</Top>
-              <Left>8.27039cm</Left>
+              <Top>3.80492cm</Top>
+              <Left>1.58743cm</Left>
               <Height>0.6cm</Height>
-              <Width>2.08549cm</Width>
+              <Width>2.18249cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -2992,7 +3119,7 @@
                       <Value>=First(Fields!objetivo.Value, "DataSet1")</Value>
                       <Style>
                         <FontFamily>Century gothic</FontFamily>
-                        <FontSize>12pt</FontSize>
+                        <FontSize>11pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -3000,10 +3127,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox14</rd:DefaultName>
-              <Top>2.28452cm</Top>
-              <Left>10.46171cm</Left>
-              <Height>1.35474cm</Height>
-              <Width>4.72567cm</Width>
+              <Top>3.8402cm</Top>
+              <Left>3.94632cm</Left>
+              <Height>0.56472cm</Height>
+              <Width>11.24106cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -3025,7 +3152,7 @@
                       <Value>=First(Fields!ApellidoSocio.Value, "DataSet1")</Value>
                       <Style>
                         <FontFamily>Century Gothic</FontFamily>
-                        <FontSize>12pt</FontSize>
+                        <FontSize>11pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -3038,72 +3165,6 @@
               <Height>0.6cm</Height>
               <Width>4.14768cm</Width>
               <ZIndex>3</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox19">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>Obs.:</Value>
-                      <Style>
-                        <FontSize>12pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox13</rd:DefaultName>
-              <Top>3.80972cm</Top>
-              <Left>8.27039cm</Left>
-              <Height>0.6cm</Height>
-              <Width>2.08549cm</Width>
-              <ZIndex>4</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox20">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>=First(Fields!observacionPlan.Value, "DataSet1")</Value>
-                      <Style>
-                        <FontFamily>Century gothic</FontFamily>
-                        <FontSize>11pt</FontSize>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox14</rd:DefaultName>
-              <Top>3.80972cm</Top>
-              <Left>10.46171cm</Left>
-              <Height>1.34993cm</Height>
-              <Width>4.72567cm</Width>
-              <ZIndex>5</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -3136,10 +3197,10 @@
               </Paragraphs>
               <rd:DefaultName>Textbox13</rd:DefaultName>
               <Top>0.41424cm</Top>
-              <Left>1.54333cm</Left>
+              <Left>2.49707cm</Left>
               <Height>0.89104cm</Height>
-              <Width>13.91745cm</Width>
-              <ZIndex>6</ZIndex>
+              <Width>13.59996cm</Width>
+              <ZIndex>4</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -3160,7 +3221,7 @@
                       <Value>=First(Fields!NombreApeProfe.Value, "DataSet1")</Value>
                       <Style>
                         <FontFamily>century gothic</FontFamily>
-                        <FontSize>12pt</FontSize>
+                        <FontSize>11pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -3169,10 +3230,10 @@
               </Paragraphs>
               <rd:DefaultName>Textbox14</rd:DefaultName>
               <Top>1.50813cm</Top>
-              <Left>10.46171cm</Left>
+              <Left>10.79685cm</Left>
               <Height>0.6cm</Height>
-              <Width>4.72567cm</Width>
-              <ZIndex>7</ZIndex>
+              <Width>4.39053cm</Width>
+              <ZIndex>5</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -3192,7 +3253,8 @@
                     <TextRun>
                       <Value>Fecha Inicio:</Value>
                       <Style>
-                        <FontSize>12pt</FontSize>
+                        <FontFamily>Century Gothic</FontFamily>
+                        <FontSize>11pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -3201,11 +3263,11 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox13</rd:DefaultName>
-              <Top>3.80972cm</Top>
-              <Left>1.58742cm</Left>
+              <Top>2.26287cm</Top>
+              <Left>8.43796cm</Left>
               <Height>0.6cm</Height>
               <Width>2.7734cm</Width>
-              <ZIndex>8</ZIndex>
+              <ZIndex>6</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -3226,7 +3288,7 @@
                       <Value>=First(Fields!fechaInicio.Value, "DataSet1")</Value>
                       <Style>
                         <FontFamily>Century Gothic</FontFamily>
-                        <FontSize>12pt</FontSize>
+                        <FontSize>11pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -3234,11 +3296,11 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox14</rd:DefaultName>
-              <Top>3.81855cm</Top>
-              <Left>4.53722cm</Left>
+              <Top>2.24924cm</Top>
+              <Left>11.3172cm</Left>
               <Height>0.6cm</Height>
-              <Width>3.55678cm</Width>
-              <ZIndex>9</ZIndex>
+              <Width>3.87018cm</Width>
+              <ZIndex>7</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -3258,7 +3320,8 @@
                     <TextRun>
                       <Value>Fecha Fin:</Value>
                       <Style>
-                        <FontSize>12pt</FontSize>
+                        <FontFamily>Century Gothic</FontFamily>
+                        <FontSize>11pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -3267,11 +3330,11 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox13</rd:DefaultName>
-              <Top>4.50384cm</Top>
-              <Left>1.58742cm</Left>
+              <Top>3.03926cm</Top>
+              <Left>8.43796cm</Left>
               <Height>0.6cm</Height>
               <Width>2.7734cm</Width>
-              <ZIndex>10</ZIndex>
+              <ZIndex>8</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -3291,7 +3354,7 @@
                     <TextRun>
                       <Value>=First(Fields!fechaFin.Value, "DataSet1")</Value>
                       <Style>
-                        <FontSize>12pt</FontSize>
+                        <FontSize>11pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -3299,11 +3362,11 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox14</rd:DefaultName>
-              <Top>4.55966cm</Top>
-              <Left>4.53722cm</Left>
+              <Top>3.04809cm</Top>
+              <Left>11.3172cm</Left>
               <Height>0.6cm</Height>
-              <Width>3.55678cm</Width>
-              <ZIndex>11</ZIndex>
+              <Width>3.87018cm</Width>
+              <ZIndex>9</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -3323,7 +3386,8 @@
                     <TextRun>
                       <Value>Nro Plan:</Value>
                       <Style>
-                        <FontSize>12pt</FontSize>
+                        <FontFamily>Century Gothic</FontFamily>
+                        <FontSize>11pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -3336,7 +3400,7 @@
               <Left>1.58743cm</Left>
               <Height>0.6cm</Height>
               <Width>2.1825cm</Width>
-              <ZIndex>12</ZIndex>
+              <ZIndex>10</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -3357,7 +3421,7 @@
                       <Value>=First(Fields!NroPlan.Value, "DataSet1")</Value>
                       <Style>
                         <FontFamily>Century Gothic</FontFamily>
-                        <FontSize>12pt</FontSize>
+                        <FontSize>11pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -3367,11 +3431,11 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox14</rd:DefaultName>
-              <Top>3.03926cm</Top>
+              <Top>3.07454cm</Top>
               <Left>3.94632cm</Left>
               <Height>0.6cm</Height>
               <Width>1.83127cm</Width>
-              <ZIndex>13</ZIndex>
+              <ZIndex>11</ZIndex>
               <Style>
                 <Border>
                   <Style>Solid</Style>
@@ -3390,7 +3454,7 @@
               <Left>15.75307cm</Left>
               <Height>3.22502cm</Height>
               <Width>2.98166cm</Width>
-              <ZIndex>14</ZIndex>
+              <ZIndex>12</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -3406,7 +3470,8 @@
                     <TextRun>
                       <Value>Apellido:</Value>
                       <Style>
-                        <FontSize>12pt</FontSize>
+                        <FontFamily>Century Gothic</FontFamily>
+                        <FontSize>11pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -3419,7 +3484,7 @@
               <Left>1.58742cm</Left>
               <Height>0.6cm</Height>
               <Width>2.1825cm</Width>
-              <ZIndex>15</ZIndex>
+              <ZIndex>13</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -3439,7 +3504,7 @@
                     <TextRun>
                       <Value>Nombre:</Value>
                       <Style>
-                        <FontSize>12pt</FontSize>
+                        <FontSize>11pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -3452,7 +3517,7 @@
               <Left>1.58743cm</Left>
               <Height>0.6cm</Height>
               <Width>2.1825cm</Width>
-              <ZIndex>16</ZIndex>
+              <ZIndex>14</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -3472,7 +3537,8 @@
                     <TextRun>
                       <Value>Profesor:</Value>
                       <Style>
-                        <FontSize>12pt</FontSize>
+                        <FontFamily>Century Gothic</FontFamily>
+                        <FontSize>11pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -3482,10 +3548,10 @@
               </Paragraphs>
               <rd:DefaultName>Textbox13</rd:DefaultName>
               <Top>1.50813cm</Top>
-              <Left>8.27039cm</Left>
+              <Left>8.43796cm</Left>
               <Height>0.6cm</Height>
-              <Width>2.08549cm</Width>
-              <ZIndex>17</ZIndex>
+              <Width>2.1825cm</Width>
+              <ZIndex>15</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -3501,13 +3567,80 @@
               <Left>0.68792cm</Left>
               <Height>0cm</Height>
               <Width>18.04682cm</Width>
-              <ZIndex>18</ZIndex>
+              <ZIndex>16</ZIndex>
               <Style>
                 <Border>
                   <Style>Solid</Style>
                 </Border>
               </Style>
             </Line>
+            <Textbox Name="Textbox19">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Obs.:</Value>
+                      <Style>
+                        <FontFamily>Century Gothic</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox13</rd:DefaultName>
+              <Top>4.58611cm</Top>
+              <Left>1.58742cm</Left>
+              <Height>0.57354cm</Height>
+              <Width>2.1825cm</Width>
+              <ZIndex>17</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox20">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=First(Fields!observacionPlan.Value, "DataSet1")</Value>
+                      <Style>
+                        <FontFamily>Century gothic</FontFamily>
+                        <FontSize>11pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox14</rd:DefaultName>
+              <Top>4.55084cm</Top>
+              <Left>3.94632cm</Left>
+              <Height>0.57354cm</Height>
+              <Width>11.24106cm</Width>
+              <ZIndex>18</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
           </ReportItems>
           <Style>
             <Border>

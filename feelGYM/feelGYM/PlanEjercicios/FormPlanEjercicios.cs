@@ -363,5 +363,29 @@ namespace feelGYM
             panel2.BringToFront();
             panel5.SendToBack();
         }
+
+        private void dgv_ejerciciosDesarrollo_MouseClick(object sender, MouseEventArgs e)
+        {
+            if ((bool)dgv_ejerciciosDesarrollo.SelectedRows[0].Cells[0].Value == false)
+            {
+                dgv_ejerciciosDesarrollo.SelectedRows[0].Cells[0].Value = true;
+            }
+            else
+            {
+                dgv_ejerciciosDesarrollo.SelectedRows[0].Cells[0].Value = false;
+            }
+        }
+
+        private void dgv_EjerciciosEC_MouseClick(object sender, MouseEventArgs e)
+        {
+            if ((bool)dgv_EjerciciosEC.SelectedRows[0].Cells[0].Value == false)
+            {
+                dgv_EjerciciosEC.SelectedRows[0].Cells[0].Value = true;
+            }
+            else
+            {
+                dgv_EjerciciosEC.SelectedRows[0].Cells[0].Value = false;
+            }
+        }
     }
 }

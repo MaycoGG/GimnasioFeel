@@ -195,18 +195,16 @@ namespace feelGYM
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            //Clases.Conexion.obtenerConexion();
-            //try
-            //{
-            //    MessageBox.Show("Ok estas conectado");
-            //}
-            //catch (Exception e1)
-            //{
-            //    MessageBox.Show(e1.Message);
-            //}
+            Clases.Conexion.obtenerConexion();
+            try
+            {
+                MessageBox.Show("Ok estas conectado");
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+            }
 
-            FormVistaPrevia fvp = new FormVistaPrevia();
-            fvp.Show();
         }
 
         private void panelMenu_Paint(object sender, PaintEventArgs e)

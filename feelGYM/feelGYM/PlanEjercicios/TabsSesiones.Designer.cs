@@ -38,7 +38,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(926, 662);
+            this.tabControl1.Size = new System.Drawing.Size(906, 662);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -52,11 +52,11 @@
             this.txt_imprimirPlan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.txt_imprimirPlan.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_imprimirPlan.ForeColor = System.Drawing.Color.LightGray;
-            this.txt_imprimirPlan.Location = new System.Drawing.Point(773, 668);
+            this.txt_imprimirPlan.Location = new System.Drawing.Point(755, 668);
             this.txt_imprimirPlan.Name = "txt_imprimirPlan";
-            this.txt_imprimirPlan.Size = new System.Drawing.Size(153, 46);
+            this.txt_imprimirPlan.Size = new System.Drawing.Size(149, 46);
             this.txt_imprimirPlan.TabIndex = 5;
-            this.txt_imprimirPlan.Text = "IMPRIMIR";
+            this.txt_imprimirPlan.Text = "VISTA PREVIA";
             this.txt_imprimirPlan.UseVisualStyleBackColor = false;
             this.txt_imprimirPlan.Click += new System.EventHandler(this.txt_imprimirPlan_Click);
             // 
@@ -65,7 +65,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(943, 720);
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.ClientSize = new System.Drawing.Size(921, 720);
             this.Controls.Add(this.txt_imprimirPlan);
             this.Controls.Add(this.tabControl1);
             this.Name = "TabsSesiones";

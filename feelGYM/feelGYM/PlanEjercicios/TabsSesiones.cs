@@ -12,6 +12,9 @@ namespace feelGYM.PlanEjercicios
 {
     public partial class TabsSesiones : Form
     {
+        public int dniSocio;
+        public int numPlan;
+
         public TabsSesiones()
         {
             InitializeComponent();
@@ -19,8 +22,6 @@ namespace feelGYM.PlanEjercicios
 
         private void TabsSesiones_Load(object sender, EventArgs e)
         {
-
-            //this.reportViewer1.RefreshReport();
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -36,6 +37,10 @@ namespace feelGYM.PlanEjercicios
         private void txt_imprimirPlan_Click(object sender, EventArgs e)
         {
 
+            FormVistaPrevia fvp = new FormVistaPrevia();
+            fvp.numPlan = numPlan;
+            fvp.dni_Socio = dniSocio;
+            fvp.Show();
         }
     }
 }
