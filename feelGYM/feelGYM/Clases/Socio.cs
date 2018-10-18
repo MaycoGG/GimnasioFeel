@@ -23,5 +23,11 @@ namespace feelGYM.Clases
             this.Nombre = n;
             this.Apellido = a;
         }
+
+        public Socio(string n, string a)
+        {
+            this.Nombre = n;
+            this.Apellido = a;
+        }
     }
 }

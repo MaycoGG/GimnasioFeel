@@ -28,18 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.lbl_dniSocio = new System.Windows.Forms.Label();
-            this.btn_aceptarPag = new System.Windows.Forms.Button();
             this.lbl_numPlan = new System.Windows.Forms.Label();
             this.lbl_sesion = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_numPag = new System.Windows.Forms.Label();
+            this.btn_aceptarPag = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.rb_ZonaMediaEC = new System.Windows.Forms.RadioButton();
+            this.rb_aeroEC = new System.Windows.Forms.RadioButton();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dgv_EntradaCalor = new System.Windows.Forms.DataGridView();
+            this.nombreeje = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoEje = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.observacionEC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_buscarEC = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.dgv_ejerciciosDesarrollo = new System.Windows.Forms.DataGridView();
@@ -68,20 +80,11 @@
             this.button2 = new System.Windows.Forms.Button();
             this.dgv_EjerciciosEC = new System.Windows.Forms.DataGridView();
             this.selec_EjerEC = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.rb_ZonaMediaEC = new System.Windows.Forms.RadioButton();
-            this.rb_aeroEC = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dgv_EntradaCalor = new System.Windows.Forms.DataGridView();
-            this.nombreeje = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoEje = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.observacionEC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_buscarEC = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_EntradaCalor)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ejerciciosDesarrollo)).BeginInit();
             this.panel4.SuspendLayout();
@@ -89,9 +92,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Desarrollo)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_EjerciciosEC)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_EntradaCalor)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -100,6 +100,7 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.panel6);
+            this.panel1.Controls.Add(this.btn_aceptarPag);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel4);
@@ -107,14 +108,13 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(910, 623);
+            this.panel1.Size = new System.Drawing.Size(910, 648);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel6
             // 
             this.panel6.Controls.Add(this.lbl_dniSocio);
-            this.panel6.Controls.Add(this.btn_aceptarPag);
             this.panel6.Controls.Add(this.lbl_numPlan);
             this.panel6.Controls.Add(this.lbl_sesion);
             this.panel6.Controls.Add(this.label3);
@@ -134,24 +134,6 @@
             this.lbl_dniSocio.TabIndex = 27;
             this.lbl_dniSocio.Text = "Num";
             this.lbl_dniSocio.Visible = false;
-            // 
-            // btn_aceptarPag
-            // 
-            this.btn_aceptarPag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
-            this.btn_aceptarPag.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_aceptarPag.FlatAppearance.BorderSize = 0;
-            this.btn_aceptarPag.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_aceptarPag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_aceptarPag.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_aceptarPag.ForeColor = System.Drawing.Color.LightGray;
-            this.btn_aceptarPag.Location = new System.Drawing.Point(621, 7);
-            this.btn_aceptarPag.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_aceptarPag.Name = "btn_aceptarPag";
-            this.btn_aceptarPag.Size = new System.Drawing.Size(184, 46);
-            this.btn_aceptarPag.TabIndex = 56;
-            this.btn_aceptarPag.Text = "GUARDAR SESIÓN";
-            this.btn_aceptarPag.UseVisualStyleBackColor = false;
-            this.btn_aceptarPag.Click += new System.EventHandler(this.btn_aceptarPag_Click_1);
             // 
             // lbl_numPlan
             // 
@@ -197,6 +179,161 @@
             this.lbl_numPag.TabIndex = 24;
             this.lbl_numPag.Text = "Num";
             // 
+            // btn_aceptarPag
+            // 
+            this.btn_aceptarPag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.btn_aceptarPag.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_aceptarPag.FlatAppearance.BorderSize = 0;
+            this.btn_aceptarPag.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_aceptarPag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_aceptarPag.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_aceptarPag.ForeColor = System.Drawing.Color.LightGray;
+            this.btn_aceptarPag.Location = new System.Drawing.Point(672, 596);
+            this.btn_aceptarPag.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_aceptarPag.Name = "btn_aceptarPag";
+            this.btn_aceptarPag.Size = new System.Drawing.Size(184, 41);
+            this.btn_aceptarPag.TabIndex = 56;
+            this.btn_aceptarPag.Text = "GUARDAR SESIÓN";
+            this.btn_aceptarPag.UseVisualStyleBackColor = false;
+            this.btn_aceptarPag.Click += new System.EventHandler(this.btn_aceptarPag_Click_1);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.groupBox4);
+            this.panel2.Location = new System.Drawing.Point(48, 75);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(828, 224);
+            this.panel2.TabIndex = 18;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.rb_ZonaMediaEC);
+            this.groupBox4.Controls.Add(this.rb_aeroEC);
+            this.groupBox4.Controls.Add(this.button1);
+            this.groupBox4.Controls.Add(this.dgv_EntradaCalor);
+            this.groupBox4.Controls.Add(this.btn_buscarEC);
+            this.groupBox4.Controls.Add(this.label5);
+            this.groupBox4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(14, 3);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(794, 214);
+            this.groupBox4.TabIndex = 5;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "ENTRADA EN CALOR";
+            // 
+            // rb_ZonaMediaEC
+            // 
+            this.rb_ZonaMediaEC.AutoSize = true;
+            this.rb_ZonaMediaEC.Location = new System.Drawing.Point(36, 101);
+            this.rb_ZonaMediaEC.Name = "rb_ZonaMediaEC";
+            this.rb_ZonaMediaEC.Size = new System.Drawing.Size(102, 21);
+            this.rb_ZonaMediaEC.TabIndex = 59;
+            this.rb_ZonaMediaEC.TabStop = true;
+            this.rb_ZonaMediaEC.Text = "Zona Media";
+            this.rb_ZonaMediaEC.UseVisualStyleBackColor = true;
+            this.rb_ZonaMediaEC.CheckedChanged += new System.EventHandler(this.rb_ZonaMediaEC_CheckedChanged);
+            // 
+            // rb_aeroEC
+            // 
+            this.rb_aeroEC.AutoSize = true;
+            this.rb_aeroEC.Location = new System.Drawing.Point(36, 74);
+            this.rb_aeroEC.Name = "rb_aeroEC";
+            this.rb_aeroEC.Size = new System.Drawing.Size(90, 21);
+            this.rb_aeroEC.TabIndex = 58;
+            this.rb_aeroEC.TabStop = true;
+            this.rb_aeroEC.Text = "Aeróbicos";
+            this.rb_aeroEC.UseVisualStyleBackColor = true;
+            this.rb_aeroEC.CheckedChanged += new System.EventHandler(this.rb_aeroEC_CheckedChanged);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Maroon;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.LightGray;
+            this.button1.Location = new System.Drawing.Point(36, 146);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(102, 30);
+            this.button1.TabIndex = 57;
+            this.button1.Text = "BORRAR";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dgv_EntradaCalor
+            // 
+            this.dgv_EntradaCalor.AllowUserToAddRows = false;
+            this.dgv_EntradaCalor.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_EntradaCalor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_EntradaCalor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_EntradaCalor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nombreeje,
+            this.tipoEje,
+            this.Id,
+            this.observacionEC});
+            this.dgv_EntradaCalor.EnableHeadersVisualStyles = false;
+            this.dgv_EntradaCalor.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.dgv_EntradaCalor.Location = new System.Drawing.Point(177, 22);
+            this.dgv_EntradaCalor.Name = "dgv_EntradaCalor";
+            this.dgv_EntradaCalor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_EntradaCalor.Size = new System.Drawing.Size(589, 171);
+            this.dgv_EntradaCalor.TabIndex = 20;
+            // 
+            // nombreeje
+            // 
+            this.nombreeje.HeaderText = "Nombre";
+            this.nombreeje.Name = "nombreeje";
+            this.nombreeje.ReadOnly = true;
+            this.nombreeje.Width = 200;
+            // 
+            // tipoEje
+            // 
+            this.tipoEje.HeaderText = "Tipo Ejercicio";
+            this.tipoEje.Name = "tipoEje";
+            this.tipoEje.ReadOnly = true;
+            this.tipoEje.Width = 150;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
+            // 
+            // observacionEC
+            // 
+            this.observacionEC.HeaderText = "Observación";
+            this.observacionEC.Name = "observacionEC";
+            this.observacionEC.Width = 200;
+            // 
+            // btn_buscarEC
+            // 
+            this.btn_buscarEC.Location = new System.Drawing.Point(132, 68);
+            this.btn_buscarEC.Name = "btn_buscarEC";
+            this.btn_buscarEC.Size = new System.Drawing.Size(95, 0);
+            this.btn_buscarEC.TabIndex = 17;
+            this.btn_buscarEC.Text = "BUSCAR EJERCICIOS";
+            this.btn_buscarEC.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(6, 49);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(165, 16);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "SELECCIONE EJERCICIOS";
+            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.button4);
@@ -228,14 +365,14 @@
             // 
             this.dgv_ejerciciosDesarrollo.AllowUserToAddRows = false;
             this.dgv_ejerciciosDesarrollo.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ejerciciosDesarrollo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ejerciciosDesarrollo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_ejerciciosDesarrollo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_ejerciciosDesarrollo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewCheckBoxColumn1});
@@ -305,14 +442,14 @@
             // 
             this.dgv_Desarrollo.AllowUserToAddRows = false;
             this.dgv_Desarrollo.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Desarrollo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Desarrollo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_Desarrollo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Desarrollo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -328,6 +465,8 @@
             this.dgv_Desarrollo.Name = "dgv_Desarrollo";
             this.dgv_Desarrollo.Size = new System.Drawing.Size(748, 173);
             this.dgv_Desarrollo.TabIndex = 21;
+            this.dgv_Desarrollo.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv_Desarrollo_EditingControlShowing);
+            this.dgv_Desarrollo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgv_Desarrollo_KeyPress);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -506,14 +645,14 @@
             // 
             this.dgv_EjerciciosEC.AllowUserToAddRows = false;
             this.dgv_EjerciciosEC.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_EjerciciosEC.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_EjerciciosEC.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_EjerciciosEC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_EjerciciosEC.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.selec_EjerEC});
@@ -532,149 +671,12 @@
             this.selec_EjerEC.Name = "selec_EjerEC";
             this.selec_EjerEC.Width = 60;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.groupBox4);
-            this.panel2.Location = new System.Drawing.Point(48, 75);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(828, 224);
-            this.panel2.TabIndex = 18;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.rb_ZonaMediaEC);
-            this.groupBox4.Controls.Add(this.rb_aeroEC);
-            this.groupBox4.Controls.Add(this.button1);
-            this.groupBox4.Controls.Add(this.dgv_EntradaCalor);
-            this.groupBox4.Controls.Add(this.btn_buscarEC);
-            this.groupBox4.Controls.Add(this.label5);
-            this.groupBox4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(14, 3);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(794, 214);
-            this.groupBox4.TabIndex = 5;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "ENTRADA EN CALOR";
-            // 
-            // rb_ZonaMediaEC
-            // 
-            this.rb_ZonaMediaEC.AutoSize = true;
-            this.rb_ZonaMediaEC.Location = new System.Drawing.Point(36, 101);
-            this.rb_ZonaMediaEC.Name = "rb_ZonaMediaEC";
-            this.rb_ZonaMediaEC.Size = new System.Drawing.Size(102, 21);
-            this.rb_ZonaMediaEC.TabIndex = 59;
-            this.rb_ZonaMediaEC.TabStop = true;
-            this.rb_ZonaMediaEC.Text = "Zona Media";
-            this.rb_ZonaMediaEC.UseVisualStyleBackColor = true;
-            this.rb_ZonaMediaEC.CheckedChanged += new System.EventHandler(this.rb_ZonaMediaEC_CheckedChanged);
-            // 
-            // rb_aeroEC
-            // 
-            this.rb_aeroEC.AutoSize = true;
-            this.rb_aeroEC.Location = new System.Drawing.Point(36, 74);
-            this.rb_aeroEC.Name = "rb_aeroEC";
-            this.rb_aeroEC.Size = new System.Drawing.Size(90, 21);
-            this.rb_aeroEC.TabIndex = 58;
-            this.rb_aeroEC.TabStop = true;
-            this.rb_aeroEC.Text = "Aeróbicos";
-            this.rb_aeroEC.UseVisualStyleBackColor = true;
-            this.rb_aeroEC.CheckedChanged += new System.EventHandler(this.rb_aeroEC_CheckedChanged);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Maroon;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.LightGray;
-            this.button1.Location = new System.Drawing.Point(36, 146);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 30);
-            this.button1.TabIndex = 57;
-            this.button1.Text = "BORRAR";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // dgv_EntradaCalor
-            // 
-            this.dgv_EntradaCalor.AllowUserToAddRows = false;
-            this.dgv_EntradaCalor.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_EntradaCalor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.dgv_EntradaCalor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_EntradaCalor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nombreeje,
-            this.tipoEje,
-            this.Id,
-            this.observacionEC});
-            this.dgv_EntradaCalor.EnableHeadersVisualStyles = false;
-            this.dgv_EntradaCalor.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
-            this.dgv_EntradaCalor.Location = new System.Drawing.Point(177, 22);
-            this.dgv_EntradaCalor.Name = "dgv_EntradaCalor";
-            this.dgv_EntradaCalor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_EntradaCalor.Size = new System.Drawing.Size(589, 171);
-            this.dgv_EntradaCalor.TabIndex = 20;
-            // 
-            // nombreeje
-            // 
-            this.nombreeje.HeaderText = "Nombre";
-            this.nombreeje.Name = "nombreeje";
-            this.nombreeje.ReadOnly = true;
-            this.nombreeje.Width = 200;
-            // 
-            // tipoEje
-            // 
-            this.tipoEje.HeaderText = "Tipo Ejercicio";
-            this.tipoEje.Name = "tipoEje";
-            this.tipoEje.ReadOnly = true;
-            this.tipoEje.Width = 150;
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
-            // 
-            // observacionEC
-            // 
-            this.observacionEC.HeaderText = "Observación";
-            this.observacionEC.Name = "observacionEC";
-            this.observacionEC.Width = 200;
-            // 
-            // btn_buscarEC
-            // 
-            this.btn_buscarEC.Location = new System.Drawing.Point(132, 68);
-            this.btn_buscarEC.Name = "btn_buscarEC";
-            this.btn_buscarEC.Size = new System.Drawing.Size(95, 0);
-            this.btn_buscarEC.TabIndex = 17;
-            this.btn_buscarEC.Text = "BUSCAR EJERCICIOS";
-            this.btn_buscarEC.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(6, 49);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(165, 16);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "SELECCIONE EJERCICIOS";
-            // 
             // FormPlanEjercicios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(910, 623);
+            this.ClientSize = new System.Drawing.Size(910, 648);
             this.Controls.Add(this.panel1);
             this.Name = "FormPlanEjercicios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -683,6 +685,10 @@
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_EntradaCalor)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ejerciciosDesarrollo)).EndInit();
             this.panel4.ResumeLayout(false);
@@ -691,10 +697,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Desarrollo)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_EjerciciosEC)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_EntradaCalor)).EndInit();
             this.ResumeLayout(false);
 
         }

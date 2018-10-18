@@ -34,6 +34,30 @@ namespace feelGYM.Clases
 
         }
 
+        public void LlenarComboSocio(ComboBox cb, String query, List<Socio> arraySocio)
+        {
+            try
+            {
+                
+                MySqlCommand cmd = new MySqlCommand(query, Clases.Conexion.obtenerConexion());
+                MySqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    cb.Items.Add(dr[arraySocio.ToString()]);
+                    
+
+                }
+                //cb.SelectedIndex = 0;
+                dr.Close();
+            }
+            catch (Exception e3)
+            {
+                MessageBox.Show(e3.Message);
+
+            }
+
+        }
+
 
         //metodos para EJERCICIOS
         #region Ejercicios
@@ -279,13 +303,7 @@ namespace feelGYM.Clases
             return retorno;
         }
 
-        public static int ValidarSocio(int dniSocio, String query)
-        {
-            int retorno = 0;
-            MySqlCommand cmd = new MySqlCommand(String.Format(query, dniSocio), Conexion.obtenerConexion());
-            retorno = cmd.ExecuteNonQuery();
-            return retorno;
-        }
+        
 
         public static int ValidarProfe(int dniProfe, String query)
         {
@@ -383,6 +401,22 @@ namespace feelGYM.Clases
             return doc;
         }
 
+        
+
+        //metodo para obtener numero de PLAN de un SOCIO
+        public static int ValidarSocio(int dniSocio)
+        {
+
+            int contador = 0;
+            MySqlCommand cmd = new MySqlCommand(String.Format("select COUNT(socio.dni) FROM socio where socio.dni = '{0}'", dniSocio), Conexion.obtenerConexion());
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                contador = reader.GetInt32(0);
+            }
+            return contador;
+        }
+
         //metodo para obtener numero de PLAN de un SOCIO
         public static int ObtenerNroPlanSocio(int dniSocio)
         {
@@ -426,7 +460,26 @@ namespace feelGYM.Clases
             return contador;
         }
 
-        
+        //metodo para buscar un profesor
+        public static List<Socio> BuscarSocio(int dni)
+        {
+            List<Socio> _lista = new List<Socio>();
+
+            MySqlCommand cmd = new MySqlCommand(String.Format("SELECT socio.dni, socio.nombre, socio.apellido FROM socio WHERE socio.dni = '{0}'", dni), Conexion.obtenerConexion());
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                Socio ejer = new Socio();
+                ejer.Nombre = reader.GetString(1);
+                ejer.Apellido = reader.GetString(2);
+                ejer.Dni = reader.GetInt32(0);
+
+
+                _lista.Add(ejer);
+            }
+            return _lista;
+        }
+
 
     }
 }

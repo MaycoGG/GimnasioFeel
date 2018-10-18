@@ -88,10 +88,16 @@ namespace feelGYM
 
         private void FormPlanDatos_Load(object sender, EventArgs e)
         {
+            Clases.Metodos cb = new Clases.Metodos();
+
+            //CARGA PROFESORES
             string query = "SELECT * FROM profesores";
             string atributo = "nombreApe";
-            Clases.Metodos cb = new Clases.Metodos();
             cb.LlenarCombo(cmb_profesor, query, atributo);
+
+            
+            
+
             txt_dniSocio.MaxLength = 8;
 
             picker_fechaInicio.MinDate = DateTime.Today;
@@ -210,19 +216,33 @@ namespace feelGYM
             {
                 #region agrega Socio
 
-                string queryValidar = "select COUNT(socio.dni) FROM socio where socio.dni = " + Convert.ToInt32(txt_dniSocio.Text);
+                //Negrada
+                //int dni = Clases.Metodos.ObtenerDniSocio(txt_NombreClientePlan.Text, txt_apellidoClientePlan.Text);
 
-                int dniExiste = Clases.Metodos.ObtenerDniSocio(txt_NombreClientePlan.Text, txt_apellidoClientePlan.Text);
-                int dniValidar = Clases.Metodos.ValidarSocio(Convert.ToInt32(txt_dniSocio.Text), queryValidar);
-                if (dniExiste == 0 && dniValidar != 0)
+                int dni = Clases.Metodos.ValidarSocio(Convert.ToInt32(txt_dniSocio.Text));
+
+                if (dni > 0)
                 {
+                    //si existe, actualiza los datos
+                    Clases.Socio socio = new Clases.Socio();
+                    string query = "UPDATE socio SET socio.nombre = '" + txt_NombreClientePlan.Text.ToString() + "' , socio.apellido = '" + txt_apellidoClientePlan.Text.ToString() + "' WHERE socio.dni = " + Convert.ToInt32(txt_dniSocio.Text);
+                    socio.Dni = Convert.ToInt32(txt_dniSocio.Text);
+                    socio.Nombre = txt_NombreClientePlan.Text;
+                    socio.Apellido = txt_apellidoClientePlan.Text;
+                    int retorno = Clases.Metodos.AgregarSocio(socio, query);
+                }
+                else
+                {
+                    //si no existe, lo AGREGA
                     Clases.Socio socio = new Clases.Socio();
                     string query = "INSERT INTO socio (dni, nombre, apellido) values ('{0}', '{1}', '{2}')";
                     socio.Dni = Convert.ToInt32(txt_dniSocio.Text);
                     socio.Nombre = txt_NombreClientePlan.Text;
                     socio.Apellido = txt_apellidoClientePlan.Text;
                     int retorno = Clases.Metodos.AgregarSocio(socio, query);
+                    
                 }
+
 
                 #endregion
 
@@ -244,7 +264,6 @@ namespace feelGYM
                 #endregion
 
 
-
                 TabsSesiones tab = new TabsSesiones();
                 tab.dniSocio = plan.dniSocio;
                 tab.numPlan = plan.numPlan;
@@ -258,18 +277,33 @@ namespace feelGYM
                 }
             }
             
+            
         }
 
-        private void btn_agregarProf_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            FormProfesor_AGREGAR form = new FormProfesor_AGREGAR();
-            form.Show();
-        }
+        
 
         private void picker_fechaInicio_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txt_dniSocio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //BUSCAR SOCIO
+            List<Clases.Socio> socio = new List<Clases.Socio>();
+            socio = Clases.Metodos.BuscarSocio(Convert.ToInt32(txt_dniSocio.Text));
+
+            foreach (Clases.Socio item in socio)
+            {
+                txt_apellidoClientePlan.Text = item.Apellido;
+                txt_NombreClientePlan.Text = item.Nombre;
+
+            }
         }
     }
 }
