@@ -1977,7 +1977,7 @@
             <Top>5.04472cm</Top>
             <Left>0.68792cm</Left>
             <Height>1.2cm</Height>
-            <Width>18.04681cm</Width>
+            <Width>18.0468cm</Width>
             <ZIndex>3</ZIndex>
             <Visibility>
               <Hidden>=Parameters!dts3.Value = "true"</Hidden>
@@ -2391,7 +2391,7 @@
             <Top>0.92286cm</Top>
             <Left>0.68792cm</Left>
             <Height>1.27938cm</Height>
-            <Width>18.04681cm</Width>
+            <Width>18.0468cm</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
@@ -2802,8 +2802,11 @@
             <Top>2.99777cm</Top>
             <Left>0.68792cm</Left>
             <Height>1.2cm</Height>
-            <Width>18.04681cm</Width>
+            <Width>18.0468cm</Width>
             <ZIndex>5</ZIndex>
+            <Visibility>
+              <Hidden>=Parameters!dts2.Value="true"</Hidden>
+            </Visibility>
             <Style>
               <Border>
                 <Style>None</Style>

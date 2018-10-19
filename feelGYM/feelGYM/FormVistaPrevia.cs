@@ -57,6 +57,64 @@ namespace feelGYM
 
         private void btn_imprimir_Click(object sender, EventArgs e)
         {
+           
+
+
+        }
+
+        public void GenerarGrillas()
+        {
+            int nroS = Clases.Metodos.ObtenerNroSesiones(numPlan, dni_Socio);
+            int x = 8;
+            int y = 8;
+
+            //for que crea dataGridView, uno para cada sesion.
+            for (int i = 0; i < nroS; i++)
+            {
+                DataGridView dg = new DataGridView();
+                Controls.Add(dg);
+                int nroSesion = i + 1;
+                dg.Name = "grilla" + nroSesion;
+                dg.Location = new Point(x, y);
+                dg.Size = new Size(748, 173);
+                dg.ReadOnly = true;
+                dg.EnableHeadersVisualStyles = false;
+                dg.BackgroundColor = Color.White;
+                
+                dg.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(255,0, 22, 68);
+                dg.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                dg.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.White;
+                dg.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
+                dg.ColumnHeadersDefaultCellStyle.Font.Name.Equals("Century Gothic");
+                dg.ColumnHeadersDefaultCellStyle.Font.Size.Equals(9.75);
+                dg.ColumnHeadersDefaultCellStyle.Font.Unit.Equals(3);
+                dg.ColumnHeadersDefaultCellStyle.Font = new Font(DataGridView.DefaultFont, FontStyle.Bold);
+
+
+                dg.GridColor = Color.FromArgb(4,41,68);
+                //x = x + 450;
+                y += 200;
+
+                if (dg.Name == "grilla" + nroSesion)
+                {
+                    string querySesion = "SELECT tipodetalleejercicio.nombre as 'Tipo Ejercicio', ejercicios.nombre, detalleplanejercicios.intensidad as 'I %', detalleplanejercicios.series as 'S', detalleplanejercicios.repeticiones as 'R', detalleplanejercicios.observacionesEC as 'Observaciones' FROM ejercicios JOIN detalleplanejercicios ON ejercicios.id = detalleplanejercicios.idEjercicio JOIN tipodetalleejercicio ON tipodetalleejercicio.id = detalleplanejercicios.idTipoDetalle WHERE detalleplanejercicios.nroPlan = " + numPlan + " AND detalleplanejercicios.dniSocio = " + dni_Socio + " AND detalleplanejercicios.nroSesion = " + nroSesion + " ORDER BY detalleplanejercicios.idTipoDetalle";
+                    //string queryEC = "SELECT ejercicios.nombre, detalleplanejercicios.observacionesEC, detalleplanejercicios.idTipoDetalle FROM ejercicios JOIN detalleplanejercicios ON ejercicios.id = detalleplanejercicios.idEjercicio WHERE detalleplanejercicios.nroPlan = 9 AND detalleplanejercicios.dniSocio = 15000111 AND detalleplanejercicios.nroSesion = " + nroSesion + " AND detalleplanejercicios.idTipoDetalle = 1";
+                    m.LlenarGridReporte(dg, querySesion);
+                    dg.Columns[1].Width = 250;
+                    dg.Columns[0].Width = 100;
+                    dg.Columns[2].Width = 50;
+                    dg.Columns[3].Width = 50;
+                    dg.Columns[4].Width = 100;
+                    dg.Columns[5].Width = 150;
+                }
+
+                grillas.Add(dg);
+
+            }
+        }
+
+        private void txt_imprimirPlan_Click(object sender, EventArgs e)
+        {
             #region DataSet Datos - Encabezado
             List<Clases.Imprimir> listDatosImp = new List<Clases.Imprimir>();
             listDatosImp.Clear();
@@ -98,7 +156,7 @@ namespace feelGYM
                     datosDetalle1.series = grillas.ElementAt(0).Rows[j].Cells[3].Value.ToString();
                     datosDetalle1.repeticiones = grillas.ElementAt(0).Rows[j].Cells[4].Value.ToString();
                     datosDetalle1.observacionDetalle = grillas.ElementAt(0).Rows[j].Cells[5].Value.ToString();
-                    listDetalle1.Add(new Clases.ImpresionDetalle(datosDetalle1.ejercicio, datosDetalle1.intesidad,datosDetalle1.series,datosDetalle1.repeticiones,datosDetalle1.observacionDetalle));
+                    listDetalle1.Add(new Clases.ImpresionDetalle(datosDetalle1.ejercicio, datosDetalle1.intesidad, datosDetalle1.series, datosDetalle1.repeticiones, datosDetalle1.observacionDetalle));
                 }
             }
 
@@ -114,7 +172,7 @@ namespace feelGYM
 
             if (grillas.Count == 2)
             {
-                for (int j = 0; j < grillas.ElementAt(1).Rows.Count - 1; j++)   
+                for (int j = 0; j < grillas.ElementAt(1).Rows.Count - 1; j++)
                 {
                     datosDetalle2.ejercicio = grillas.ElementAt(1).Rows[j].Cells[1].Value.ToString();
                     datosDetalle2.intesidad = grillas.ElementAt(1).Rows[j].Cells[2].Value.ToString();
@@ -315,41 +373,6 @@ namespace feelGYM
             #endregion
 
             frm.ShowDialog();
-
-
         }
-
-        public void GenerarGrillas()
-        {
-            int nroS = Clases.Metodos.ObtenerNroSesiones(numPlan, dni_Socio);
-            int x = 8;
-            int y = 8;
-
-            //for que crea dataGridView, uno para cada sesion.
-            for (int i = 0; i < nroS; i++)
-            {
-                DataGridView dg = new DataGridView();
-                Controls.Add(dg);
-                int nroSesion = i + 1;
-                dg.Name = "grilla" + nroSesion;
-                dg.Location = new Point(x, y);
-                dg.Size = new Size(750, 200);
-                dg.ReadOnly = true;
-                //x = x + 450;
-                y += 250;
-
-                if (dg.Name == "grilla" + nroSesion)
-                {
-                    string querySesion = "SELECT tipodetalleejercicio.nombre as 'Tipo Ejercicio', ejercicios.nombre, detalleplanejercicios.intensidad, detalleplanejercicios.series, detalleplanejercicios.repeticiones, detalleplanejercicios.observacionesEC as 'Observaciones' FROM ejercicios JOIN detalleplanejercicios ON ejercicios.id = detalleplanejercicios.idEjercicio JOIN tipodetalleejercicio ON tipodetalleejercicio.id = detalleplanejercicios.idTipoDetalle WHERE detalleplanejercicios.nroPlan = " + numPlan + " AND detalleplanejercicios.dniSocio = " + dni_Socio + " AND detalleplanejercicios.nroSesion = " + nroSesion + " ORDER BY detalleplanejercicios.idTipoDetalle";
-                    //string queryEC = "SELECT ejercicios.nombre, detalleplanejercicios.observacionesEC, detalleplanejercicios.idTipoDetalle FROM ejercicios JOIN detalleplanejercicios ON ejercicios.id = detalleplanejercicios.idEjercicio WHERE detalleplanejercicios.nroPlan = 9 AND detalleplanejercicios.dniSocio = 15000111 AND detalleplanejercicios.nroSesion = " + nroSesion + " AND detalleplanejercicios.idTipoDetalle = 1";
-                    m.LlenarGridReporte(dg, querySesion);
-                }
-
-                grillas.Add(dg);
-
-            }
-        }
-
-        
     }
 }

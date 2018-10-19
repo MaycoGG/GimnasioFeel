@@ -113,12 +113,6 @@
     <Compile Include="FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="PlanEjercicios\GrillaEjercicios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PlanEjercicios\GrillaEjercicios.Designer.cs">
-      <DependentUpon>GrillaEjercicios.cs</DependentUpon>
-    </Compile>
     <Compile Include="PlanEjercicios\MyTabsEjercicio.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -166,9 +160,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PlanEjercicios\GrillaEjercicios.resx">
-      <DependentUpon>GrillaEjercicios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlanEjercicios\TabsSesiones.resx">
       <DependentUpon>TabsSesiones.cs</DependentUpon>
@@ -224,6 +215,9 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reporte\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

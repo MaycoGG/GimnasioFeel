@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.dgv_vistaprevia = new System.Windows.Forms.DataGridView();
-            this.btn_imprimir = new System.Windows.Forms.Button();
+            this.txt_imprimirPlan = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_vistaprevia)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,37 +42,44 @@
             this.dgv_vistaprevia.TabIndex = 0;
             this.dgv_vistaprevia.Visible = false;
             // 
-            // btn_imprimir
+            // txt_imprimirPlan
             // 
-            this.btn_imprimir.AutoSize = true;
-            this.btn_imprimir.Location = new System.Drawing.Point(786, 12);
-            this.btn_imprimir.Name = "btn_imprimir";
-            this.btn_imprimir.Size = new System.Drawing.Size(109, 51);
-            this.btn_imprimir.TabIndex = 1;
-            this.btn_imprimir.Text = "Imprimir";
-            this.btn_imprimir.UseVisualStyleBackColor = true;
-            this.btn_imprimir.Click += new System.EventHandler(this.btn_imprimir_Click);
+            this.txt_imprimirPlan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_imprimirPlan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.txt_imprimirPlan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txt_imprimirPlan.FlatAppearance.BorderSize = 0;
+            this.txt_imprimirPlan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_imprimirPlan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txt_imprimirPlan.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_imprimirPlan.ForeColor = System.Drawing.Color.White;
+            this.txt_imprimirPlan.Location = new System.Drawing.Point(786, 12);
+            this.txt_imprimirPlan.Name = "txt_imprimirPlan";
+            this.txt_imprimirPlan.Size = new System.Drawing.Size(105, 51);
+            this.txt_imprimirPlan.TabIndex = 6;
+            this.txt_imprimirPlan.Text = "IMPRIMIR";
+            this.txt_imprimirPlan.UseVisualStyleBackColor = false;
+            this.txt_imprimirPlan.Click += new System.EventHandler(this.txt_imprimirPlan_Click);
             // 
             // FormVistaPrevia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(907, 485);
-            this.Controls.Add(this.btn_imprimir);
+            this.Controls.Add(this.txt_imprimirPlan);
             this.Controls.Add(this.dgv_vistaprevia);
             this.Name = "FormVistaPrevia";
             this.Text = "FormVistaPrevia";
             this.Load += new System.EventHandler(this.FormVistaPrevia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_vistaprevia)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dgv_vistaprevia;
-        private System.Windows.Forms.Button btn_imprimir;
+        private System.Windows.Forms.Button txt_imprimirPlan;
     }
 }
