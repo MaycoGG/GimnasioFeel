@@ -165,15 +165,12 @@ namespace feelGYM
                     //consulta para actualizar el ejercicio
                     string query = "UPDATE profesores set nombreApe = '{1}', celular = '{2}', celEmergencia = '{3}', tipoSangre = '{4}' where dniProfe = '{0}'";
 
-                    //txt_nombreProfe.Text = "";
-                    //ejer.Nombre = txt_nombreProfe.Text;
                     ejer.Apellido = txt_apellidoProfe.Text;
                     String nomApe = ejer.Nombre + " " + ejer.Apellido;
                     ejer.Celular = Convert.ToDouble(txt_celProfe.Text);
                     ejer.CelEmergencia = Convert.ToDouble(txt_cerEmergenciaProfe.Text);
                     ejer.TipoSangre = cmb_sangreProfe.SelectedIndex + 1;
                     ejer.Dni = Convert.ToInt32(txt_docProfe.Text);
-
 
 
                     //llamo al metodo de la clase "Metodos" y le paso por parametro el ejercicio creado y la consulta
@@ -196,7 +193,7 @@ namespace feelGYM
                 }
                 else
                 {
-                    //consulta para guardar el ejercicio
+                    //consulta para guardar el profesor
                     string query = "insert into profesores (dniProfe, nombreApe, celular, celEmergencia, tipoSangre) values ('{0}', '{1}', '{2}', '{3}', '{4}')";
 
                     ejer.Nombre = txt_nombreProfe.Text;
@@ -335,53 +332,70 @@ namespace feelGYM
         {
             Boolean valida = true;
 
+
             if (txt_nombreProfe.Text == "NOMBRE")
             {
-                MessageBox.Show("Campo 'NOMBRE' vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                valida = false;
-            }
-
-            if (txt_apellidoProfe.Text == "APELLIDO")
-            {
-                MessageBox.Show("Campo 'APELLIDO' vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                valida = false;
-            }
-
-            if (txt_docProfe.Text == "NRO DOCUMENTO")
-            {
-                MessageBox.Show("Campo 'DNI' vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                errorProvider1.SetError(txt_nombreProfe, "Ingrese NOMBRE");
                 valida = false;
             }
             else
             {
-                string querySocio = "SELECT COUNT(profesores.dniProfe) from profesores where profesores.dniProfe = " + Convert.ToInt32(txt_docProfe.Text);
-                int contador = Clases.Metodos.ValidarProfe(Convert.ToInt32(txt_docProfe.Text), querySocio);
-
-                if (contador > 0 && txt_docProfe.Enabled == true )
+                errorProvider1.Clear();
+                if (txt_apellidoProfe.Text == "APELLIDO")
                 {
-                    MessageBox.Show("Ya existe un profesor con ese DNI", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     valida = false;
+                    errorProvider1.SetError(txt_apellidoProfe, "Ingrese APELLIDO");
+                }
+                else
+                {
+                    errorProvider1.Clear();
+                    if (txt_celProfe.Text == "CELULAR")
+                    {
+                        errorProvider1.SetError(txt_celProfe, "Ingrese CELULAR");
+                        valida = false;
+                    }
+                    else
+                    {
+                        errorProvider1.Clear();
+                        if (txt_cerEmergenciaProfe.Text == "CEL EMERGENCIA")
+                        {
+                            errorProvider1.SetError(txt_cerEmergenciaProfe, "Ingrese CELULAR");
+                            valida = false;
+                        }
+                        else
+                        {
+                            errorProvider1.Clear();
+                            if (cmb_sangreProfe.SelectedIndex < 0)
+                            {
+                                errorProvider1.SetError(cmb_sangreProfe, "Seleccione un TIPO DE SANGRE");
+                                valida = false;
+                            }
+                            else
+                            {
+                                errorProvider1.Clear();
+                                if (txt_docProfe.Text == "NRO DOCUMENTO")
+                                {
+                                    valida = false;
+                                    errorProvider1.SetError(txt_docProfe, "Ingrese DNI");
+                                }
+                                else
+                                {
+                                    string querySocio = "SELECT COUNT(profesores.dniProfe) from profesores where profesores.dniProfe = " + Convert.ToInt32(txt_docProfe.Text);
+                                    int contador = Clases.Metodos.ValidarProfe(Convert.ToInt32(txt_docProfe.Text), querySocio);
+
+                                    if (contador > 0 && txt_docProfe.Enabled == true)
+                                    {
+                                        MessageBox.Show("Ya existe un profesor con ese DNI", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        valida = false;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
 
-            if (txt_celProfe.Text == "CELULAR")
-            {
-                MessageBox.Show("Campo 'CELULAR' vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                valida = false;
-            }
-
-            if (txt_cerEmergenciaProfe.Text == "CEL EMERGENCIA")
-            {
-                MessageBox.Show("Campo 'CELULAR EMERGENCIA' vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                valida = false;
-            }
-
-            if (cmb_sangreProfe.SelectedIndex < 0)
-            {
-                MessageBox.Show("Seleccione un TIPO DE SANGRE", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                valida = false;
-            }
-
+           
             return valida;
         }
 
@@ -478,9 +492,20 @@ namespace feelGYM
                 txt_nombreProfe.Text = "";
                 
                 txt_apellidoProfe.Text = profeSeleccionado.Apellido;
+                txt_apellidoProfe.ForeColor = Color.Black;
                 txt_docProfe.Text = Convert.ToString(profeSeleccionado.Dni);
+                if (txt_docProfe.Enabled == false)
+                {
+                    errorProvider1.SetError(txt_docProfe, "No se puede modificar el DNI");
+                }
+                else
+                {
+                    errorProvider1.Clear();
+                }
                 txt_celProfe.Text = profeSeleccionado.Celular.ToString();
+                txt_celProfe.ForeColor = Color.Black;
                 txt_cerEmergenciaProfe.Text = Convert.ToString(profeSeleccionado.CelEmergencia);
+                txt_cerEmergenciaProfe.ForeColor = Color.Black;
                 btn_registrarProfe.Text = "GUARDAR";
                 gb_profesores.Visible = false;
             }

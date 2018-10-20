@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAgregarEjercicio));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -46,10 +47,12 @@
             this.txt_buscar = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dgv_todosLosEjercicios = new System.Windows.Forms.DataGridView();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cerrarPlan)).BeginInit();
             this.gb_listaEjercicios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_todosLosEjercicios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -299,6 +302,10 @@
             this.dgv_todosLosEjercicios.Size = new System.Drawing.Size(434, 196);
             this.dgv_todosLosEjercicios.TabIndex = 24;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FormAgregarEjercicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -320,6 +327,7 @@
             this.gb_listaEjercicios.ResumeLayout(false);
             this.gb_listaEjercicios.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_todosLosEjercicios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -341,5 +349,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

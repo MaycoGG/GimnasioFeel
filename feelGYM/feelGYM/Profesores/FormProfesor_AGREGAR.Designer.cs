@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProfesor_AGREGAR));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_registrarProfe = new System.Windows.Forms.Button();
@@ -54,10 +55,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_todosLosProfes = new System.Windows.Forms.DataGridView();
             this.btn_mostrarProfe = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.btn_cerrarPlan)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.gb_profesores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_todosLosProfes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_registrarProfe
@@ -165,7 +168,7 @@
             this.txt_docProfe.Location = new System.Drawing.Point(55, 90);
             this.txt_docProfe.Margin = new System.Windows.Forms.Padding(4);
             this.txt_docProfe.Name = "txt_docProfe";
-            this.txt_docProfe.Size = new System.Drawing.Size(241, 19);
+            this.txt_docProfe.Size = new System.Drawing.Size(435, 19);
             this.txt_docProfe.TabIndex = 38;
             this.txt_docProfe.Text = "NRO DOCUMENTO";
             this.txt_docProfe.Enter += new System.EventHandler(this.txt_docProfe_Enter);
@@ -421,6 +424,10 @@
             this.btn_mostrarProfe.UseVisualStyleBackColor = false;
             this.btn_mostrarProfe.Click += new System.EventHandler(this.btn_mostrarProfe_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FormProfesor_AGREGAR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -443,6 +450,7 @@
             this.gb_profesores.ResumeLayout(false);
             this.gb_profesores.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_todosLosProfes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -473,5 +481,6 @@
         private System.Windows.Forms.DataGridView dgv_todosLosProfes;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

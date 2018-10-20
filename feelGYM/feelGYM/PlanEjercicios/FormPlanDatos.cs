@@ -25,9 +25,9 @@ namespace feelGYM
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            //txt_fechaActualPlan.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            picker_fechaInicio.Text =  DateTime.Now.ToString("dd/MM/yyyy");
-            picker_fechaFin.Text = DateTime.Now.AddDays(30).ToString("dd/MM/yyyy");
+            ////txt_fechaActualPlan.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            //picker_fechaInicio.Text =  DateTime.Now.ToString("dd/MM/yyyy");
+            //picker_fechaFin.Text = DateTime.Now.AddDays(30).ToString("dd/MM/yyyy");
         }
 
         private void txt_NombreClientePlan_Enter(object sender, EventArgs e)
@@ -94,18 +94,12 @@ namespace feelGYM
             string query = "SELECT * FROM profesores";
             string atributo = "nombreApe";
             cb.LlenarCombo(cmb_profesor, query, atributo);
-
-            
-            
-
             txt_dniSocio.MaxLength = 8;
 
             picker_fechaInicio.MinDate = DateTime.Today;
-            picker_fechaInicio.Text = DateTime.Now.ToString("dd/MM/yyyy");
-
             picker_fechaFin.MinDate = DateTime.Today.AddDays(1);
+            picker_fechaInicio.Text = DateTime.Now.ToString("dd/MM/yyyy");
             picker_fechaFin.Text = DateTime.Now.AddDays(30).ToString("dd/MM/yyyy");
-
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -135,37 +129,48 @@ namespace feelGYM
         public Boolean ValidarDatos()
         {
             Boolean valida = true;
-            
-            if (txt_NombreClientePlan.Text == "NOMBRE")
-            {
-                MessageBox.Show("Campo 'NOMBRE' vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                valida = false;
-            }
-
-            if (txt_apellidoClientePlan.Text == "APELLIDO")
-            {
-                MessageBox.Show("Campo 'APELLIDO' vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                valida = false;
-            }
 
             if (txt_dniSocio.Text == "DNI")
             {
-                MessageBox.Show("Campo 'DNI' vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                errorProvider1.SetError(txt_dniSocio, "Ingrese DNI");
                 valida = false;
             }
-            
-
-            if (cmb_sesionesPlan.Value < 1 || cmb_sesionesPlan.Value > 6)
+            else
             {
-                MessageBox.Show("El número de sesiones acepta valores entre 1 y 6 inclusive", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                valida = false;
-            }
-
-            if (cmb_profesor.SelectedIndex < 0)
-            {
-                MessageBox.Show("Seleccione un PROFESOR", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                valida = false;
-            }
+                errorProvider1.Clear();
+                if (txt_apellidoClientePlan.Text == "APELLIDO")
+                {
+                    valida = false;
+                    errorProvider1.SetError(txt_apellidoClientePlan, "Ingrese APELLIDO");
+                }
+                else
+                {
+                    errorProvider1.Clear();
+                    if (txt_NombreClientePlan.Text == "NOMBRE")
+                    {
+                        valida = false;
+                        errorProvider1.SetError(txt_NombreClientePlan, "Ingrese NOMBRE");
+                    }
+                    else
+                    {
+                        errorProvider1.Clear();
+                        if (cmb_profesor.SelectedIndex < 0)
+                        {
+                            errorProvider1.SetError(cmb_profesor, "Seleccione un PROFESOR");
+                            valida = false;
+                        }
+                        else
+                        {
+                            errorProvider1.Clear();
+                            if (cmb_sesionesPlan.Value < 1 || cmb_sesionesPlan.Value > 6)
+                            {
+                                errorProvider1.SetError(cmb_sesionesPlan, "El número de sesiones debe ser entre 1 y 6");
+                                valida = false;
+                            }
+                        }
+                    }
+                }
+            }      
 
             return valida;
         }
@@ -276,8 +281,13 @@ namespace feelGYM
                     tab.tabControl1.TabPages.Add(new MyTabPage(new FormPlanEjercicios(), sesion, plan.numPlan, plan.dniSocio));
                 }
             }
-            
-            
+            else
+            {
+                MessageBox.Show("Complete los campos faltantes.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
+            }
+
+
         }
 
         
@@ -296,14 +306,30 @@ namespace feelGYM
         {
             //BUSCAR SOCIO
             List<Clases.Socio> socio = new List<Clases.Socio>();
-            socio = Clases.Metodos.BuscarSocio(Convert.ToInt32(txt_dniSocio.Text));
-
-            foreach (Clases.Socio item in socio)
+            if (txt_dniSocio.Text == "DNI")
             {
-                txt_apellidoClientePlan.Text = item.Apellido;
-                txt_NombreClientePlan.Text = item.Nombre;
-
+                MessageBox.Show("Debe ingresar un DNI para buscar sus datos.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else
+            {
+                socio = Clases.Metodos.BuscarSocio(Convert.ToInt32(txt_dniSocio.Text));
+                if (socio.Count > 0)
+                {
+                    foreach (Clases.Socio item in socio)
+                    {
+                        txt_apellidoClientePlan.Text = item.Apellido;
+                        txt_apellidoClientePlan.ForeColor = Color.Black;
+                        txt_NombreClientePlan.Text = item.Nombre;
+                        txt_NombreClientePlan.ForeColor = Color.Black;
+
+                    }
+                }
+                else { MessageBox.Show("No existe un SOCIO con ese DNI, complete los campos.", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            }
+            
+
+            
+            
         }
     }
 }

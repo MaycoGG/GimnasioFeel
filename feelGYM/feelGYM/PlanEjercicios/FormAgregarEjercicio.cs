@@ -131,6 +131,11 @@ namespace feelGYM
                     else { MessageBox.Show("Ocurrió un error"); }
                 }
             }
+            else
+            {
+                MessageBox.Show("Complete los campos faltantes.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
 
         private void btn_cancelarEjer_Click(object sender, EventArgs e)
@@ -219,6 +224,7 @@ namespace feelGYM
             if (ejercicioSeleccionado != null)
             {
                 txt_nombreEjercicioNuevo.Text = ejercicioSeleccionado.Nombre;
+                txt_nombreEjercicioNuevo.ForeColor = Color.Black;
                 txt_idEjercicioModificar.Text = Convert.ToString(ejercicioSeleccionado.Id);
                 gb_listaEjercicios.Visible = false;
             }
@@ -321,25 +327,47 @@ namespace feelGYM
         {
             bool valida = true;
             int tipo = 0;
-            if (txt_nombreEjercicioNuevo.Text == "")
+
+            if (txt_nombreEjercicioNuevo.Text == "NOMBRE")
             {
-                MessageBox.Show("Campo 'NOMBRE' vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                errorProvider1.SetError(txt_nombreEjercicioNuevo, "Ingrese NOMBRE del ejercicio");
                 valida = false;
             }
-            if (cmb_tipoEjercicioAgregar.SelectedIndex < 0)
+            else
             {
-                MessageBox.Show("Seleccione un TIPO DE EJERCICIO", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                valida = false;
+                errorProvider1.Clear();
+                if (cmb_tipoEjercicioAgregar.SelectedIndex < 0)
+                {
+                    valida = false;
+                    errorProvider1.SetError(cmb_tipoEjercicioAgregar, "Seleccione un TIPO DE EJERCICIO");
+                }
+                else
+                {
+                    int devolveme = devolverTipoEjercicio();
+                    int contValidacion = Clases.Metodos.ValidarEjercicio(devolveme, txt_nombreEjercicioNuevo.Text);
+                    if (contValidacion > 0)
+                    {
+                        MessageBox.Show("Existe un ejercicio con mismo tipo e igual nombre", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        valida = false;
+                    }
+                }
             }
 
-            int devolveme = devolverTipoEjercicio();
-            int contValidacion = Clases.Metodos.ValidarEjercicio(devolveme, txt_nombreEjercicioNuevo.Text);
 
-            if (contValidacion > 0)
-            {
-                MessageBox.Show("Existe un ejercicio con mismo tipo e igual nombre", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                valida = false;
-            }
+
+
+            //if (txt_nombreEjercicioNuevo.Text == "")
+            //{
+            //    MessageBox.Show("Campo 'NOMBRE' vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    valida = false;
+            //}
+            //if (cmb_tipoEjercicioAgregar.SelectedIndex < 0)
+            //{
+            //    MessageBox.Show("Seleccione un TIPO DE EJERCICIO", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    valida = false;
+            //}
+
+            
 
 
             return valida;
