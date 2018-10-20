@@ -97,7 +97,7 @@ namespace feelGYM
 
                 if (dg.Name == "grilla" + nroSesion)
                 {
-                    string querySesion = "SELECT tipodetalleejercicio.nombre as 'Tipo Ejercicio', ejercicios.nombre, detalleplanejercicios.intensidad as 'I %', detalleplanejercicios.series as 'S', detalleplanejercicios.repeticiones as 'R', detalleplanejercicios.observacionesEC as 'Observaciones' FROM ejercicios JOIN detalleplanejercicios ON ejercicios.id = detalleplanejercicios.idEjercicio JOIN tipodetalleejercicio ON tipodetalleejercicio.id = detalleplanejercicios.idTipoDetalle WHERE detalleplanejercicios.nroPlan = " + numPlan + " AND detalleplanejercicios.dniSocio = " + dni_Socio + " AND detalleplanejercicios.nroSesion = " + nroSesion + " ORDER BY detalleplanejercicios.idTipoDetalle";
+                    string querySesion = "SELECT tipodetalleejercicio.nombre as 'Tipo Ejercicio', ejercicios.nombre as 'Nombre', detalleplanejercicios.intensidad as 'I %', detalleplanejercicios.series as 'S', detalleplanejercicios.repeticiones as 'R', detalleplanejercicios.observacionesEC as 'Observaciones' FROM ejercicios JOIN detalleplanejercicios ON ejercicios.id = detalleplanejercicios.idEjercicio JOIN tipodetalleejercicio ON tipodetalleejercicio.id = detalleplanejercicios.idTipoDetalle WHERE detalleplanejercicios.nroPlan = " + numPlan + " AND detalleplanejercicios.dniSocio = " + dni_Socio + " AND detalleplanejercicios.nroSesion = " + nroSesion + " ORDER BY detalleplanejercicios.idTipoDetalle";
                     //string queryEC = "SELECT ejercicios.nombre, detalleplanejercicios.observacionesEC, detalleplanejercicios.idTipoDetalle FROM ejercicios JOIN detalleplanejercicios ON ejercicios.id = detalleplanejercicios.idEjercicio WHERE detalleplanejercicios.nroPlan = 9 AND detalleplanejercicios.dniSocio = 15000111 AND detalleplanejercicios.nroSesion = " + nroSesion + " AND detalleplanejercicios.idTipoDetalle = 1";
                     m.LlenarGridReporte(dg, querySesion);
                     dg.Columns[1].Width = 250;
@@ -373,6 +373,16 @@ namespace feelGYM
             #endregion
 
             frm.ShowDialog();
+        }
+
+        private void btn_cerrarPlan_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_cerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

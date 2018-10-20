@@ -36,7 +36,6 @@ namespace feelGYM.PlanEjercicios
 
         private void txt_imprimirPlan_Click(object sender, EventArgs e)
         {
-
             FormVistaPrevia fvp = new FormVistaPrevia();
             fvp.numPlan = numPlan;
             fvp.dni_Socio = dniSocio;
@@ -51,6 +50,7 @@ namespace feelGYM.PlanEjercicios
         private void btn_cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+
         }
 
         private void btn_minimizar_Click(object sender, EventArgs e)

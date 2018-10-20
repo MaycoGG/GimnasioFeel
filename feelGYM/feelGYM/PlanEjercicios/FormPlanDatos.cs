@@ -281,11 +281,7 @@ namespace feelGYM
                     tab.tabControl1.TabPages.Add(new MyTabPage(new FormPlanEjercicios(), sesion, plan.numPlan, plan.dniSocio));
                 }
             }
-            else
-            {
-                MessageBox.Show("Complete los campos faltantes.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
-            }
+            
 
 
         }

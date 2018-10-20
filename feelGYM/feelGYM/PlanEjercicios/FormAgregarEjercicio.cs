@@ -131,11 +131,7 @@ namespace feelGYM
                     else { MessageBox.Show("Ocurrió un error"); }
                 }
             }
-            else
-            {
-                MessageBox.Show("Complete los campos faltantes.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
+            
         }
 
         private void btn_cancelarEjer_Click(object sender, EventArgs e)

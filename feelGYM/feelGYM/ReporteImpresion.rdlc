@@ -2393,6 +2393,9 @@
             <Height>1.27938cm</Height>
             <Width>18.0468cm</Width>
             <ZIndex>4</ZIndex>
+            <Visibility>
+              <Hidden>=Parameters!dts1.Value="true"</Hidden>
+            </Visibility>
             <Style>
               <Border>
                 <Style>None</Style>
