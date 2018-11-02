@@ -77,10 +77,10 @@ namespace feelGYM
 
         private void btn_aceptarPag_Click_1(object sender, EventArgs e)
         {
+            Boolean flag = true;
+
             foreach (DataGridViewRow item in dgv_EntradaCalor.Rows)
             {
-
-
                 Clases.DetallePlan detalle = new Clases.DetallePlan();
                 string query = "INSERT into detalleplanejercicios (detalleplanejercicios.nroPlan, detalleplanejercicios.dniSocio, " +
                     "detalleplanejercicios.nroSesion, detalleplanejercicios.idTipoDetalle, detalleplanejercicios.idEjercicio, " +
@@ -90,18 +90,31 @@ namespace feelGYM
                 detalle.nroSesion = Convert.ToInt32(lbl_numPag.Text);
                 detalle.tipoDetalle = 1;
                 detalle.idEjercicio = Convert.ToInt32(item.Cells["Id"].Value);
-                detalle.obsEC = item.Cells["ObservacionEC"].Value.ToString();
+                if (item.Cells["ObservacionEC"].Value == null)
+                {
+                    detalle.obsEC = "";
+
+                }
+                else
+                {
+                    detalle.obsEC = item.Cells["ObservacionEC"].Value.ToString();
+                }
+                
 
                 int contador = Clases.Metodos.compararDetalle(detalle.nroPlan, detalle.dniSocio, detalle.nroSesion, detalle.idEjercicio);
 
                 if (contador != 0)
                 {
-                    MessageBox.Show("Ejercicio " + detalle.idEjercicio + " se repite");
-
-                    dgv_EntradaCalor.Rows.Remove(item);
+                    flag = false;
+                    string queryDelete = "DELETE FROM detalleplanejercicios where detalleplanejercicios.nroPlan = '{0}' " +
+                        "AND detalleplanejercicios.dniSocio = '{1}' and detalleplanejercicios.nroSesion = '{2}' " +
+                        "AND detalleplanejercicios.idEjercicio = '{3}' AND detalleplanejercicios.idTipoDetalle = 1 ";
+                    Metodos.EliminarDetallePlan(detalle, queryDelete);
+                    int retorno = Clases.Metodos.AgregarDatosDetallePlanEC(detalle, query);
                 }
                 else
                 {
+
                     int retorno = Clases.Metodos.AgregarDatosDetallePlanEC(detalle, query);
                 }
 
@@ -120,19 +133,59 @@ namespace feelGYM
                 detalle.nroSesion = Convert.ToInt32(lbl_numPag.Text);
                 detalle.tipoDetalle = 2;
                 detalle.idEjercicio = Convert.ToInt32(item.Cells["IDD"].Value);
-                detalle.intensidad = item.Cells["intensidad"].Value.ToString();
-                detalle.series = item.Cells["series"].Value.ToString();
-                detalle.repe = item.Cells["repeticiones"].Value.ToString();
-                detalle.obsD = item.Cells["observacionD"].Value.ToString();
+
+                #region ValidaCeldasVacias
+
+                if (item.Cells["intensidad"].Value == null)
+                {
+                    detalle.intensidad = "";
+                }
+                else
+                {
+                    detalle.intensidad = item.Cells["intensidad"].Value.ToString();
+                }
+
+                if (item.Cells["series"].Value == null)
+                {
+                    detalle.series = "";
+                }
+                else
+                {
+                    detalle.series = item.Cells["series"].Value.ToString();
+                }
+
+                if (item.Cells["repeticiones"].Value == null)
+                {
+                    detalle.repe = "";
+                }
+                else
+                {
+                    detalle.repe = item.Cells["repeticiones"].Value.ToString();
+                }
+
+                if (item.Cells["observacionD"].Value == null)
+                {
+                    detalle.obsD = "";
+                }
+                else
+                {
+                    detalle.obsD = item.Cells["observacionD"].Value.ToString();
+                }
+
+                #endregion
+
 
 
                 int contador = Clases.Metodos.compararDetalle(detalle.nroPlan, detalle.dniSocio, detalle.nroSesion, detalle.idEjercicio);
 
                 if (contador != 0)
                 {
-                    MessageBox.Show("Ejercicio " + detalle.idEjercicio + " se repite");
-
-                    dgv_Desarrollo.Rows.Remove(item);
+                    flag = false;
+                    string queryDelete = "DELETE FROM detalleplanejercicios where detalleplanejercicios.nroPlan = '{0}' " +
+                        "AND detalleplanejercicios.dniSocio = '{1}' and detalleplanejercicios.nroSesion = '{2}' " +
+                        "AND detalleplanejercicios.idEjercicio = '{3}' AND detalleplanejercicios.idTipoDetalle = 2 ";
+                    Metodos.EliminarDetallePlan(detalle, queryDelete);
+                    int retorno = Clases.Metodos.AgregarDatosDetallePlanDesarrollo(detalle, query);
                 }
                 else
                 {
@@ -140,6 +193,15 @@ namespace feelGYM
                 }
 
 
+            }
+
+            if (flag == false)
+            {
+                MessageBox.Show("Existen ejercicios repetidos, se guarda solo el último de ellos.", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Se guardo correctamente la sesión.", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -186,6 +248,8 @@ namespace feelGYM
             panel4.BringToFront();
             panel4.Visible = true;
             panel3.SendToBack();
+            rb_aeroEC.Checked = false;
+            rb_ZonaMediaEC.Checked = false;
         }
 
         private void rb_pectoralesD_CheckedChanged(object sender, EventArgs e)
@@ -344,6 +408,8 @@ namespace feelGYM
             }
         }
 
+
+        //Agrega ejercicios a desarrollo.
         private void button4_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow item in dgv_ejerciciosDesarrollo.Rows)
@@ -362,6 +428,14 @@ namespace feelGYM
 
             panel2.BringToFront();
             panel5.SendToBack();
+            rb_pectoralesD.Checked = false;
+            rb_dorsalesD.Checked = false;
+            rb_HombroD.Checked = false;
+            rb_bicepsD.Checked = false;
+            rb_tricepsD.Checked = false;
+            rb_piernasD.Checked = false;
+            rb_aeroD.Checked = false;
+            rb_zonaD.Checked = false;
         }
 
         private void dgv_ejerciciosDesarrollo_MouseClick(object sender, MouseEventArgs e)
@@ -414,6 +488,34 @@ namespace feelGYM
             }
         }
 
-        
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            
+            rb_aeroEC.Checked = false;
+            rb_ZonaMediaEC.Checked = false;
+            panel4.BringToFront();
+            panel4.Visible = true;
+            panel3.SendToBack();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            rb_pectoralesD.Checked = false;
+            rb_dorsalesD.Checked = false;
+            rb_HombroD.Checked = false;
+            rb_bicepsD.Checked = false;
+            rb_tricepsD.Checked = false;
+            rb_piernasD.Checked = false;
+            rb_aeroD.Checked = false;
+            rb_zonaD.Checked = false;
+            panel2.BringToFront();
+            panel2.Visible = true;
+            panel5.SendToBack();
+        }
+
+        private void dgv_Desarrollo_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            
+        }
     }
 }
