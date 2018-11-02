@@ -57,5 +57,9 @@ namespace feelGYM.PlanEjercicios
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        public void cerrarForm() {
+            this.Close();
+        }
     }
 }

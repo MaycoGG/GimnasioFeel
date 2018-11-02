@@ -243,7 +243,10 @@ namespace feelGYM.Clases
                 grid.Rows[i].Cells[0].Value = false;
 
             }
-               
+            grid.Columns[0].SortMode = DataGridViewColumnSortMode.NotSortable;
+            grid.Columns[1].SortMode = DataGridViewColumnSortMode.NotSortable;
+            grid.Columns[2].SortMode = DataGridViewColumnSortMode.NotSortable;
+            grid.Columns[3].SortMode = DataGridViewColumnSortMode.NotSortable;
 
         }
 

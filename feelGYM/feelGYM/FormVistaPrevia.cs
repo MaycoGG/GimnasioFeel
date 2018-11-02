@@ -170,18 +170,22 @@ namespace feelGYM
             listDetalle2.Clear();
             Clases.ImpresionDetalle datosDetalle2 = new Clases.ImpresionDetalle();
 
-            if (grillas.Count == 2)
+            if (grillas.Count > 1)
             {
-                for (int j = 0; j < grillas.ElementAt(1).Rows.Count - 1; j++)
+                if (grillas.ElementAt(1) != null)
                 {
-                    datosDetalle2.ejercicio = grillas.ElementAt(1).Rows[j].Cells[1].Value.ToString();
-                    datosDetalle2.intesidad = grillas.ElementAt(1).Rows[j].Cells[2].Value.ToString();
-                    datosDetalle2.series = grillas.ElementAt(1).Rows[j].Cells[3].Value.ToString();
-                    datosDetalle2.repeticiones = grillas.ElementAt(1).Rows[j].Cells[4].Value.ToString();
-                    datosDetalle2.observacionDetalle = grillas.ElementAt(1).Rows[j].Cells[5].Value.ToString();
-                    listDetalle2.Add(new Clases.ImpresionDetalle(datosDetalle2.ejercicio, datosDetalle2.intesidad, datosDetalle2.series, datosDetalle2.repeticiones, datosDetalle2.observacionDetalle));
+                    for (int j = 0; j < grillas.ElementAt(1).Rows.Count - 1; j++)
+                    {
+                        datosDetalle2.ejercicio = grillas.ElementAt(1).Rows[j].Cells[1].Value.ToString();
+                        datosDetalle2.intesidad = grillas.ElementAt(1).Rows[j].Cells[2].Value.ToString();
+                        datosDetalle2.series = grillas.ElementAt(1).Rows[j].Cells[3].Value.ToString();
+                        datosDetalle2.repeticiones = grillas.ElementAt(1).Rows[j].Cells[4].Value.ToString();
+                        datosDetalle2.observacionDetalle = grillas.ElementAt(1).Rows[j].Cells[5].Value.ToString();
+                        listDetalle2.Add(new Clases.ImpresionDetalle(datosDetalle2.ejercicio, datosDetalle2.intesidad, datosDetalle2.series, datosDetalle2.repeticiones, datosDetalle2.observacionDetalle));
+                    }
                 }
             }
+            
 
             rsDetalle2.Name = "DataSet3";
             rsDetalle2.Value = listDetalle2;
@@ -192,18 +196,22 @@ namespace feelGYM
             listDetalle3.Clear();
             Clases.ImpresionDetalle datosDetalle3 = new Clases.ImpresionDetalle();
 
-            if (grillas.Count == 3)
+            if (grillas.Count > 2)
             {
-                for (int j = 0; j < grillas.ElementAt(2).Rows.Count - 1; j++)
+                if (grillas.ElementAt(2) != null)
                 {
-                    datosDetalle3.ejercicio = grillas.ElementAt(2).Rows[j].Cells[1].Value.ToString();
-                    datosDetalle3.intesidad = grillas.ElementAt(2).Rows[j].Cells[2].Value.ToString();
-                    datosDetalle3.series = grillas.ElementAt(2).Rows[j].Cells[3].Value.ToString();
-                    datosDetalle3.repeticiones = grillas.ElementAt(2).Rows[j].Cells[4].Value.ToString();
-                    datosDetalle3.observacionDetalle = grillas.ElementAt(2).Rows[j].Cells[5].Value.ToString();
-                    listDetalle3.Add(new Clases.ImpresionDetalle(datosDetalle3.ejercicio, datosDetalle3.intesidad, datosDetalle3.series, datosDetalle3.repeticiones, datosDetalle3.observacionDetalle));
+                    for (int j = 0; j < grillas.ElementAt(2).Rows.Count - 1; j++)
+                    {
+                        datosDetalle3.ejercicio = grillas.ElementAt(2).Rows[j].Cells[1].Value.ToString();
+                        datosDetalle3.intesidad = grillas.ElementAt(2).Rows[j].Cells[2].Value.ToString();
+                        datosDetalle3.series = grillas.ElementAt(2).Rows[j].Cells[3].Value.ToString();
+                        datosDetalle3.repeticiones = grillas.ElementAt(2).Rows[j].Cells[4].Value.ToString();
+                        datosDetalle3.observacionDetalle = grillas.ElementAt(2).Rows[j].Cells[5].Value.ToString();
+                        listDetalle3.Add(new Clases.ImpresionDetalle(datosDetalle3.ejercicio, datosDetalle3.intesidad, datosDetalle3.series, datosDetalle3.repeticiones, datosDetalle3.observacionDetalle));
+                    }
                 }
             }
+            
 
             rsDetalle3.Name = "DataSet4";
             rsDetalle3.Value = listDetalle3;
@@ -214,18 +222,23 @@ namespace feelGYM
             listDetalle4.Clear();
             Clases.ImpresionDetalle datosDetalle4 = new Clases.ImpresionDetalle();
 
-            if (grillas.Count == 4)
+
+            if (grillas.Count > 3)
             {
-                for (int j = 0; j < grillas.ElementAt(3).Rows.Count - 1; j++)
+                if (grillas.ElementAt(3) != null)
                 {
-                    datosDetalle4.ejercicio = grillas.ElementAt(3).Rows[j].Cells[1].Value.ToString();
-                    datosDetalle4.intesidad = grillas.ElementAt(3).Rows[j].Cells[2].Value.ToString();
-                    datosDetalle4.series = grillas.ElementAt(3).Rows[j].Cells[3].Value.ToString();
-                    datosDetalle4.repeticiones = grillas.ElementAt(3).Rows[j].Cells[4].Value.ToString();
-                    datosDetalle4.observacionDetalle = grillas.ElementAt(3).Rows[j].Cells[5].Value.ToString();
-                    listDetalle4.Add(new Clases.ImpresionDetalle(datosDetalle4.ejercicio, datosDetalle4.intesidad, datosDetalle4.series, datosDetalle4.repeticiones, datosDetalle4.observacionDetalle));
+                    for (int j = 0; j < grillas.ElementAt(3).Rows.Count - 1; j++)
+                    {
+                        datosDetalle4.ejercicio = grillas.ElementAt(3).Rows[j].Cells[1].Value.ToString();
+                        datosDetalle4.intesidad = grillas.ElementAt(3).Rows[j].Cells[2].Value.ToString();
+                        datosDetalle4.series = grillas.ElementAt(3).Rows[j].Cells[3].Value.ToString();
+                        datosDetalle4.repeticiones = grillas.ElementAt(3).Rows[j].Cells[4].Value.ToString();
+                        datosDetalle4.observacionDetalle = grillas.ElementAt(3).Rows[j].Cells[5].Value.ToString();
+                        listDetalle4.Add(new Clases.ImpresionDetalle(datosDetalle4.ejercicio, datosDetalle4.intesidad, datosDetalle4.series, datosDetalle4.repeticiones, datosDetalle4.observacionDetalle));
+                    }
                 }
             }
+            
 
             rsDetalle4.Name = "DataSet5";
             rsDetalle4.Value = listDetalle4;
@@ -236,18 +249,23 @@ namespace feelGYM
             listDetalle5.Clear();
             Clases.ImpresionDetalle datosDetalle5 = new Clases.ImpresionDetalle();
 
-            if (grillas.Count == 5)
+
+            if (grillas.Count > 4)
             {
-                for (int j = 0; j < grillas.ElementAt(4).Rows.Count - 1; j++)
+                if (grillas.ElementAt(4) != null)
                 {
-                    datosDetalle5.ejercicio = grillas.ElementAt(4).Rows[j].Cells[1].Value.ToString();
-                    datosDetalle5.intesidad = grillas.ElementAt(4).Rows[j].Cells[2].Value.ToString();
-                    datosDetalle5.series = grillas.ElementAt(4).Rows[j].Cells[3].Value.ToString();
-                    datosDetalle5.repeticiones = grillas.ElementAt(4).Rows[j].Cells[4].Value.ToString();
-                    datosDetalle5.observacionDetalle = grillas.ElementAt(4).Rows[j].Cells[5].Value.ToString();
-                    listDetalle5.Add(new Clases.ImpresionDetalle(datosDetalle5.ejercicio, datosDetalle5.intesidad, datosDetalle5.series, datosDetalle5.repeticiones, datosDetalle5.observacionDetalle));
+                    for (int j = 0; j < grillas.ElementAt(4).Rows.Count - 1; j++)
+                    {
+                        datosDetalle5.ejercicio = grillas.ElementAt(4).Rows[j].Cells[1].Value.ToString();
+                        datosDetalle5.intesidad = grillas.ElementAt(4).Rows[j].Cells[2].Value.ToString();
+                        datosDetalle5.series = grillas.ElementAt(4).Rows[j].Cells[3].Value.ToString();
+                        datosDetalle5.repeticiones = grillas.ElementAt(4).Rows[j].Cells[4].Value.ToString();
+                        datosDetalle5.observacionDetalle = grillas.ElementAt(4).Rows[j].Cells[5].Value.ToString();
+                        listDetalle5.Add(new Clases.ImpresionDetalle(datosDetalle5.ejercicio, datosDetalle5.intesidad, datosDetalle5.series, datosDetalle5.repeticiones, datosDetalle5.observacionDetalle));
+                    }
                 }
             }
+            
 
             rsDetalle5.Name = "DataSet6";
             rsDetalle5.Value = listDetalle5;
@@ -258,27 +276,36 @@ namespace feelGYM
             listDetalle6.Clear();
             Clases.ImpresionDetalle datosDetalle6 = new Clases.ImpresionDetalle();
 
-            if (grillas.Count == 6)
+
+            if (grillas.Count > 5)
             {
-                for (int j = 0; j < grillas.ElementAt(5).Rows.Count - 1; j++)
+                if (grillas.ElementAt(5) != null)
                 {
-                    datosDetalle6.ejercicio = grillas.ElementAt(5).Rows[j].Cells[1].Value.ToString();
-                    datosDetalle6.intesidad = grillas.ElementAt(5).Rows[j].Cells[2].Value.ToString();
-                    datosDetalle6.series = grillas.ElementAt(5).Rows[j].Cells[3].Value.ToString();
-                    datosDetalle6.repeticiones = grillas.ElementAt(5).Rows[j].Cells[4].Value.ToString();
-                    datosDetalle6.observacionDetalle = grillas.ElementAt(5).Rows[j].Cells[5].Value.ToString();
-                    listDetalle6.Add(new Clases.ImpresionDetalle(datosDetalle6.ejercicio, datosDetalle6.intesidad, datosDetalle6.series, datosDetalle6.repeticiones, datosDetalle6.observacionDetalle));
+                    for (int j = 0; j < grillas.ElementAt(5).Rows.Count - 1; j++)
+                    {
+                        datosDetalle6.ejercicio = grillas.ElementAt(5).Rows[j].Cells[1].Value.ToString();
+                        datosDetalle6.intesidad = grillas.ElementAt(5).Rows[j].Cells[2].Value.ToString();
+                        datosDetalle6.series = grillas.ElementAt(5).Rows[j].Cells[3].Value.ToString();
+                        datosDetalle6.repeticiones = grillas.ElementAt(5).Rows[j].Cells[4].Value.ToString();
+                        datosDetalle6.observacionDetalle = grillas.ElementAt(5).Rows[j].Cells[5].Value.ToString();
+                        listDetalle6.Add(new Clases.ImpresionDetalle(datosDetalle6.ejercicio, datosDetalle6.intesidad, datosDetalle6.series, datosDetalle6.repeticiones, datosDetalle6.observacionDetalle));
+                    }
                 }
             }
+            
 
             rsDetalle6.Name = "DataSet7";
             rsDetalle6.Value = listDetalle6;
             #endregion
 
 
+            
+            
 
             Form3 frm = new Form3();
             frm.reportViewerImprimir.LocalReport.DataSources.Clear();
+
+            this.Close();
 
             //Agregar los DataSources de cada DataSet
             frm.reportViewerImprimir.LocalReport.DataSources.Add(rs);
@@ -320,6 +347,7 @@ namespace feelGYM
                 frm.reportViewerImprimir.LocalReport.SetParameters(dts1);
             }
 
+
             if (listDetalle2.Count != 0)
             {
                 ReportParameter dts2 = new ReportParameter("dts2", "false");
@@ -330,6 +358,8 @@ namespace feelGYM
                 ReportParameter dts2 = new ReportParameter("dts2", "true");
                 frm.reportViewerImprimir.LocalReport.SetParameters(dts2);
             }
+
+
             if (listDetalle3.Count != 0)
             {
                 ReportParameter dts3 = new ReportParameter("dts3", "false");
@@ -340,6 +370,8 @@ namespace feelGYM
                 ReportParameter dts3 = new ReportParameter("dts3", "true");
                 frm.reportViewerImprimir.LocalReport.SetParameters(dts3);
             }
+
+
             if (listDetalle4.Count != 0)
             {
                 ReportParameter dts4 = new ReportParameter("dts4", "false");
@@ -350,6 +382,8 @@ namespace feelGYM
                 ReportParameter dts4 = new ReportParameter("dts4", "true");
                 frm.reportViewerImprimir.LocalReport.SetParameters(dts4);
             }
+
+
             if (listDetalle5.Count != 0)
             {
                 ReportParameter dts5 = new ReportParameter("dts5", "false");
@@ -360,6 +394,8 @@ namespace feelGYM
                 ReportParameter dts5 = new ReportParameter("dts5", "true");
                 frm.reportViewerImprimir.LocalReport.SetParameters(dts5);
             }
+
+
             if (listDetalle6.Count != 0)
             {
                 ReportParameter dts6 = new ReportParameter("dts6", "false");
@@ -372,7 +408,10 @@ namespace feelGYM
             }
             #endregion
 
+            
             frm.ShowDialog();
+            
+
         }
 
         private void btn_cerrarPlan_Click(object sender, EventArgs e)
