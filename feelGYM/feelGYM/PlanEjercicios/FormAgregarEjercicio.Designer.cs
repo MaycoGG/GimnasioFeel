@@ -84,7 +84,7 @@
             this.txt_nombreEjercicioNuevo.Margin = new System.Windows.Forms.Padding(4);
             this.txt_nombreEjercicioNuevo.Name = "txt_nombreEjercicioNuevo";
             this.txt_nombreEjercicioNuevo.Size = new System.Drawing.Size(412, 19);
-            this.txt_nombreEjercicioNuevo.TabIndex = 56;
+            this.txt_nombreEjercicioNuevo.TabIndex = 2;
             this.txt_nombreEjercicioNuevo.Text = "NOMBRE";
             this.txt_nombreEjercicioNuevo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_nombreEjercicioNuevo.Enter += new System.EventHandler(this.txt_nombreEjercicioNuevo_Enter);
@@ -113,7 +113,7 @@
             this.txt_mostrarEj.Margin = new System.Windows.Forms.Padding(4);
             this.txt_mostrarEj.Name = "txt_mostrarEj";
             this.txt_mostrarEj.Size = new System.Drawing.Size(195, 52);
-            this.txt_mostrarEj.TabIndex = 55;
+            this.txt_mostrarEj.TabIndex = 5;
             this.txt_mostrarEj.Text = "MOSTRAR EJERCICIOS";
             this.txt_mostrarEj.UseVisualStyleBackColor = false;
             this.txt_mostrarEj.Click += new System.EventHandler(this.txt_mostrarEj_Click);
@@ -131,7 +131,7 @@
             this.btn_cancelarEjer.Margin = new System.Windows.Forms.Padding(4);
             this.btn_cancelarEjer.Name = "btn_cancelarEjer";
             this.btn_cancelarEjer.Size = new System.Drawing.Size(154, 52);
-            this.btn_cancelarEjer.TabIndex = 54;
+            this.btn_cancelarEjer.TabIndex = 4;
             this.btn_cancelarEjer.Text = "CANCELAR";
             this.btn_cancelarEjer.UseVisualStyleBackColor = false;
             this.btn_cancelarEjer.Click += new System.EventHandler(this.btn_cancelarEjer_Click);
@@ -149,7 +149,7 @@
             this.btn_registrarEjercicio.Margin = new System.Windows.Forms.Padding(4);
             this.btn_registrarEjercicio.Name = "btn_registrarEjercicio";
             this.btn_registrarEjercicio.Size = new System.Drawing.Size(154, 52);
-            this.btn_registrarEjercicio.TabIndex = 53;
+            this.btn_registrarEjercicio.TabIndex = 3;
             this.btn_registrarEjercicio.Text = "REGISTRAR";
             this.btn_registrarEjercicio.UseVisualStyleBackColor = false;
             this.btn_registrarEjercicio.Click += new System.EventHandler(this.btn_registrarEjercicio_Click);
@@ -184,7 +184,7 @@
             this.cmb_tipoEjercicioAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_tipoEjercicioAgregar.Name = "cmb_tipoEjercicioAgregar";
             this.cmb_tipoEjercicioAgregar.Size = new System.Drawing.Size(269, 28);
-            this.cmb_tipoEjercicioAgregar.TabIndex = 18;
+            this.cmb_tipoEjercicioAgregar.TabIndex = 1;
             // 
             // btn_cerrarPlan
             // 
