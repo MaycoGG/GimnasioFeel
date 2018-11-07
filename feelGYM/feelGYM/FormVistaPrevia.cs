@@ -305,7 +305,7 @@ namespace feelGYM
             Form3 frm = new Form3();
             frm.reportViewerImprimir.LocalReport.DataSources.Clear();
 
-            this.Close();
+            
 
             //Agregar los DataSources de cada DataSet
             frm.reportViewerImprimir.LocalReport.DataSources.Add(rs);

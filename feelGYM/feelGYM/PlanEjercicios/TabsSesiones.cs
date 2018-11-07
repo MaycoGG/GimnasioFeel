@@ -40,6 +40,7 @@ namespace feelGYM.PlanEjercicios
             fvp.numPlan = numPlan;
             fvp.dni_Socio = dniSocio;
             fvp.Show();
+   
         }
 
         private void btn_cerrarPlan_Click(object sender, EventArgs e)
