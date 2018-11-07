@@ -300,6 +300,32 @@ namespace feelGYM
                     int sesion = i + 1;
                     tab.tabControl1.TabPages.Add(new MyTabPage(new FormPlanEjercicios(), sesion, plan.numPlan, plan.dniSocio));
                 }
+
+
+                #region Limpia FORMULARIO
+                txt_dniSocio.Text = "DNI";
+                txt_dniSocio.ForeColor = Color.DimGray;
+
+                txt_apellidoClientePlan.Text = "APELLIDO";
+                txt_apellidoClientePlan.ForeColor = Color.DimGray;
+
+                txt_NombreClientePlan.Text = "NOMBRE";
+                txt_NombreClientePlan.ForeColor = Color.DimGray;
+
+                cmb_sesionesPlan.Value = 1;
+
+                txt_obj.Text = "";
+                txt_obs.Text = "";
+
+                cmb_profesor.SelectedIndex = -1;
+
+                picker_fechaInicio.MinDate = DateTime.Today;
+                picker_fechaFin.MinDate = DateTime.Today.AddDays(1);
+                picker_fechaInicio.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                picker_fechaFin.Text = DateTime.Now.AddDays(30).ToString("dd/MM/yyyy");
+                #endregion
+
+
             }
             
 

@@ -36,11 +36,21 @@ namespace feelGYM.PlanEjercicios
 
         private void txt_imprimirPlan_Click(object sender, EventArgs e)
         {
-            FormVistaPrevia fvp = new FormVistaPrevia();
-            fvp.numPlan = numPlan;
-            fvp.dni_Socio = dniSocio;
-            fvp.Show();
-   
+            
+            
+            if (MessageBox.Show("¿Guardo todas las sesiones? Recuerde que en caso de proseguir ya no podrá modificar el plan actual.", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                FormVistaPrevia fvp = new FormVistaPrevia();
+                fvp.numPlan = numPlan;
+                fvp.dni_Socio = dniSocio;
+                fvp.Show();
+                this.Close();
+            }
+            else
+            {
+                //
+            }
+            
         }
 
         private void btn_cerrarPlan_Click(object sender, EventArgs e)

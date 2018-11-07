@@ -161,7 +161,7 @@
             this.txt_obj.Multiline = true;
             this.txt_obj.Name = "txt_obj";
             this.txt_obj.Size = new System.Drawing.Size(396, 58);
-            this.txt_obj.TabIndex = 4;
+            this.txt_obj.TabIndex = 5;
             // 
             // label1
             // 
@@ -182,7 +182,7 @@
             this.txt_obs.Multiline = true;
             this.txt_obs.Name = "txt_obs";
             this.txt_obs.Size = new System.Drawing.Size(399, 103);
-            this.txt_obs.TabIndex = 5;
+            this.txt_obs.TabIndex = 6;
             // 
             // label5
             // 
@@ -250,7 +250,7 @@
             0});
             this.cmb_sesionesPlan.Name = "cmb_sesionesPlan";
             this.cmb_sesionesPlan.Size = new System.Drawing.Size(65, 23);
-            this.cmb_sesionesPlan.TabIndex = 13;
+            this.cmb_sesionesPlan.TabIndex = 4;
             this.cmb_sesionesPlan.Value = new decimal(new int[] {
             1,
             0,
@@ -298,11 +298,11 @@
             this.btn_armarPlan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_armarPlan.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_armarPlan.ForeColor = System.Drawing.Color.LightGray;
-            this.btn_armarPlan.Location = new System.Drawing.Point(145, 356);
+            this.btn_armarPlan.Location = new System.Drawing.Point(145, 245);
             this.btn_armarPlan.Margin = new System.Windows.Forms.Padding(4);
             this.btn_armarPlan.Name = "btn_armarPlan";
             this.btn_armarPlan.Size = new System.Drawing.Size(223, 73);
-            this.btn_armarPlan.TabIndex = 22;
+            this.btn_armarPlan.TabIndex = 10;
             this.btn_armarPlan.Text = "EMPEZAR ARMADO DE PLAN";
             this.btn_armarPlan.UseVisualStyleBackColor = false;
             this.btn_armarPlan.Click += new System.EventHandler(this.btn_armarPlan_Click);
@@ -316,11 +316,11 @@
             this.btn_registrarProfe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_registrarProfe.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_registrarProfe.ForeColor = System.Drawing.Color.LightGray;
-            this.btn_registrarProfe.Location = new System.Drawing.Point(145, 258);
+            this.btn_registrarProfe.Location = new System.Drawing.Point(145, 356);
             this.btn_registrarProfe.Margin = new System.Windows.Forms.Padding(4);
             this.btn_registrarProfe.Name = "btn_registrarProfe";
             this.btn_registrarProfe.Size = new System.Drawing.Size(223, 72);
-            this.btn_registrarProfe.TabIndex = 21;
+            this.btn_registrarProfe.TabIndex = 11;
             this.btn_registrarProfe.Text = "LIMPIAR DATOS";
             this.btn_registrarProfe.UseVisualStyleBackColor = false;
             this.btn_registrarProfe.Click += new System.EventHandler(this.btn_registrarProfe_Click);
@@ -334,7 +334,7 @@
             this.picker_fechaInicio.MinDate = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
             this.picker_fechaInicio.Name = "picker_fechaInicio";
             this.picker_fechaInicio.Size = new System.Drawing.Size(257, 23);
-            this.picker_fechaInicio.TabIndex = 20;
+            this.picker_fechaInicio.TabIndex = 8;
             this.picker_fechaInicio.Value = new System.DateTime(2018, 10, 14, 0, 0, 0, 0);
             this.picker_fechaInicio.ValueChanged += new System.EventHandler(this.picker_fechaInicio_ValueChanged);
             // 
@@ -347,7 +347,7 @@
             this.picker_fechaFin.MinDate = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
             this.picker_fechaFin.Name = "picker_fechaFin";
             this.picker_fechaFin.Size = new System.Drawing.Size(257, 23);
-            this.picker_fechaFin.TabIndex = 19;
+            this.picker_fechaFin.TabIndex = 9;
             this.picker_fechaFin.Value = new System.DateTime(2018, 10, 14, 0, 0, 0, 0);
             // 
             // label10
@@ -391,7 +391,7 @@
             this.cmb_profesor.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_profesor.Name = "cmb_profesor";
             this.cmb_profesor.Size = new System.Drawing.Size(257, 24);
-            this.cmb_profesor.TabIndex = 0;
+            this.cmb_profesor.TabIndex = 7;
             this.cmb_profesor.SelectedIndexChanged += new System.EventHandler(this.cmb_profesor_SelectedIndexChanged);
             // 
             // btn_cerrarPlan

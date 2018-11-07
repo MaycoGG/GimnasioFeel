@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProfesor_AGREGAR));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_registrarProfe = new System.Windows.Forms.Button();
             this.txt_apellidoProfe = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -76,7 +76,7 @@
             this.btn_registrarProfe.Margin = new System.Windows.Forms.Padding(4);
             this.btn_registrarProfe.Name = "btn_registrarProfe";
             this.btn_registrarProfe.Size = new System.Drawing.Size(181, 52);
-            this.btn_registrarProfe.TabIndex = 1;
+            this.btn_registrarProfe.TabIndex = 7;
             this.btn_registrarProfe.Text = "REGISTRAR";
             this.btn_registrarProfe.UseVisualStyleBackColor = false;
             this.btn_registrarProfe.Click += new System.EventHandler(this.txt_registrarProfe_Click);
@@ -91,7 +91,7 @@
             this.txt_apellidoProfe.Margin = new System.Windows.Forms.Padding(4);
             this.txt_apellidoProfe.Name = "txt_apellidoProfe";
             this.txt_apellidoProfe.Size = new System.Drawing.Size(400, 19);
-            this.txt_apellidoProfe.TabIndex = 34;
+            this.txt_apellidoProfe.TabIndex = 2;
             this.txt_apellidoProfe.Text = "APELLIDO";
             this.txt_apellidoProfe.Enter += new System.EventHandler(this.txt_apellidoProfe_Enter);
             this.txt_apellidoProfe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_apellidoProfe_KeyPress);
@@ -117,7 +117,7 @@
             this.txt_nombreProfe.Margin = new System.Windows.Forms.Padding(4);
             this.txt_nombreProfe.Name = "txt_nombreProfe";
             this.txt_nombreProfe.Size = new System.Drawing.Size(400, 19);
-            this.txt_nombreProfe.TabIndex = 33;
+            this.txt_nombreProfe.TabIndex = 1;
             this.txt_nombreProfe.Text = "NOMBRE";
             this.txt_nombreProfe.Enter += new System.EventHandler(this.txt_nombreProfe_Enter);
             this.txt_nombreProfe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombreProfe_KeyPress);
@@ -143,7 +143,7 @@
             this.txt_celProfe.Margin = new System.Windows.Forms.Padding(4);
             this.txt_celProfe.Name = "txt_celProfe";
             this.txt_celProfe.Size = new System.Drawing.Size(400, 19);
-            this.txt_celProfe.TabIndex = 39;
+            this.txt_celProfe.TabIndex = 4;
             this.txt_celProfe.Text = "CELULAR";
             this.txt_celProfe.Enter += new System.EventHandler(this.txt_celProfe_Enter);
             this.txt_celProfe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_celProfe_KeyPress);
@@ -169,7 +169,7 @@
             this.txt_docProfe.Margin = new System.Windows.Forms.Padding(4);
             this.txt_docProfe.Name = "txt_docProfe";
             this.txt_docProfe.Size = new System.Drawing.Size(435, 19);
-            this.txt_docProfe.TabIndex = 38;
+            this.txt_docProfe.TabIndex = 3;
             this.txt_docProfe.Text = "NRO DOCUMENTO";
             this.txt_docProfe.Enter += new System.EventHandler(this.txt_docProfe_Enter);
             this.txt_docProfe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_docProfe_KeyPress);
@@ -205,7 +205,7 @@
             this.txt_cerEmergenciaProfe.Margin = new System.Windows.Forms.Padding(4);
             this.txt_cerEmergenciaProfe.Name = "txt_cerEmergenciaProfe";
             this.txt_cerEmergenciaProfe.Size = new System.Drawing.Size(400, 19);
-            this.txt_cerEmergenciaProfe.TabIndex = 42;
+            this.txt_cerEmergenciaProfe.TabIndex = 5;
             this.txt_cerEmergenciaProfe.Text = "CEL EMERGENCIA";
             this.txt_cerEmergenciaProfe.Enter += new System.EventHandler(this.txt_cerEmergenciaProfe_Enter);
             this.txt_cerEmergenciaProfe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cerEmergenciaProfe_KeyPress);
@@ -228,7 +228,7 @@
             this.cmb_sangreProfe.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_sangreProfe.Name = "cmb_sangreProfe";
             this.cmb_sangreProfe.Size = new System.Drawing.Size(269, 25);
-            this.cmb_sangreProfe.TabIndex = 49;
+            this.cmb_sangreProfe.TabIndex = 6;
             this.cmb_sangreProfe.SelectedIndexChanged += new System.EventHandler(this.cmb_sangreProfe_SelectedIndexChanged);
             // 
             // textBox1
@@ -271,7 +271,7 @@
             this.btn_cancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(195, 52);
-            this.btn_cancelar.TabIndex = 52;
+            this.btn_cancelar.TabIndex = 8;
             this.btn_cancelar.Text = "CANCELAR";
             this.btn_cancelar.UseVisualStyleBackColor = false;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
@@ -386,14 +386,14 @@
             // dgv_todosLosProfes
             // 
             this.dgv_todosLosProfes.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_todosLosProfes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_todosLosProfes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_todosLosProfes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_todosLosProfes.EnableHeadersVisualStyles = false;
             this.dgv_todosLosProfes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
