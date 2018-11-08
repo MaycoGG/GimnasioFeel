@@ -299,117 +299,125 @@ namespace feelGYM
             #endregion
 
 
+
+            if (MessageBox.Show("¿Desea imprimir?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Form3 frm = new Form3();
+                frm.reportViewerImprimir.LocalReport.DataSources.Clear();
+                this.Close();
+
+
+                //Agregar los DataSources de cada DataSet
+                frm.reportViewerImprimir.LocalReport.DataSources.Add(rs);
+                frm.reportViewerImprimir.LocalReport.DataSources.Add(rsDetalle1);
+                frm.reportViewerImprimir.LocalReport.DataSources.Add(rsDetalle2);
+                frm.reportViewerImprimir.LocalReport.DataSources.Add(rsDetalle3);
+                frm.reportViewerImprimir.LocalReport.DataSources.Add(rsDetalle4);
+                frm.reportViewerImprimir.LocalReport.DataSources.Add(rsDetalle5);
+                frm.reportViewerImprimir.LocalReport.DataSources.Add(rsDetalle6);
+
+                //asigna el reporte
+                frm.reportViewerImprimir.LocalReport.ReportEmbeddedResource = "feelGYM.ReporteImpresion.rdlc";
+
+                //parametros para ocultar las tablas
+                #region asignamos los parametros
+
+                ReportParameter s1 = new ReportParameter("s1", "Sesión 1");
+                frm.reportViewerImprimir.LocalReport.SetParameters(s1);
+                ReportParameter s2 = new ReportParameter("s2", "Sesión 2");
+                frm.reportViewerImprimir.LocalReport.SetParameters(s2);
+                ReportParameter s3 = new ReportParameter("s3", "Sesión 3");
+                frm.reportViewerImprimir.LocalReport.SetParameters(s3);
+                ReportParameter s4 = new ReportParameter("s4", "Sesión 4");
+                frm.reportViewerImprimir.LocalReport.SetParameters(s4);
+                ReportParameter s5 = new ReportParameter("s5", "Sesión 5");
+                frm.reportViewerImprimir.LocalReport.SetParameters(s5);
+                ReportParameter s6 = new ReportParameter("s6", "Sesión 6");
+                frm.reportViewerImprimir.LocalReport.SetParameters(s6);
+
+
+                if (listDetalle1.Count != 0)
+                {
+                    ReportParameter dts1 = new ReportParameter("dts1", "false");
+                    frm.reportViewerImprimir.LocalReport.SetParameters(dts1);
+                }
+                else
+                {
+                    ReportParameter dts1 = new ReportParameter("dts1", "true");
+                    frm.reportViewerImprimir.LocalReport.SetParameters(dts1);
+                }
+
+
+                if (listDetalle2.Count != 0)
+                {
+                    ReportParameter dts2 = new ReportParameter("dts2", "false");
+                    frm.reportViewerImprimir.LocalReport.SetParameters(dts2);
+                }
+                else
+                {
+                    ReportParameter dts2 = new ReportParameter("dts2", "true");
+                    frm.reportViewerImprimir.LocalReport.SetParameters(dts2);
+                }
+
+
+                if (listDetalle3.Count != 0)
+                {
+                    ReportParameter dts3 = new ReportParameter("dts3", "false");
+                    frm.reportViewerImprimir.LocalReport.SetParameters(dts3);
+                }
+                else
+                {
+                    ReportParameter dts3 = new ReportParameter("dts3", "true");
+                    frm.reportViewerImprimir.LocalReport.SetParameters(dts3);
+                }
+
+
+                if (listDetalle4.Count != 0)
+                {
+                    ReportParameter dts4 = new ReportParameter("dts4", "false");
+                    frm.reportViewerImprimir.LocalReport.SetParameters(dts4);
+                }
+                else
+                {
+                    ReportParameter dts4 = new ReportParameter("dts4", "true");
+                    frm.reportViewerImprimir.LocalReport.SetParameters(dts4);
+                }
+
+
+                if (listDetalle5.Count != 0)
+                {
+                    ReportParameter dts5 = new ReportParameter("dts5", "false");
+                    frm.reportViewerImprimir.LocalReport.SetParameters(dts5);
+                }
+                else
+                {
+                    ReportParameter dts5 = new ReportParameter("dts5", "true");
+                    frm.reportViewerImprimir.LocalReport.SetParameters(dts5);
+                }
+
+
+                if (listDetalle6.Count != 0)
+                {
+                    ReportParameter dts6 = new ReportParameter("dts6", "false");
+                    frm.reportViewerImprimir.LocalReport.SetParameters(dts6);
+                }
+                else
+                {
+                    ReportParameter dts6 = new ReportParameter("dts6", "true");
+                    frm.reportViewerImprimir.LocalReport.SetParameters(dts6);
+                }
+                #endregion
+
+
+                frm.ShowDialog();
+            }
+            else
+            {
+                
+            }
+
+
             
-            
-
-            Form3 frm = new Form3();
-            frm.reportViewerImprimir.LocalReport.DataSources.Clear();
-
-            
-
-            //Agregar los DataSources de cada DataSet
-            frm.reportViewerImprimir.LocalReport.DataSources.Add(rs);
-            frm.reportViewerImprimir.LocalReport.DataSources.Add(rsDetalle1);
-            frm.reportViewerImprimir.LocalReport.DataSources.Add(rsDetalle2);
-            frm.reportViewerImprimir.LocalReport.DataSources.Add(rsDetalle3);
-            frm.reportViewerImprimir.LocalReport.DataSources.Add(rsDetalle4);
-            frm.reportViewerImprimir.LocalReport.DataSources.Add(rsDetalle5);
-            frm.reportViewerImprimir.LocalReport.DataSources.Add(rsDetalle6);
-
-            //asigna el reporte
-            frm.reportViewerImprimir.LocalReport.ReportEmbeddedResource = "feelGYM.ReporteImpresion.rdlc";
-
-            //parametros para ocultar las tablas
-            #region asignamos los parametros
-
-            ReportParameter s1 = new ReportParameter("s1", "Sesión 1");
-            frm.reportViewerImprimir.LocalReport.SetParameters(s1);
-            ReportParameter s2 = new ReportParameter("s2", "Sesión 2");
-            frm.reportViewerImprimir.LocalReport.SetParameters(s2);
-            ReportParameter s3 = new ReportParameter("s3", "Sesión 3");
-            frm.reportViewerImprimir.LocalReport.SetParameters(s3);
-            ReportParameter s4 = new ReportParameter("s4", "Sesión 4");
-            frm.reportViewerImprimir.LocalReport.SetParameters(s4);
-            ReportParameter s5 = new ReportParameter("s5", "Sesión 5");
-            frm.reportViewerImprimir.LocalReport.SetParameters(s5);
-            ReportParameter s6 = new ReportParameter("s6", "Sesión 6");
-            frm.reportViewerImprimir.LocalReport.SetParameters(s6);
-
-
-            if (listDetalle1.Count != 0)
-            {
-                ReportParameter dts1 = new ReportParameter("dts1", "false");
-                frm.reportViewerImprimir.LocalReport.SetParameters(dts1);
-            }
-            else
-            {
-                ReportParameter dts1 = new ReportParameter("dts1", "true");
-                frm.reportViewerImprimir.LocalReport.SetParameters(dts1);
-            }
-
-
-            if (listDetalle2.Count != 0)
-            {
-                ReportParameter dts2 = new ReportParameter("dts2", "false");
-                frm.reportViewerImprimir.LocalReport.SetParameters(dts2);
-            }
-            else
-            {
-                ReportParameter dts2 = new ReportParameter("dts2", "true");
-                frm.reportViewerImprimir.LocalReport.SetParameters(dts2);
-            }
-
-
-            if (listDetalle3.Count != 0)
-            {
-                ReportParameter dts3 = new ReportParameter("dts3", "false");
-                frm.reportViewerImprimir.LocalReport.SetParameters(dts3);
-            }
-            else
-            {
-                ReportParameter dts3 = new ReportParameter("dts3", "true");
-                frm.reportViewerImprimir.LocalReport.SetParameters(dts3);
-            }
-
-
-            if (listDetalle4.Count != 0)
-            {
-                ReportParameter dts4 = new ReportParameter("dts4", "false");
-                frm.reportViewerImprimir.LocalReport.SetParameters(dts4);
-            }
-            else
-            {
-                ReportParameter dts4 = new ReportParameter("dts4", "true");
-                frm.reportViewerImprimir.LocalReport.SetParameters(dts4);
-            }
-
-
-            if (listDetalle5.Count != 0)
-            {
-                ReportParameter dts5 = new ReportParameter("dts5", "false");
-                frm.reportViewerImprimir.LocalReport.SetParameters(dts5);
-            }
-            else
-            {
-                ReportParameter dts5 = new ReportParameter("dts5", "true");
-                frm.reportViewerImprimir.LocalReport.SetParameters(dts5);
-            }
-
-
-            if (listDetalle6.Count != 0)
-            {
-                ReportParameter dts6 = new ReportParameter("dts6", "false");
-                frm.reportViewerImprimir.LocalReport.SetParameters(dts6);
-            }
-            else
-            {
-                ReportParameter dts6 = new ReportParameter("dts6", "true");
-                frm.reportViewerImprimir.LocalReport.SetParameters(dts6);
-            }
-            #endregion
-
-            
-            frm.ShowDialog();
             
 
         }
@@ -422,6 +430,12 @@ namespace feelGYM
         private void btn_cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+
+            string query = "DELETE FROM detalleplanejercicios WHERE detalleplanejercicios.nroPlan = '{0}' AND detalleplanejercicios.dniSocio = '{1}'";
+            Clases.Metodos.EliminarDetallePlanFINAL(numPlan, dni_Socio, query);
+
+            string query2 = "DELETE FROM planejercicios WHERE planejercicios.nroPlan = '{0}' AND planejercicios.dniSocio = '{1}'";
+            Clases.Metodos.EliminarPlanEjercicios(numPlan, dni_Socio, query2);
         }
     }
 }

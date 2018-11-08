@@ -351,6 +351,24 @@ namespace feelGYM.Clases
             return retorno;
         }
 
+        //metodo para eliminar un PLAN
+        public static int EliminarPlanEjercicios(int nroPlan, int dniSocio, String query)
+        {
+            int retorno = 0;
+            MySqlCommand cmd = new MySqlCommand(String.Format(query, nroPlan, dniSocio), Conexion.obtenerConexion());
+            retorno = cmd.ExecuteNonQuery();
+            return retorno;
+        }
+
+        //metodo para eliminar DETALLE DE PLAN
+        public static int EliminarDetallePlanFINAL(int nroPlan, int dniSocio, String query)
+        {
+            int retorno = 0;
+            MySqlCommand cmd = new MySqlCommand(String.Format(query, nroPlan, dniSocio), Conexion.obtenerConexion());
+            retorno = cmd.ExecuteNonQuery();
+            return retorno;
+        }
+
         //metodo para eliminar DETALLE DE PLAN
         public static int EliminarDetallePlan(DetallePlan plan, String query)
         {
@@ -501,6 +519,7 @@ namespace feelGYM.Clases
             }
             return _lista;
         }
+
 
 
     }
