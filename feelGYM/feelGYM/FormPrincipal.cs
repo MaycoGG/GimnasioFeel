@@ -175,9 +175,14 @@ namespace feelGYM
             if (panelMenu.Width == 200)
             {
                 timerOcultarMenu.Enabled = true;
+                
             }
             else{
-                if (panelMenu.Width == 56) { timerMostrarMenu.Enabled = true; }
+                if (panelMenu.Width == 56)
+                {
+                    timerMostrarMenu.Enabled = true;
+
+                }
             }
         }
 
@@ -193,23 +198,23 @@ namespace feelGYM
 
         }
 
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-            Clases.Conexion.obtenerConexion();
-            try
-            {
-                MessageBox.Show("Ok estas conectado");
-            }
-            catch (Exception e1)
-            {
-                MessageBox.Show(e1.Message);
-            }
-
-        }
+        
 
         private void panelMenu_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            //Contacto c = new Contacto();
+            //c.Show();
+            panelCONTACTO.Visible = true;
+        }
+
+        private void btn_acptarCont_Click(object sender, EventArgs e)
+        {
+            panelCONTACTO.Visible = false;
         }
 
         #endregion

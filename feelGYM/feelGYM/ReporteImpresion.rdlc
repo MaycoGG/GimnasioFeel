@@ -3303,7 +3303,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox14</rd:DefaultName>
               <Top>2.24924cm</Top>
-              <Left>11.3172cm</Left>
+              <Left>11.28192cm</Left>
               <Height>0.6cm</Height>
               <Width>3.87018cm</Width>
               <ZIndex>7</ZIndex>
@@ -3351,38 +3351,6 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Textbox26">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>=First(Fields!fechaFin.Value, "DataSet1")</Value>
-                      <Style>
-                        <FontSize>11pt</FontSize>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox14</rd:DefaultName>
-              <Top>3.04809cm</Top>
-              <Left>11.3172cm</Left>
-              <Height>0.6cm</Height>
-              <Width>3.87018cm</Width>
-              <ZIndex>9</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
             <Textbox Name="Textbox27">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
@@ -3406,7 +3374,7 @@
               <Left>1.58743cm</Left>
               <Height>0.6cm</Height>
               <Width>2.1825cm</Width>
-              <ZIndex>10</ZIndex>
+              <ZIndex>9</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -3441,7 +3409,7 @@
               <Left>3.94632cm</Left>
               <Height>0.6cm</Height>
               <Width>1.83127cm</Width>
-              <ZIndex>11</ZIndex>
+              <ZIndex>10</ZIndex>
               <Style>
                 <Border>
                   <Style>Solid</Style>
@@ -3460,7 +3428,7 @@
               <Left>15.75307cm</Left>
               <Height>3.22502cm</Height>
               <Width>2.98166cm</Width>
-              <ZIndex>12</ZIndex>
+              <ZIndex>11</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -3490,7 +3458,7 @@
               <Left>1.58742cm</Left>
               <Height>0.6cm</Height>
               <Width>2.1825cm</Width>
-              <ZIndex>13</ZIndex>
+              <ZIndex>12</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -3523,7 +3491,7 @@
               <Left>1.58743cm</Left>
               <Height>0.6cm</Height>
               <Width>2.1825cm</Width>
-              <ZIndex>14</ZIndex>
+              <ZIndex>13</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -3557,7 +3525,7 @@
               <Left>8.43796cm</Left>
               <Height>0.6cm</Height>
               <Width>2.1825cm</Width>
-              <ZIndex>15</ZIndex>
+              <ZIndex>14</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -3573,7 +3541,7 @@
               <Left>0.68792cm</Left>
               <Height>0cm</Height>
               <Width>18.04682cm</Width>
-              <ZIndex>16</ZIndex>
+              <ZIndex>15</ZIndex>
               <Style>
                 <Border>
                   <Style>Solid</Style>
@@ -3603,7 +3571,7 @@
               <Left>1.58742cm</Left>
               <Height>0.57354cm</Height>
               <Width>2.1825cm</Width>
-              <ZIndex>17</ZIndex>
+              <ZIndex>16</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -3633,9 +3601,39 @@
               </Paragraphs>
               <rd:DefaultName>Textbox14</rd:DefaultName>
               <Top>4.55084cm</Top>
-              <Left>3.94632cm</Left>
+              <Left>3.94634cm</Left>
               <Height>0.85603cm</Height>
               <Width>14.7884cm</Width>
+              <ZIndex>17</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox29">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=First(Fields!fechaFin.Value, "DataSet1")</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox29</rd:DefaultName>
+              <Top>3.03926cm</Top>
+              <Left>11.28192cm</Left>
+              <Height>0.6cm</Height>
+              <Width>3.87018cm</Width>
               <ZIndex>18</ZIndex>
               <Style>
                 <Border>

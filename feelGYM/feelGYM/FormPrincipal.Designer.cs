@@ -32,12 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.panelFormularios = new System.Windows.Forms.Panel();
+            this.btn_menu = new System.Windows.Forms.PictureBox();
             this.lbl_fechaActual = new System.Windows.Forms.Label();
             this.lbl_horaActual = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.btn_menu = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.Ejercicios = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -53,17 +53,24 @@
             this.timerOcultarMenu = new System.Windows.Forms.Timer(this.components);
             this.timerMostrarMenu = new System.Windows.Forms.Timer(this.components);
             this.horaFecha = new System.Windows.Forms.Timer(this.components);
+            this.panelCONTACTO = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btn_acptarCont = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panelContenedor.SuspendLayout();
             this.panelFormularios.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_maximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_restaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cerrar)).BeginInit();
+            this.panelCONTACTO.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelContenedor
@@ -82,6 +89,8 @@
             // panelFormularios
             // 
             this.panelFormularios.BackColor = System.Drawing.Color.White;
+            this.panelFormularios.Controls.Add(this.panelCONTACTO);
+            this.panelFormularios.Controls.Add(this.btn_menu);
             this.panelFormularios.Controls.Add(this.lbl_fechaActual);
             this.panelFormularios.Controls.Add(this.lbl_horaActual);
             this.panelFormularios.Controls.Add(this.pictureBox2);
@@ -90,6 +99,19 @@
             this.panelFormularios.Name = "panelFormularios";
             this.panelFormularios.Size = new System.Drawing.Size(776, 627);
             this.panelFormularios.TabIndex = 2;
+            // 
+            // btn_menu
+            // 
+            this.btn_menu.BackColor = System.Drawing.Color.White;
+            this.btn_menu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_menu.Image = ((System.Drawing.Image)(resources.GetObject("btn_menu.Image")));
+            this.btn_menu.Location = new System.Drawing.Point(6, 6);
+            this.btn_menu.Name = "btn_menu";
+            this.btn_menu.Size = new System.Drawing.Size(56, 49);
+            this.btn_menu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_menu.TabIndex = 7;
+            this.btn_menu.TabStop = false;
+            this.btn_menu.Click += new System.EventHandler(this.btn_menu_Click);
             // 
             // lbl_fechaActual
             // 
@@ -132,8 +154,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
-            this.panelMenu.Controls.Add(this.button3);
-            this.panelMenu.Controls.Add(this.btn_menu);
+            this.panelMenu.Controls.Add(this.label1);
             this.panelMenu.Controls.Add(this.panel3);
             this.panelMenu.Controls.Add(this.Ejercicios);
             this.panelMenu.Controls.Add(this.panel2);
@@ -148,28 +169,18 @@
             this.panelMenu.TabIndex = 1;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
-            // button3
+            // label1
             // 
-            this.button3.Location = new System.Drawing.Point(54, 287);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
-            // 
-            // btn_menu
-            // 
-            this.btn_menu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_menu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_menu.Image = ((System.Drawing.Image)(resources.GetObject("btn_menu.Image")));
-            this.btn_menu.Location = new System.Drawing.Point(144, 6);
-            this.btn_menu.Name = "btn_menu";
-            this.btn_menu.Size = new System.Drawing.Size(56, 49);
-            this.btn_menu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_menu.TabIndex = 7;
-            this.btn_menu.TabStop = false;
-            this.btn_menu.Click += new System.EventHandler(this.btn_menu_Click);
+            this.label1.AutoSize = true;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(10, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(139, 46);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "BR - Code";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel3
             // 
@@ -346,6 +357,87 @@
             this.horaFecha.Enabled = true;
             this.horaFecha.Tick += new System.EventHandler(this.horaFecha_Tick);
             // 
+            // panelCONTACTO
+            // 
+            this.panelCONTACTO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.panelCONTACTO.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelCONTACTO.Controls.Add(this.label2);
+            this.panelCONTACTO.Controls.Add(this.btn_acptarCont);
+            this.panelCONTACTO.Controls.Add(this.label4);
+            this.panelCONTACTO.Controls.Add(this.label3);
+            this.panelCONTACTO.Controls.Add(this.label5);
+            this.panelCONTACTO.Location = new System.Drawing.Point(0, 0);
+            this.panelCONTACTO.Name = "panelCONTACTO";
+            this.panelCONTACTO.Size = new System.Drawing.Size(300, 186);
+            this.panelCONTACTO.TabIndex = 8;
+            this.panelCONTACTO.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(143, 92);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(16, 22);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "-";
+            // 
+            // btn_acptarCont
+            // 
+            this.btn_acptarCont.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btn_acptarCont.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_acptarCont.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_acptarCont.FlatAppearance.BorderSize = 0;
+            this.btn_acptarCont.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_acptarCont.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_acptarCont.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_acptarCont.ForeColor = System.Drawing.Color.White;
+            this.btn_acptarCont.Location = new System.Drawing.Point(93, 133);
+            this.btn_acptarCont.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_acptarCont.Name = "btn_acptarCont";
+            this.btn_acptarCont.Size = new System.Drawing.Size(124, 40);
+            this.btn_acptarCont.TabIndex = 16;
+            this.btn_acptarCont.Text = "ACEPTAR";
+            this.btn_acptarCont.UseVisualStyleBackColor = false;
+            this.btn_acptarCont.Click += new System.EventHandler(this.btn_acptarCont_Click);
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label4.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(52, 11);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(198, 67);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "BR - Code";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(155, 92);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(120, 22);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "3517521500";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(26, 92);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(120, 22);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "3584194980";
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,15 +453,18 @@
             this.panelContenedor.ResumeLayout(false);
             this.panelFormularios.ResumeLayout(false);
             this.panelFormularios.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_menu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btn_menu)).EndInit();
+            this.panelMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelBarraTitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btn_maximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_restaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_minimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cerrar)).EndInit();
+            this.panelCONTACTO.ResumeLayout(false);
+            this.panelCONTACTO.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -396,8 +491,14 @@
         private System.Windows.Forms.Label lbl_fechaActual;
         private System.Windows.Forms.Label lbl_horaActual;
         private System.Windows.Forms.Timer horaFecha;
-        private System.Windows.Forms.Button button3;
         public System.Windows.Forms.Panel panelContenedor;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panelCONTACTO;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btn_acptarCont;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
     }
 }
 

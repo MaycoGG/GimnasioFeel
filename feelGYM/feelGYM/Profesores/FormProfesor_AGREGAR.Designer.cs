@@ -385,6 +385,7 @@
             // 
             // dgv_todosLosProfes
             // 
+            this.dgv_todosLosProfes.AllowUserToAddRows = false;
             this.dgv_todosLosProfes.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));

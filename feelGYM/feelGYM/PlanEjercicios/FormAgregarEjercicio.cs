@@ -130,6 +130,9 @@ namespace feelGYM
                     }
                     else { MessageBox.Show("Ocurrió un error"); }
                 }
+
+                txt_nombreEjercicioNuevo.Text = "NOMBRE";
+                txt_nombreEjercicioNuevo.ForeColor = Color.DimGray;
             }
             
         }
@@ -324,7 +327,7 @@ namespace feelGYM
             bool valida = true;
             int tipo = 0;
 
-            if (txt_nombreEjercicioNuevo.Text == "NOMBRE")
+            if (txt_nombreEjercicioNuevo.Text == "NOMBRE" || txt_nombreEjercicioNuevo.Text == "")
             {
                 errorProvider1.SetError(txt_nombreEjercicioNuevo, "Ingrese NOMBRE del ejercicio");
                 valida = false;
