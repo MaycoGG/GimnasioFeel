@@ -61,7 +61,11 @@ namespace feelGYM.PlanEjercicios
         private void btn_cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+            string query = "DELETE FROM detalleplanejercicios WHERE detalleplanejercicios.nroPlan = '{0}' AND detalleplanejercicios.dniSocio = '{1}'";
+            Clases.Metodos.EliminarDetallePlanFINAL(numPlan, dniSocio, query);
 
+            string query2 = "DELETE FROM planejercicios WHERE planejercicios.nroPlan = '{0}' AND planejercicios.dniSocio = '{1}'";
+            Clases.Metodos.EliminarPlanEjercicios(numPlan, dniSocio, query2);
         }
 
         private void btn_minimizar_Click(object sender, EventArgs e)
